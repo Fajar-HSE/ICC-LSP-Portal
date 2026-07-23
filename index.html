@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSP & Skema Directory — ICC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="all">
+<style>
+:root {
+  --primary: #004B87;
+  --primary-light: #0066b3;
+  --primary-dark: #003366;
+  --accent: #F47920;
+  --accent-light: #ff9633;
+  --red: #E4002B;
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.04);
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 24px 32px;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+.header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.header-brand { display: flex; align-items: center; gap: 12px; }
+.header-brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
+.header-brand span { font-size: 13px; opacity: .85; font-weight: 500; }
+.header-stats { display: flex; gap: 20px; font-size: 13px; }
+.header-stats .stat { text-align: center; }
+.header-stats .num { font-size: 20px; font-weight: 700; }
+.header-stats .lbl { opacity: .75; font-size: 11px; }
+/* Search */
+.search-section {
+  max-width: 1280px; margin: 0 auto; padding: 20px 32px 0;
+}
+.search-bar {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  background: var(--card); border-radius: var(--radius);
+  padding: 16px 20px; box-shadow: var(--shadow);
+}
+.search-group { flex: 1; min-width: 200px; position: relative; }
+.search-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
+.search-input-wrap { position: relative; }
+.search-group input {
+  width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 14px; transition: all .2s; background: var(--bg);
+  padding-right: 36px;
+}
+.search-group input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px rgba(0,75,135,.1); }
+.search-group .clear-btn {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; font-size: 16px; cursor: pointer;
+  color: var(--text-light); display: none; padding: 4px 6px; border-radius: 4px;
+  line-height: 1;
+}
+.search-group .clear-btn:hover { color: var(--text); background: var(--border); }
+.search-group .clear-btn.show { display: block; }
+.search-hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
+/* Autocomplete */
+.autocomplete {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 50;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg); max-height: 320px; overflow-y: auto; display: none;
+  margin-top: 2px;
+}
+.autocomplete.show { display: block; }
+.autocomplete-item {
+  padding: 10px 14px; cursor: pointer; font-size: 13px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; transition: background .1s;
+}
+.autocomplete-item:last-child { border-bottom: none; }
+.autocomplete-item:hover, .autocomplete-item.selected { background: #f0f7ff; }
+.autocomplete-item .tag {
+  font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px;
+  background: var(--bg); color: var(--text-muted); white-space: nowrap;
+}
+.autocomplete-item .highlight { color: var(--primary); font-weight: 600; }
+.autocomplete-item .lsp-name { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+/* Main */
+.main { max-width: 1280px; margin: 0 auto; padding: 20px 32px 40px; }
+/* Cards */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card {
+  background: var(--card); border-radius: var(--radius); border: 1px solid var(--border);
+  padding: 20px; box-shadow: var(--shadow); transition: all .2s;
+}
+.card:hover { box-shadow: var(--shadow-lg); }
+.card-clickable { cursor: pointer; }
+.card-clickable:hover { transform: translateY(-2px); }
+.card-lsp { border-left: 4px solid var(--primary); }
+.card-skema { border-left: 4px solid var(--accent); }
+.card .title { font-size: 15px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
+.card .sub { font-size: 12px; color: var(--text-muted); }
+.card .badge-group { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.badge {
+  display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 12px;
+  font-size: 11px; font-weight: 600;
+}
+.badge-primary { background: #e8f0fe; color: var(--primary); }
+.badge-accent { background: #fef3e8; color: var(--accent); }
+.badge-red { background: #fde8eb; color: var(--red); }
+/* Table */
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.section-header h2 { font-size: 18px; font-weight: 700; }
+.section-header .count { font-size: 13px; color: var(--text-muted); }
+.table-wrap { overflow-x: auto; background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  background: var(--primary); color: #fff; font-weight: 600; padding: 10px 16px;
+  text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .5px;
+  position: sticky; top: 0;
+}
+td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+tr:last-child td { border-bottom: none; }
+.kode-cell { font-family: 'Courier New', monospace; font-size: 13px; color: var(--primary); font-weight: 500; white-space: nowrap; }
+/* Empty state */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text-light); }
+.empty-state .icon { font-size: 48px; margin-bottom: 12px; opacity: .5; }
+.empty-state p { font-size: 15px; }
+.empty-state .sub { font-size: 13px; margin-top: 4px; }
+/* Summary */
+.summary-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.summary-item {
+  background: var(--card); padding: 14px 20px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); flex: 1; min-width: 140px;
+}
+.summary-item .num { font-size: 24px; font-weight: 800; color: var(--primary); }
+.summary-item .lbl { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.summary-item.accent .num { color: var(--accent); }
+/* Loading */
+.loading { text-align: center; padding: 60px; color: var(--text-light); }
+.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Back btn */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--card); cursor: pointer; font-family: inherit;
+  font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 16px;
+  transition: all .15s;
+}
+.back-btn:hover { background: var(--bg); border-color: var(--primary); color: var(--primary); }
+/* Footer */
+.footer { text-align: center; padding: 24px; color: var(--text-light); font-size: 12px; border-top: 1px solid var(--border); margin-top: 40px; }
+/* LSP selector after skema search */
+.lsp-options { margin-bottom: 20px; }
+.lsp-options .hint { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.lsp-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.lsp-pill {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+  border-radius: 20px; border: 2px solid var(--border); background: var(--card);
+  cursor: pointer; font-size: 13px; font-weight: 500; transition: all .15s;
+  font-family: inherit;
+}
+.lsp-pill:hover { border-color: var(--primary); color: var(--primary); }
+.lsp-pill .count { font-size: 11px; color: var(--text-muted); }
+.lsp-pill .check { display: none; }
+.lsp-pill.selected { border-color: var(--primary); background: #e8f0fe; color: var(--primary); }
+.lsp-pill.selected .check { display: inline; }
+/* Responsive */
+@media (max-width: 768px) {
+  .header { padding: 16px; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .header-stats { width: 100%; justify-content: space-between; }
+  .search-section { padding: 12px 16px 0; }
+  .main { padding: 12px 16px 24px; }
+  .search-bar { flex-direction: column; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <img src="logo_icc.png" alt="ICC Logo" style="height:42px;width:auto">
+      <div>
+        <h1>ICC LSP Portal</h1>
+        <span>Lembaga Sertifikasi Profesi — BNSP</span>
+      </div>
+    </div>
+    <div class="header-stats" id="headerStats">
+      <div class="stat"><div class="num" id="statLsp">—</div><div class="lbl">LSP</div></div>
+      <div class="stat"><div class="num" id="statSkema">—</div><div class="lbl">Skema</div></div>
+      <div class="stat"><div class="num" id="statUnit">—</div><div class="lbl">Unit Kompetensi</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="search-section">
+  <div class="search-bar">
+    <div class="search-group">
+      <label>Cari LSP</label>
+      <div class="search-input-wrap">
+        <input type="text" id="searchLsp" placeholder="Ketik nama LSP..." autocomplete="off">
+        <button class="clear-btn" id="clearLsp">✕</button>
+      </div>
+      <div class="autocomplete" id="acLsp"></div>
+      <div class="search-hint">Misal: Administrator, Digital, K3, Migas</div>
+    </div>
+    <div class="search-group">
+      <label>Cari Skema</label>
+      <div class="search-input-wrap">
+        <input type="text" id="searchSkema" placeholder="Ketik nama skema..." autocomplete="off">
+        <button class="clear-btn" id="clearSkema">✕</button>
+      </div>
+      <div class="autocomplete" id="acSkema"></div>
+      <div class="search-hint">Misal: Digital Marketing, K3 Umum, Sekretaris</div>
+    </div>
+  </div>
+</div>
+
+<main class="main" id="mainContent">
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    <p>Memuat data LSP...</p>
+  </div>
+</main>
+
+<div class="footer">
+  Indonesian Certification Center (ICC) — Data LSP BNSP
+</div>
+
+<script>
+// ===== STATE =====
+var DATA = null;
+var lspList = [];
+var skemaList = [];
+var acLspSelected = -1;
+var acSkemaSelected = -1;
+var currentSkemaName = null;
+
+// Supabase
+var SB_URL = 'https://ziybqtcdphuzhfoahopr.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
+
+function sb(path) {
+  return fetch(SB_URL + '/rest/v1/' + path, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r){ return r.json(); });
+}
+
+// ===== LOAD =====
+function loadData() {
+  var p1 = sb('lsp?select=id,nama,jml_skema&order=nama.asc&limit=1000');
+  var p2 = sb('skema?select=id,nama,id_skema,lsp_id,jml_unit&limit=10000');
+
+  Promise.all([p1, p2]).then(function(results){
+    var lspRows = results[0];
+    var skemaRows = results[1];
+
+    // Build LSP list
+    lspList = lspRows.map(function(l){ return { nama: l.nama, jml_skema: l.jml_skema, id: l.id }; });
+
+    // Group skema by name -> { LSP options }
+    var skemaGroup = {};
+    skemaRows.forEach(function(s){
+      if (!skemaGroup[s.nama]) skemaGroup[s.nama] = { nama: s.nama, lsps: {} };
+      skemaGroup[s.nama].lsps[s.lsp_id] = { id_skema: s.id_skema, jml_unit: s.jml_unit, skema_id: s.id, units: [] };
+    });
+
+    // Build skemaList — look up LSP name
+    var lspMap = {};
+    lspList.forEach(function(l){ lspMap[l.id] = l.nama; });
+
+    skemaList = Object.keys(skemaGroup).sort().map(function(nama){
+      var g = skemaGroup[nama];
+      var lspArr = Object.keys(g.lsps).map(function(lid){
+        return { lsp: lspMap[lid] || 'Unknown', lsp_id: parseInt(lid), ...g.lsps[lid] };
+      });
+      lspArr.sort(function(a,b){ return a.lsp.localeCompare(b.lsp); });
+      return {
+        nama: nama,
+        jml_lsp: lspArr.length,
+        total_unit: lspArr.reduce(function(s, o){ return s + o.jml_unit; }, 0),
+        lsps: lspArr
+      };
+    });
+
+    DATA = {
+      total_lsp: lspList.length,
+      total_skema: skemaList.length,
+      total_unit: skemaRows.length // approximate from skema rows
+    };
+    // Get actual unit count
+    sb('unit_kompetensi?select=count').then(function(c){
+      if (c && c[0]) DATA.total_unit = c[0].count;
+      document.getElementById('statUnit').textContent = DATA.total_unit.toLocaleString();
+    });
+
+    document.getElementById('statLsp').textContent = DATA.total_lsp;
+    document.getElementById('statSkema').textContent = DATA.total_skema;
+    document.getElementById('statUnit').textContent = '...';
+    renderHome();
+  }).catch(function(e){
+    document.getElementById('mainContent').innerHTML =
+      '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
+  });
+}
+
+// ===== HELPERS =====
+function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function highlight(text, query) {
+  if (!query) return esc(text);
+  var q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  var re = new RegExp('(' + q + ')', 'gi');
+  return esc(text).replace(re, '<span class="highlight">$1</span>');
+}
+
+// ===== HOME =====
+function renderHome() {
+  currentSkemaName = null;
+  var html = '';
+  html += '<div class="summary-bar">' +
+    '<div class="summary-item"><div class="num">' + DATA.total_lsp + '</div><div class="lbl">Total LSP</div></div>' +
+    '<div class="summary-item accent"><div class="num">' + DATA.total_skema + '</div><div class="lbl">Total Skema</div></div>' +
+    '<div class="summary-item"><div class="num">' + DATA.total_unit.toLocaleString() + '</div><div class="lbl">Unit Kompetensi</div></div>' +
+    '</div>';
+
+  html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2></div><div class="cards-grid">';
+  var top = lspList.slice().sort(function(a,b){ return b.jml_skema - a.jml_skema; }).slice(0, 6);
+  top.forEach(function(l){
+    html += '<div class="card card-lsp card-clickable" onclick="showLsp(\'' + esc(l.nama) + '\')">' +
+      '<div class="title">' + esc(l.nama) + '</div>' +
+      '<div class="sub">' + l.jml_skema + ' skema sertifikasi</div>' +
+      '<div class="badge-group"><span class="badge badge-primary">' + l.jml_skema + ' skema</span></div></div>';
+  });
+  html += '</div>';
+
+  html += '<div class="section-header"><h2>Skema Tersedia</h2><span class="count">Menampilkan 12 dari ' + DATA.total_skema + '</span></div><div class="cards-grid">';
+  var step = Math.max(1, Math.floor(skemaList.length / 12));
+  for (var i = 0; i < skemaList.length && i < 12 * step; i += step) {
+    var s = skemaList[i];
+    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
+      '<div class="title">' + esc(s.nama) + '</div>' +
+      '<div class="sub">' + s.jml_lsp + ' LSP • ' + s.total_unit + ' unit</div>' +
+      '<div class="badge-group"><span class="badge badge-accent">' + s.total_unit + ' unit</span></div></div>';
+  }
+  html += '</div>';
+
+  document.getElementById('mainContent').innerHTML = html;
+}
+
+// ===== SEARCH LSP =====
+var searchLspInput = document.getElementById('searchLsp');
+var acLsp = document.getElementById('acLsp');
+var clearLsp = document.getElementById('clearLsp');
+
+searchLspInput.addEventListener('input', function(){
+  var q = this.value.trim().toLowerCase();
+  clearLsp.classList.toggle('show', q.length > 0);
+  if (q.length < 1) { acLsp.classList.remove('show'); renderHome(); return; }
+  // Priority: startsWith first, then includes
+  var starts = lspList.filter(function(l){ return l.nama.toLowerCase().startsWith(q); });
+  var includes = lspList.filter(function(l){ return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
+  var matches = starts.concat(includes).slice(0, 8);
+  if (matches.length === 0) { acLsp.classList.remove('show'); return; }
+  acLspSelected = -1;
+  var html = '';
+  matches.forEach(function(m){
+    html += '<div class="autocomplete-item" onclick="selectLsp(\'' + esc(m.nama) + '\')">' +
+      '<span>' + highlight(m.nama, searchLspInput.value) + '</span>' +
+      '</div>';
+  });
+  acLsp.innerHTML = html;
+  acLsp.classList.add('show');
+});
+
+searchLspInput.addEventListener('keydown', function(e){
+  var items = acLsp.querySelectorAll('.autocomplete-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); acLspSelected = Math.min(acLspSelected + 1, items.length - 1); highlightAc(items); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); acLspSelected = Math.max(acLspSelected - 1, -1); highlightAc(items); }
+  if (e.key === 'Enter' && acLspSelected >= 0 && items[acLspSelected]) { items[acLspSelected].click(); }
+  if (e.key === 'Escape') { acLsp.classList.remove('show'); }
+});
+
+function highlightAc(items) {
+  items.forEach(function(el, i){ el.classList.toggle('selected', i === acLspSelected); });
+}
+
+function selectLsp(name) {
+  searchLspInput.value = name;
+  acLsp.classList.remove('show');
+  showLsp(name);
+}
+
+clearLsp.addEventListener('click', function(){
+  searchLspInput.value = '';
+  clearLsp.classList.remove('show');
+  acLsp.classList.remove('show');
+  renderHome();
+});
+
+// ===== SEARCH SKEMA → PICK LSP =====
+var searchSkemaInput = document.getElementById('searchSkema');
+var acSkema = document.getElementById('acSkema');
+var clearSkema = document.getElementById('clearSkema');
+
+searchSkemaInput.addEventListener('input', function(){
+  var q = this.value.trim().toLowerCase();
+  clearSkema.classList.toggle('show', q.length > 0);
+  if (q.length < 1) { acSkema.classList.remove('show'); return; }
+  // Priority: startsWith first, then includes
+  var starts = skemaList.filter(function(s){ return s.nama.toLowerCase().startsWith(q); });
+  var includes = skemaList.filter(function(s){ return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
+  var matches = starts.concat(includes).slice(0, 8);
+  if (matches.length === 0) { acSkema.classList.remove('show'); return; }
+  acSkemaSelected = -1;
+  var html = '';
+  matches.forEach(function(m){
+    html += '<div class="autocomplete-item" onclick="searchSkemaAndPickLsp(\'' + esc(m.nama) + '\')">' +
+      '<span>' + highlight(m.nama, searchSkemaInput.value) + '</span>' +
+      ' <span class="tag">' + m.jml_lsp + ' LSP</span></div>';
+  });
+  acSkema.innerHTML = html;
+  acSkema.classList.add('show');
+});
+
+searchSkemaInput.addEventListener('keydown', function(e){
+  var items = acSkema.querySelectorAll('.autocomplete-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); acSkemaSelected = Math.min(acSkemaSelected + 1, items.length - 1); highlightAc(items); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); acSkemaSelected = Math.max(acSkemaSelected - 1, -1); highlightAc(items); }
+  if (e.key === 'Enter' && acSkemaSelected >= 0 && items[acSkemaSelected]) { items[acSkemaSelected].click(); }
+  if (e.key === 'Escape') { acSkema.classList.remove('show'); }
+});
+
+clearSkema.addEventListener('click', function(){
+  searchSkemaInput.value = '';
+  currentSkemaName = null;
+  clearSkema.classList.remove('show');
+  acSkema.classList.remove('show');
+  renderHome();
+});
+
+// When user clicks a skema (from autocomplete or home card)
+function searchSkemaAndPickLsp(name) {
+  searchSkemaInput.value = name;
+  acSkema.classList.remove('show');
+  clearSkema.classList.add('show');
+  currentSkemaName = name;
+
+  // Find the skema data
+  var skema = null;
+  for (var i = 0; i < skemaList.length; i++) {
+    if (skemaList[i].nama === name) { skema = skemaList[i]; break; }
+  }
+  if (!skema || skema.lsps.length === 0) {
+    document.getElementById('mainContent').innerHTML =
+      '<button class="back-btn" onclick="renderHome()">← Kembali</button>' +
+      '<div class="empty-state"><div class="icon">🔍</div><p>Skema tidak ditemukan</p></div>';
+    return;
+  }
+
+  var html = '<button class="back-btn" onclick="clearSkema.click()">← Kembali</button>';
+
+  // Header card
+  html += '<div class="card card-skema" style="margin-bottom:20px">' +
+    '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
+    '<div class="sub" style="margin-top:4px">Tersedia di ' + skema.jml_lsp + ' LSP — total ' + skema.total_unit + ' unit kompetensi</div>' +
+    '</div>';
+
+  // LSP selector
+  html += '<div class="lsp-options">' +
+    '<div class="hint">Pilih LSP untuk melihat daftar unit kompetensi:</div>' +
+    '<div class="lsp-pills">';
+  skema.lsps.forEach(function(o, idx){
+    html += '<button class="lsp-pill" onclick="showSkemaDetail(\'' + esc(name) + '\', ' + idx + ', this)">' +
+      '<span class="check">✓ </span>' + esc(o.lsp) + ' <span class="count">(' + o.jml_unit + ' unit)</span></button>';
+  });
+  html += '</div></div>';
+
+  html += '<div id="skemaUnitTable"></div>';
+
+  document.getElementById('mainContent').innerHTML = html;
+}
+
+// ===== SHOW SKEMA DETAIL (units) =====
+function showSkemaDetail(skemaName, lspIdx, btnEl) {
+  var skema = null;
+  for (var i = 0; i < skemaList.length; i++) {
+    if (skemaList[i].nama === skemaName) { skema = skemaList[i]; break; }
+  }
+  if (!skema) return;
+
+  var opt = skema.lsps[lspIdx];
+  if (!opt) return;
+
+  // Highlight selected pill
+  var allPills = document.querySelectorAll('.lsp-pill');
+  allPills.forEach(function(p){ p.classList.remove('selected'); });
+  if (btnEl) btnEl.classList.add('selected');
+
+  // Show loading
+  document.getElementById('skemaUnitTable').innerHTML =
+    '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
+
+  // Fetch units from Supabase
+  sb('unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc')
+    .then(function(units){
+      var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
+        '<span class="count">' + esc(opt.lsp) + ' — ' + units.length + ' unit</span></div>';
+      html += '<div class="table-wrap"><table><thead><tr><th style="width:40px">No</th><th style="width:220px">Kode Unit</th><th>Judul Unit Kompetensi</th></tr></thead><tbody>';
+      units.forEach(function(u, idx){
+        html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
+      });
+      html += '</tbody></table></div>';
+      document.getElementById('skemaUnitTable').innerHTML = html;
+    })
+    .catch(function(){
+      document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
+    });
+}
+
+// ===== SHOW LSP DETAIL =====
+function showLsp(name) {
+  var lsp = null;
+  for (var i = 0; i < lspList.length; i++) {
+    if (lspList[i].nama === name) { lsp = lspList[i]; break; }
+  }
+  if (!lsp) return;
+
+  var html = '<button class="back-btn" onclick="clearLsp.click()">← Kembali</button>';
+
+  html += '<div class="card card-lsp" style="margin-bottom:20px">' +
+    '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">' +
+    '  <div><div style="font-size:20px;font-weight:700">' + esc(lsp.nama) + '</div>' +
+    '  <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Lembaga Sertifikasi Profesi</div></div>' +
+    '  <span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
+    '</div></div>';
+
+  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lsp.jml_skema + ' skema</span></div>';
+  html += '<div class="cards-grid">';
+
+  var lspSkema = skemaList.filter(function(s){
+    for (var j = 0; j < s.lsps.length; j++) { if (s.lsps[j].lsp === name) return true; }
+    return false;
+  });
+  lspSkema.sort(function(a,b){ return a.nama.localeCompare(b.nama); });
+  lspSkema.forEach(function(s){
+    var opt = null;
+    for (var j = 0; j < s.lsps.length; j++) { if (s.lsps[j].lsp === name) { opt = s.lsps[j]; break; } }
+    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
+      '<div class="title">' + esc(s.nama) + '</div>' +
+      '<div class="badge-group"><span class="badge badge-accent">' + (opt ? opt.jml_unit : '?') + ' unit</span></div></div>';
+  });
+  html += '</div>';
+
+  document.getElementById('mainContent').innerHTML = html;
+}
+
+// Auto-hide autocomplete on outside click
+document.addEventListener('click', function(e){
+  var t = e.target;
+  if (!t.closest('#searchLsp') && !t.closest('#acLsp')) acLsp.classList.remove('show');
+  if (!t.closest('#searchSkema') && !t.closest('#acSkema')) acSkema.classList.remove('show');
+});
+
+// Init
+loadData();
+</script>
+</body>
+</html>
