@@ -3,3 +3,5 @@ seed_full.sql
 seed_supabase.py
 data.json
 supabase/.temp/
+
+.vercel

@@ -197,7 +197,7 @@ tr:last-child td { border-bottom: none; }
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <img src="logo_icc.png" alt="ICC Logo" style="height:42px;width:auto">
+      <img src="https://iili.io/CNylDyg.png" alt="ICC Logo" style="height:42px;width:auto">
       <div>
         <h1>ICC LSP Portal</h1>
         <span>Lembaga Sertifikasi Profesi — BNSP</span>
@@ -205,7 +205,7 @@ tr:last-child td { border-bottom: none; }
     </div>
     <div class="header-stats" id="headerStats">
       <div class="stat"><div class="num" id="statLsp">—</div><div class="lbl">LSP</div></div>
-      <div class="stat"><div class="num" id="statSkema">—</div><div class="lbl">Skema</div></div>
+      <div class="stat"><div class="num" id="statSkema">—</div><div class="lbl">Jenis Skema</div></div>
       <div class="stat"><div class="num" id="statUnit">—</div><div class="lbl">Unit Kompetensi</div></div>
     </div>
   </div>
@@ -264,6 +264,15 @@ function sb(path) {
   }).then(function(r){ return r.json(); });
 }
 
+function sbCount(path) {
+  return fetch(SB_URL + '/rest/v1/' + path, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r){ return r.json(); }).then(function(data){
+    if (data && data[0] && data[0].count !== undefined) return parseInt(data[0].count, 10);
+    return 0;
+  });
+}
+
 // ===== LOAD =====
 function loadData() {
   var p1 = sb('lsp?select=id,nama,jml_skema&order=nama.asc&limit=1000');
@@ -304,18 +313,30 @@ function loadData() {
     DATA = {
       total_lsp: lspList.length,
       total_skema: skemaList.length,
-      total_unit: skemaRows.length // approximate from skema rows
+      total_unit: skemaRows.length // temporary, will be replaced
     };
-    // Get actual unit count
-    sb('unit_kompetensi?select=count').then(function(c){
-      if (c && c[0]) DATA.total_unit = c[0].count;
-      document.getElementById('statUnit').textContent = DATA.total_unit.toLocaleString();
-    });
 
     document.getElementById('statLsp').textContent = DATA.total_lsp;
     document.getElementById('statSkema').textContent = DATA.total_skema;
     document.getElementById('statUnit').textContent = '...';
-    renderHome();
+
+    // Get actual unit count first, then render
+    sbCount('unit_kompetensi?select=count').then(function(count){
+      DATA.total_unit = count || 0;
+    }).catch(function(){
+      // fallback: approximate from skema rows unique ids
+      try {
+        var idSet = {};
+        var s = 0;
+        for (var i = 0; i < skemaRows.length; i++) {
+          if (!idSet[skemaRows[i].id]) { idSet[skemaRows[i].id] = 1; s++; }
+        }
+        DATA.total_unit = s;
+      } catch(e) { DATA.total_unit = skemaRows.length; }
+    }).finally(function(){
+      document.getElementById('statUnit').textContent = DATA.total_unit.toLocaleString();
+      renderHome();
+    });
   }).catch(function(e){
     document.getElementById('mainContent').innerHTML =
       '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
@@ -338,7 +359,7 @@ function renderHome() {
   var html = '';
   html += '<div class="summary-bar">' +
     '<div class="summary-item"><div class="num">' + DATA.total_lsp + '</div><div class="lbl">Total LSP</div></div>' +
-    '<div class="summary-item accent"><div class="num">' + DATA.total_skema + '</div><div class="lbl">Total Skema</div></div>' +
+    '<div class="summary-item accent"><div class="num">' + DATA.total_skema + '</div><div class="lbl">Jenis Skema</div></div>' +
     '<div class="summary-item"><div class="num">' + DATA.total_unit.toLocaleString() + '</div><div class="lbl">Unit Kompetensi</div></div>' +
     '</div>';
 
