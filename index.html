@@ -207,6 +207,8 @@ tr:last-child td { border-bottom: none; }
       <div class="stat"><div class="num" id="statLsp">—</div><div class="lbl">LSP</div></div>
       <div class="stat"><div class="num" id="statSkema">—</div><div class="lbl">Jenis Skema</div></div>
       <div class="stat"><div class="num" id="statUnit">—</div><div class="lbl">Unit Kompetensi</div></div>
+      <div class="stat"><div class="num" id="statAktif" style="color:#16a34a">—</div><div class="lbl">Aktif</div></div>
+      <div class="stat"><div class="num" id="statHabis" style="color:#dc2626">—</div><div class="lbl">Masa Berlaku Habis</div></div>
     </div>
   </div>
 </header>
@@ -275,7 +277,7 @@ function sbCount(path) {
 
 // ===== LOAD =====
 function loadData() {
-  var p1 = sb('lsp?select=id,nama,jml_skema&order=nama.asc&limit=1000');
+  var p1 = sb('lsp?select=id,nama,jml_skema,status&order=nama.asc&limit=1000');
   var p2 = sb('skema?select=id,nama,id_skema,lsp_id,jml_unit&limit=10000');
 
   Promise.all([p1, p2]).then(function(results){
@@ -283,7 +285,16 @@ function loadData() {
     var skemaRows = results[1];
 
     // Build LSP list
-    lspList = lspRows.map(function(l){ return { nama: l.nama, jml_skema: l.jml_skema, id: l.id }; });
+    lspList = lspRows.map(function(l){ return { nama: l.nama, jml_skema: l.jml_skema, id: l.id, status: l.status || '' }; });
+
+    // Count active/expired
+    var aktif = 0, habis = 0;
+    lspList.forEach(function(l){
+      if (l.status === 'Lisensi Aktif') aktif++;
+      else if (l.status === 'Masa Berlaku Habis') habis++;
+    });
+    document.getElementById('statAktif').textContent = aktif;
+    document.getElementById('statHabis').textContent = habis;
 
     // Group skema by name -> { LSP options }
     var skemaGroup = {};
@@ -369,7 +380,11 @@ function renderHome() {
     html += '<div class="card card-lsp card-clickable" onclick="showLsp(\'' + esc(l.nama) + '\')">' +
       '<div class="title">' + esc(l.nama) + '</div>' +
       '<div class="sub">' + l.jml_skema + ' skema sertifikasi</div>' +
-      '<div class="badge-group"><span class="badge badge-primary">' + l.jml_skema + ' skema</span></div></div>';
+      '<div class="badge-group">' +
+        '<span class="badge badge-primary">' + l.jml_skema + ' skema</span>' +
+        (l.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Aktif</span>' :
+         l.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Habis</span>' : '') +
+      '</div></div>';
   });
   html += '</div>';
 
@@ -571,8 +586,11 @@ function showLsp(name) {
     '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">' +
     '  <div><div style="font-size:20px;font-weight:700">' + esc(lsp.nama) + '</div>' +
     '  <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Lembaga Sertifikasi Profesi</div></div>' +
-    '  <span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
-    '</div></div>';
+    '  <div style="display:flex;gap:8px;align-items:start">' +
+      (lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a;font-size:13px;padding:6px 14px">✓ Lisensi Aktif</span>' :
+       lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626;font-size:13px;padding:6px 14px">✕ Masa Berlaku Habis</span>' : '') +
+      '<span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
+    '</div></div></div>';
 
   html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lsp.jml_skema + ' skema</span></div>';
   html += '<div class="cards-grid">';

@@ -1,0 +1,7 @@
+Page 1...
+  Found 21 LSP (21 baru, total 21)
+Page 2...
+  Found 21 LSP (0 baru, total 21)
+  All duplicate, stopping
+
+Total: 21 LSP
