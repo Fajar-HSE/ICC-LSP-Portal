@@ -604,6 +604,38 @@ function showSkemaDetail(skemaName, lspIdx, btnEl) {
   });
 }
 
+// ===== LSP PAGINATION STATE =====
+var lspSkemaNames = [];      // sorted skema names for current LSP
+var lspCurrentPage = 1;
+var lspPageSize = 24;
+
+function renderLspSkema(page) {
+  lspCurrentPage = page;
+  var start = (page - 1) * lspPageSize;
+  var end = Math.min(start + lspPageSize, lspSkemaNames.length);
+  var html = '<div class="cards-grid">';
+  for (var i = start; i < end; i++) {
+    var nama = lspSkemaNames[i];
+    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(nama) + '\')">' +
+      '<div class="title">' + esc(nama) + '</div>' +
+      '<div class="badge-group"><span class="badge badge-accent">- unit</span></div></div>';
+  }
+  html += '</div>';
+
+  var totalPages = Math.ceil(lspSkemaNames.length / lspPageSize);
+  if (totalPages > 1) {
+    html += '<div class="pagination">';
+    html += '<button class="page-btn" onclick="renderLspSkema(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
+    for (var p = 1; p <= totalPages; p++) {
+      html += '<button class="page-btn' + (p === page ? ' active' : '') + '" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
+    }
+    html += '<button class="page-btn" onclick="renderLspSkema(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
+    html += '</div>';
+  }
+
+  document.getElementById('lspSkemaGrid').innerHTML = html;
+}
+
 // ===== SHOW LSP DETAIL =====
 function showLsp(name) {
   currentView = 'lsp';
@@ -621,6 +653,14 @@ function showLsp(name) {
     return s.lsp_id === lsp.id;
   });
 
+  // Group by name, sort
+  var skemaByName = {};
+  lspSkemaRows.forEach(function(s) {
+    if (!skemaByName[s.nama]) skemaByName[s.nama] = true;
+  });
+  lspSkemaNames = Object.keys(skemaByName).sort();
+  lspCurrentPage = 1;
+
   var html = '<button class="back-btn" onclick="clearLsp.click()">← Kembali</button>';
 
   html += '<div class="card card-lsp" style="margin-bottom:20px">' +
@@ -633,33 +673,17 @@ function showLsp(name) {
       '<span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
     '</div></div></div>';
 
-  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lspSkemaRows.length + ' skema</span></div>';
+  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lspSkemaNames.length + ' skema</span></div>';
 
-  if (lspSkemaRows.length === 0) {
+  if (lspSkemaNames.length === 0) {
     html += '<div class="empty-state"><p>Tidak ada skema ditemukan untuk LSP ini</p></div>';
     document.getElementById('mainContent').innerHTML = html;
     return;
   }
 
-  // Group skema by name untuk LSP ini (in case same skema name appears in same LSP)
-  var skemaByName = {};
-  lspSkemaRows.forEach(function(s) {
-    if (!skemaByName[s.nama]) skemaByName[s.nama] = { nama: s.nama, rows: [] };
-    skemaByName[s.nama].rows.push(s);
-  });
-
-  var skemaNames = Object.keys(skemaByName).sort();
-  html += '<div class="cards-grid">';
-  skemaNames.forEach(function(nama) {
-    var g = skemaByName[nama];
-    var totalUnit = g.rows.reduce(function(sum, r) { return sum + (r.jml_unit || 0); }, 0);
-    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(nama) + '\')">' +
-      '<div class="title">' + esc(nama) + '</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">' + totalUnit + ' unit</span></div></div>';
-  });
-  html += '</div>';
-
+  html += '<div id="lspSkemaGrid"></div>';
   document.getElementById('mainContent').innerHTML = html;
+  renderLspSkema(1);
 }
 
 // ===== AUTO-HIDE =====
