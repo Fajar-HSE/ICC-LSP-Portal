@@ -35,7 +35,6 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-/* Header */
 .header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff;
@@ -51,7 +50,6 @@ body {
 .header-stats .stat { text-align: center; }
 .header-stats .num { font-size: 20px; font-weight: 700; }
 .header-stats .lbl { opacity: .75; font-size: 11px; }
-/* Search */
 .search-section {
   max-width: 1280px; margin: 0 auto; padding: 20px 32px 0;
 }
@@ -78,7 +76,6 @@ body {
 .search-group .clear-btn:hover { color: var(--text); background: var(--border); }
 .search-group .clear-btn.show { display: block; }
 .search-hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
-/* Autocomplete */
 .autocomplete {
   position: absolute; top: 100%; left: 0; right: 0; z-index: 50;
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
@@ -98,9 +95,7 @@ body {
 }
 .autocomplete-item .highlight { color: var(--primary); font-weight: 600; }
 .autocomplete-item .lsp-name { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-/* Main */
 .main { max-width: 1280px; margin: 0 auto; padding: 20px 32px 40px; }
-/* Cards */
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 24px; }
 .card {
   background: var(--card); border-radius: var(--radius); border: 1px solid var(--border);
@@ -121,7 +116,6 @@ body {
 .badge-primary { background: #e8f0fe; color: var(--primary); }
 .badge-accent { background: #fef3e8; color: var(--accent); }
 .badge-red { background: #fde8eb; color: var(--red); }
-/* Table */
 .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
 .section-header h2 { font-size: 18px; font-weight: 700; }
 .section-header .count { font-size: 13px; color: var(--text-muted); }
@@ -136,12 +130,10 @@ td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align:
 tr:hover td { background: #f8fafc; }
 tr:last-child td { border-bottom: none; }
 .kode-cell { font-family: 'Courier New', monospace; font-size: 13px; color: var(--primary); font-weight: 500; white-space: nowrap; }
-/* Empty state */
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-light); }
 .empty-state .icon { font-size: 48px; margin-bottom: 12px; opacity: .5; }
 .empty-state p { font-size: 15px; }
 .empty-state .sub { font-size: 13px; margin-top: 4px; }
-/* Summary */
 .summary-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .summary-item {
   background: var(--card); padding: 14px 20px; border-radius: var(--radius-sm);
@@ -150,11 +142,9 @@ tr:last-child td { border-bottom: none; }
 .summary-item .num { font-size: 24px; font-weight: 800; color: var(--primary); }
 .summary-item .lbl { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 .summary-item.accent .num { color: var(--accent); }
-/* Loading */
 .loading { text-align: center; padding: 60px; color: var(--text-light); }
 .spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 12px; }
 @keyframes spin { to { transform: rotate(360deg); } }
-/* Back btn */
 .back-btn {
   display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
   border: 1px solid var(--border); border-radius: var(--radius-sm);
@@ -163,9 +153,7 @@ tr:last-child td { border-bottom: none; }
   transition: all .15s;
 }
 .back-btn:hover { background: var(--bg); border-color: var(--primary); color: var(--primary); }
-/* Footer */
 .footer { text-align: center; padding: 24px; color: var(--text-light); font-size: 12px; border-top: 1px solid var(--border); margin-top: 40px; }
-/* LSP selector after skema search */
 .lsp-options { margin-bottom: 20px; }
 .lsp-options .hint { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
 .lsp-pills { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -180,7 +168,15 @@ tr:last-child td { border-bottom: none; }
 .lsp-pill .check { display: none; }
 .lsp-pill.selected { border-color: var(--primary); background: #e8f0fe; color: var(--primary); }
 .lsp-pill.selected .check { display: inline; }
-/* Responsive */
+.pagination { display: flex; justify-content: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
+.page-btn {
+  padding: 6px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--card); cursor: pointer; font-size: 13px; font-family: inherit;
+  transition: all .15s;
+}
+.page-btn:hover { border-color: var(--primary); color: var(--primary); }
+.page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.page-btn:disabled { opacity: .4; cursor: default; }
 @media (max-width: 768px) {
   .header { padding: 16px; }
   .header-inner { flex-direction: column; align-items: flex-start; }
@@ -197,18 +193,18 @@ tr:last-child td { border-bottom: none; }
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <img src="logo_icc.png" alt="ICC Logo" style="height:42px;width:auto">
+      <img src="logo_icc.png" alt="ICC Logo" style="height:42px;width:auto" onerror="this.style.display='none'">
       <div>
         <h1>ICC LSP Portal</h1>
         <span>Lembaga Sertifikasi Profesi — BNSP</span>
       </div>
     </div>
     <div class="header-stats" id="headerStats">
-      <div class="stat"><div class="num" id="statLsp">—</div><div class="lbl">LSP</div></div>
-      <div class="stat"><div class="num" id="statSkema">—</div><div class="lbl">Jenis Skema</div></div>
-      <div class="stat"><div class="num" id="statUnit">—</div><div class="lbl">Unit Kompetensi</div></div>
-      <div class="stat"><div class="num" id="statAktif" style="color:#16a34a">—</div><div class="lbl">Aktif</div></div>
-      <div class="stat"><div class="num" id="statHabis" style="color:#dc2626">—</div><div class="lbl">Masa Berlaku Habis</div></div>
+      <div class="stat"><div class="num" id="statLsp">-</div><div class="lbl">LSP</div></div>
+      <div class="stat"><div class="num" id="statSkema">-</div><div class="lbl">Jenis Skema</div></div>
+      <div class="stat"><div class="num" id="statUnit">-</div><div class="lbl">Unit Kompetensi</div></div>
+      <div class="stat"><div class="num" id="statAktif" style="color:#16a34a">-</div><div class="lbl">Aktif</div></div>
+      <div class="stat"><div class="num" id="statHabis" style="color:#dc2626">-</div><div class="lbl">Masa Berlaku Habis</div></div>
     </div>
   </div>
 </header>
@@ -237,10 +233,7 @@ tr:last-child td { border-bottom: none; }
 </div>
 
 <main class="main" id="mainContent">
-  <div class="loading" id="loadingState">
-    <div class="spinner"></div>
-    <p>Memuat data LSP...</p>
-  </div>
+  <div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>
 </main>
 
 <div class="footer">
@@ -248,107 +241,123 @@ tr:last-child td { border-bottom: none; }
 </div>
 
 <script>
-// ===== STATE =====
-var DATA = null;
-var lspList = [];
-var skemaList = [];
-var acLspSelected = -1;
-var acSkemaSelected = -1;
-var currentSkemaName = null;
-
-// Supabase
+// ===== CONFIG =====
 var SB_URL = 'https://ziybqtcdphuzhfoahopr.supabase.co';
 var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
 
-function sb(path) {
-  return fetch(SB_URL + '/rest/v1/' + path, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r){ return r.json(); });
-}
+// ===== STATE =====
+var lspList = [];
+var skemaList = [];        // grouped by name (unique)
+var skemaAllRows = [];     // raw rows for per-LSP filtering
+var lspMap = {};           // id -> name
+var acLspSelected = -1;
+var acSkemaSelected = -1;
+var currentView = 'home';  // 'home' | 'lsp' | 'skema'
 
-function sbCount(path) {
-  return fetch(SB_URL + '/rest/v1/' + path, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r){ return r.json(); }).then(function(data){
-    if (data && data[0] && data[0].count !== undefined) return parseInt(data[0].count, 10);
-    return 0;
-  });
+// ===== FETCH WITH PAGINATION =====
+function fetchAll(table, select, pageSize) {
+  pageSize = pageSize || 1000;
+  var results = [];
+  function getPage(start) {
+    var end = start + pageSize - 1;
+    var url = SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
+    return fetch(url, {
+      headers: {
+        apikey: SB_KEY,
+        Authorization: 'Bearer ' + SB_KEY,
+        Accept: 'application/json',
+        Range: start + '-' + end
+      }
+    }).then(function(r) {
+      return r.json().then(function(data) {
+        if (!data || !data.length) return results;
+        results = results.concat(data);
+        if (data.length < pageSize) return results;
+        return getPage(start + pageSize);
+      });
+    });
+  }
+  return getPage(0);
 }
 
 // ===== LOAD =====
 function loadData() {
-  var p1 = sb('lsp?select=id,nama,jml_skema,status&order=nama.asc&limit=1000');
-  var p2 = sb('skema?select=id,nama,id_skema,lsp_id,jml_unit&limit=10000');
+  document.getElementById('mainContent').innerHTML =
+    '<div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>';
 
-  Promise.all([p1, p2]).then(function(results){
+  // Fetch all 3 tables in parallel with full pagination
+  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status');
+  var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
+  var p3 = fetchAll('unit_kompetensi', 'count');
+
+  Promise.all([p1, p2, p3]).then(function(results) {
+    // If unit_kompetensi count query failed, try counting rows
+    var unitCount = 0;
+    if (results[2] && results[2][0] && results[2][0].count !== undefined) {
+      unitCount = parseInt(results[2][0].count, 10);
+    }
+
     var lspRows = results[0];
     var skemaRows = results[1];
 
     // Build LSP list
-    lspList = lspRows.map(function(l){ return { nama: l.nama, jml_skema: l.jml_skema, id: l.id, status: l.status || '' }; });
-
-    // Count active/expired
-    var aktif = 0, habis = 0;
-    lspList.forEach(function(l){
-      if (l.status === 'Lisensi Aktif') aktif++;
-      else if (l.status === 'Masa Berlaku Habis') habis++;
+    lspList = lspRows.map(function(l) {
+      return { nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '' };
     });
-    document.getElementById('statAktif').textContent = aktif;
-    document.getElementById('statHabis').textContent = habis;
 
-    // Group skema by name -> { LSP options }
+    // Build LSP name map
+    lspMap = {};
+    lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
+
+    // Save all raw skema rows for per-LSP filtering
+    skemaAllRows = skemaRows;
+
+    // Group by name
     var skemaGroup = {};
-    skemaRows.forEach(function(s){
+    skemaRows.forEach(function(s) {
       if (!skemaGroup[s.nama]) skemaGroup[s.nama] = { nama: s.nama, lsps: {} };
-      skemaGroup[s.nama].lsps[s.lsp_id] = { id_skema: s.id_skema, jml_unit: s.jml_unit, skema_id: s.id, units: [] };
+      skemaGroup[s.nama].lsps[s.lsp_id] = {
+        id_skema: s.id_skema,
+        jml_unit: s.jml_unit || 0,
+        skema_id: s.id,
+        lsp_id: parseInt(s.lsp_id)
+      };
     });
 
-    // Build skemaList — look up LSP name
-    var lspMap = {};
-    lspList.forEach(function(l){ lspMap[l.id] = l.nama; });
-
-    skemaList = Object.keys(skemaGroup).sort().map(function(nama){
+    skemaList = Object.keys(skemaGroup).sort().map(function(nama) {
       var g = skemaGroup[nama];
-      var lspArr = Object.keys(g.lsps).map(function(lid){
-        return { lsp: lspMap[lid] || 'Unknown', lsp_id: parseInt(lid), ...g.lsps[lid] };
+      var lspArr = Object.keys(g.lsps).map(function(lid) {
+        return {
+          lsp: lspMap[lid] || 'Unknown',
+          lsp_id: parseInt(lid),
+          id_skema: g.lsps[lid].id_skema,
+          jml_unit: g.lsps[lid].jml_unit,
+          skema_id: g.lsps[lid].skema_id
+        };
       });
-      lspArr.sort(function(a,b){ return a.lsp.localeCompare(b.lsp); });
+      lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
       return {
         nama: nama,
         jml_lsp: lspArr.length,
-        total_unit: lspArr.reduce(function(s, o){ return s + o.jml_unit; }, 0),
+        total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
         lsps: lspArr
       };
     });
 
-    DATA = {
-      total_lsp: lspList.length,
-      total_skema: skemaList.length,
-      total_unit: skemaRows.length // temporary, will be replaced
-    };
-
-    document.getElementById('statLsp').textContent = DATA.total_lsp;
-    document.getElementById('statSkema').textContent = DATA.total_skema;
-    document.getElementById('statUnit').textContent = '...';
-
-    // Get actual unit count first, then render
-    sbCount('unit_kompetensi?select=count').then(function(count){
-      DATA.total_unit = count || 0;
-    }).catch(function(){
-      // fallback: approximate from skema rows unique ids
-      try {
-        var idSet = {};
-        var s = 0;
-        for (var i = 0; i < skemaRows.length; i++) {
-          if (!idSet[skemaRows[i].id]) { idSet[skemaRows[i].id] = 1; s++; }
-        }
-        DATA.total_unit = s;
-      } catch(e) { DATA.total_unit = skemaRows.length; }
-    }).finally(function(){
-      document.getElementById('statUnit').textContent = DATA.total_unit.toLocaleString();
-      renderHome();
+    // Update stats
+    var aktif = 0, habis = 0;
+    lspList.forEach(function(l) {
+      if (l.status === 'Lisensi Aktif') aktif++;
+      else if (l.status === 'Masa Berlaku Habis') habis++;
     });
-  }).catch(function(e){
+    document.getElementById('statLsp').textContent = lspList.length;
+    document.getElementById('statSkema').textContent = skemaList.length;
+    document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : skemaRows.length.toLocaleString();
+    document.getElementById('statAktif').textContent = aktif;
+    document.getElementById('statHabis').textContent = habis;
+
+    renderHome();
+  }).catch(function(e) {
     document.getElementById('mainContent').innerHTML =
       '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
   });
@@ -366,12 +375,12 @@ function highlight(text, query) {
 
 // ===== HOME =====
 function renderHome() {
-  currentSkemaName = null;
+  currentView = 'home';
   var html = '';
   html += '<div class="summary-bar">' +
-    '<div class="summary-item"><div class="num">' + DATA.total_lsp + '</div><div class="lbl">Total LSP</div></div>' +
-    '<div class="summary-item accent"><div class="num">' + DATA.total_skema + '</div><div class="lbl">Jenis Skema</div></div>' +
-    '<div class="summary-item"><div class="num">' + DATA.total_unit.toLocaleString() + '</div><div class="lbl">Unit Kompetensi</div></div>' +
+    '<div class="summary-item"><div class="num">' + lspList.length + '</div><div class="lbl">Total LSP</div></div>' +
+    '<div class="summary-item accent"><div class="num">' + skemaList.length + '</div><div class="lbl">Jenis Skema</div></div>' +
+    '<div class="summary-item"><div class="num">' + document.getElementById('statUnit').textContent + '</div><div class="lbl">Unit Kompetensi</div></div>' +
     '</div>';
 
   html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2></div><div class="cards-grid">';
@@ -388,9 +397,9 @@ function renderHome() {
   });
   html += '</div>';
 
-  html += '<div class="section-header"><h2>Skema Tersedia</h2><span class="count">Menampilkan 12 dari ' + DATA.total_skema + '</span></div><div class="cards-grid">';
-  var step = Math.max(1, Math.floor(skemaList.length / 12));
-  for (var i = 0; i < skemaList.length && i < 12 * step; i += step) {
+  html += '<div class="section-header"><h2>Skema Tersedia</h2><span class="count">' + skemaList.length + ' jenis skema</span></div><div class="cards-grid" id="skemaGrid">';
+  // Show first 24
+  for (var i = 0; i < Math.min(24, skemaList.length); i++) {
     var s = skemaList[i];
     html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
       '<div class="title">' + esc(s.nama) + '</div>' +
@@ -399,7 +408,44 @@ function renderHome() {
   }
   html += '</div>';
 
+  if (skemaList.length > 24) {
+    html += '<div class="pagination" id="skemaPagination"></div>';
+  }
+
   document.getElementById('mainContent').innerHTML = html;
+
+  if (skemaList.length > 24) {
+    renderSkemaPagination(1);
+  }
+}
+
+var skemaPageSize = 24;
+var skemaCurrentPage = 1;
+
+function renderSkemaPagination(page) {
+  skemaCurrentPage = page;
+  var grid = document.getElementById('skemaGrid');
+  if (!grid) return;
+  var start = (page - 1) * skemaPageSize;
+  var end = Math.min(start + skemaPageSize, skemaList.length);
+  var html = '';
+  for (var i = start; i < end; i++) {
+    var s = skemaList[i];
+    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
+      '<div class="title">' + esc(s.nama) + '</div>' +
+      '<div class="sub">' + s.jml_lsp + ' LSP • ' + s.total_unit + ' unit</div>' +
+      '<div class="badge-group"><span class="badge badge-accent">' + s.total_unit + ' unit</span></div></div>';
+  }
+  grid.innerHTML = html;
+
+  var totalPages = Math.ceil(skemaList.length / skemaPageSize);
+  var phtml = '';
+  phtml += '<button class="page-btn" onclick="renderSkemaPagination(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
+  for (var p = Math.max(1, page - 2); p <= Math.min(totalPages, page + 2); p++) {
+    phtml += '<button class="page-btn' + (p === page ? ' active' : '') + '" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
+  }
+  phtml += '<button class="page-btn" onclick="renderSkemaPagination(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
+  document.getElementById('skemaPagination').innerHTML = phtml;
 }
 
 // ===== SEARCH LSP =====
@@ -407,27 +453,25 @@ var searchLspInput = document.getElementById('searchLsp');
 var acLsp = document.getElementById('acLsp');
 var clearLsp = document.getElementById('clearLsp');
 
-searchLspInput.addEventListener('input', function(){
+searchLspInput.addEventListener('input', function() {
   var q = this.value.trim().toLowerCase();
   clearLsp.classList.toggle('show', q.length > 0);
-  if (q.length < 1) { acLsp.classList.remove('show'); renderHome(); return; }
-  // Priority: startsWith first, then includes
-  var starts = lspList.filter(function(l){ return l.nama.toLowerCase().startsWith(q); });
-  var includes = lspList.filter(function(l){ return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
+  if (q.length < 1) { acLsp.classList.remove('show'); if (currentView === 'home') return; renderHome(); return; }
+  var starts = lspList.filter(function(l) { return l.nama.toLowerCase().startsWith(q); });
+  var includes = lspList.filter(function(l) { return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
   var matches = starts.concat(includes).slice(0, 8);
   if (matches.length === 0) { acLsp.classList.remove('show'); return; }
   acLspSelected = -1;
   var html = '';
-  matches.forEach(function(m){
+  matches.forEach(function(m) {
     html += '<div class="autocomplete-item" onclick="selectLsp(\'' + esc(m.nama) + '\')">' +
-      '<span>' + highlight(m.nama, searchLspInput.value) + '</span>' +
-      '</div>';
+      '<span>' + highlight(m.nama, searchLspInput.value) + '</span></div>';
   });
   acLsp.innerHTML = html;
   acLsp.classList.add('show');
 });
 
-searchLspInput.addEventListener('keydown', function(e){
+searchLspInput.addEventListener('keydown', function(e) {
   var items = acLsp.querySelectorAll('.autocomplete-item');
   if (e.key === 'ArrowDown') { e.preventDefault(); acLspSelected = Math.min(acLspSelected + 1, items.length - 1); highlightAc(items); }
   if (e.key === 'ArrowUp') { e.preventDefault(); acLspSelected = Math.max(acLspSelected - 1, -1); highlightAc(items); }
@@ -436,7 +480,7 @@ searchLspInput.addEventListener('keydown', function(e){
 });
 
 function highlightAc(items) {
-  items.forEach(function(el, i){ el.classList.toggle('selected', i === acLspSelected); });
+  items.forEach(function(el, i) { el.classList.toggle('selected', i === acLspSelected); });
 }
 
 function selectLsp(name) {
@@ -445,30 +489,29 @@ function selectLsp(name) {
   showLsp(name);
 }
 
-clearLsp.addEventListener('click', function(){
+clearLsp.addEventListener('click', function() {
   searchLspInput.value = '';
   clearLsp.classList.remove('show');
   acLsp.classList.remove('show');
   renderHome();
 });
 
-// ===== SEARCH SKEMA → PICK LSP =====
+// ===== SEARCH SKEMA =====
 var searchSkemaInput = document.getElementById('searchSkema');
 var acSkema = document.getElementById('acSkema');
 var clearSkema = document.getElementById('clearSkema');
 
-searchSkemaInput.addEventListener('input', function(){
+searchSkemaInput.addEventListener('input', function() {
   var q = this.value.trim().toLowerCase();
   clearSkema.classList.toggle('show', q.length > 0);
   if (q.length < 1) { acSkema.classList.remove('show'); return; }
-  // Priority: startsWith first, then includes
-  var starts = skemaList.filter(function(s){ return s.nama.toLowerCase().startsWith(q); });
-  var includes = skemaList.filter(function(s){ return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
+  var starts = skemaList.filter(function(s) { return s.nama.toLowerCase().startsWith(q); });
+  var includes = skemaList.filter(function(s) { return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
   var matches = starts.concat(includes).slice(0, 8);
   if (matches.length === 0) { acSkema.classList.remove('show'); return; }
   acSkemaSelected = -1;
   var html = '';
-  matches.forEach(function(m){
+  matches.forEach(function(m) {
     html += '<div class="autocomplete-item" onclick="searchSkemaAndPickLsp(\'' + esc(m.nama) + '\')">' +
       '<span>' + highlight(m.nama, searchSkemaInput.value) + '</span>' +
       ' <span class="tag">' + m.jml_lsp + ' LSP</span></div>';
@@ -477,7 +520,7 @@ searchSkemaInput.addEventListener('input', function(){
   acSkema.classList.add('show');
 });
 
-searchSkemaInput.addEventListener('keydown', function(e){
+searchSkemaInput.addEventListener('keydown', function(e) {
   var items = acSkema.querySelectorAll('.autocomplete-item');
   if (e.key === 'ArrowDown') { e.preventDefault(); acSkemaSelected = Math.min(acSkemaSelected + 1, items.length - 1); highlightAc(items); }
   if (e.key === 'ArrowUp') { e.preventDefault(); acSkemaSelected = Math.max(acSkemaSelected - 1, -1); highlightAc(items); }
@@ -485,100 +528,98 @@ searchSkemaInput.addEventListener('keydown', function(e){
   if (e.key === 'Escape') { acSkema.classList.remove('show'); }
 });
 
-clearSkema.addEventListener('click', function(){
+clearSkema.addEventListener('click', function() {
   searchSkemaInput.value = '';
-  currentSkemaName = null;
   clearSkema.classList.remove('show');
   acSkema.classList.remove('show');
   renderHome();
 });
 
-// When user clicks a skema (from autocomplete or home card)
+// ===== SKEMA DETAIL (pick LSP → show units) =====
 function searchSkemaAndPickLsp(name) {
+  currentView = 'skema';
   searchSkemaInput.value = name;
   acSkema.classList.remove('show');
   clearSkema.classList.add('show');
-  currentSkemaName = name;
 
-  // Find the skema data
   var skema = null;
   for (var i = 0; i < skemaList.length; i++) {
     if (skemaList[i].nama === name) { skema = skemaList[i]; break; }
   }
   if (!skema || skema.lsps.length === 0) {
     document.getElementById('mainContent').innerHTML =
-      '<button class="back-btn" onclick="renderHome()">← Kembali</button>' +
+      '<button class="back-btn" onclick="clearSkema.click()">← Kembali</button>' +
       '<div class="empty-state"><div class="icon">🔍</div><p>Skema tidak ditemukan</p></div>';
     return;
   }
 
   var html = '<button class="back-btn" onclick="clearSkema.click()">← Kembali</button>';
-
-  // Header card
   html += '<div class="card card-skema" style="margin-bottom:20px">' +
     '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
     '<div class="sub" style="margin-top:4px">Tersedia di ' + skema.jml_lsp + ' LSP — total ' + skema.total_unit + ' unit kompetensi</div>' +
     '</div>';
-
-  // LSP selector
   html += '<div class="lsp-options">' +
     '<div class="hint">Pilih LSP untuk melihat daftar unit kompetensi:</div>' +
     '<div class="lsp-pills">';
-  skema.lsps.forEach(function(o, idx){
+  skema.lsps.forEach(function(o, idx) {
     html += '<button class="lsp-pill" onclick="showSkemaDetail(\'' + esc(name) + '\', ' + idx + ', this)">' +
       '<span class="check">✓ </span>' + esc(o.lsp) + ' <span class="count">(' + o.jml_unit + ' unit)</span></button>';
   });
   html += '</div></div>';
-
   html += '<div id="skemaUnitTable"></div>';
-
   document.getElementById('mainContent').innerHTML = html;
 }
 
-// ===== SHOW SKEMA DETAIL (units) =====
 function showSkemaDetail(skemaName, lspIdx, btnEl) {
   var skema = null;
   for (var i = 0; i < skemaList.length; i++) {
     if (skemaList[i].nama === skemaName) { skema = skemaList[i]; break; }
   }
   if (!skema) return;
-
   var opt = skema.lsps[lspIdx];
   if (!opt) return;
 
-  // Highlight selected pill
   var allPills = document.querySelectorAll('.lsp-pill');
-  allPills.forEach(function(p){ p.classList.remove('selected'); });
+  allPills.forEach(function(p) { p.classList.remove('selected'); });
   if (btnEl) btnEl.classList.add('selected');
 
-  // Show loading
   document.getElementById('skemaUnitTable').innerHTML =
     '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
 
-  // Fetch units from Supabase
-  sb('unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc')
-    .then(function(units){
-      var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
-        '<span class="count">' + esc(opt.lsp) + ' — ' + units.length + ' unit</span></div>';
-      html += '<div class="table-wrap"><table><thead><tr><th style="width:40px">No</th><th style="width:220px">Kode Unit</th><th>Judul Unit Kompetensi</th></tr></thead><tbody>';
-      units.forEach(function(u, idx){
-        html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
-      });
-      html += '</tbody></table></div>';
-      document.getElementById('skemaUnitTable').innerHTML = html;
-    })
-    .catch(function(){
-      document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
+  // Fetch units for this skema
+  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc';
+  fetch(url, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r) { return r.json(); }).then(function(units) {
+    var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
+      '<span class="count">' + esc(opt.lsp) + ' — ' + units.length + ' unit</span></div>';
+    html += '<div class="table-wrap"><table><thead><tr><th style="width:40px">No</th><th style="width:220px">Kode Unit</th><th>Judul Unit Kompetensi</th></tr></thead><tbody>';
+    units.forEach(function(u, idx) {
+      html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
     });
+    html += '</tbody></table></div>';
+    document.getElementById('skemaUnitTable').innerHTML = html;
+  }).catch(function() {
+    document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
+  });
 }
 
 // ===== SHOW LSP DETAIL =====
 function showLsp(name) {
+  currentView = 'lsp';
+  searchLspInput.value = name;
+  clearLsp.classList.add('show');
+
   var lsp = null;
   for (var i = 0; i < lspList.length; i++) {
     if (lspList[i].nama === name) { lsp = lspList[i]; break; }
   }
   if (!lsp) return;
+
+  // Get all skema belonging to this LSP from skemaAllRows
+  var lspSkemaRows = skemaAllRows.filter(function(s) {
+    return s.lsp_id === lsp.id;
+  });
 
   var html = '<button class="back-btn" onclick="clearLsp.click()">← Kembali</button>';
 
@@ -592,34 +633,43 @@ function showLsp(name) {
       '<span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
     '</div></div></div>';
 
-  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lsp.jml_skema + ' skema</span></div>';
-  html += '<div class="cards-grid">';
+  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lspSkemaRows.length + ' skema</span></div>';
 
-  var lspSkema = skemaList.filter(function(s){
-    for (var j = 0; j < s.lsps.length; j++) { if (s.lsps[j].lsp === name) return true; }
-    return false;
+  if (lspSkemaRows.length === 0) {
+    html += '<div class="empty-state"><p>Tidak ada skema ditemukan untuk LSP ini</p></div>';
+    document.getElementById('mainContent').innerHTML = html;
+    return;
+  }
+
+  // Group skema by name untuk LSP ini (in case same skema name appears in same LSP)
+  var skemaByName = {};
+  lspSkemaRows.forEach(function(s) {
+    if (!skemaByName[s.nama]) skemaByName[s.nama] = { nama: s.nama, rows: [] };
+    skemaByName[s.nama].rows.push(s);
   });
-  lspSkema.sort(function(a,b){ return a.nama.localeCompare(b.nama); });
-  lspSkema.forEach(function(s){
-    var opt = null;
-    for (var j = 0; j < s.lsps.length; j++) { if (s.lsps[j].lsp === name) { opt = s.lsps[j]; break; } }
-    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
-      '<div class="title">' + esc(s.nama) + '</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">' + (opt ? opt.jml_unit : '?') + ' unit</span></div></div>';
+
+  var skemaNames = Object.keys(skemaByName).sort();
+  html += '<div class="cards-grid">';
+  skemaNames.forEach(function(nama) {
+    var g = skemaByName[nama];
+    var totalUnit = g.rows.reduce(function(sum, r) { return sum + (r.jml_unit || 0); }, 0);
+    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(nama) + '\')">' +
+      '<div class="title">' + esc(nama) + '</div>' +
+      '<div class="badge-group"><span class="badge badge-accent">' + totalUnit + ' unit</span></div></div>';
   });
   html += '</div>';
 
   document.getElementById('mainContent').innerHTML = html;
 }
 
-// Auto-hide autocomplete on outside click
-document.addEventListener('click', function(e){
+// ===== AUTO-HIDE =====
+document.addEventListener('click', function(e) {
   var t = e.target;
   if (!t.closest('#searchLsp') && !t.closest('#acLsp')) acLsp.classList.remove('show');
   if (!t.closest('#searchSkema') && !t.closest('#acSkema')) acSkema.classList.remove('show');
 });
 
-// Init
+// ===== INIT =====
 loadData();
 </script>
 </body>
