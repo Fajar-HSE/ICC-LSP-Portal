@@ -569,6 +569,12 @@ function searchSkemaAndPickLsp(name) {
   html += '</div></div>';
   html += '<div id="skemaUnitTable"></div>';
   document.getElementById('mainContent').innerHTML = html;
+
+  // Auto-load if only 1 LSP
+  if (skema.lsps.length === 1) {
+    var firstPill = document.querySelector('.lsp-pill');
+    if (firstPill) firstPill.click();
+  }
 }
 
 function showSkemaDetail(skemaName, lspIdx, btnEl) {
