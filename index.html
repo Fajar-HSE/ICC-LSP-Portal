@@ -253,6 +253,7 @@ var lspMap = {};           // id -> name
 var acLspSelected = -1;
 var acSkemaSelected = -1;
 var currentView = 'home';  // 'home' | 'lsp' | 'skema'
+var currentLspId = null;
 
 // ===== FETCH WITH PAGINATION =====
 function fetchAll(table, select, pageSize) {
@@ -616,9 +617,16 @@ function renderLspSkema(page) {
   var html = '<div class="cards-grid">';
   for (var i = start; i < end; i++) {
     var nama = lspSkemaNames[i];
+    // Find total units for this skema name across this LSP
+    var totalUnit = 0;
+    for (var j = 0; j < skemaAllRows.length; j++) {
+      if (skemaAllRows[j].nama === nama && skemaAllRows[j].lsp_id === currentLspId) {
+        totalUnit += (skemaAllRows[j].jml_unit || 0);
+      }
+    }
     html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(nama) + '\')">' +
       '<div class="title">' + esc(nama) + '</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">- unit</span></div></div>';
+      '<div class="badge-group"><span class="badge badge-accent">' + totalUnit + ' unit</span></div></div>';
   }
   html += '</div>';
 
@@ -660,6 +668,7 @@ function showLsp(name) {
   });
   lspSkemaNames = Object.keys(skemaByName).sort();
   lspCurrentPage = 1;
+  currentLspId = lsp.id;
 
   var html = '<button class="back-btn" onclick="clearLsp.click()">← Kembali</button>';
 
