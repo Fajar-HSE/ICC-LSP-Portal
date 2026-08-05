@@ -1,7 +1,9 @@
-import requests, json
+import os, requests, sys, json
 
 SUPABASE_URL = "https://ziybqtcdphuzhfoahopr.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NDc4NDQ1NSwiZXhwIjoyMTAwMzYwNDU1fQ.pGsEuaMoCxFsZetRFqacKpX_OiEFJU1V1IENKSqz6UQ"
+KEY = os.environ.get("SUPABASE_MANAGEMENT_KEY", "")  # WAJIB via env
+if not KEY:
+    sys.exit("ERROR: set SUPABASE_MANAGEMENT_KEY env var")
 
 SQL = """
 ALTER TABLE lsp ADD COLUMN IF NOT EXISTS status TEXT DEFAULT '';

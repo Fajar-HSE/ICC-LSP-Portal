@@ -1,10 +1,11 @@
+if (!process.env.SUPABASE_DB_PASSWORD) { console.error('ERROR: set SUPABASE_DB_PASSWORD env var'); process.exit(1); }
 const { Client } = require('pg');
 const client = new Client({
   host: 'aws-0-ap-southeast-1.pooler.supabase.com',
   port: 6543,
   database: 'postgres',
   user: 'postgres.ziybqtcdphuzhfoahopr',
-  password: 'r1G6cOS4cVVXiYLn',
+  password: process.env.SUPABASE_DB_PASSWORD || '',
   ssl: { rejectUnauthorized: false }
 });
 client.connect().then(() => {

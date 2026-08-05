@@ -2,11 +2,11 @@
 Scrape ALL LSP status dari BNSP — pakai ?hal=N (127 halaman)
 curl langsung, lebih cepat & tanpa Playwright
 """
-import json, re, sys, time
+import json, os, re, sys, time
 from urllib.request import urlopen, Request
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-OUT = "bnsp_status_all.json"  # relative — bekerja di Windows & Linux (CI)
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bnsp_status_all.json")
 
 def fetch(url):
     req = Request(url, headers=HEADERS)

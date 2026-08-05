@@ -5,7 +5,7 @@ import json, sys, asyncio, os
 from playwright.async_api import async_playwright
 
 BASE = "https://bnsp.go.id/lsp"
-OUTPUT = "C:\\Users\\DELL\\LSP-Dashboard\\bnsp_status_all.json"
+OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bnsp_status_all.json")
 
 async def scrape_all():
     all_lsp = []

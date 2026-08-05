@@ -36,6 +36,8 @@
 | 6 | `<button>` tanpa `type="button"` (submit-injection risk) | 🔵 Low | Accessibility | ✅ FIXED |
 | 7 | Inline `style` di logo & header stat | 🔵 Low | Accessibility | ✅ FIXED |
 | 8 | Logo fail → tidak ada fallback teks | 🔵 Low | Accessibility | ✅ FIXED |
+| 9 | **CI scraper gagal di GitHub Actions**: hardcoded path Windows `C:\Users\DELL\...` di `scrape_status_bnsp.py` & `scrape_status_bnsp_playwright.py` | 🟠 High | CI / Functional | ✅ FIXED |
+| 10 | **Kredensial bocor di repo PUBLIC** (password DB di `check_status.js`, service key fallback di `update_db.py`, management key di `run_migration.py`) | 🔴 Critical | Security | ⚠️ FIXED (file) — **WAJIB rotasi** (lihat bawah) |
 
 ---
 
@@ -82,11 +84,26 @@ Kartu di grid "LSP Terbanyak" / "Skema Tersedia" tinggi tidak rata; badge paling
 ---
 
 ## Rekomendasi Selanjutnya (out of scope — belum dilakukan, butuh keputusan/user)
-1. **Deploy preview otomatis ke GitHub Pages** — sudah disertakan workflow `.github/workflows/pages.yml` (commit & push `main`).
-2. **Security hardening:** ganti anon key (public read) pakai **service_role key** hanya untuk write (scrape). Anon key sekarang membaca semua tabel lengkap — bisa dipertahankan, tapi pertimbangkan RPC.
-3. **Pagination data skema di LSP view** (`renderLspSkema`) masih render semua halaman angka (1..N) — untuk N besar jadi panjang. Pertimbangkan windowed (current ±2 sudah ada). OK untuk sekaran.
-4. **`showSkemaDetail` error path**: catch hanya kasih "Gagal memuat unit" — tambahkan retry/disabled state.
-5. **Responsive test di perangkat mobile** belum dilakukan (sandbox 1024x). Rekomendasi test di iPhone/portrait via Lighthouse.
+1. **🔴 WAJIB — Rotasi kredensial (repo PUBLIC, sudah terekspos):**
+   - **Postgres password** (`check_status.js` dulu berisi password literal) → rotasi di Dashboard Supabase → *Project Settings → Database → Reset password*. Set `SUPABASE_DB_PASSWORD` sebagai env var bila menjalankan `check_status.js`.
+   - **Service role key** (`update_db.py` dulu punya fallback literal) → rotasi di *Project Settings → API Keys*. Update GitHub secret `SUPABASE_SERVICE_KEY` dengan nilai baru. Jangan pernah commit key ini.
+   - **Management/personal access token** (`run_migration.py` dulu berisi literal) → revoke di *Supabase Account → Access Tokens*. Set `SUPABASE_MANAGEMENT_KEY` saat perlu.
+   - **Anon key** (di `index.html`) tidak rahasia (public by design untuk client-side), aman dibiarkan — tapi batasi RLS bila data sensitif.
+   - **Scrub git history** (opsional tapi dianjurkan): `git filter-repo` + force push untuk menghapus kredensial dari riwayat commit lama.
+2. **Deploy preview otomatis ke GitHub Pages** — sudah disertakan workflow `.github/workflows/pages.yml` (commit & push `main`).
+3. **Security hardening:** pertimbangkan RLS (Row Level Security) di Supabase + RPC untuk read-only, dan pindahkan semua key non-anon ke GitHub Secrets (bukan file).
+4. **Pagination data skema di LSP view** (`renderLspSkema`) masih render semua halaman angka (1..N) — untuk N besar jadi panjang. Pertimbangkan windowed (current ±2 sudah ada). OK untuk sekaran.
+5. **`showSkemaDetail` error path**: catch hanya kasih "Gagal memuat unit" — tambahkan retry/disabled state.
+6. **Responsive test di perangkat mobile** belum dilakukan (sandbox 1024x). Rekomendasi test di iPhone/portrait via Lighthouse.
+
+---
+
+## Catatan CI (scraper) — hasil verifikasi nyata
+Setelah fix path Windows → repo-relative:
+- `python3 -m py_compile` **lolos** untuk semua script scraper/DB.
+- Scraper dijalankan **di Linux** (environment setara GitHub Actions) → **EXIT=0**, menulis `bnsp_status_all.json` di repo root (bukan `C:\Users\DELL\...`), berhenti normal saat halaman kosong.
+- **Hasil scrape: 1.217 LSP (746 Lisensi Aktif, 469 Masa Berlaku Habis).**
+- ⚠️ **Gap data ditemukan:** DB Supabase hanya berisi **295 LSP** sedangkan BNSP punya **1.217** — `update_db.py` hanya *mengupdate* record yang nama-nya cocok, **tidak pernah meng-insert** LSP baru. Akibatnya DB tidak pernah bertambah. Rekomendasi: tambahkan logika insert untuk LSP yang belum ada di DB (atau sync penuh per minggu).
 
 ---
 

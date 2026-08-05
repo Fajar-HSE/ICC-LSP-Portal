@@ -5,3 +5,10 @@ data.json
 supabase/.temp/
 
 .vercel
+
+# environment / credentials
+*.env
+.env*
+
+__pycache__/
+*.pyc
