@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSP & Skema Directory — ICC</title>
+<title>LSP &amp; Skema Directory — ICC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="all">
@@ -46,9 +46,13 @@ body {
 .header-brand { display: flex; align-items: center; gap: 12px; }
 .header-brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
 .header-brand span { font-size: 13px; opacity: .85; font-weight: 500; }
-.header-stats { display: flex; gap: 20px; font-size: 13px; }
+.logo-img { height: 42px; width: auto; display: block; }
+.logo-fallback { font-size: 20px; font-weight: 700; color: #fff; }
+.header-stats { display: flex; align-items: center; gap: 20px; font-size: 13px; flex-wrap: wrap; }
 .header-stats .stat { text-align: center; }
 .header-stats .num { font-size: 20px; font-weight: 700; }
+.header-stats .stat-aktif { color: #16a34a; }
+.header-stats .stat-habis { color: #dc2626; }
 .header-stats .lbl { opacity: .75; font-size: 11px; }
 .search-section {
   max-width: 1280px; margin: 0 auto; padding: 20px 32px 0;
@@ -100,6 +104,7 @@ body {
 .card {
   background: var(--card); border-radius: var(--radius); border: 1px solid var(--border);
   padding: 20px; box-shadow: var(--shadow); transition: all .2s;
+  display: flex; flex-direction: column; height: 100%;
 }
 .card:hover { box-shadow: var(--shadow-lg); }
 .card-clickable { cursor: pointer; }
@@ -108,7 +113,7 @@ body {
 .card-skema { border-left: 4px solid var(--accent); }
 .card .title { font-size: 15px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
 .card .sub { font-size: 12px; color: var(--text-muted); }
-.card .badge-group { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.card .badge-group { display: flex; gap: 8px; margin-top: auto; flex-wrap: wrap; }
 .badge {
   display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 12px;
   font-size: 11px; font-weight: 600;
@@ -168,11 +173,11 @@ tr:last-child td { border-bottom: none; }
 .lsp-pill .check { display: none; }
 .lsp-pill.selected { border-color: var(--primary); background: #e8f0fe; color: var(--primary); }
 .lsp-pill.selected .check { display: inline; }
-.pagination { display: flex; justify-content: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
+.pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
 .page-btn {
   padding: 6px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
   background: var(--card); cursor: pointer; font-size: 13px; font-family: inherit;
-  transition: all .15s;
+  transition: all .15s; display: inline-flex; align-items: center; justify-content: center; min-width: 36px;
 }
 .page-btn:hover { border-color: var(--primary); color: var(--primary); }
 .page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
@@ -193,7 +198,7 @@ tr:last-child td { border-bottom: none; }
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <img src="logo_icc.png" alt="ICC Logo" style="height:42px;width:auto" onerror="this.style.display='none'">
+      <img src="logo_icc.png" alt="ICC Logo" class="logo-img" onerror="this.style.display='none';var b=document.createElement('span');b.className='logo-fallback';b.textContent='ICC';b.setAttribute('role','img');b.setAttribute('aria-label','ICC Logo');this.parentNode.appendChild(b);">
       <div>
         <h1>ICC LSP Portal</h1>
         <span>Lembaga Sertifikasi Profesi — BNSP</span>
@@ -203,8 +208,8 @@ tr:last-child td { border-bottom: none; }
       <div class="stat"><div class="num" id="statLsp">-</div><div class="lbl">LSP</div></div>
       <div class="stat"><div class="num" id="statSkema">-</div><div class="lbl">Jenis Skema</div></div>
       <div class="stat"><div class="num" id="statUnit">-</div><div class="lbl">Unit Kompetensi</div></div>
-      <div class="stat"><div class="num" id="statAktif" style="color:#16a34a">-</div><div class="lbl">Aktif</div></div>
-      <div class="stat"><div class="num" id="statHabis" style="color:#dc2626">-</div><div class="lbl">Masa Berlaku Habis</div></div>
+      <div class="stat"><div class="num stat-aktif" id="statAktif">-</div><div class="lbl">Aktif</div></div>
+      <div class="stat"><div class="num stat-habis" id="statHabis">-</div><div class="lbl">Masa Berlaku Habis</div></div>
     </div>
   </div>
 </header>
@@ -215,7 +220,7 @@ tr:last-child td { border-bottom: none; }
       <label>Cari LSP</label>
       <div class="search-input-wrap">
         <input type="text" id="searchLsp" placeholder="Ketik nama LSP..." autocomplete="off">
-        <button class="clear-btn" id="clearLsp">✕</button>
+        <button class="clear-btn" id="clearLsp" type="button" aria-label="Hapus pencarian LSP">✕</button>
       </div>
       <div class="autocomplete" id="acLsp"></div>
       <div class="search-hint">Misal: Administrator, Digital, K3, Migas</div>
@@ -224,7 +229,7 @@ tr:last-child td { border-bottom: none; }
       <label>Cari Skema</label>
       <div class="search-input-wrap">
         <input type="text" id="searchSkema" placeholder="Ketik nama skema..." autocomplete="off">
-        <button class="clear-btn" id="clearSkema">✕</button>
+        <button class="clear-btn" id="clearSkema" type="button" aria-label="Hapus pencarian Skema">✕</button>
       </div>
       <div class="autocomplete" id="acSkema"></div>
       <div class="search-hint">Misal: Digital Marketing, K3 Umum, Sekretaris</div>
@@ -353,7 +358,9 @@ function loadData() {
     });
     document.getElementById('statLsp').textContent = lspList.length;
     document.getElementById('statSkema').textContent = skemaList.length;
-    document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : skemaRows.length.toLocaleString();
+    // Fallback: jumlah unit = penjumlahan jml_unit semua skema (bukan jumlah baris skema)
+    var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
+    document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
     document.getElementById('statAktif').textContent = aktif;
     document.getElementById('statHabis').textContent = habis;
 
@@ -441,11 +448,11 @@ function renderSkemaPagination(page) {
 
   var totalPages = Math.ceil(skemaList.length / skemaPageSize);
   var phtml = '';
-  phtml += '<button class="page-btn" onclick="renderSkemaPagination(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
+  phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
   for (var p = Math.max(1, page - 2); p <= Math.min(totalPages, page + 2); p++) {
-    phtml += '<button class="page-btn' + (p === page ? ' active' : '') + '" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
+    phtml += '<button class="page-btn' type='button' + (p === page ? ' active' : '') + '" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
   }
-  phtml += '<button class="page-btn" onclick="renderSkemaPagination(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
+  phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
   document.getElementById('skemaPagination').innerHTML = phtml;
 }
 
@@ -549,12 +556,12 @@ function searchSkemaAndPickLsp(name) {
   }
   if (!skema || skema.lsps.length === 0) {
     document.getElementById('mainContent').innerHTML =
-      '<button class="back-btn" onclick="clearSkema.click()">← Kembali</button>' +
+      '<button class="back-btn" type="button" onclick="clearSkema.click()">← Kembali</button>' +
       '<div class="empty-state"><div class="icon">🔍</div><p>Skema tidak ditemukan</p></div>';
     return;
   }
 
-  var html = '<button class="back-btn" onclick="clearSkema.click()">← Kembali</button>';
+  var html = '<button class="back-btn" type="button" onclick="clearSkema.click()">← Kembali</button>';
   html += '<div class="card card-skema" style="margin-bottom:20px">' +
     '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
     '<div class="sub" style="margin-top:4px">Tersedia di ' + skema.jml_lsp + ' LSP — total ' + skema.total_unit + ' unit kompetensi</div>' +
@@ -563,7 +570,7 @@ function searchSkemaAndPickLsp(name) {
     '<div class="hint">Pilih LSP untuk melihat daftar unit kompetensi:</div>' +
     '<div class="lsp-pills">';
   skema.lsps.forEach(function(o, idx) {
-    html += '<button class="lsp-pill" onclick="showSkemaDetail(\'' + esc(name) + '\', ' + idx + ', this)">' +
+    html += '<button class="lsp-pill" type="button" onclick="showSkemaDetail(\'' + esc(name) + '\', ' + idx + ', this)">' +
       '<span class="check">✓ </span>' + esc(o.lsp) + ' <span class="count">(' + o.jml_unit + ' unit)</span></button>';
   });
   html += '</div></div>';
@@ -639,11 +646,11 @@ function renderLspSkema(page) {
   var totalPages = Math.ceil(lspSkemaNames.length / lspPageSize);
   if (totalPages > 1) {
     html += '<div class="pagination">';
-    html += '<button class="page-btn" onclick="renderLspSkema(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
+    html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
     for (var p = 1; p <= totalPages; p++) {
-      html += '<button class="page-btn' + (p === page ? ' active' : '') + '" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
+      html += '<button class="page-btn' type='button' + (p === page ? ' active' : '') + '" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
     }
-    html += '<button class="page-btn" onclick="renderLspSkema(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
+    html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
     html += '</div>';
   }
 
@@ -676,7 +683,7 @@ function showLsp(name) {
   lspCurrentPage = 1;
   currentLspId = lsp.id;
 
-  var html = '<button class="back-btn" onclick="clearLsp.click()">← Kembali</button>';
+  var html = '<button class="back-btn" type="button" onclick="clearLsp.click()">← Kembali</button>';
 
   html += '<div class="card card-lsp" style="margin-bottom:20px">' +
     '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">' +
