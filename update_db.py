@@ -145,5 +145,38 @@ def main():
 
     print(f"\nDone: {oks} updated (Aktif: {aktif}, Habis: {habis}), {fails} failed")
 
+    # Insert LSP baru yang belum ada di DB (sebelumnya hanya update, tidak pernah insert)
+    new_items = [s for s in scraped if s['nama'].lower().strip() not in db_by_name]
+    if new_items:
+        print(f"\nInserting {len(new_items)} new LSP...")
+        ins_ok = 0
+        for i in range(0, len(new_items), 100):
+            chunk = [
+                {
+                    "nama": s['nama'],
+                    "status": s.get('status', ''),
+                    "no_sk": s.get('no_sk', ''),
+                    "no_lisensi": s.get('no_lisensi', ''),
+                    "last_checked": "now()",
+                }
+                for s in new_items[i:i+100]
+            ]
+            try:
+                resp = session.post(
+                    f"{SUPABASE_URL}/rest/v1/lsp",
+                    json=chunk,
+                    headers=headers,
+                    timeout=30,
+                )
+                if resp.status_code in (200, 201, 204):
+                    ins_ok += len(chunk)
+                else:
+                    print(f"  INSERT FAIL HTTP {resp.status_code}: {resp.text[:200]}", file=sys.stderr)
+            except Exception as e:
+                print(f"  INSERT ERR: {str(e)[:200]}", file=sys.stderr)
+        print(f"Inserted: {ins_ok} new LSP")
+    else:
+        print("\nNo new LSP to insert (DB already in sync)")
+
 if __name__ == "__main__":
     main()
