@@ -343,6 +343,19 @@ function loadData() {
     // Save all raw skema rows for per-LSP filtering
     skemaAllRows = skemaRows;
 
+    // Hitung ulang jml_skema per LSP dari data AKTUAL (tabel skema) —
+    // kolom lsp.jml_skema di DB bisa stale/basi. Fallback: tetap kolom DB bila kosong.
+    var lspSkemaCount = {};
+    skemaRows.forEach(function(s) {
+      var key = String(s.lsp_id);
+      if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
+      lspSkemaCount[key][s.nama] = true;   // unik per nama skema
+    });
+    lspList.forEach(function(l) {
+      var m = lspSkemaCount[String(l.id)];
+      if (m) l.jml_skema = Object.keys(m).length;
+    });
+
     // Group by name
     var skemaGroup = {};
     skemaRows.forEach(function(s) {
@@ -412,12 +425,19 @@ function renderHome() {
   var html = '';
 
   // Filter status
+  var cntAktif = 0, cntHabis = 0;
+  lspList.forEach(function(l) {
+    if (l.status === 'Lisensi Aktif') cntAktif++;
+    else if (l.status === 'Masa Berlaku Habis') cntHabis++;
+  });
   html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2>' +
     '<div class="filter-pills">' +
-      '<button class="lsp-pill' + (lspFilter === 'all' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'all\')"><span class="check">✓ </span>Semua</button>' +
-      '<button class="lsp-pill' + (lspFilter === 'aktif' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'aktif\')"><span class="check">✓ </span>Aktif</button>' +
-      '<button class="lsp-pill' + (lspFilter === 'habis' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'habis\')"><span class="check">✓ </span>Habis</button>' +
-    '</div></div><div class="cards-grid">';
+      '<button class="lsp-pill' + (lspFilter === 'all' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'all\')"><span class="check">✓ </span>Semua (' + lspList.length + ')</button>' +
+      '<button class="lsp-pill' + (lspFilter === 'aktif' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'aktif\')"><span class="check">✓ </span>Aktif (' + cntAktif + ')</button>' +
+      '<button class="lsp-pill' + (lspFilter === 'habis' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'habis\')"><span class="check">✓ </span>Habis (' + cntHabis + ')</button>' +
+    '</div></div>' +
+    '<div class="section-sub" style="margin:-12px 0 16px;font-size:12px;color:var(--text-muted)">Top 6 LSP — diurutkan berdasarkan jumlah skema aktual</div>' +
+    '<div class="cards-grid">';
   var top = lspList.slice().filter(function(l) {
     if (lspFilter === 'aktif') return l.status === 'Lisensi Aktif';
     if (lspFilter === 'habis') return l.status === 'Masa Berlaku Habis';
