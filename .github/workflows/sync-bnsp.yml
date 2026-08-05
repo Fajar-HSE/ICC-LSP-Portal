@@ -1,0 +1,57 @@
+name: Sync BNSP (mingguan)
+
+# Jalan setiap Senin pukul 06:00 UTC untuk refresh data BNSP
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-bnsp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape BNSP (LSP status)
+        run: |
+          set -e
+          pip install --quiet requests 2>/dev/null || true
+          python scrape_status_bnsp.py
+
+      - name: Sync skema + units to DB (resume-friendly)
+        run: |
+          set -e
+          pip install --quiet requests 2>/dev/null || true
+          # fase 1: update/purge LSP di DB (bnsp_status_p3.json -> Supabase)
+          python update_db.py
+          # fase 2+3: scrape unit + sync skema ke DB (resume checkpoint)
+          timeout 1200 python sync_units.py || true
+
+      - name: Validate JSON
+        run: |
+          python -c "import json; json.load(open('bnsp_status_p3.json')); json.load(open('bnsp_status_all.json'))"
+          python -c "import json; d=json.load(open('skema_list.json')); print('skema total:', sum(len(v) for v in d.values()))"
+          python -c "import json; d=json.load(open('skema_units.json')); print('units skema:', len(d), 'unit total:', sum(len(v) for v in d.values()))"
+
+      - name: Commit & push
+        env:
+          GIT_AUTHOR_NAME: github-actions
+          GIT_AUTHOR_EMAIL: actions@github.com
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add bnsp_status_all.json bnsp_status_p3.json skema_list.json skema_units.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: BNSP weekly refresh"
+            git push
+          else
+            echo "No changes to commit"
+          fi

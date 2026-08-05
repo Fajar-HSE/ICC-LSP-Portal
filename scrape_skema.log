@@ -1,0 +1,21 @@
+Perlu fetch detail page: 654 LSP
+  skip Halal Syariah Salam: TimeoutError
+  skip Informatika Indonesia: TimeoutError
+  skip Kopi Indonesia: TimeoutError
+  skip Kuliner Kreatif Indonesia: TimeoutError
+  skip LSP Fokus Koperasi , Usaha Mikro, Kecil : HTTPError
+  skip LSP Manajemen, Bisnis dan Kewirausahaan : HTTPError
+  skip LSP P3 Ekonomi, Keuangan dan Bisnis Isla: HTTPError
+  skip LSP Informasi Komunikasi: TimeoutError
+  skip LSP Publik Relasi Indonesia (d/h LSP Pub: HTTPError
+  skip LSP Pariwisata Gunadharma Utama: TimeoutError
+  skip Parabi Konstruksi Mandiri: TimeoutError
+  skip Pengendali Hama, Penyakit dan Mutu Ikan : HTTPError
+  skip Pendamping Pembangunan Desa: TimeoutError
+  skip Tatakelola, Risiko, dan Kepatuhan (TRK): HTTPError
+  skip Satpam Abujapi: TimeoutError
+  skip 15 LSP (slug 404/timeout)
+  ERR unit skema 16296: TimeoutError
+  ERR unit skema 15499: TimeoutError
+  ERR unit skema 39819: TimeoutError
+  ERR unit skema 77690: TimeoutError
