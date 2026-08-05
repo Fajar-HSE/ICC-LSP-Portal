@@ -635,6 +635,7 @@ function searchSkemaAndPickLsp(name) {
       '<span class="check">✓ </span>' + esc(o.lsp) + ' <span class="count">(' + o.jml_unit + ' unit)</span></button>';
   });
   html += '</div></div>';
+  html += '<div id="skemaLspInfo"></div>';
   html += '<div id="skemaUnitTable"></div>';
   document.getElementById('mainContent').innerHTML = html;
 
@@ -657,6 +658,31 @@ function showSkemaDetail(skemaName, lspIdx, btnEl) {
   var allPills = document.querySelectorAll('.lsp-pill');
   allPills.forEach(function(p) { p.classList.remove('selected'); });
   if (btnEl) btnEl.classList.add('selected');
+
+  // Info LSP pemilik skema ini (lookup dari lspList via lsp_id)
+  var infoEl = document.getElementById('skemaLspInfo');
+  if (infoEl) {
+    var lsp = null;
+    for (var i = 0; i < lspList.length; i++) {
+      if (lspList[i].id === opt.lsp_id) { lsp = lspList[i]; break; }
+    }
+    infoEl.innerHTML =
+      '<div class="card card-lsp" style="margin-bottom:20px">' +
+        '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:start">' +
+          '<div><div style="font-size:18px;font-weight:700">' + esc(lsp ? lsp.nama : opt.lsp) + '</div>' +
+          '<div style="font-size:13px;color:var(--text-muted);margin-top:2px">Lembaga Sertifikasi Profesi</div></div>' +
+          (lsp && lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Lisensi Aktif</span>' :
+           lsp && lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Masa Berlaku Habis</span>' : '') +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px">' +
+          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">No SK</div>' +
+            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.no_sk) || '—') + '</div></div>' +
+          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">No Lisensi</div>' +
+            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.no_lisensi) || '—') + '</div></div>' +
+          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">Terakhir Diperiksa</div>' +
+            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.last_checked) ? new Date(lsp.last_checked).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '—') + '</div></div>' +
+        '</div></div>';
+  }
 
   document.getElementById('skemaUnitTable').innerHTML =
     '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
