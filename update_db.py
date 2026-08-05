@@ -56,10 +56,10 @@ def get_key():
 def main():
     KEY = get_key()
 
-    # Load scraped data
-    with open("bnsp_status_all.json", encoding="utf-8") as f:
+    # Load scraped data (HANYA LSP P3 — snapshot sudah difilter kategori)
+    with open("bnsp_status_p3.json", encoding="utf-8") as f:
         scraped = json.load(f)
-    print(f"BNSP data: {len(scraped)} LSP")
+    print(f"BNSP data: {len(scraped)} LSP (P3 only)")
 
     # Fetch DB LSP names (semua, pakai pagination)
     db_lsp = []
@@ -177,6 +177,29 @@ def main():
         print(f"Inserted: {ins_ok} new LSP")
     else:
         print("\nNo new LSP to insert (DB already in sync)")
+
+    # PRUNE: hapus LSP non-P3 dari DB (portal hanya menampilkan LSP Pihak Ketiga)
+    # Skema semua milik LSP P3 (diverifikasi: 0 skema non-P3), jadi aman dihapus.
+    scraped_names = set(s['nama'].lower().strip() for s in scraped)
+    orphans = [l for l in db_lsp if l['nama'].lower().strip() not in scraped_names]
+    if orphans:
+        print(f"\nPruning {len(orphans)} LSP non-P3 dari DB...")
+        pruned = 0
+        for i in range(0, len(orphans), 100):
+            chunk = orphans[i:i+100]
+            ids = ",".join(str(l['id']) for l in chunk)
+            resp = session.delete(
+                f"{SUPABASE_URL}/rest/v1/lsp?id=in.({ids})",
+                headers=headers,
+                timeout=30,
+            )
+            if resp.status_code in (200, 204):
+                pruned += len(chunk)
+            else:
+                print(f"  PRUNE FAIL HTTP {resp.status_code}: {resp.text[:200]}", file=sys.stderr)
+        print(f"Pruned: {pruned} LSP non-P3")
+    else:
+        print("\nNo non-P3 LSP to prune")
 
 if __name__ == "__main__":
     main()

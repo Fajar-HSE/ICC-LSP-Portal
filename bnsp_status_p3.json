@@ -1,0 +1,5234 @@
+[
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Abadi Karya Wiyasa Digital Kreatif",
+    "no_lisensi": "BNSP-LSP-2689-ID",
+    "no_sk": "KEP.2395/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/abadi-karya-wiyasa-digital-kreatif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ADMINISTRASI BISNIS PERKANTORAN MODERN",
+    "no_lisensi": "BNSP-LSP-2019-ID",
+    "no_sk": "KEP.2195/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/administrasi-bisnis-perkantoran-modern",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Perkantoran Indonesia",
+    "no_lisensi": "BNSP-LSP-656-ID",
+    "no_sk": "KEP.1812/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/administrasi-perkantoran-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Perkantoran Nasional (AP-Nas)",
+    "no_lisensi": "BNSP-LSP-2273-ID",
+    "no_sk": "KEP.0744/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/administrasi-perkantoran-nasional-ap-nas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Perkantoran Nawa Widya",
+    "no_lisensi": "BNSP-LSP-854-ID",
+    "no_sk": "KEP.1742/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/administrasi-perkantoran-nawa-widya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Administrasi Profesional dan Sekretaris Indonesia (APSI)",
+    "no_lisensi": "",
+    "no_sk": "KEP.0694/BNSP/IV/2021",
+    "slug": "https://bnsp.go.id/lsp/administrasi-profesional-dan-sekretaris-indonesia-apsi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2319-ID",
+    "no_sk": "KEP.1645/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/administrasi-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Publik Indonesia (API)",
+    "no_lisensi": "BNSP-LSP-2450-ID",
+    "no_sk": "KEP.0783/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/administrasi-publik-indonesia-api",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Administrasi Terampil Indonesia",
+    "no_lisensi": "BNSP-LSP-2623-ID",
+    "no_sk": "KEP.1066/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/administrasi-terampil-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Agen Asuransi Jasa Intermediary",
+    "no_lisensi": "BNSP-LSP-1380-ID",
+    "no_sk": "KEP.1113/BNSP/X/2018",
+    "slug": "https://bnsp.go.id/lsp/agen-asuransi-jasa-intermediary",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Agen Real Estate Andalan (AREA) Indonesia",
+    "no_lisensi": "BNSP-LSP-1309-ID",
+    "no_sk": "KEP.2369/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/agen-real-estate-andalan-area-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Agribisnis Ambissi",
+    "no_lisensi": "BNSP-LSP-446-ID",
+    "no_sk": "KEP.1786/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/agribisnis-ambissi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ahli Asuransi dan Jasa Indonesia (LSP AAJI)",
+    "no_lisensi": "BNSP-LSP-2779-ID",
+    "no_sk": "KEP.1572/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/ahli-asuransi-dan-jasa-indonesia-lsp-aaji",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ahli Bahasa",
+    "no_lisensi": "BNSP-LSP-2694-ID",
+    "no_sk": "KEP.2519/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/ahli-bahasa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ahli Kontrak Konstruksi",
+    "no_lisensi": "BNSP-LSP-2599-ID",
+    "no_sk": "KEP. 0561-B/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/ahli-kontrak-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ahli Struktur Bangunan Sipil Indonesia (ASBSI)",
+    "no_lisensi": "BNSP-LSP-2176-ID",
+    "no_sk": "KEP.1654/BNSP/VIII/2022",
+    "slug": "https://bnsp.go.id/lsp/ahli-struktur-bangunan-sipil-indonesia-asbsi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Air Minum Indonesia",
+    "no_lisensi": "BNSP-LSP-061-ID",
+    "no_sk": "KEP.1742/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/air-minum-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Akuakultur Indonesia",
+    "no_lisensi": "BNSP-LSP-445-ID",
+    "no_sk": "KEP.1802/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/akuakultur-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Akuntansi Humanika Investa",
+    "no_lisensi": "BNSP-LSP-975-ID",
+    "no_sk": "KEP.0954/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/akuntansi-humanika-investa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Akuntansi Indonesia",
+    "no_lisensi": "BNSP-LSP-2724-ID",
+    "no_sk": "KEP.2970/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/akuntansi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Akuntansi Nusantara",
+    "no_lisensi": "BNSP-LSP-2602-ID",
+    "no_sk": "KEP.0561-F/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/akuntansi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Alas Kaki",
+    "no_lisensi": "BNSP-LSP-075-ID",
+    "no_sk": "KEP.2107/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/alas-kaki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Alat Angkat dan Angkut Indonesia (A3I)",
+    "no_lisensi": "BNSP-LSP-1242-ID",
+    "no_sk": "KEP.2132/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/alat-angkat-dan-angkut-indonesia-a3i",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Alat Berat Indonesia (ABI)",
+    "no_lisensi": "BNSP-LSP-101-ID",
+    "no_sk": "KEP.0970/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/alat-berat-indonesia-abi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Alat Konstruksi Indonesia (ALKINDO)",
+    "no_lisensi": "BNSP-LSP-2414-ID",
+    "no_sk": "KEP.2753/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/alat-konstruksi-indonesia-alkindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Animasi Kreatif Indonesia (AINAKI)",
+    "no_lisensi": "BNSP-LSP-1435-ID",
+    "no_sk": "KEP.0094/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/animasi-kreatif-indonesia-ainaki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "APLIKASI ASURANSI DAN MANAJEMEN ASURANSI INDONESIA",
+    "no_lisensi": "BNSP-LSP-113-ID",
+    "no_sk": "KEP.2933/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/aplikasi-asuransi-dan-manajemen-asuransi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Aplikasi Asuransi Umum Indonesia",
+    "no_lisensi": "BNSP-LSP-2101-ID",
+    "no_sk": "KEP.1001/BNSP/IV/2025",
+    "slug": "https://bnsp.go.id/lsp/aplikasi-asuransi-umum-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Aptakindo Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2379-ID",
+    "no_sk": "KEP.2309/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/aptakindo-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Artificial Intelligence Indonesia",
+    "no_lisensi": "BNSP-LSP-2598-ID",
+    "no_sk": "KEP.0561-A/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/artificial-intelligence-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Asisten Tenaga Kesehatan Indonesia (ASNAKES INDONESIA)",
+    "no_lisensi": "BNSP-LSP-296-ID",
+    "no_sk": "KEP.0623/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/asisten-tenaga-kesehatan-indonesia-asnakes-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Assessment Center Nasional Indonesia",
+    "no_lisensi": "BNSP-LSP-2487-ID",
+    "no_sk": "KEP.1342/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/assessment-center-nasional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ASTEKINDO KONSTRUKSI MANDIRI",
+    "no_lisensi": "BNSP-LSP-1993-ID",
+    "no_sk": "KEP.1412/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/astekindo-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Asuransi Kompetensi Indonesia (AKASI)",
+    "no_lisensi": "BNSP-LSP-2627-ID",
+    "no_sk": "KEP.1225/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/asuransi-kompetensi-indonesia-akasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ATAKI Konstruksi Indonesia",
+    "no_lisensi": "BNSP-LSP-2017-ID",
+    "no_sk": "KEP.0741/BNSP/III/2022",
+    "slug": "https://bnsp.go.id/lsp/ataki-konstruksi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ATDA",
+    "no_lisensi": "BNSP-LSP-064-ID",
+    "no_sk": "KEP. 25566/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/atda",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ATM Konstruksi",
+    "no_lisensi": "BNSP-LSP-2411-ID",
+    "no_sk": "KEP.2706/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/atm-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Auditor Forensik",
+    "no_lisensi": "BNSP-LSP-082-ID",
+    "no_sk": "KEP.01361/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/auditor-forensik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Auditor Forensik Indonesia",
+    "no_lisensi": "BNSP-LSP-2661-ID",
+    "no_sk": "KEP.1956/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/auditor-forensik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Auditor Hukum Indonesia",
+    "no_lisensi": "BNSP-LSP-508-ID",
+    "no_sk": "KEP.1573/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/auditor-hukum-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Auditor Internal",
+    "no_lisensi": "BNSP-LSP-1826-ID",
+    "no_sk": "KEP.2953/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/auditor-internal",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Awak Kapal Migran",
+    "no_lisensi": "BNSP-LSP-2389-ID",
+    "no_sk": "2381/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/awak-kapal-migran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Awak Kapal Perikanan",
+    "no_lisensi": "BNSP-LSP-206-ID",
+    "no_sk": "KEP.0438/BNSP/VI/2019",
+    "slug": "https://bnsp.go.id/lsp/awak-kapal-perikanan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Badan Narkotika Nasional",
+    "no_lisensi": "BNSP-LSP-1448-ID",
+    "no_sk": "KEP.2658/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/badan-narkotika-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Badan Sertifikasi Manajemen Risiko",
+    "no_lisensi": "BNSP-LSP-027-ID",
+    "no_sk": "KEP.1833/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/badan-sertifikasi-manajemen-risiko",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Bahana Kompetensi Katiga",
+    "no_lisensi": "BNSP-LSP-1976-ID",
+    "no_sk": "NOMOR KEP.1299/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/bahana-kompetensi-katiga",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Batik Indonesia",
+    "no_lisensi": "BNSP-LSP-228-ID",
+    "no_sk": "KEP.0627/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/batik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Bina Daya Alam",
+    "no_lisensi": "BNSP-LSP-1491-ID",
+    "no_sk": "KEP.0303/BNSP/V/2019",
+    "slug": "https://bnsp.go.id/lsp/bina-daya-alam",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Bina Konstruksi Nusantara",
+    "no_lisensi": "BNSP-LSP-553-ID",
+    "no_sk": "KEP.2195/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/bina-konstruksi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Bina Lingkungan Indonesia",
+    "no_lisensi": "BNSP-LSP-2688-ID",
+    "no_sk": "KEP.2388/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/bina-lingkungan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Bina Multi Pipa Indonesia",
+    "no_lisensi": "BNSP-LSP-1531-ID",
+    "no_sk": "KEP.2257/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/bina-multi-pipa-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Binatu Indonesia",
+    "no_lisensi": "BNSP-LSP-2544-ID",
+    "no_sk": "020/KEP-Dir/LSP-BI/X/2024",
+    "slug": "https://bnsp.go.id/lsp/binatu-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Bisnis Ekonomi Keuangan Syariah",
+    "no_lisensi": "BNSP-LSP-2108-ID",
+    "no_sk": "0801/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/bisnis-ekonomi-keuangan-syariah",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Bongkar Muat Indonesia",
+    "no_lisensi": "BNSP-LSP-453-ID",
+    "no_sk": "KEP.0510/BNSP/V/2016",
+    "slug": "https://bnsp.go.id/lsp/bongkar-muat-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Broker Properti Indonesia",
+    "no_lisensi": "BNSP-LSP-255-ID",
+    "no_sk": "KEP.269/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/broker-properti-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Budidaya Kopi Berkelanjutan",
+    "no_lisensi": "BNSP-LSP-2200-ID",
+    "no_sk": "KEP.2144/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/budidaya-kopi-berkelanjutan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Cakra Wisata Indonesia",
+    "no_lisensi": "BNSP-LSP-1481-ID",
+    "no_sk": "KEP.1359/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/cakra-wisata-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Certification Institution of National Instructur and Training Officer Profession (LSP PELATINAS)",
+    "no_lisensi": "BNSP-LSP-455-ID",
+    "no_sk": "KEP.2500-B/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/certification-institution-of-national-instructur-and-training-officer-profession-lsp-pelatinas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Chemsign",
+    "no_lisensi": "BNSP-LSP-350-ID",
+    "no_sk": "KEP.1495/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/chemsign",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Cleaning Service Nusantara",
+    "no_lisensi": "BNSP-LSP-506-ID",
+    "no_sk": "KEP.1964/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/cleaning-service-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Cleaning Service Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2672-ID",
+    "no_sk": "KEP.2141/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/cleaning-service-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "CoachPro Indonesia",
+    "no_lisensi": "BNSP-LSP-2646-ID",
+    "no_sk": "KEP.1753/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/coachpro-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Coating Indonesia",
+    "no_lisensi": "BNSP-LSP-016-ID",
+    "no_sk": "Nomor Kep.2145/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/coating-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "COHESPA",
+    "no_lisensi": "BNSP-LSP-021-ID",
+    "no_sk": "3027/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/cohespa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Cooperative Indonesia",
+    "no_lisensi": "BNSP-LSP-2777-ID",
+    "no_sk": "KEP.1512/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/cooperative-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Crew Kapal Pesiar dan Kapal Niaga Internasional (CKPNI)",
+    "no_lisensi": "BNSP-LSP-159-ID",
+    "no_sk": "KEP. 270/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/crew-kapal-pesiar-dan-kapal-niaga-internasional-ckpni",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Dana Pensiun",
+    "no_lisensi": "BNSP-LSP-290-ID",
+    "no_sk": "KEP.2259/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/dana-pensiun",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "DENTAL ASISTEN INDONESIA",
+    "no_lisensi": "BNSP-LSP-334-ID",
+    "no_sk": "KEP.1296/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/dental-asisten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Desain Digital Singhasari",
+    "no_lisensi": "BNSP-LSP-2345-ID",
+    "no_sk": "KEP.1967/BNSP/IX/2023",
+    "slug": "https://bnsp.go.id/lsp/desain-digital-singhasari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Desain Interior Indonesia",
+    "no_lisensi": "BNSP-LSP-2556-ID",
+    "no_sk": "KEP.2664/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/desain-interior-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digipreneur Indonesia",
+    "no_lisensi": "BNSP-LSP-2625-ID",
+    "no_sk": "KEP1133/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/digipreneur-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Informatika Indonesia",
+    "no_lisensi": "BNSP-LSP-2180-ID",
+    "no_sk": "KEP.1754/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/digital-informatika-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Kreatif Nusantara",
+    "no_lisensi": "BNSP-LSP-2570-ID",
+    "no_sk": "KEP.3056/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/digital-kreatif-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Kreatif Solusi",
+    "no_lisensi": "BNSP-LSP-2420-ID",
+    "no_sk": "KEP.0032/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/digital-kreatif-solusi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Marketing Indonesia",
+    "no_lisensi": "BNSP-LSP-2139-ID",
+    "no_sk": "KEP.1049/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/digital-marketing-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Nusantara Teknologi",
+    "no_lisensi": "BNSP-LSP-2223-ID",
+    "no_sk": "KEP.2574/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/digital-nusantara-teknologi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital Teknologi Informasi Indonesia",
+    "no_lisensi": "BNSP-LSP-2324-ID",
+    "no_sk": "KEP.1678/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/digital-teknologi-informasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Digital TIK",
+    "no_lisensi": "BNSP-LSP-1866-ID",
+    "no_sk": "KEP.652/BNSP/III/2026",
+    "slug": "https://bnsp.go.id/lsp/digital-tik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "EBTKE Indonesia",
+    "no_lisensi": "BNSP-LSP-2478-ID",
+    "no_sk": "KEP.1081/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/ebtke-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ekonomi dan Bisnis Kreatif",
+    "no_lisensi": "BNSP-LSP-2569-ID",
+    "no_sk": "KEP.3007/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/ekonomi-dan-bisnis-kreatif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ekosistem Multimoda Indonesia",
+    "no_lisensi": "BNSP-LSP-2144-ID",
+    "no_sk": "KEP.1092/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/ekosistem-multimoda-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Ekspor Impor Internasional",
+    "no_lisensi": "BNSP-LSP-1593-ID",
+    "no_sk": "KEP.0483/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/ekspor-impor-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Elektronik Semikonduktor Indonesia",
+    "no_lisensi": "BNSP-LSP-2685-ID",
+    "no_sk": "KEP.2385/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/elektronik-semikonduktor-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Elektronika Indonesia",
+    "no_lisensi": "BNSP-LSP-218-ID",
+    "no_sk": "KEP.2393/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/elektronika-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Elektronika Nasional",
+    "no_lisensi": "BNSP-LSP-462-ID",
+    "no_sk": "KEP.1850-C/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/elektronika-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "ENERGI INDONESIA",
+    "no_lisensi": "BNSP-LSP-238-ID",
+    "no_sk": "0781/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/energi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Energi Kompetensi Inspirasi",
+    "no_lisensi": "BNSP-LSP-2545-ID",
+    "no_sk": "KEP.2500-C/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/energi-kompetensi-inspirasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Energi Mandiri",
+    "no_lisensi": "BNSP-LSP-1238-ID",
+    "no_sk": "KEP.1091/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/energi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Energi Nasional",
+    "no_lisensi": "BNSP-LSP-2220-ID",
+    "no_sk": "KEP.1749/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/energi-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Energi Nusantara",
+    "no_lisensi": "BNSP-LSP-2720-ID",
+    "no_sk": "KEP.2954/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/energi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Energi Terbarukan",
+    "no_lisensi": "BNSP-LSP-743-ID",
+    "no_sk": "KEP.2776/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/energi-terbarukan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Entrepreneur Digital Indonesia",
+    "no_lisensi": "BNSP-LSP-2297-ID",
+    "no_sk": "NOMOR KEP.1255/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/entrepreneur-digital-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Environmental Health Safety Indonesia",
+    "no_lisensi": "BNSP-LSP-2712-ID",
+    "no_sk": "KEP.2785/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/environmental-health-safety-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Event Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2518-ID",
+    "no_sk": "KEP.1901/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/event-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Fasilitator Instruktur dan Tenaga Kepelatihan",
+    "no_lisensi": "BNSP-LSP-444-ID",
+    "no_sk": "KEP.0975/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/fasilitator-instruktur-dan-tenaga-kepelatihan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Fasilitator Pemberdayaan Masyarakat",
+    "no_lisensi": "BNSP-LSP-094-ID",
+    "no_sk": "KEP.XX/BNSP/XX/XXXX",
+    "slug": "https://bnsp.go.id/lsp/fasilitator-pemberdayaan-masyarakat",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Fintech Indonesia",
+    "no_lisensi": "BNSP-LSP-2605-ID",
+    "no_sk": "KEP. 0622/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/fintech-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Fotografi Indonesia",
+    "no_lisensi": "BNSP-LSP-1647-ID",
+    "no_sk": "KEP. 0755/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/fotografi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Furnicraft Indonesia",
+    "no_lisensi": "BNSP-LSP-1902-ID",
+    "no_sk": "KEP.0399/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/furnicraft-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Furnitur dan Kayu Olahan (Furniko)",
+    "no_lisensi": "BNSP-LSP-034-ID",
+    "no_sk": "KEP.0994/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/furnitur-dan-kayu-olahan-furniko",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Garment Indonesia",
+    "no_lisensi": "BNSP-LSP-008-ID",
+    "no_sk": "KEP.1204/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/garment-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Garmindo Plus",
+    "no_lisensi": "BNSP-LSP-095-ID",
+    "no_sk": "KEP.2039-I/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/garmindo-plus",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Gataki Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-1994-ID",
+    "no_sk": "KEP.1496/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/gataki-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Gatensi Karya Konstruksi",
+    "no_lisensi": "BNSP-LSP-2146-ID",
+    "no_sk": "KEP.1094/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/gatensi-karya-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Geo Mineral Batubara dan Energi",
+    "no_lisensi": "BNSP-LSP-1375-ID",
+    "no_sk": "KEP.2460/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/geo-mineral-batubara-dan-energi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Geologi Pertambangan Panas Bumi (GPPB)",
+    "no_lisensi": "BNSP-LSP-047-ID",
+    "no_sk": "KEP.457/BNSP/VII/2019",
+    "slug": "https://bnsp.go.id/lsp/geologi-pertambangan-panas-bumi-gppb",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Geomatika",
+    "no_lisensi": "BNSP-LSP-017-ID",
+    "no_sk": "KEP.2378/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/geomatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Geoteknik Indonesia",
+    "no_lisensi": "BNSP-LSP-2163-ID",
+    "no_sk": "KEP.1000/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/geoteknik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Global Otomotif",
+    "no_lisensi": "BNSP-LSP-2485-ID",
+    "no_sk": "0192/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/global-otomotif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Governansi Risiko Kepatuhan (GRK)",
+    "no_lisensi": "BNSP-LSP-2151-ID",
+    "no_sk": "KEP.1157/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/governansi-risiko-kepatuhan-grk",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Governansi Risiko Kontrol Indonesia (LSP GRK Indonesia)",
+    "no_lisensi": "BNSP-LSP-2740-ID",
+    "no_sk": "KEP.130/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/governansi-risiko-kontrol-indonesia-lsp-grk-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "HAKE (Himpunan Ahli Konservasi Energi)",
+    "no_lisensi": "BNSP-LSP-084-ID",
+    "no_sk": "KEP.0926/BNSP/IV/2025",
+    "slug": "https://bnsp.go.id/lsp/hake-himpunan-ahli-konservasi-energi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Halal Indonesia",
+    "no_lisensi": "BNSP-LSP-1957-ID",
+    "no_sk": "KEP. 1570/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/halal-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Halal Kompeten Internasional",
+    "no_lisensi": "BNSP-LSP-2474-ID",
+    "no_sk": "KEP 1141/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/halal-kompeten-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Halal Syariah Salam",
+    "no_lisensi": "BNSP-LSP-2193-ID",
+    "no_sk": "KEP.2064/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/halal-syariah-salam",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Higiene Industri",
+    "no_lisensi": "BNSP-LSP-128-ID",
+    "no_sk": "KEP.734/BNSP/III/2026",
+    "slug": "https://bnsp.go.id/lsp/higiene-industri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Himpunan Ahli Teknik Hidraulik Indonesia (HATHI)",
+    "no_lisensi": "BNSP-LSP-2197-ID",
+    "no_sk": "2107/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/himpunan-ahli-teknik-hidraulik-indonesia-hathi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hiperkes dan Keselamatan Kerja Indonesia",
+    "no_lisensi": "BNSP-LSP-133-ID",
+    "no_sk": "KEP.2715/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/hiperkes-dan-keselamatan-kerja-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Hospitality Cakrawala Indonesia",
+    "no_lisensi": "BNSP-LSP-789-ID",
+    "no_sk": "KEP.0354/BNSP/II/2021",
+    "slug": "https://bnsp.go.id/lsp/hospitality-cakrawala-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Hotel dan Pariwisata Medan",
+    "no_lisensi": "BNSP-LSP-081-ID",
+    "no_sk": "KEP.0496/BNSP/VIII/2019",
+    "slug": "https://bnsp.go.id/lsp/hotel-dan-pariwisata-medan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hotel dan Restoran",
+    "no_lisensi": "BNSP-LSP-031-ID",
+    "no_sk": "KEP.0401/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/hotel-dan-restoran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hubungan Industrial Pancasila (HIP)",
+    "no_lisensi": "BNSP-LSP-166-ID",
+    "no_sk": "KEP.1752/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/hubungan-industrial-pancasila-hip",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hubungan Masyarakat Global",
+    "no_lisensi": "BNSP-LSP-2396-ID",
+    "no_sk": "KEP.2394/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/hubungan-masyarakat-global",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hubungan Masyarakat Indonesia (Humas Indonesia)",
+    "no_lisensi": "BNSP-LSP-2719-ID",
+    "no_sk": "KEP.2910/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/hubungan-masyarakat-indonesia-humas-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hukum Bisnis Indonesia (HBI)",
+    "no_lisensi": "BNSP-LSP-2267-ID",
+    "no_sk": "KEP.0650/BNSP/II/2023",
+    "slug": "https://bnsp.go.id/lsp/hukum-bisnis-indonesia-hbi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hukum Indonesia",
+    "no_lisensi": "BNSP-LSP-1945-ID",
+    "no_sk": "KEP.1494/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/hukum-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hukum Kesehatan Indonesia",
+    "no_lisensi": "BNSP-LSP-2696-ID",
+    "no_sk": "KEP.2521/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/hukum-kesehatan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Hukum Kontrak Indonesia",
+    "no_lisensi": "BNSP-LSP-1838-ID",
+    "no_sk": "KEP.2039/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/hukum-kontrak-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Human Capital Management Indonesia",
+    "no_lisensi": "BNSP-LSP-1840-ID",
+    "no_sk": "ÐšÐ•Ð .3030-F/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/human-capital-management-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "IND Logistik Indonesia",
+    "no_lisensi": "BNSP-LSP-2505-ID",
+    "no_sk": "KEP.1712/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/ind-logistik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "INDUSTRI KEUANGAN PASAR MODAL INDONESIA",
+    "no_lisensi": "BNSP-LSP-2447-ID",
+    "no_sk": "KEP. 1851/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/industri-keuangan-pasar-modal-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Industri Logam Mesin Nasional",
+    "no_lisensi": "BNSP-LSP-2384-ID",
+    "no_sk": "KEP. 2039-D/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/industri-logam-mesin-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Industri Otomotif Indonesia",
+    "no_lisensi": "BNSP-LSP-2162-ID",
+    "no_sk": "KEP.1407/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/industri-otomotif-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Informatika",
+    "no_lisensi": "BNSP-LSP-317-ID",
+    "no_sk": "KEP.2375/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/informatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "INFORMATIKA DIJITAL NUSANTARA",
+    "no_lisensi": "BNSP-LSP-1228-ID",
+    "no_sk": "KEP.0513/BNSP/V/2018",
+    "slug": "https://bnsp.go.id/lsp/informatika-dijital-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Informatika Dwi Warna",
+    "no_lisensi": "BNSP-LSP-1861-ID",
+    "no_sk": "KEP.2021/BNSP/XII/2020",
+    "slug": "https://bnsp.go.id/lsp/informatika-dwi-warna",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Informatika Indonesia",
+    "no_lisensi": "BNSP-LSP-601-ID",
+    "no_sk": "KEP.2110/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/informatika-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Infrastruktur Jalan dan Jembatan Indonesia",
+    "no_lisensi": "BNSP-LSP-2122-ID",
+    "no_sk": "KEP.0884/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/infrastruktur-jalan-dan-jembatan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Inovasi Digital Teknologi Informasi",
+    "no_lisensi": "BNSP-LSP-2609-ID",
+    "no_sk": "KEP.0681/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/inovasi-digital-teknologi-informasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Insan Ritel Indonesia",
+    "no_lisensi": "BNSP-LSP-1511-ID",
+    "no_sk": "KEP.1774/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/insan-ritel-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Inspektor Industri Manufaktur",
+    "no_lisensi": "BNSP-LSP-152-ID",
+    "no_sk": "1164/BNSP/XI/2019",
+    "slug": "https://bnsp.go.id/lsp/inspektor-industri-manufaktur",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Inspektur Maritim Indonesia",
+    "no_lisensi": "BNSP-LSP-129-ID",
+    "no_sk": "KEP.2039-E/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/inspektur-maritim-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur dan Tenaga Latih Kompeten (INTEN)",
+    "no_lisensi": "BNSP-LSP-2668-ID",
+    "no_sk": "KEP.2090/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/instruktur-dan-tenaga-latih-kompeten-inten",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Instruktur dan Tenaga Pelatihan Nasional (INNAS)",
+    "no_lisensi": "BNSP-LSP-918-ID",
+    "no_sk": "KEP.2253/BNSP/XI/2022",
+    "slug": "https://bnsp.go.id/lsp/instruktur-dan-tenaga-pelatihan-nasional-innas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Kompeten Indonesia",
+    "no_lisensi": "BNSP-LSP-045-ID",
+    "no_sk": "KEP.2172/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/instruktur-kompeten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Kompeten Nasional",
+    "no_lisensi": "BNSP-LSP-2204-ID",
+    "no_sk": "KEP.2251/BNSP/XI/2022",
+    "slug": "https://bnsp.go.id/lsp/instruktur-kompeten-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Kompeten Nusantara",
+    "no_lisensi": "BNSP-LSP-2497-ID",
+    "no_sk": "KEP.1512/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/instruktur-kompeten-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Konstruksi IALKI",
+    "no_lisensi": "BNSP-LSP-1556-ID",
+    "no_sk": "KEP. 1067/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/instruktur-konstruksi-ialki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Madani Nusantara",
+    "no_lisensi": "BNSP-LSP-2743-ID",
+    "no_sk": "KEP.181/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/instruktur-madani-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Mandiri Nusantara",
+    "no_lisensi": "BNSP-LSP-2444-ID",
+    "no_sk": "KEP.0489/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/instruktur-mandiri-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Nusantara (INSAN)",
+    "no_lisensi": "BNSP-LSP-2638-ID",
+    "no_sk": "KEP.1559/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/instruktur-nusantara-insan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Pengemudi (LSP IPI)",
+    "no_lisensi": "BNSP-LSP-2701-ID",
+    "no_sk": "KEP.2637/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/instruktur-pengemudi-lsp-ipi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Penggiat Jati Diri Bangsa",
+    "no_lisensi": "",
+    "no_sk": "KEP.0151/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/instruktur-penggiat-jati-diri-bangsa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Ratu Kompetensi Indonesia",
+    "no_lisensi": "BNSP-LSP-2717-ID",
+    "no_sk": "KEP.2903-G/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/instruktur-ratu-kompetensi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Instruktur Tenaga Pelatihan (INTALA)",
+    "no_lisensi": "BNSP-LSP-086-ID",
+    "no_sk": "KEP.0818/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/instruktur-tenaga-pelatihan-intala",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Jaminan Mutu dan Keamanan Pangan (JMKP)",
+    "no_lisensi": "BNSP-LSP-188-ID",
+    "no_sk": "KEP.2013/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/jaminan-mutu-dan-keamanan-pangan-jmkp",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "JASA BOGA INDONESIA",
+    "no_lisensi": "BNSP-LSP-085-ID",
+    "no_sk": "KEP.2215/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/jasa-boga-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Jasa Integrasi Mediator Legal Yustisia (JIMLY)",
+    "no_lisensi": "BNSP-LSP-1924-ID",
+    "no_sk": "KEP.1304/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/jasa-integrasi-mediator-legal-yustisia-jimly",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Jasa Sertifikasi Kompetensi Konstruksi Indonesia",
+    "no_lisensi": "BNSP-LSP-2417-ID",
+    "no_sk": "KEP.2760/BNSP/XII/2023 (12",
+    "slug": "https://bnsp.go.id/lsp/jasa-sertifikasi-kompetensi-konstruksi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Jasaboga Nusantara",
+    "no_lisensi": "BNSP-LSP-2466-ID",
+    "no_sk": "KEP.1086/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/jasaboga-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "K3 Industri Buana Lestari",
+    "no_lisensi": "BNSP-LSP-2155-ID",
+    "no_sk": "KEP.1207/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/k3-industri-buana-lestari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "K3 Mandiri",
+    "no_lisensi": "BNSP-LSP-753-ID",
+    "no_sk": "KEP.1749/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/k3-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kadaster Indonesia",
+    "no_lisensi": "BNSP-LSP-2318-ID",
+    "no_sk": "KEP.1642/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/kadaster-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Katiga Konstruksi Indonesia",
+    "no_lisensi": "BNSP-LSP-612-ID",
+    "no_sk": "KEP.0497/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/katiga-konstruksi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Katiga Lingkungan OSHE Nusantara",
+    "no_lisensi": "BNSP-LSP-458-ID",
+    "no_sk": "KEP.1775/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/katiga-lingkungan-oshe-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "KATIGA PEKERJA KETINGGIAN AKSAKTEV REKSAKA INDONESIA",
+    "no_lisensi": "BNSP-LSP-2522-ID",
+    "no_sk": "NOMOR KEP.1971/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/katiga-pekerja-ketinggian-aksaktev-reksaka-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Katiga Prima Mandiri",
+    "no_lisensi": "BNSP-LSP-2697-ID",
+    "no_sk": "KEP.2523/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/katiga-prima-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keamanan Pangan Nasional",
+    "no_lisensi": "BNSP-LSP-2508-ID",
+    "no_sk": "KEP.1715/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/keamanan-pangan-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kecantikan Escrins",
+    "no_lisensi": "BNSP-LSP-624-ID",
+    "no_sk": "KEP.1815/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/kecantikan-escrins",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kecantikan Indonesia",
+    "no_lisensi": "BNSP-LSP-023-ID",
+    "no_sk": "KEP.711/BNSP/VIII/2015",
+    "slug": "https://bnsp.go.id/lsp/kecantikan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kehutanan Indonesia",
+    "no_lisensi": "BNSP-LSP-038-ID",
+    "no_sk": "KEP.0895-J/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/kehutanan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kelautan Dan Perikanan",
+    "no_lisensi": "BNSP-LSP-039-ID",
+    "no_sk": "KEP.0643/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/kelautan-dan-perikanan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kerjasama Pemerintah Badan Usaha Indonesia (KPBU Indonesia)",
+    "no_lisensi": "BNSP-LSP-2458-ID",
+    "no_sk": "KEP.0973/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/kerjasama-pemerintah-badan-usaha-indonesia-kpbu-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kesehatan Hewan",
+    "no_lisensi": "BNSP-LSP-423-ID",
+    "no_sk": "KEP.0025/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/kesehatan-hewan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keselamatan dan Kesehatan Kerja Indonusa",
+    "no_lisensi": "BNSP-LSP-2537-ID",
+    "no_sk": "KEP.2251/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/keselamatan-dan-kesehatan-kerja-indonusa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keselamatan dan Kesehatan Kerja Nasional (K3 Nasional)",
+    "no_lisensi": "BNSP-LSP-2037-ID",
+    "no_sk": "KEP.2810/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/keselamatan-dan-kesehatan-kerja-nasional-k3-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keselamatan Kesehatan Kerja",
+    "no_lisensi": "BNSP-LSP-2160-ID",
+    "no_sk": "KEP.1321/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/keselamatan-kesehatan-kerja",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keuangan Ekopina",
+    "no_lisensi": "BNSP-LSP-2670-ID",
+    "no_sk": "Kep.2133/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/keuangan-ekopina",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "KEUANGAN JAGADHITA NUSANTARA",
+    "no_lisensi": "BNSP-LSP-2387-ID",
+    "no_sk": "KEP. 237/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/keuangan-jagadhita-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Keuangan Syariah",
+    "no_lisensi": "BNSP-LSP-495-ID",
+    "no_sk": "KEP.2588/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/keuangan-syariah",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kewirausahaan Cipta Mandiri",
+    "no_lisensi": "BNSP-LSP-2482-ID",
+    "no_sk": "KEP.1241-A/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/kewirausahaan-cipta-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kewirausahaan Kadiri Mandiri",
+    "no_lisensi": "BNSP-LSP-2440-ID",
+    "no_sk": "KEP.0394/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/kewirausahaan-kadiri-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kewirausahaan Kecil Menengah Indonesia",
+    "no_lisensi": "BNSP-LSP-2479-ID",
+    "no_sk": "Nomor Kep. 1178/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/kewirausahaan-kecil-menengah-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "KEWIRAUSAHAAN TRIATMA MULYA",
+    "no_lisensi": "BNSP-LSP-2167-ID",
+    "no_sk": "1463/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/kewirausahaan-triatma-mulya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kimia Industri",
+    "no_lisensi": "BNSP-LSP-1462-ID",
+    "no_sk": "KEP.0286/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/kimia-industri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Klining Servis Duta Internasional",
+    "no_lisensi": "BNSP-LSP-1941-ID",
+    "no_sk": "KEP.347/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/klining-servis-duta-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Klining Servis Internasional",
+    "no_lisensi": "BNSP-LSP-2065-ID",
+    "no_sk": "KEP.0764/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/klining-servis-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Klining Servis Prima Indonesia",
+    "no_lisensi": "BNSP-LSP-2783-ID",
+    "no_sk": "KEP.1828/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/klining-servis-prima-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Administrasi Perkantoran",
+    "no_lisensi": "BNSP-LSP-1469-ID",
+    "no_sk": "KEP.0340/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-administrasi-perkantoran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Keselamatan Kerja",
+    "no_lisensi": "BNSP-LSP-2551-ID",
+    "no_sk": "KEP.2541/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-keselamatan-kerja",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Konstruksi",
+    "no_lisensi": "BNSP-LSP-2533-ID",
+    "no_sk": "KEP.2515/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2292-ID",
+    "no_sk": "KEP.2036/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Penunjang Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2382-ID",
+    "no_sk": "KEP.2033/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-penunjang-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Simpan Pinjam",
+    "no_lisensi": "BNSP-LSP-026-ID",
+    "no_sk": "KEP.1525/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-simpan-pinjam",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kompetensi Wilayah Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2540-ID",
+    "no_sk": "KEP.2196/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/kompetensi-wilayah-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Komunikasi dan Informatika",
+    "no_lisensi": "BNSP-LSP-973-ID",
+    "no_sk": "KEP.999/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/komunikasi-dan-informatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "KOMUNIKASI PRIMA NUSANTARA",
+    "no_lisensi": "BNSP-LSP-2527-ID",
+    "no_sk": "KEP.2108/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/komunikasi-prima-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Komunitas Farmasi Indonesia",
+    "no_lisensi": "BNSP-LSP-878-ID",
+    "no_sk": "KEP.1085/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/komunitas-farmasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konselor Keluarga Kreatif",
+    "no_lisensi": "BNSP-LSP-2250-ID",
+    "no_sk": "KEP.0144/BNSP/I/2023",
+    "slug": "https://bnsp.go.id/lsp/konselor-keluarga-kreatif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konstruksi Asttatindo",
+    "no_lisensi": "BNSP-LSP-2058-ID",
+    "no_sk": "KEP.1514/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-asttatindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "KONSTRUKSI ATAKNAS",
+    "no_lisensi": "BNSP-LSP-2100-ID",
+    "no_sk": "KEP.0698/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-ataknas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konstruksi Manajemen Solid Abhinaya",
+    "no_lisensi": "BNSP-LSP-2393-ID",
+    "no_sk": "KEP.2376/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-manajemen-solid-abhinaya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konstruksi Migran Indonesia",
+    "no_lisensi": "BNSP-LSP-2800-ID",
+    "no_sk": "KEP.2510/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-migran-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konstruksi Pertapin Raya",
+    "no_lisensi": "BNSP-LSP-2212-ID",
+    "no_sk": "KEP. 430/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-pertapin-raya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "KONSTRUKSI SEJAHTERA MANDIRI",
+    "no_lisensi": "BNSP-LSP-2403-ID",
+    "no_sk": "KEP.2592/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/konstruksi-sejahtera-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Konsultan Manajemen Kesehatan",
+    "no_lisensi": "BNSP-LSP-1038-ID",
+    "no_sk": "KEP.991/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/konsultan-manajemen-kesehatan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Koperasi",
+    "no_lisensi": "BNSP-LSP-080-ID",
+    "no_sk": "KEP.2297/BNSP/XI/2021",
+    "slug": "https://bnsp.go.id/lsp/koperasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kopi Indonesia",
+    "no_lisensi": "BNSP-LSP-122-ID",
+    "no_sk": "KEP.1060/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/kopi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kreatif Daya Indonesia",
+    "no_lisensi": "BNSP-LSP-2374-ID",
+    "no_sk": "KEP.2301/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/kreatif-daya-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kreator Film Indonesia",
+    "no_lisensi": "BNSP-LSP-2764-ID",
+    "no_sk": "KEP.992/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/kreator-film-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Kuliner Kreatif Indonesia",
+    "no_lisensi": "BNSP-LSP-2577-ID",
+    "no_sk": "KEP.0098/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/kuliner-kreatif-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lalu Lintas Angkutan Jalan",
+    "no_lisensi": "BNSP-LSP-099-ID",
+    "no_sk": "KEP.0594/BNSP/IX/2019",
+    "slug": "https://bnsp.go.id/lsp/lalu-lintas-angkutan-jalan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LAS",
+    "no_lisensi": "BNSP-LSP-024-ID",
+    "no_sk": "KEP.254/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/las",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LAS PROFESIONAL INDONESIA",
+    "no_lisensi": "BNSP-LSP-2116-ID",
+    "no_sk": "KEP.0859/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/las-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LAUNDRY INDONESIA",
+    "no_lisensi": "BNSP-LSP-1113-ID",
+    "no_sk": "KEP.0645/BNSP/IV/2021",
+    "slug": "https://bnsp.go.id/lsp/laundry-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lembaga Keuangan Mikro Certif (LKM Certif)",
+    "no_lisensi": "BNSP-LSP-005-ID",
+    "no_sk": "KEP.2275/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/lembaga-keuangan-mikro-certif-lkm-certif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Lembaga Sertifikasi Profesi Jasa Pengelola Keuangan Pratama ( PT LSP JPK Pratama )",
+    "no_lisensi": "BNSP-LSP-041-ID",
+    "no_sk": "KEP.0441/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/lembaga-sertifikasi-profesi-jasa-pengelola-keuangan-pratama-pt-lsp-jpk-pratama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lembaga Sertifikasi Profesi Kesehatan Lingkungan Indonesia",
+    "no_lisensi": "BNSP-LSP-2152-ID",
+    "no_sk": "KEP.1159/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/lembaga-sertifikasi-profesi-kesehatan-lingkungan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lembaga Sertifikasi Profesi Pariwisata Jana Dharma Indonesia",
+    "no_lisensi": "BNSP-LSP-1602-ID",
+    "no_sk": "KEP.3071/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/lembaga-sertifikasi-profesi-pariwisata-jana-dharma-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LEMBAGA SERTIFIKASI PROFESI PERKEBUNAN DAN HORTIKULTURA INDONESIA",
+    "no_lisensi": "BNSP-LSP-163-ID",
+    "no_sk": "KEP.1892/BNSP/IX/2021",
+    "slug": "https://bnsp.go.id/lsp/lembaga-sertifikasi-profesi-perkebunan-dan-hortikultura-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lembaga Sertifikasi Profesional Perbankan",
+    "no_lisensi": "BNSP-LSP-030-ID",
+    "no_sk": "KEP.0033/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/lembaga-sertifikasi-profesional-perbankan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup - INKALINDO",
+    "no_lisensi": "BNSP-LSP-786-ID",
+    "no_sk": "KEP.578/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-inkalindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Envirotama",
+    "no_lisensi": "BNSP-LSP-2128-ID",
+    "no_sk": "KEP.0952/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-envirotama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Indonesia",
+    "no_lisensi": "BNSP-LSP-2707-ID",
+    "no_sk": "KEP.2711/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Jagad Semesta Lestari",
+    "no_lisensi": "BNSP-LSP-2628-ID",
+    "no_sk": "KEP.1210/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-jagad-semesta-lestari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Kompetensi Mandiri",
+    "no_lisensi": "BNSP-LSP-2791-ID",
+    "no_sk": "KEP.2106/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-kompetensi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Lestari",
+    "no_lisensi": "BNSP-LSP-1983-ID",
+    "no_sk": "KEP.2385/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-lestari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Hidup Nasional",
+    "no_lisensi": "BNSP-LSP-1841-ID",
+    "no_sk": "KEP.177/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-hidup-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LINGKUNGAN KEHUTANAN",
+    "no_lisensi": "BNSP-LSP-2117-ID",
+    "no_sk": "KEP.0860/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-kehutanan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Lingkungan Prima Mandiri",
+    "no_lisensi": "BNSP-LSP-2679-ID",
+    "no_sk": "KEP.2271/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/lingkungan-prima-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Litera Ikapi",
+    "no_lisensi": "BNSP-LSP-2718-ID",
+    "no_sk": "KEP. 2903-J/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/litera-ikapi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Logam Mesin Indonesia",
+    "no_lisensi": "BNSP-LSP-004-ID",
+    "no_sk": "KEP.0097/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/logam-mesin-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Logistik Indonesia",
+    "no_lisensi": "BNSP-LSP-093-ID",
+    "no_sk": "KEP.1757/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/logistik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Logistik Insan Prima",
+    "no_lisensi": "BNSP-LSP-253-ID",
+    "no_sk": "KEP.2553/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/logistik-insan-prima",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Logistik Internasional",
+    "no_lisensi": "BNSP-LSP-2637-ID",
+    "no_sk": "KEP.1546/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/logistik-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSK K3 ICCOSH",
+    "no_lisensi": "BNSP-LSP-042-ID",
+    "no_sk": "KEP.0448/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/lsk-k3-iccosh",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Administrasi Perkantoran Nusantara",
+    "no_lisensi": "BNSP-LSP-1354-ID",
+    "no_sk": "KEP.0901/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-administrasi-perkantoran-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP AFILIASI TENAGA INFRASTRUKTUR",
+    "no_lisensi": "BNSP-LSP-2016-ID",
+    "no_sk": "KEP.2160/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-afiliasi-tenaga-infrastruktur",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Agro Daya Nusantara",
+    "no_lisensi": "BNSP-LSP-2354-ID",
+    "no_sk": "KEP.2092/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-agro-daya-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP AGRO GLOBAL LESTARI",
+    "no_lisensi": "BNSP-LSP-1643-ID",
+    "no_sk": "KEP.0184/BNSP/I/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-agro-global-lestari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Akuntansi Profesional",
+    "no_lisensi": "BNSP-LSP-1649-ID",
+    "no_sk": "KEP.0240/BNSP/II/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-akuntansi-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP AKUNTANSI TRIATMA",
+    "no_lisensi": "BNSP-LSP-1298-ID",
+    "no_sk": "KEP.1236/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-akuntansi-triatma",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP APMINDO",
+    "no_lisensi": "BNSP-LSP-1518-ID",
+    "no_sk": "KEP.444/BNSP/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-apmindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Aviasi Sentral Indonesia",
+    "no_lisensi": "BNSP-LSP-1925-ID",
+    "no_sk": "KEP.0607/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-aviasi-sentral-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP BANDAR UDARA INDONESIA",
+    "no_lisensi": "BNSP-LSP-2145-ID",
+    "no_sk": "KEP.1093/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-bandar-udara-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Barista Indonesia",
+    "no_lisensi": "BNSP-LSP-143-ID",
+    "no_sk": "KEP. 2221/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-barista-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Binamutu Lingkungan Kehutanan",
+    "no_lisensi": "BNSP-LSP-2063-ID",
+    "no_sk": "KEP.0208/BNSP/I/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-binamutu-lingkungan-kehutanan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Bisnis Digital",
+    "no_lisensi": "BNSP-LSP-2082-ID",
+    "no_sk": "KEP.0411/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-bisnis-digital",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Lsp Broker Properti Nasional",
+    "no_lisensi": "BNSP-LSP-1842-ID",
+    "no_sk": "KEP.1773/BNSP/X/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-broker-properti-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Caregiver",
+    "no_lisensi": "BNSP-LSP-2298-ID",
+    "no_sk": "KEP.1256/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-caregiver",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Cleaning Service Indonesia",
+    "no_lisensi": "BNSP-LSP-2012-ID",
+    "no_sk": "KEP.2122/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-cleaning-service-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP COACH META UNGGUL",
+    "no_lisensi": "BNSP-LSP-2110-ID",
+    "no_sk": "KEP.0803/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-coach-meta-unggul",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Ekspor Impor Indonesia",
+    "no_lisensi": "BNSP-LSP-060-ID",
+    "no_sk": "KEP.1121/BNSP/VI/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-ekspor-impor-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP ELEKTROTEKNIKA",
+    "no_lisensi": "BNSP-LSP-219-ID",
+    "no_sk": "KEP.1476/BNSP/VI/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-elektroteknika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Elespe Jaki Mandhiri",
+    "no_lisensi": "BNSP-LSP-697-ID",
+    "no_sk": "KEP.0904/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-elespe-jaki-mandhiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP ENGINEERING HOSPITALITY INDONESIA",
+    "no_lisensi": "BNSP-LSP-1303-ID",
+    "no_sk": "KEP.0162/BNSP/I/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-engineering-hospitality-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Fokus Koperasi , Usaha Mikro, Kecil dan Menengah Indonesia (LSP FKI)",
+    "no_lisensi": "",
+    "no_sk": "-",
+    "slug": "https://bnsp.go.id/lsp/lsp-fokus-koperasi-,-usaha-mikro,-kecil-dan-menengah-indonesia-lsp-fki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Geospasial",
+    "no_lisensi": "BNSP-LSP-689-ID",
+    "no_sk": "KEP.2400/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-geospasial",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Gizi Indonesia",
+    "no_lisensi": "BNSP-LSP-2187-ID",
+    "no_sk": "KEP.1906/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-gizi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP HATSINDO INDONESIA TEKNIK",
+    "no_lisensi": "BNSP-LSP-2018-ID",
+    "no_sk": "KEP.1585/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-hatsindo-indonesia-teknik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP HIPTASI MULTI KONSTRUKSI",
+    "no_lisensi": "BNSP-LSP-2355-ID",
+    "no_sk": "KEP.2094/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-hiptasi-multi-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Hubungan Industrial Indonesia APINDO",
+    "no_lisensi": "BNSP-LSP-570-ID",
+    "no_sk": "KEP.2364/BNSP/XI/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-hubungan-industrial-indonesia-apindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Hutan Indonesia",
+    "no_lisensi": "BNSP-LSP-2196-ID",
+    "no_sk": "KEP.2106/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-hutan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Hutan Lestari Mandiri Profesi",
+    "no_lisensi": "BNSP-LSP-2263-ID",
+    "no_sk": "KEP.0322/BNSP/II/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-hutan-lestari-mandiri-profesi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Industri Hasil Tembakau",
+    "no_lisensi": "BNSP-LSP-1147-ID",
+    "no_sk": "KEP.0309/BNSP/III/2018",
+    "slug": "https://bnsp.go.id/lsp/lsp-industri-hasil-tembakau",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Industri Manufaktur Alat Berat Indonesia (LSP IMABI)",
+    "no_lisensi": "BNSP-LSP-2165-ID",
+    "no_sk": "KEP.1416/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-industri-manufaktur-alat-berat-indonesia-lsp-imabi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Informasi Komunikasi",
+    "no_lisensi": "BNSP-LSP-1648-ID",
+    "no_sk": "KEP.0239/BNSP/II/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-informasi-komunikasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Ini Aja",
+    "no_lisensi": "",
+    "no_sk": "345",
+    "slug": "https://bnsp.go.id/lsp/lsp-ini-aja",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Instruktur Berdaya Indonesia",
+    "no_lisensi": "BNSP-LSP-2554-ID",
+    "no_sk": "KEP.2609/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-instruktur-berdaya-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP JASA KONSTRUKSI INTAKINDO",
+    "no_lisensi": "BNSP-LSP-2087-ID",
+    "no_sk": "KEP.0488/BNSP/III/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-jasa-konstruksi-intakindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP KAPAL PESIAR HARAPAN MULYA",
+    "no_lisensi": "BNSP-LSP-688-ID",
+    "no_sk": "KEP.0590/BNSP/III/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-kapal-pesiar-harapan-mulya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Karsa Jasa Pariwisata",
+    "no_lisensi": "BNSP-LSP-1418-ID",
+    "no_sk": "NOMOR KEP.1279/BNSP/XII/2018",
+    "slug": "https://bnsp.go.id/lsp/lsp-karsa-jasa-pariwisata",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Katiga Bina Nusa",
+    "no_lisensi": "BNSP-LSP-2032-ID",
+    "no_sk": "KEP.2608/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-katiga-bina-nusa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP KATIGA PASS",
+    "no_lisensi": "BNSP-LSP-2123-ID",
+    "no_sk": "KEP.0873/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-katiga-pass",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP KESEHATAN OLAHRAGA (KESOR)",
+    "no_lisensi": "BNSP-LSP-1384-ID",
+    "no_sk": "KEP.2102/BNSP/X/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-kesehatan-olahraga-kesor",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Keuangan Koperasi Indonesia",
+    "no_lisensi": "BNSP-LSP-217-ID",
+    "no_sk": "KEP.0191/BNSP/IV/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-keuangan-koperasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP KJK NASIONAL",
+    "no_lisensi": "BNSP-LSP-572-ID",
+    "no_sk": "KEP.0889/BNSP/X/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-kjk-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP KLINING SERVIS",
+    "no_lisensi": "BNSP-LSP-077-ID",
+    "no_sk": "KEP.2761/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-klining-servis",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Kompeten Hipnotis Indonesia",
+    "no_lisensi": "BNSP-LSP-1900-ID",
+    "no_sk": "KEP.0389/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-kompeten-hipnotis-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Komputer",
+    "no_lisensi": "BNSP-LSP-294-ID",
+    "no_sk": "KEP.0037/BNSP/II/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-komputer",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Komunikasi dan Siaran Indonesia (KOMSINDO)",
+    "no_lisensi": "BNSP-LSP-1335-ID",
+    "no_sk": "KEP.0707/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-komunikasi-dan-siaran-indonesia-komsindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Konservasi dan Jasa Kelautan",
+    "no_lisensi": "BNSP-LSP-160-ID",
+    "no_sk": "KEP.2470/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-konservasi-dan-jasa-kelautan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Kreator Film dan Televisi Indonesia",
+    "no_lisensi": "BNSP-LSP-1358-ID",
+    "no_sk": "KEP.1893-B/BNSP/XI/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-kreator-film-dan-televisi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Lingkungan Hidup Nusantara",
+    "no_lisensi": "BNSP-LSP-1445-ID",
+    "no_sk": "KEP.0733/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-lingkungan-hidup-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Lingkungan Indonesia",
+    "no_lisensi": "BNSP-LSP-2053-ID",
+    "no_sk": "KEP.2762/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-lingkungan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MAHAWIRA",
+    "no_lisensi": "BNSP-LSP-2257-ID",
+    "no_sk": "KEP.0187/BNSP/I/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-mahawira",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Manajemen Bisnis Kewirausahaan Mandiri",
+    "no_lisensi": "BNSP-LSP-2074-ID",
+    "no_sk": "KEP.0364/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-bisnis-kewirausahaan-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Manajemen Informatika Multimatics",
+    "no_lisensi": "BNSP-LSP-931-ID",
+    "no_sk": "KEP.0893/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-informatika-multimatics",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP MANAJEMEN KOMUNIKASI",
+    "no_lisensi": "BNSP-LSP-1926-ID",
+    "no_sk": "KEP.0630/BNSP/IV/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-komunikasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MANAJEMEN KONSTRUKSI HAMKI",
+    "no_lisensi": "BNSP-LSP-2219-ID",
+    "no_sk": "KEP.2522/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-konstruksi-hamki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Manajemen Pelayanan Indonesia",
+    "no_lisensi": "BNSP-LSP-2090-ID",
+    "no_sk": "KEP.0541/BNSP/III/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-pelayanan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Manajemen Perkantoran Profesional",
+    "no_lisensi": "BNSP-LSP-2083-ID",
+    "no_sk": "KEP.0413/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-perkantoran-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Manajemen Sumber Daya Manusia Global (LSP MSDM Global)",
+    "no_lisensi": "BNSP-LSP-648-ID",
+    "no_sk": "KEP.0033/BNSP/I/2017",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen-sumber-daya-manusia-global-lsp-msdm-global",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Manajemen, Bisnis dan Kewirausahaan Nusantara (MENBISKA Nusantara)",
+    "no_lisensi": "BNSP-LSP-908-ID",
+    "no_sk": "Kep.2109/BNSP/XII/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-manajemen,-bisnis-dan-kewirausahaan-nusantara-menbiska-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP MEBEL KRIYA INDONESIA",
+    "no_lisensi": "BNSP-LSP-1401-ID",
+    "no_sk": "KEP.1196/BNSP/XI/2018",
+    "slug": "https://bnsp.go.id/lsp/lsp-mebel-kriya-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Medika KDI PDUI",
+    "no_lisensi": "BNSP-LSP-2217-ID",
+    "no_sk": "KEP.2469/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-medika-kdi-pdui",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Mekatronik Konstruksi Nusantara",
+    "no_lisensi": "BNSP-LSP-2370-ID",
+    "no_sk": "KEP.2262/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-mekatronik-konstruksi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Microfinance Indonesia",
+    "no_lisensi": "BNSP-LSP-1995-ID",
+    "no_sk": "1650/BNSP/VIII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-microfinance-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Migas Mitra Perkasa",
+    "no_lisensi": "BNSP-LSP-1968-ID",
+    "no_sk": "1177/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-migas-mitra-perkasa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Migran Sawit Indonesia",
+    "no_lisensi": "BNSP-LSP-2186-ID",
+    "no_sk": "KEP.1905/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-migran-sawit-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MSDM ANALITIK",
+    "no_lisensi": "BNSP-LSP-1974-ID",
+    "no_sk": "1241/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-msdm-analitik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MSDM ILMA",
+    "no_lisensi": "BNSP-LSP-1013-ID",
+    "no_sk": "KEP.1653/BNSP/VIII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-msdm-ilma",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MSDM TRANSFORMASI INDONESIA",
+    "no_lisensi": "BNSP-LSP-2346-ID",
+    "no_sk": "KEP.1968/BNSP/IX/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-msdm-transformasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP MSDM Unggul Indonesia",
+    "no_lisensi": "BNSP-LSP-2177-ID",
+    "no_sk": "KEP.1655/BNSP/VIII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-msdm-unggul-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Norma Ketenagakerjaan Indonesia",
+    "no_lisensi": "BNSP-LSP-1960-ID",
+    "no_sk": "KEP.1038/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-norma-ketenagakerjaan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP P3 Ekonomi, Keuangan dan Bisnis Islam (Ekbisi)",
+    "no_lisensi": "BNSP-LSP-1235-ID",
+    "no_sk": "030/SK/LSP-EKBISI/X/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-p3-ekonomi,-keuangan-dan-bisnis-islam-ekbisi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP P3 Pembangun Penyuluh Integritas Bangsa",
+    "no_lisensi": "BNSP-LSP-1545-ID",
+    "no_sk": "KEP.0687/BNSP/IX/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-p3-pembangun-penyuluh-integritas-bangsa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP P3 Teknologi Digital",
+    "no_lisensi": "BNSP-LSP-1565-ID",
+    "no_sk": "KEP. 3005/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-p3-teknologi-digital",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pariwisata Bhatara Tunas Profesional",
+    "no_lisensi": "BNSP-LSP-2309-ID",
+    "no_sk": "KEP.1551/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-bhatara-tunas-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pariwisata Gunadharma Utama",
+    "no_lisensi": "BNSP-LSP-151-ID",
+    "no_sk": "KEP.0158/BNSP/I/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-gunadharma-utama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pariwisata Jaya ( PATAYA )",
+    "no_lisensi": "BNSP-LSP-602-ID",
+    "no_sk": "-",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-jaya-pataya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pariwisata Lancang Kuning Nusantara",
+    "no_lisensi": "BNSP-LSP-131-ID",
+    "no_sk": "KEP.1000/BNSP/IX/2017",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-lancang-kuning-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PARIWISATA MAHAMU MANDIRI",
+    "no_lisensi": "BNSP-LSP-833-ID",
+    "no_sk": "KEP.2858/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-mahamu-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pariwisata Syariah Indonesia",
+    "no_lisensi": "BNSP-LSP-2008-ID",
+    "no_sk": "Kep.2018/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-syariah-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pariwisata Wiyata Nusantara",
+    "no_lisensi": "BNSP-LSP-068-ID",
+    "no_sk": "KEP.1180/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pariwisata-wiyata-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pasar Modal",
+    "no_lisensi": "BNSP-LSP-211-ID",
+    "no_sk": "KEP.2296/BNSP/XI/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pasar-modal",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP PD Berkah Bintang Abadi",
+    "no_lisensi": "BNSP-LSP-1920-ID",
+    "no_sk": "KEP.0581/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pd-berkah-bintang-abadi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PD Bina Bangsa",
+    "no_lisensi": "BNSP-LSP-2188-ID",
+    "no_sk": "KEP.1953/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-pd-bina-bangsa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP PEKERJA DOMESTIK HARMONI KOMPETENSI INDONESIA (HOKI)",
+    "no_lisensi": "BNSP-LSP-293-ID",
+    "no_sk": "KEP.0029/BNSP/I/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-pekerja-domestik-harmoni-kompetensi-indonesia-hoki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PEKERJA DOMESTIK LINTAS BENUA BERKARYA",
+    "no_lisensi": "BNSP-LSP-1529-ID",
+    "no_sk": "KEP.2115/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-pekerja-domestik-lintas-benua-berkarya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PEKERJA DOMESTIK LUK PERDANA",
+    "no_lisensi": "BNSP-LSP-010-ID",
+    "no_sk": "KEP.1425/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/lsp-pekerja-domestik-luk-perdana",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pekerja Migran Indonesia Kompetindo",
+    "no_lisensi": "BNSP-LSP-065-ID",
+    "no_sk": "NOMOR KEP.2755/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-pekerja-migran-indonesia-kompetindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PEKERJA MIGRAN INDUSTRI MANUFAKTUR",
+    "no_lisensi": "BNSP-LSP-2081-ID",
+    "no_sk": "KEP.2622/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-pekerja-migran-industri-manufaktur",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pelaku Usaha IKM Prestasi",
+    "no_lisensi": "BNSP-LSP-1966-ID",
+    "no_sk": "KEP.1135/BNSP/VI/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pelaku-usaha-ikm-prestasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PELATIH OLAHRAGA",
+    "no_lisensi": "BNSP-LSP-604-ID",
+    "no_sk": "KEP.1374/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-pelatih-olahraga",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP PELHINDO",
+    "no_lisensi": "BNSP-LSP-1716-ID",
+    "no_sk": "Nomor ;KEP.0563/BNSP/III/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-pelhindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pengacara Indonesia",
+    "no_lisensi": "BNSP-LSP-511-ID",
+    "no_sk": "0562/BNSP/V/2016",
+    "slug": "https://bnsp.go.id/lsp/lsp-pengacara-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pengelolaan Lingkungan Indonesia (LSP LAGUNA)",
+    "no_lisensi": "BNSP-LSP-2237-ID",
+    "no_sk": "KEP.2636/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-pengelolaan-lingkungan-indonesia-lsp-laguna",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Pengendalian Pencemaran Lingkungan (LSP DAIMARU)",
+    "no_lisensi": "BNSP-LSP-1456-ID",
+    "no_sk": "KEP.2539/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-pengendalian-pencemaran-lingkungan-lsp-daimaru",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PENYEHAT TRADISIONAL GUSMUS RAKSA JASAD",
+    "no_lisensi": "BNSP-LSP-2014-ID",
+    "no_sk": "KEP.2146/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-penyehat-tradisional-gusmus-raksa-jasad",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Periklanan Indonesia",
+    "no_lisensi": "BNSP-LSP-2230-ID",
+    "no_sk": "KEP.2583/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-periklanan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Perkapalan Nusantara",
+    "no_lisensi": "BNSP-LSP-2262-ID",
+    "no_sk": "KEP.0256/BNSP/II/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-perkapalan-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Persemenan Indonesia",
+    "no_lisensi": "BNSP-LSP-069-ID",
+    "no_sk": "0312/BNSP/II/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-persemenan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Pertanian Nusantara",
+    "no_lisensi": "BNSP-LSP-1877-ID",
+    "no_sk": "KEP.0062/BNSP/I/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-pertanian-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP PRODUKTIVITAS",
+    "no_lisensi": "BNSP-LSP-1637-ID",
+    "no_sk": "KEP.1822/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/lsp-produktivitas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Publik Relasi Indonesia (d/h LSP Public Relations Indonesia)",
+    "no_lisensi": "BNSP-LSP-135-ID",
+    "no_sk": "KEP.1392/VBSP/VII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-publik-relasi-indonesia-d-h-lsp-public-relations-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Rajawali Hospitality Nusantara",
+    "no_lisensi": "BNSP-LSP-1302-ID",
+    "no_sk": "KEP.0254/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-rajawali-hospitality-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Real Estat Indonesia",
+    "no_lisensi": "BNSP-LSP-1210-ID",
+    "no_sk": "KEP.2072/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-real-estat-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Rimbawan dan Lingkungan",
+    "no_lisensi": "BNSP-LSP-070-ID",
+    "no_sk": "KEP.2561/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-rimbawan-dan-lingkungan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP SDM Konstruksi Indonesia",
+    "no_lisensi": "BNSP-LSP-2149-ID",
+    "no_sk": "KEP.1137/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-sdm-konstruksi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP SDM TIK",
+    "no_lisensi": "BNSP-LSP-1977-ID",
+    "no_sk": "KEP.2310/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-sdm-tik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Sistem Informasi",
+    "no_lisensi": "BNSP-LSP-2293-ID",
+    "no_sk": "KEP 1251/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-sistem-informasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Smart Hospitality Solution",
+    "no_lisensi": "BNSP-LSP-1955-ID",
+    "no_sk": "KEP.0960/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-smart-hospitality-solution",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Stasiun Pengisian Bahan Bakar Minyak dan Gas",
+    "no_lisensi": "BNSP-LSP-1197-ID",
+    "no_sk": "KEP.2073/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-stasiun-pengisian-bahan-bakar-minyak-dan-gas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP Teknik Operasional Bangunan Gedung",
+    "no_lisensi": "BNSP-LSP-456-ID",
+    "no_sk": "KEP.1597/BNSP/IX/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-teknik-operasional-bangunan-gedung",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Teknik Otomotif Indonesia",
+    "no_lisensi": "BNSP-LSP-157-ID",
+    "no_sk": "KEP.2020/BNSP/X/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-teknik-otomotif-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP TEKNIK PENDINGIN TATA UDARA",
+    "no_lisensi": "BNSP-LSP-1219-ID",
+    "no_sk": "KEP.1805/BNSP/IX/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-teknik-pendingin-tata-udara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP TEKNIK TAMBANG PRIMA MANDIRI",
+    "no_lisensi": "BNSP-LSP-2283-ID",
+    "no_sk": "KEP.1031/BNSP/IV /2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-teknik-tambang-prima-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Teknologi Informatika",
+    "no_lisensi": "BNSP-LSP-1991-ID",
+    "no_sk": "KEP.1602/BNSP/VIII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-teknologi-informatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Telekomunikasi Indonesia",
+    "no_lisensi": "BNSP-LSP-1343-ID",
+    "no_sk": "-",
+    "slug": "https://bnsp.go.id/lsp/lsp-telekomunikasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP TENAGA PELATIHAN DAN INSTRUKTUR PROFESIONAL",
+    "no_lisensi": "BNSP-LSP-1546-ID",
+    "no_sk": "KEP.0688/BNSP/IX/2019",
+    "slug": "https://bnsp.go.id/lsp/lsp-tenaga-pelatihan-dan-instruktur-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Tenaga Teknis Vokasi Indonesia",
+    "no_lisensi": "BNSP-LSP-2349-ID",
+    "no_sk": "KEP.2020/BNSPIX/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-tenaga-teknis-vokasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Tenun Indonesia",
+    "no_lisensi": "BNSP-LSP-2275-ID",
+    "no_sk": "KEP.0749/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-tenun-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP TIK TRIATMA KOMPETENSI",
+    "no_lisensi": "BNSP-LSP-1417-ID",
+    "no_sk": "KEP.2395/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-tik-triatma-kompetensi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP TPT TEGAR UTAMA",
+    "no_lisensi": "BNSP-LSP-1956-ID",
+    "no_sk": "NOMOR KEP.0962/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-tpt-tegar-utama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Trainer Nuswantoro",
+    "no_lisensi": "BNSP-LSP-2367-ID",
+    "no_sk": "KEP.2214/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/lsp-trainer-nuswantoro",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP TRANSPORTASI DARAT",
+    "no_lisensi": "BNSP-LSP-348-ID",
+    "no_sk": "NOMOR ÐšÐ•Ð . 2262/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/lsp-transportasi-darat",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "LSP Transportasi Pengemudi Indonesia",
+    "no_lisensi": "BNSP-LSP-2154-ID",
+    "no_sk": "KEP.1206/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/lsp-transportasi-pengemudi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP-Hidrografi",
+    "no_lisensi": "BNSP-LSP-1306-ID",
+    "no_sk": "KEP.0838/BNSP/VIII/2018",
+    "slug": "https://bnsp.go.id/lsp/lsp-hidrografi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP-Laboratorium Industri Indonesia",
+    "no_lisensi": "BNSP-LSP-1985-ID",
+    "no_sk": "KEP. 1447/BNSP/VII/2021",
+    "slug": "https://bnsp.go.id/lsp/lsp-laboratorium-industri-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "LSP-PM Sukses Pratama Jaya",
+    "no_lisensi": "BNSP-LSP-1641-ID",
+    "no_sk": "KEP.0162/BNSP/I/2020",
+    "slug": "https://bnsp.go.id/lsp/lsp-pm-sukses-pratama-jaya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MANAJEMEN BISNIS PEMASARAN",
+    "no_lisensi": "BNSP-LSP-2040-ID",
+    "no_sk": "KEP.2625/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/manajemen-bisnis-pemasaran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Dan Pengembangan Sumber Daya Manusia (MPSDM)",
+    "no_lisensi": "BNSP-LSP-944-ID",
+    "no_sk": "KEP.1054/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/manajemen-dan-pengembangan-sumber-daya-manusia-mpsdm",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Keuangan",
+    "no_lisensi": "BNSP-LSP-063-ID",
+    "no_sk": "KEP.2525/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-keuangan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Kewirausahaan Cerdas",
+    "no_lisensi": "BNSP-LSP-2499-ID",
+    "no_sk": "KEP.1502/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/manajemen-kewirausahaan-cerdas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Kewirausahaan dan Bisnis Indonesia",
+    "no_lisensi": "BNSP-LSP-2376-ID",
+    "no_sk": "KEP.2303/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/manajemen-kewirausahaan-dan-bisnis-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Kewirausahaan Prima Indonesia (MENPRINDO)",
+    "no_lisensi": "BNSP-LSP-2129-ID",
+    "no_sk": "KEP.1927/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-kewirausahaan-prima-indonesia-menprindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Konstruksi Nusantara",
+    "no_lisensi": "BNSP-LSP-2366-ID",
+    "no_sk": "KEP.2211/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/manajemen-konstruksi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Pengelola Lembaga Pelatihan dan Kursus Indonesia (MAPELKINDO)",
+    "no_lisensi": "BNSP-LSP-1933-ID",
+    "no_sk": "KEP.1417/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/manajemen-pengelola-lembaga-pelatihan-dan-kursus-indonesia-mapelkindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Proyek IAMPI",
+    "no_lisensi": "BNSP-LSP-2520-ID",
+    "no_sk": "KEP.1895/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/manajemen-proyek-iampi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Risiko",
+    "no_lisensi": "BNSP-LSP-121-ID",
+    "no_sk": "KEP.2324/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-risiko",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Risiko Nasional",
+    "no_lisensi": "BNSP-LSP-2708-ID",
+    "no_sk": "KEP.2717/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-risiko-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Risiko Terintegrasi Energi Kelistrikan",
+    "no_lisensi": "BNSP-LSP-2255-ID",
+    "no_sk": "KEP.2532/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/manajemen-risiko-terintegrasi-energi-kelistrikan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Sumber Daya Manusia Indonesia (LSP MSDM Indonesia)",
+    "no_lisensi": "BNSP-LSP-275-ID",
+    "no_sk": "KEP.0978/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/manajemen-sumber-daya-manusia-indonesia-lsp-msdm-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Sumber Daya Manusia Kompeten Indonesia",
+    "no_lisensi": "BNSP-LSP-1000-ID",
+    "no_sk": "KEP.1301/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/manajemen-sumber-daya-manusia-kompeten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Sumber Daya Manusia Nusantara (MSDM Nusantara)",
+    "no_lisensi": "BNSP-LSP-865-ID",
+    "no_sk": "KEP. 2794/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-sumber-daya-manusia-nusantara-msdm-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Sumber Daya Manusia Unggul Persada",
+    "no_lisensi": "BNSP-LSP-1809-ID",
+    "no_sk": "KEP.1548/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-sumber-daya-manusia-unggul-persada",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Manajemen Usaha Kecil Menengah Indonesia",
+    "no_lisensi": "BNSP-LSP-2657-ID",
+    "no_sk": "KEP.1922/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/manajemen-usaha-kecil-menengah-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Maritim Indonesia",
+    "no_lisensi": "BNSP-LSP-011-ID",
+    "no_sk": "KEP.2171/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/maritim-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Maritim Nusantara",
+    "no_lisensi": "BNSP-LSP-2504-ID",
+    "no_sk": "KEP.1717/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/maritim-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Marketing Internasional Indonesia",
+    "no_lisensi": "BNSP-LSP-2347-ID",
+    "no_sk": "KEP.2011/BNSP/IX/2023",
+    "slug": "https://bnsp.go.id/lsp/marketing-internasional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Marketing Kreatif Nasional",
+    "no_lisensi": "BNSP-LSP-2432-ID",
+    "no_sk": "KEP.0280/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/marketing-kreatif-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Media Informatika",
+    "no_lisensi": "BNSP-LSP-2121-ID",
+    "no_sk": "KEP.0868/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/media-informatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Medika Teknik Kontrindo",
+    "no_lisensi": "BNSP-LSP-2320-ID",
+    "no_sk": "KEP.1673/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/medika-teknik-kontrindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Mekanik Indonesia",
+    "no_lisensi": "BNSP-LSP-2332-ID",
+    "no_sk": "KEP.1771/BNSP/VIII/2023",
+    "slug": "https://bnsp.go.id/lsp/mekanik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MICE Pertemuan Perjalanan Insentif Konvensi Dan Pameran",
+    "no_lisensi": "BNSP-LSP-056-ID",
+    "no_sk": "KEP.0786/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/mice-pertemuan-perjalanan-insentif-konvensi-dan-pameran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Minyak dan Gas (MIGAS)",
+    "no_lisensi": "BNSP-LSP-074-ID",
+    "no_sk": "KEP.1215/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/minyak-dan-gas-migas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MITRA SERTIFINDO KONSTRUKSI",
+    "no_lisensi": "BNSP-LSP-2269-ID",
+    "no_sk": "KEP.0693/BNSP/II/2023",
+    "slug": "https://bnsp.go.id/lsp/mitra-sertifindo-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Mitra Wirausaha Produktif Merdeka",
+    "no_lisensi": "BNSP-LSP-117-ID",
+    "no_sk": "KEP.993/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/mitra-wirausaha-produktif-merdeka",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Mode Indonesia",
+    "no_lisensi": "BNSP-LSP-1867-ID",
+    "no_sk": "KEP.2082/BNSP/XII/2020",
+    "slug": "https://bnsp.go.id/lsp/mode-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM APINDO",
+    "no_lisensi": "BNSP-LSP-2111-ID",
+    "no_sk": "KEP.0804/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/msdm-apindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM APINDO Jaya",
+    "no_lisensi": "BNSP-LSP-2039-ID",
+    "no_sk": "KEP.2623/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/msdm-apindo-jaya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM ASPHRI",
+    "no_lisensi": "BNSP-LSP-2233-ID",
+    "no_sk": "KEP.2626/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/msdm-asphri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Brilliant",
+    "no_lisensi": "BNSP-LSP-649-ID",
+    "no_sk": "KEP.0611/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/msdm-brilliant",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Cipta Unggul",
+    "no_lisensi": "BNSP-LSP-1813-ID",
+    "no_sk": "KEP.2201/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/msdm-cipta-unggul",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM MANDIRI",
+    "no_lisensi": "BNSP-LSP-2044-ID",
+    "no_sk": "KEP.2704/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/msdm-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Maxima Mitra",
+    "no_lisensi": "BNSP-LSP-2755-ID",
+    "no_sk": "KEP.582/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/msdm-maxima-mitra",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Pratama",
+    "no_lisensi": "BNSP-LSP-2452-ID",
+    "no_sk": "KEP.0788/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/msdm-pratama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Prima Indonesia",
+    "no_lisensi": "BNSP-LSP-2546-ID",
+    "no_sk": "KEP.2495/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/msdm-prima-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Profesional",
+    "no_lisensi": "BNSP-LSP-1400-ID",
+    "no_sk": "KEP.2500-J/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/msdm-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Quality Indonesia",
+    "no_lisensi": "BNSP-LSP-1859-ID",
+    "no_sk": "KEP.3026/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/msdm-quality-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Talenta Gemilang",
+    "no_lisensi": "BNSP-LSP-2568-ID",
+    "no_sk": "KEP.3006/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/msdm-talenta-gemilang",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Transformasi Nusantara",
+    "no_lisensi": "BNSP-LSP-2495-ID",
+    "no_sk": "KEP.2324/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/msdm-transformasi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "MSDM Universal",
+    "no_lisensi": "BNSP-LSP-516-ID",
+    "no_sk": "KEP.0489/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/msdm-universal",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Multi Bahasa Profesional",
+    "no_lisensi": "BNSP-LSP-2640-ID",
+    "no_sk": "KEP.1630/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/multi-bahasa-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Musik Indonesia",
+    "no_lisensi": "BNSP-LSP-1141-ID",
+    "no_sk": "KEP.0961/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/musik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Olahraga Indonesia",
+    "no_lisensi": "BNSP-LSP-2276-ID",
+    "no_sk": "KEP.0812/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/olahraga-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Otomasi Industri Indonesia",
+    "no_lisensi": "BNSP-LSP-2572-ID",
+    "no_sk": "KEP.3062/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/otomasi-industri-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Otomasi Mekatronika Indonesia",
+    "no_lisensi": "BNSP-LSP-2564-ID",
+    "no_sk": "KEP.2991/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/otomasi-mekatronika-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Parabi Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2642-ID",
+    "no_sk": "KEP.1682/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/parabi-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pariwisata",
+    "no_lisensi": "BNSP-LSP-009-ID",
+    "no_sk": "KEP.1478/BNSP/IX/2020",
+    "slug": "https://bnsp.go.id/lsp/pariwisata",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Angin Mamiri",
+    "no_lisensi": "BNSP-LSP-271-ID",
+    "no_sk": "KEP. 1335/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-angin-mamiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bali",
+    "no_lisensi": "BNSP-LSP-146-ID",
+    "no_sk": "KEP.0143/BNSP/I/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bali",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bali Internasional",
+    "no_lisensi": "BNSP-LSP-454-ID",
+    "no_sk": "KEP.2962/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bali-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Barelang International",
+    "no_lisensi": "BNSP-LSP-1507-ID",
+    "no_sk": "KEP.0965/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-barelang-international",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bhakti Persada",
+    "no_lisensi": "BNSP-LSP-136-ID",
+    "no_sk": "KEP.1044/BNSP/IV/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bhakti-persada",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bina Kompetensi",
+    "no_lisensi": "BNSP-LSP-718-ID",
+    "no_sk": "KEP.1743/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bina-kompetensi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bumi Sejahtera Banyuwangi",
+    "no_lisensi": "BNSP-LSP-2173-ID",
+    "no_sk": "KEP.2241/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bumi-sejahtera-banyuwangi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Bunaken Indonesia",
+    "no_lisensi": "BNSP-LSP-333-ID",
+    "no_sk": "KEP.1965/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-bunaken-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pariwisata Citra Insan",
+    "no_lisensi": "BNSP-LSP-1231-ID",
+    "no_sk": "KEP.0762/BNSP/IV/2021",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-citra-insan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pariwisata dan Kapal Pesiar Jakarta",
+    "no_lisensi": "BNSP-LSP-945-ID",
+    "no_sk": "KEP.0124/BNSP/I/2020",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-dan-kapal-pesiar-jakarta",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata dan SPA Indonesia",
+    "no_lisensi": "BNSP-LSP-1051-ID",
+    "no_sk": "KEP.180/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-dan-spa-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Danau Toba",
+    "no_lisensi": "BNSP-LSP-2516-ID",
+    "no_sk": "KEP. 1896/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-danau-toba",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Diyafa Kencana Indonesia",
+    "no_lisensi": "BNSP-LSP-1564-ID",
+    "no_sk": "KEP.2500-A/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-diyafa-kencana-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Global Indonesia",
+    "no_lisensi": "BNSP-LSP-2132-ID",
+    "no_sk": "KEP.0996/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-global-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Global Spirit Persada",
+    "no_lisensi": "BNSP-LSP-1465-ID",
+    "no_sk": "KEP 0978/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-global-spirit-persada",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Hospitaliti Nasional",
+    "no_lisensi": "BNSP-LSP-2118-ID",
+    "no_sk": "KEP.0862/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-hospitaliti-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pariwisata Housekeeper",
+    "no_lisensi": "BNSP-LSP-801-ID",
+    "no_sk": "KEP.1931-A/BNSP/XI/2020",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-housekeeper",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Indo Nusa",
+    "no_lisensi": "BNSP-LSP-2313-ID",
+    "no_sk": "KEP.1556/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-indo-nusa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Insan Kreatif",
+    "no_lisensi": "BNSP-LSP-2409-ID",
+    "no_sk": "KEP.2700/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-insan-kreatif",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Jaya Kompeten",
+    "no_lisensi": "BNSP-LSP-2314-ID",
+    "no_sk": "KEP.1591/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-jaya-kompeten",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Komodo Flores",
+    "no_lisensi": "BNSP-LSP-547-ID",
+    "no_sk": "KEP.1900/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-komodo-flores",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Maestro Indonesia",
+    "no_lisensi": "BNSP-LSP-1449-ID",
+    "no_sk": "KEP.0817/BNSP/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-maestro-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PARIWISATA MAHOTAMA",
+    "no_lisensi": "BNSP-LSP-2126-ID",
+    "no_sk": "KEP.0905/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-mahotama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Metro Global",
+    "no_lisensi": "BNSP-LSP-2342-ID",
+    "no_sk": "KEP.1909/BNSP/IX/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-metro-global",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Mice Pesona Indonesia",
+    "no_lisensi": "BNSP-LSP-2667-ID",
+    "no_sk": "ÐšÐ•Ð . 2087/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-mice-pesona-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Mutu Pesona Indonesia",
+    "no_lisensi": "BNSP-LSP-1812-ID",
+    "no_sk": "KEP.2273/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-mutu-pesona-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Nasional (PARNAS)",
+    "no_lisensi": "BNSP-LSP-055-ID",
+    "no_sk": "KEP.1010/BNSP/IV/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-nasional-parnas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Nasional Rahenda",
+    "no_lisensi": "BNSP-LSP-2410-ID",
+    "no_sk": "KEP.2704/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-nasional-rahenda",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Nawasena",
+    "no_lisensi": "BNSP-LSP-2547-ID",
+    "no_sk": "KEP.2500-C/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-nawasena",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Nugraha Internasional",
+    "no_lisensi": "BNSP-LSP-732-ID",
+    "no_sk": "KEP.1264/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-nugraha-internasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Nusantara",
+    "no_lisensi": "BNSP-LSP-022-ID",
+    "no_sk": "KEP.2613/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Pesona Indonesia",
+    "no_lisensi": "BNSP-LSP-1185-ID",
+    "no_sk": "KEP.1961/ BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-pesona-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Phinisi",
+    "no_lisensi": "BNSP-LSP-158-ID",
+    "no_sk": "KEP.2528/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-phinisi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Phuri Nusantara",
+    "no_lisensi": "BNSP-LSP-1595-ID",
+    "no_sk": "KEP.2796/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-phuri-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Pratama Indonesia",
+    "no_lisensi": "BNSP-LSP-2713-ID",
+    "no_sk": "KEP.2847/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-pratama-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pariwisata Rafflesia",
+    "no_lisensi": "BNSP-LSP-522-ID",
+    "no_sk": "KEP.1055/BNSP/X/2019",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-rafflesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Semesta Nusantara",
+    "no_lisensi": "BNSP-LSP-2489-ID",
+    "no_sk": "KEP.1359/BNSP/LSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-semesta-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Tiga Puluh Juni",
+    "no_lisensi": "BNSP-LSP-2630-ID",
+    "no_sk": "KEP.1346/BNSP/VI/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-tiga-puluh-juni",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Wellness Nusantara",
+    "no_lisensi": "BNSP-LSP-2695-ID",
+    "no_sk": "2520/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-wellness-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Wijaya Indonesia",
+    "no_lisensi": "BNSP-LSP-2655-ID",
+    "no_sk": "KEP.1920/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-wijaya-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pariwisata Wonderful Indonesia",
+    "no_lisensi": "BNSP-LSP-2747-ID",
+    "no_sk": "KEP.263/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/pariwisata-wonderful-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Parnasa Pariwisata Flores",
+    "no_lisensi": "BNSP-LSP-523-ID",
+    "no_sk": "KEP.0385/BNSP/VI/2019",
+    "slug": "https://bnsp.go.id/lsp/parnasa-pariwisata-flores",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pasar Modal Indonesia",
+    "no_lisensi": "BNSP-LSP-1823-ID",
+    "no_sk": "KEP.2199/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pasar-modal-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PASKI Health Care",
+    "no_lisensi": "BNSP-LSP-1432-ID",
+    "no_sk": "KEP.0487/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/paski-health-care",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pastali Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2662-ID",
+    "no_sk": "KEP.1984/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/pastali-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Bahtera Berkah Abadi",
+    "no_lisensi": "BNSP-LSP-2451-ID",
+    "no_sk": "KEP.0819/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-bahtera-berkah-abadi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PEKERJA DOMESTIK BAKTI PERTIWI",
+    "no_lisensi": "BNSP-LSP-2091-ID",
+    "no_sk": "KEP.0544/BNSP/III/2022",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-bakti-pertiwi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Bina Mulia",
+    "no_lisensi": "BNSP-LSP-680-ID",
+    "no_sk": "KEP.0430/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-bina-mulia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Citra Indonesia",
+    "no_lisensi": "BNSP-LSP-853-ID",
+    "no_sk": "KEP.737/BNSP/III/2026",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-citra-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pekerja Domestik Duta Bangsa",
+    "no_lisensi": "BNSP-LSP-071-ID",
+    "no_sk": "KEP.0067/BNSP/I/2021",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-duta-bangsa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pekerja Domestik Indonesia",
+    "no_lisensi": "BNSP-LSP-052-ID",
+    "no_sk": "KEP.0056/BNSP/II/2019",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Kencana Unggul Samudera",
+    "no_lisensi": "BNSP-LSP-2573-ID",
+    "no_sk": "KEP.3080/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-kencana-unggul-samudera",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Mandiri",
+    "no_lisensi": "BNSP-LSP-076-ID",
+    "no_sk": "KEP.0970/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Migran Kompeten Indonesia",
+    "no_lisensi": "BNSP-LSP-2454-ID",
+    "no_sk": "KEP.0966/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-migran-kompeten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Nasional",
+    "no_lisensi": "BNSP-LSP-2455-ID",
+    "no_sk": "KEP.0968/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Nusantara",
+    "no_lisensi": "BNSP-LSP-020-ID",
+    "no_sk": "KEP.0141/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Pratama Sejahtera",
+    "no_lisensi": "BNSP-LSP-012-ID",
+    "no_sk": "KEP.0162/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-pratama-sejahtera",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Prisma Indonesia",
+    "no_lisensi": "BNSP-LSP-1243-ID",
+    "no_sk": "KEP.0453/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-prisma-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Profesional",
+    "no_lisensi": "BNSP-LSP-2606-ID",
+    "no_sk": "KEP/0614/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Ratu Kompetensi Indonesia",
+    "no_lisensi": "BNSP-LSP-2619-ID",
+    "no_sk": "KEP.1051/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-ratu-kompetensi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Sukses Surya Nusantara",
+    "no_lisensi": "BNSP-LSP-1917-ID",
+    "no_sk": "KEP.911/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-sukses-surya-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Surya Sentosa",
+    "no_lisensi": "BNSP-LSP-2567-ID",
+    "no_sk": "2999/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-surya-sentosa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pekerja Domestik Terampil Indonesia",
+    "no_lisensi": "BNSP-LSP-1414-ID",
+    "no_sk": "KEP.1022/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-terampil-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Domestik Wahyu Utama Sejahtera Mandiri",
+    "no_lisensi": "BNSP-LSP-2749-ID",
+    "no_sk": "KEP.348/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/pekerja-domestik-wahyu-utama-sejahtera-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Cahaya Timur Nusantara",
+    "no_lisensi": "BNSP-LSP-2674-ID",
+    "no_sk": "KEP.2191/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-cahaya-timur-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Central Mandiri Utama",
+    "no_lisensi": "BNSP-LSP-2692-ID",
+    "no_sk": "KEP.2458/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-central-mandiri-utama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Global Indonesia",
+    "no_lisensi": "BNSP-LSP-2438-ID",
+    "no_sk": "KEP.0348/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-global-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Industri Kelapa Sawit",
+    "no_lisensi": "BNSP-LSP-2182-ID",
+    "no_sk": "KEP.1803/BNSP/IX/2022",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-industri-kelapa-sawit",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Kharisma Duta Utama",
+    "no_lisensi": "BNSP-LSP-2453-ID",
+    "no_sk": "0816/BNSP/III/2024",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-kharisma-duta-utama",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Kusuma Indonesia",
+    "no_lisensi": "BNSP-LSP-2687-ID",
+    "no_sk": "KEP.2386/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-kusuma-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pekerja Migran Mitra Kompeten Indonesia",
+    "no_lisensi": "BNSP-LSP-2771-ID",
+    "no_sk": "KEP.1193/BNSP/V2026",
+    "slug": "https://bnsp.go.id/lsp/pekerja-migran-mitra-kompeten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelabuhan",
+    "no_lisensi": "BNSP-LSP-2106-ID",
+    "no_sk": "KEP.0799/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/pelabuhan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelabuhan Nusantara Berkarya (PELTARA)",
+    "no_lisensi": "BNSP-LSP-2631-ID",
+    "no_sk": "KEP.1350/BNSP/VI/2025",
+    "slug": "https://bnsp.go.id/lsp/pelabuhan-nusantara-berkarya-peltara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelatih Pengelola dan Mentor",
+    "no_lisensi": "BNSP-LSP-2658-ID",
+    "no_sk": "KEP.1929/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/pelatih-pengelola-dan-mentor",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelatih SDM Bangun Negeri",
+    "no_lisensi": "BNSP-LSP-1881-ID",
+    "no_sk": "KEP.350/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/pelatih-sdm-bangun-negeri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelatihan Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2494-ID",
+    "no_sk": "KEP.1422/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/pelatihan-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelindungan Data Pribadi",
+    "no_lisensi": "BNSP-LSP-2725-ID",
+    "no_sk": "KEP.3030-D/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/pelindungan-data-pribadi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pelindungan Data Pribadi Indonesia",
+    "no_lisensi": "BNSP-LSP-2615-ID",
+    "no_sk": "KEP.0751/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/pelindungan-data-pribadi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemandu Wisata Nusantara (PENTARA)",
+    "no_lisensi": "BNSP-LSP-561-ID",
+    "no_sk": "KEP.2924/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/pemandu-wisata-nusantara-pentara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemasaran",
+    "no_lisensi": "BNSP-LSP-134-ID",
+    "no_sk": "KEP.2713/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/pemasaran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemasaran Pratama Nusantara",
+    "no_lisensi": "BNSP-LSP-2256-ID",
+    "no_sk": "KEP.0183/BNSP/I/2023",
+    "slug": "https://bnsp.go.id/lsp/pemasaran-pratama-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemasok Pasar Indonesia",
+    "no_lisensi": "BNSP-LSP-2311-ID",
+    "no_sk": "KEP.1553/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/pemasok-pasar-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemberdayaan dan Pembangunan Desa",
+    "no_lisensi": "BNSP-LSP-2459-ID",
+    "no_sk": "KEP.0976/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/pemberdayaan-dan-pembangunan-desa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pemberdayaan Masyarakat Pendamping Desa (PMPD)",
+    "no_lisensi": "BNSP-LSP-2526-ID",
+    "no_sk": "1895/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/pemberdayaan-masyarakat-pendamping-desa-pmpd",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pembiayaan Indonesia",
+    "no_lisensi": "BNSP-LSP-2153-ID",
+    "no_sk": "KEP.1204/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/pembiayaan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pembicara Kompeten",
+    "no_lisensi": "BNSP-LSP-2641-ID",
+    "no_sk": "KEP.1681/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/pembicara-kompeten",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pendamping Pembangunan Desa",
+    "no_lisensi": "BNSP-LSP-2594-ID",
+    "no_sk": "KEP.0415/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/pendamping-pembangunan-desa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pendidikan Bahasa Inggris",
+    "no_lisensi": "BNSP-LSP-2510-ID",
+    "no_sk": "KEP.560/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/pendidikan-bahasa-inggris",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penerbitan",
+    "no_lisensi": "BNSP-LSP-2045-ID",
+    "no_sk": "KEP.2706/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/penerbitan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penerbitan Ilmiah Indonesia",
+    "no_lisensi": "BNSP-LSP-2784-ID",
+    "no_sk": "KEP.1831/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/penerbitan-ilmiah-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengadaan Indonesia",
+    "no_lisensi": "BNSP-LSP-879-ID",
+    "no_sk": "KEP.1097/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/pengadaan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengamanan Nusantara",
+    "no_lisensi": "BNSP-LSP-2325-ID",
+    "no_sk": "KEP.1711/BNSP/VIII/2023",
+    "slug": "https://bnsp.go.id/lsp/pengamanan-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengelola Laboratorium Indonesia Jaya",
+    "no_lisensi": "BNSP-LSP-2648-ID",
+    "no_sk": "KEP.1817/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/pengelola-laboratorium-indonesia-jaya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengelolaan Limbah Industri dan Sampah (LALINSA)",
+    "no_lisensi": "BNSP-LSP-852-ID",
+    "no_sk": "KEP.1919/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/pengelolaan-limbah-industri-dan-sampah-lalinsa",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengelolaan Limbah Industri Indonesia (LSP LAMINDO)",
+    "no_lisensi": "BNSP-LSP-2490-ID",
+    "no_sk": "KEP.1363/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/pengelolaan-limbah-industri-indonesia-lsp-lamindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengelolaan Properti Indonesia",
+    "no_lisensi": "BNSP-LSP-2666-ID",
+    "no_sk": "KEP.2084/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pengelolaan-properti-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengelolaan Tata Lingkungan Industri Indonesia (PETALINDO)",
+    "no_lisensi": "BNSP-LSP-1873-ID",
+    "no_sk": "KEP.2116/BNSP/XII/2020",
+    "slug": "https://bnsp.go.id/lsp/pengelolaan-tata-lingkungan-industri-indonesia-petalindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengembang Karakter Profesional",
+    "no_lisensi": "BNSP-LSP-2659-ID",
+    "no_sk": "KEP.1934/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/pengembang-karakter-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengembangan Las",
+    "no_lisensi": "BNSP-LSP-167-ID",
+    "no_sk": "KEP.1320/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/pengembangan-las",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengemudi Transportasi Indonesia",
+    "no_lisensi": "BNSP-LSP-2580-ID",
+    "no_sk": "0121/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/pengemudi-transportasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pengendali Hama, Penyakit dan Mutu Ikan (PHPMI)",
+    "no_lisensi": "BNSP-LSP-877-ID",
+    "no_sk": "KEP.0797/BNSP/VIII/2018",
+    "slug": "https://bnsp.go.id/lsp/pengendali-hama,-penyakit-dan-mutu-ikan-phpmi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengolahan Kopi",
+    "no_lisensi": "BNSP-LSP-2109-ID",
+    "no_sk": "KEP.0802/BNSP/IV/2022",
+    "slug": "https://bnsp.go.id/lsp/pengolahan-kopi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pengujian Kendaraan Bermotor Indonesia",
+    "no_lisensi": "BNSP-LSP-2675-ID",
+    "no_sk": "KEP.2192/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/pengujian-kendaraan-bermotor-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penilai Kerugian Asuransi Indonesia",
+    "no_lisensi": "BNSP-LSP-2636-ID",
+    "no_sk": "KEP.1497/BNSP/VI/2025",
+    "slug": "https://bnsp.go.id/lsp/penilai-kerugian-asuransi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penjaminan",
+    "no_lisensi": "BNSP-LSP-1835-ID",
+    "no_sk": "KEP.2450/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/penjaminan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penulis dan Editor Profesional",
+    "no_lisensi": "BNSP-LSP-1446-ID",
+    "no_sk": "KEP.0974/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/penulis-dan-editor-profesional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Penyelenggara Produk Halal Indonesia (PPHI)",
+    "no_lisensi": "BNSP-LSP-2066-ID",
+    "no_sk": "KEP.0255/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/penyelenggara-produk-halal-indonesia-pphi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perasuransian Indonesia",
+    "no_lisensi": "BNSP-LSP-486-ID",
+    "no_sk": "KEP.0269/BNSP/I/2025",
+    "slug": "https://bnsp.go.id/lsp/perasuransian-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perasuransian Syariah",
+    "no_lisensi": "BNSP-LSP-459-ID",
+    "no_sk": "KEP.1583/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/perasuransian-syariah",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perdagangan Berjangka Komoditi",
+    "no_lisensi": "BNSP-LSP-2352-ID",
+    "no_sk": "KEP.2048/BNSP/IX/2023",
+    "slug": "https://bnsp.go.id/lsp/perdagangan-berjangka-komoditi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perdagangan Ekspor Impor Indonesia",
+    "no_lisensi": "BNSP-LSP-2280-ID",
+    "no_sk": "KEP.0816/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/perdagangan-ekspor-impor-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perdagangan Internasional Indonesia",
+    "no_lisensi": "BNSP-LSP-2534-ID",
+    "no_sk": "2264/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/perdagangan-internasional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Perdagangan Ritel",
+    "no_lisensi": "BNSP-LSP-652-ID",
+    "no_sk": "KEP.707/BNSP/IV/2020",
+    "slug": "https://bnsp.go.id/lsp/perdagangan-ritel",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Perencanaan Pembangunan Indonesia",
+    "no_lisensi": "BNSP-LSP-1846-ID",
+    "no_sk": "KEP.1880/BNSP/XI/2020",
+    "slug": "https://bnsp.go.id/lsp/perencanaan-pembangunan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perencanaan Pembangunan Wilayah",
+    "no_lisensi": "BNSP-LSP-2548-ID",
+    "no_sk": "KEP.2500-H/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/perencanaan-pembangunan-wilayah",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perencanaan Wilayah dan Kota",
+    "no_lisensi": "BNSP-LSP-2010-ID",
+    "no_sk": "KEP.266/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/perencanaan-wilayah-dan-kota",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PERHAPI",
+    "no_lisensi": "BNSP-LSP-025-ID",
+    "no_sk": "KEP.1787/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/perhapi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perikanan Hias Indonesia",
+    "no_lisensi": "BNSP-LSP-2468-ID",
+    "no_sk": "1097/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/perikanan-hias-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perikanan Indonesia",
+    "no_lisensi": "BNSP-LSP-2739-ID",
+    "no_sk": "KEP.129/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/perikanan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perkapalan",
+    "no_lisensi": "BNSP-LSP-1157-ID",
+    "no_sk": "KEP.1053/BNSP/IV/2023",
+    "slug": "https://bnsp.go.id/lsp/perkapalan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perkeretaapian Indonesia",
+    "no_lisensi": "BNSP-LSP-2402-ID",
+    "no_sk": "KEP.2542/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/perkeretaapian-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perkerisan Indonesia",
+    "no_lisensi": "BNSP-LSP-2457-ID",
+    "no_sk": "KEP.0971/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/perkerisan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perkoperasian Indonesia",
+    "no_lisensi": "BNSP-LSP-156-ID",
+    "no_sk": "KEP-1957/BNSP/IX/2021",
+    "slug": "https://bnsp.go.id/lsp/perkoperasian-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Permanent Makeup Indonesia",
+    "no_lisensi": "BNSP-LSP-2795-ID",
+    "no_sk": "KEP.2242/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/permanent-makeup-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Permuseuman Indonesia",
+    "no_lisensi": "BNSP-LSP-2310-ID",
+    "no_sk": "KEP.1552/BNSP/VII/2023",
+    "slug": "https://bnsp.go.id/lsp/permuseuman-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Perpajakan Indonesia",
+    "no_lisensi": "BNSP-LSP-2395-ID",
+    "no_sk": "KEP.2390/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/perpajakan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Unknown",
+    "nama": "PERS INDONESIA",
+    "no_lisensi": "BNSP-LSP-2042-ID",
+    "no_sk": "KEP.2702/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/pers-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "PERTAHKINDO KONSTRUKSI NASIONAL",
+    "no_lisensi": "BNSP-LSP-2092-ID",
+    "no_sk": "KEP.0547/BNSP/III/2022",
+    "slug": "https://bnsp.go.id/lsp/pertahkindo-konstruksi-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pertambangan Indonesia Mandiri",
+    "no_lisensi": "BNSP-LSP-1406-ID",
+    "no_sk": "KEP.2536/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/pertambangan-indonesia-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pertambangan Mineral Batubara dan Energi",
+    "no_lisensi": "BNSP-LSP-2375-ID",
+    "no_sk": "KEP.2302/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/pertambangan-mineral-batubara-dan-energi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Pertani Indonesia",
+    "no_lisensi": "BNSP-LSP-1988-ID",
+    "no_sk": "KEP.1497/BNSP/VII/2021",
+    "slug": "https://bnsp.go.id/lsp/pertani-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pertanian Nasional",
+    "no_lisensi": "BNSP-LSP-097-ID",
+    "no_sk": "KEP. 1632/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/pertanian-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pertanian Organik",
+    "no_lisensi": "BNSP-LSP-452-ID",
+    "no_sk": "KEP.1343/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/pertanian-organik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Petakindo Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-1997-ID",
+    "no_sk": "KEP.1497/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/petakindo-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Peternakan Indonesia",
+    "no_lisensi": "BNSP-LSP-168-ID",
+    "no_sk": "KEP. 1951/BNSP/IX/2021",
+    "slug": "https://bnsp.go.id/lsp/peternakan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "PETERNAKAN SINGOSARI",
+    "no_lisensi": "BNSP-LSP-949-ID",
+    "no_sk": "KEP.0259/BNSP/II/2021",
+    "slug": "https://bnsp.go.id/lsp/peternakan-singosari",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "PORT UNDERWATER AND SALVAGE SURVEY (LSP. POWERS)",
+    "no_lisensi": "BNSP-LSP-422-ID",
+    "no_sk": "KEP.239/LATTAS/X/2015",
+    "slug": "https://bnsp.go.id/lsp/port-underwater-and-salvage-survey-lsp-powers",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pos Logistik Indonesia",
+    "no_lisensi": "BNSP-LSP-2683-ID",
+    "no_sk": "KEP.2334/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/pos-logistik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Praktisi Intervensi Nyeri",
+    "no_lisensi": "BNSP-LSP-2680-ID",
+    "no_sk": "KEP.2322/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/praktisi-intervensi-nyeri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Praktisi Lingkungan Indonesia",
+    "no_lisensi": "BNSP-LSP-2726-ID",
+    "no_sk": "KEP.3030-E/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/praktisi-lingkungan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Praktisi Otomotif Indonesia",
+    "no_lisensi": "BNSP-LSP-2760-ID",
+    "no_sk": "KEP.724/BNSP/III/2026",
+    "slug": "https://bnsp.go.id/lsp/praktisi-otomotif-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pramuwisata Indonesia",
+    "no_lisensi": "BNSP-LSP-103-ID",
+    "no_sk": "KEP.1972/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/pramuwisata-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pranata Laboratorium Medik Presisi",
+    "no_lisensi": "BNSP-LSP-2557-ID",
+    "no_sk": "KEP.2666/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/pranata-laboratorium-medik-presisi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Produktivitas Indonesia Emas",
+    "no_lisensi": "BNSP-LSP-2705-ID",
+    "no_sk": "KEP.2561/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/produktivitas-indonesia-emas",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Produktivitas Nasional",
+    "no_lisensi": "BNSP-LSP-2300-ID",
+    "no_sk": "KEP.1258/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/produktivitas-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Profesional Desa Buana",
+    "no_lisensi": "BNSP-LSP-2391-ID",
+    "no_sk": "KEP.2383/BNSP/XI/2023",
+    "slug": "https://bnsp.go.id/lsp/profesional-desa-buana",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Profesional Komunikasi Informasi",
+    "no_lisensi": "BNSP-LSP-2698-ID",
+    "no_sk": "KEP.2578/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/profesional-komunikasi-informasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Profesional Migas Indonesia",
+    "no_lisensi": "BNSP-LSP-2147-ID",
+    "no_sk": "KEP.1095/BNSP/VI/2022",
+    "slug": "https://bnsp.go.id/lsp/profesional-migas-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Profesional Pelatihan Indonesia",
+    "no_lisensi": "BNSP-LSP-2430-ID",
+    "no_sk": "KEP.0278/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/profesional-pelatihan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Professional Global Trainer",
+    "no_lisensi": "BNSP-LSP-2137-ID",
+    "no_sk": "KEP.1007/BNSP/V/2022",
+    "slug": "https://bnsp.go.id/lsp/professional-global-trainer",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Proteksi Kebakaran",
+    "no_lisensi": "BNSP-LSP-484-ID",
+    "no_sk": "KEP.550/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/proteksi-kebakaran",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Psikologi Indonesia",
+    "no_lisensi": "BNSP-LSP-1392-ID",
+    "no_sk": "KEP.2177/BNS/X/2023",
+    "slug": "https://bnsp.go.id/lsp/psikologi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PT. LEMBAGA SERTIFIKASI PROFESI INDUSTRI PUPUK INDONESIA",
+    "no_lisensi": "BNSP-LSP-132-ID",
+    "no_sk": "KEP.1006/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/pt-lembaga-sertifikasi-profesi-industri-pupuk-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "PT. LSP Pertanian Presisi",
+    "no_lisensi": "BNSP-LSP-2612-ID",
+    "no_sk": "KEP.0696/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/pt-lsp-pertanian-presisi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Publik Relation Nusantara",
+    "no_lisensi": "BNSP-LSP-1878-ID",
+    "no_sk": "KEP.568/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/publik-relation-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pustaka Ilmiah Elektronik",
+    "no_lisensi": "BNSP-LSP-2542-ID",
+    "no_sk": "KEP.2321/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/pustaka-ilmiah-elektronik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Pustakawan",
+    "no_lisensi": "BNSP-LSP-107-ID",
+    "no_sk": "KEP.2631/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/pustakawan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Retail Indonesia",
+    "no_lisensi": "BNSP-LSP-913-ID",
+    "no_sk": "KEP.0551/BNSP/III/2021",
+    "slug": "https://bnsp.go.id/lsp/retail-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Rias Pengantin Modifikasi dan Modern Katalia",
+    "no_lisensi": "BNSP-LSP-083-ID",
+    "no_sk": "KEP.1411/BNSP/V/2026",
+    "slug": "https://bnsp.go.id/lsp/rias-pengantin-modifikasi-dan-modern-katalia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Safety Enviro Indonesia",
+    "no_lisensi": "BNSP-LSP-2503-ID",
+    "no_sk": "KEP.1575/BNSP/VII/2024",
+    "slug": "https://bnsp.go.id/lsp/safety-enviro-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sains Data dan Kecerdasan Buatan Indonesia",
+    "no_lisensi": "BNSP-LSP-2357-ID",
+    "no_sk": "KEP.2171/BNSP/X/2023",
+    "slug": "https://bnsp.go.id/lsp/sains-data-dan-kecerdasan-buatan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sains Olahraga Indonesia Raya",
+    "no_lisensi": "BNSP-LSP-2415-ID",
+    "no_sk": "KEP.2756/BNSP/XII/2023",
+    "slug": "https://bnsp.go.id/lsp/sains-olahraga-indonesia-raya",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sapta Cipta Konstruksi",
+    "no_lisensi": "BNSP-LSP-2336-ID",
+    "no_sk": "KEP.1852/BNSP/VIII/2023",
+    "slug": "https://bnsp.go.id/lsp/sapta-cipta-konstruksi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "SARANA KOMUNIKASI PRIMA INDONESIA",
+    "no_lisensi": "BNSP-LSP-1427-ID",
+    "no_sk": "0003/BNSP/I/2019",
+    "slug": "https://bnsp.go.id/lsp/sarana-komunikasi-prima-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Satpam Abujapi",
+    "no_lisensi": "BNSP-LSP-2235-ID",
+    "no_sk": "KEP.2631/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/satpam-abujapi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "SDM Pajak Modern",
+    "no_lisensi": "BNSP-LSP-2427-ID",
+    "no_sk": "KEP.0150/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/sdm-pajak-modern",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sertifa Teknologi Informasi Indonesia",
+    "no_lisensi": "BNSP-LSP-2673-ID",
+    "no_sk": "KEP.2190/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/sertifa-teknologi-informasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sertifikasi Arsitek Indonesia (SARSI)",
+    "no_lisensi": "BNSP-LSP-2436-ID",
+    "no_sk": "KEP.0342/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/sertifikasi-arsitek-indonesia-sarsi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sertifikasi Arsitek Lanskap Indonesia",
+    "no_lisensi": "BNSP-LSP-2431-ID",
+    "no_sk": "KEP.0279/BNSP/II/2024",
+    "slug": "https://bnsp.go.id/lsp/sertifikasi-arsitek-lanskap-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sertifikasi Keahlian Bendungan Besar Indonesia (SKBBI)",
+    "no_lisensi": "BNSP-LSP-2214-ID",
+    "no_sk": "KEP.2431/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/sertifikasi-keahlian-bendungan-besar-indonesia-skbbi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sertifikasi Konstruksi Teknik IAKI",
+    "no_lisensi": "BNSP-LSP-2281-ID",
+    "no_sk": "KEP.0863/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/sertifikasi-konstruksi-teknik-iaki",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Signal Informatika Teknindo",
+    "no_lisensi": "BNSP-LSP-2514-ID",
+    "no_sk": "KEP.2558/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/signal-informatika-teknindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sinergi Instruktur Kompeten",
+    "no_lisensi": "BNSP-LSP-2611-ID",
+    "no_sk": "KEP.0684/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/sinergi-instruktur-kompeten",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sinergi Kewirausahaan Indonesia",
+    "no_lisensi": "BNSP-LSP-2736-ID",
+    "no_sk": "KEP.126/BNSP/1/2026",
+    "slug": "https://bnsp.go.id/lsp/sinergi-kewirausahaan-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sistem Pembayaran Indonesia",
+    "no_lisensi": "BNSP-LSP-2498-ID",
+    "no_sk": "Kep.1531/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/sistem-pembayaran-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Sistem Unggul Konstruksi Sertifikasi (SUKSES)",
+    "no_lisensi": "BNSP-LSP-2754-ID",
+    "no_sk": "KEP.564/BNSP/II/ 2026",
+    "slug": "https://bnsp.go.id/lsp/sistem-unggul-konstruksi-sertifikasi-sukses",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Softskill Indonesia Kompeten",
+    "no_lisensi": "BNSP-LSP-2741-ID",
+    "no_sk": "KEP.178/BNSP/I/2026",
+    "slug": "https://bnsp.go.id/lsp/softskill-indonesia-kompeten",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "SPA Kecantikan DEA",
+    "no_lisensi": "BNSP-LSP-2600-ID",
+    "no_sk": "KEP.0561-H/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/spa-kecantikan-dea",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "SPA Nasional",
+    "no_lisensi": "BNSP-LSP-037-ID",
+    "no_sk": "KEP.2100/BNSP/VII/2026",
+    "slug": "https://bnsp.go.id/lsp/spa-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "SPA Tirta Nirwana Indonesia",
+    "no_lisensi": "BNSP-LSP-381-ID",
+    "no_sk": "KEP.2325/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/spa-tirta-nirwana-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Survey Pemetaan Ikatan Surveyor Indonesia",
+    "no_lisensi": "BNSP-LSP-1182-ID",
+    "no_sk": "KEP.2393/BNSP/XI/2021",
+    "slug": "https://bnsp.go.id/lsp/survey-pemetaan-ikatan-surveyor-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Talenta Wirausaha Nusantara",
+    "no_lisensi": "BNSP-LSP-2073-ID",
+    "no_sk": "KEP.0357/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/talenta-wirausaha-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tally Mandiri",
+    "no_lisensi": "BNSP-LSP-2729-ID",
+    "no_sk": "KEP.3078/BNSP/XII/2025",
+    "slug": "https://bnsp.go.id/lsp/tally-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tambang Minerba Indonesia (TMI)",
+    "no_lisensi": "BNSP-LSP-2278-ID",
+    "no_sk": "KEP.0814/BNSP/III/2023",
+    "slug": "https://bnsp.go.id/lsp/tambang-minerba-indonesia-tmi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tanggap Darurat Pertambangan dan Energi Indonesia (LSP PERTAPINDO)",
+    "no_lisensi": "BNSP-LSP-2456-ID",
+    "no_sk": "KEP.0969/BNSP/IV/2024",
+    "slug": "https://bnsp.go.id/lsp/tanggap-darurat-pertambangan-dan-energi-indonesia-lsp-pertapindo",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tani Andalan Nasional Indonesia",
+    "no_lisensi": "BNSP-LSP-2525-ID",
+    "no_sk": "KEP.2041/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/tani-andalan-nasional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tata Kecantikan Juwita Nusantara",
+    "no_lisensi": "BNSP-LSP-2758-ID",
+    "no_sk": "KEP.632/BNSP/III/2026",
+    "slug": "https://bnsp.go.id/lsp/tata-kecantikan-juwita-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tata Lingkungan Industri dan Permukiman (TLIP)",
+    "no_lisensi": "BNSP-LSP-1090-ID",
+    "no_sk": "KEP.1696/BNSP/VIII/2021",
+    "slug": "https://bnsp.go.id/lsp/tata-lingkungan-industri-dan-permukiman-tlip",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tata Sertifikasi Konstruksi Mandiri",
+    "no_lisensi": "BNSP-LSP-2645-ID",
+    "no_sk": "KEP.1743/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/tata-sertifikasi-konstruksi-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tatakelola, Risiko, dan Kepatuhan (TRK)",
+    "no_lisensi": "BNSP-LSP-2077-ID",
+    "no_sk": "KEP.0404/BNSP/II/2022",
+    "slug": "https://bnsp.go.id/lsp/tatakelola,-risiko,-dan-kepatuhan-trk",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknik Katiga Indonesia",
+    "no_lisensi": "BNSP-LSP-2681-ID",
+    "no_sk": "KEP.2323/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/teknik-katiga-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknik Lingkungan IATPI",
+    "no_lisensi": "BNSP-LSP-2441-ID",
+    "no_sk": "KEP.1209/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/teknik-lingkungan-iatpi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknik Listrik",
+    "no_lisensi": "BNSP-LSP-036-ID",
+    "no_sk": "KEP.0615/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/teknik-listrik",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknik Manajemen Industri",
+    "no_lisensi": "BNSP-LSP-1544-ID",
+    "no_sk": "KEP.2818/BNSP/XI/2024",
+    "slug": "https://bnsp.go.id/lsp/teknik-manajemen-industri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknik Tambang Indonesia",
+    "no_lisensi": "BNSP-LSP-102-ID",
+    "no_sk": "KEP.2106/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/teknik-tambang-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknisi Akuntansi",
+    "no_lisensi": "BNSP-LSP-029-ID",
+    "no_sk": "KEP.0496/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/teknisi-akuntansi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknisi Operasional Penerbangan",
+    "no_lisensi": "BNSP-LSP-2626-ID",
+    "no_sk": "KEP. 1128/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/teknisi-operasional-penerbangan",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknisi Otomotif Indonesia",
+    "no_lisensi": "BNSP-LSP-001-ID",
+    "no_sk": "KEP.01228/BNSP/V/2025",
+    "slug": "https://bnsp.go.id/lsp/teknisi-otomotif-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknisi Otomotif Profesional Indonesia (TOP Indonesia)",
+    "no_lisensi": "BNSP-LSP-349-ID",
+    "no_sk": "KEP.1105/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/teknisi-otomotif-profesional-indonesia-top-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Data Digital Indonesia",
+    "no_lisensi": "BNSP-LSP-2543-ID",
+    "no_sk": "KEP. 2382/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/teknologi-data-digital-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Informasi dan Komunikasi",
+    "no_lisensi": "BNSP-LSP-2677-ID",
+    "no_sk": "KEP.2191/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informasi-dan-komunikasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Informasi dan Komunikasi Global",
+    "no_lisensi": "BNSP-LSP-2150-ID",
+    "no_sk": "KEP.1471/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informasi-dan-komunikasi-global",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Informasi dan Komunikasi Kanira",
+    "no_lisensi": "BNSP-LSP-2761-ID",
+    "no_sk": "KEP.892/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informasi-dan-komunikasi-kanira",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "TEKNOLOGI INFORMASI NUSANTARA",
+    "no_lisensi": "BNSP-LSP-2215-ID",
+    "no_sk": "KEP.2435/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informasi-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Informatika Bisnis Digital",
+    "no_lisensi": "BNSP-LSP-2639-ID",
+    "no_sk": "KEÐ .546/BNSP/II/2026",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informatika-bisnis-digital",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Informatika Indonesia",
+    "no_lisensi": "BNSP-LSP-2213-ID",
+    "no_sk": "KBP.2367/BNSP/XI/2022",
+    "slug": "https://bnsp.go.id/lsp/teknologi-informatika-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Rekayasa dan Informatika",
+    "no_lisensi": "BNSP-LSP-2699-ID",
+    "no_sk": "KEP.2574/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/teknologi-rekayasa-dan-informatika",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Teknologi Rekayasa Industri Manufaktur",
+    "no_lisensi": "BNSP-LSP-2785-ID",
+    "no_sk": "KEP.18323/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/teknologi-rekayasa-industri-manufaktur",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tekstil dan Produk Tekstil",
+    "no_lisensi": "BNSP-LSP-237-ID",
+    "no_sk": "KEP.1895/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/tekstil-dan-produk-tekstil",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tekstil Indonesia",
+    "no_lisensi": "BNSP-LSP-048-ID",
+    "no_sk": "KEP.1744/BNSP/VII/2025",
+    "slug": "https://bnsp.go.id/lsp/tekstil-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Telecommunication Indonesia",
+    "no_lisensi": "BNSP-LSP-347-ID",
+    "no_sk": "KEP.0126/BNSP/I/2016",
+    "slug": "https://bnsp.go.id/lsp/telecommunication-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Telekomunikasi",
+    "no_lisensi": "BNSP-LSP-229-ID",
+    "no_sk": "KEP.2500-L/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/telekomunikasi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Telekomunikasi Digital Indonesia",
+    "no_lisensi": "BNSP-LSP-1596-ID",
+    "no_sk": "KEP.2935/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/telekomunikasi-digital-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Telekomunikasi Informatika Nusantara",
+    "no_lisensi": "BNSP-LSP-1403-ID",
+    "no_sk": "KEP.1906/BNSP/VIII/2024",
+    "slug": "https://bnsp.go.id/lsp/telekomunikasi-informatika-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Telekomunikasi Prima Indonesia",
+    "no_lisensi": "BNSP-LSP-1632-ID",
+    "no_sk": "KEP.0939/BNSP/IV/2025",
+    "slug": "https://bnsp.go.id/lsp/telekomunikasi-prima-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Telematika Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-002-ID",
+    "no_sk": "KEP.1002/BNSP/IV/2025",
+    "slug": "https://bnsp.go.id/lsp/telematika-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Tenaga Jasa Pelayanan Kesehatan Indohusada",
+    "no_lisensi": "BNSP-LSP-1178-ID",
+    "no_sk": "KEP.1071/BNSP/V/2021",
+    "slug": "https://bnsp.go.id/lsp/tenaga-jasa-pelayanan-kesehatan-indohusada",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tenaga Konstruksi Nasional",
+    "no_lisensi": "BNSP-LSP-2249-ID",
+    "no_sk": "KEP.2088/BNSP/IX/2025",
+    "slug": "https://bnsp.go.id/lsp/tenaga-konstruksi-nasional",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tenaga Laboratorium Penguji Indonesia (TELAPI)",
+    "no_lisensi": "BNSP-LSP-003-ID",
+    "no_sk": "KEP. 2325/BNSP/IX/2024",
+    "slug": "https://bnsp.go.id/lsp/tenaga-laboratorium-penguji-indonesia-telapi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tenaga Pelatihan Edutrain",
+    "no_lisensi": "BNSP-LSP-2476-ID",
+    "no_sk": "KEP.1173/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/tenaga-pelatihan-edutrain",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tenaga Teknik Keselamatan dan Kesehatan Kerja (T2K3) Indonesia",
+    "no_lisensi": "BNSP-LSP-118-ID",
+    "no_sk": "Kep. 2613/BNSP/XII/2021",
+    "slug": "https://bnsp.go.id/lsp/tenaga-teknik-keselamatan-dan-kesehatan-kerja-t2k3-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Tenaga Teknis Pertambangan Nusantara",
+    "no_lisensi": "BNSP-LSP-2691-ID",
+    "no_sk": "KEP.2446/BNSP/X/2025",
+    "slug": "https://bnsp.go.id/lsp/tenaga-teknis-pertambangan-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Trainer Indonesia",
+    "no_lisensi": "BNSP-LSP-646-ID",
+    "no_sk": "KEP.0299/BNSP/II/2020",
+    "slug": "https://bnsp.go.id/lsp/trainer-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "TRAINER KOMPETEN INDONESIA",
+    "no_lisensi": "BNSP-LSP-2164-ID",
+    "no_sk": "KEP.1413/BNSP/VII/2022",
+    "slug": "https://bnsp.go.id/lsp/trainer-kompeten-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Trainer Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2562-ID",
+    "no_sk": "KEP.2930/BNSP/XII/2024",
+    "slug": "https://bnsp.go.id/lsp/trainer-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Trainer Quality Indonesia",
+    "no_lisensi": "BNSP-LSP-2765-ID",
+    "no_sk": "KEP.996/BNSP/IV/2026",
+    "slug": "https://bnsp.go.id/lsp/trainer-quality-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Masa Berlaku Habis",
+    "nama": "Transformasi Animedia Nusantara",
+    "no_lisensi": "BNSP-LSP-741-ID",
+    "no_sk": "KEP.0186/BNSP/I/2023",
+    "slug": "https://bnsp.go.id/lsp/transformasi-animedia-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Transportasi dan Logistik Indonesia",
+    "no_lisensi": "BNSP-LSP-276-ID",
+    "no_sk": "KEP.1420/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/transportasi-dan-logistik-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Transportasi Global Indonesia",
+    "no_lisensi": "BNSP-LSP-1146-ID",
+    "no_sk": "KEP.1639/BNSP/VI/2026",
+    "slug": "https://bnsp.go.id/lsp/transportasi-global-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Transportasi Indonesia",
+    "no_lisensi": "BNSP-LSP-510-ID",
+    "no_sk": "KEP.1357/BNSP/VI/2024",
+    "slug": "https://bnsp.go.id/lsp/transportasi-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Triatma Pariwisata Indonesia",
+    "no_lisensi": "BNSP-LSP-019-ID",
+    "no_sk": "KEP.0508/BNSP/II/2025",
+    "slug": "https://bnsp.go.id/lsp/triatma-pariwisata-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "UMKM Profesional Indonesia",
+    "no_lisensi": "BNSP-LSP-2285-ID",
+    "no_sk": "KEP.1052/BNSP/IV/2023",
+    "slug": "https://bnsp.go.id/lsp/umkm-profesional-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Usaha Kecil Menengah Asta Bumi",
+    "no_lisensi": "BNSP-LSP-1271-ID",
+    "no_sk": "KEP.0081/ BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/usaha-kecil-menengah-asta-bumi",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Usaha Mikro Kecil Menengah dan Wirausaha Indonesia",
+    "no_lisensi": "BNSP-LSP-1420-ID",
+    "no_sk": "KEP.1249/BNSP/V/2024",
+    "slug": "https://bnsp.go.id/lsp/usaha-mikro-kecil-menengah-dan-wirausaha-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Welding Indonesia",
+    "no_lisensi": "BNSP-LSP-2553-ID",
+    "no_sk": "KEP.2543/BNSP/X/2024",
+    "slug": "https://bnsp.go.id/lsp/welding-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wellness Indonesia",
+    "no_lisensi": "BNSP-LSP-2650-ID",
+    "no_sk": "1820/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/wellness-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Widya Bahasa Nusantara",
+    "no_lisensi": "BNSP-LSP-2236-ID",
+    "no_sk": "KEP.2632/BNSP/XII/2022",
+    "slug": "https://bnsp.go.id/lsp/widya-bahasa-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wirausaha Kompeten Nusantara",
+    "no_lisensi": "BNSP-LSP-116-ID",
+    "no_sk": "KEP.2638/BNSP/XI/2025",
+    "slug": "https://bnsp.go.id/lsp/wirausaha-kompeten-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wirausaha Kreatif Mitra Mandiri",
+    "no_lisensi": "BNSP-LSP-2614-ID",
+    "no_sk": "KEP.0761/BNSP/III/2025",
+    "slug": "https://bnsp.go.id/lsp/wirausaha-kreatif-mitra-mandiri",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wirausaha Mandiri Indonesia",
+    "no_lisensi": "BNSP-LSP-2426-ID",
+    "no_sk": "KEP.0147/BNSP/I/2024",
+    "slug": "https://bnsp.go.id/lsp/wirausaha-mandiri-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wirausaha Unggul Nusantara",
+    "no_lisensi": "BNSP-LSP-2653-ID",
+    "no_sk": "KEP.1867/BNSP/VIII/2025",
+    "slug": "https://bnsp.go.id/lsp/wirausaha-unggul-nusantara",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wisata Hasanah Indonesia",
+    "no_lisensi": "BNSP-LSP-2022-ID",
+    "no_sk": "KEP.2307/BNSP/XI/2021",
+    "slug": "https://bnsp.go.id/lsp/wisata-hasanah-indonesia",
+    "kategori": "Ketiga"
+  },
+  {
+    "status": "Lisensi Aktif",
+    "nama": "Wisata Indonesia",
+    "no_lisensi": "BNSP-LSP-2294-ID",
+    "no_sk": "KEP.1252/BNSP/V/2023",
+    "slug": "https://bnsp.go.id/lsp/wisata-indonesia",
+    "kategori": "Ketiga"
+  }
+]
