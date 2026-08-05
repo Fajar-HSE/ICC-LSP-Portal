@@ -410,14 +410,6 @@ function highlight(text, query) {
 function renderHome() {
   currentView = 'home';
   var html = '';
-  // Insight bar (menggantikan duplikasi statistik header)
-  var multiLspCount = skemaList.filter(function(s) { return s.jml_lsp > 1; }).length;
-  var topLsp = lspList.slice().sort(function(a,b){ return b.jml_skema - a.jml_skema; })[0];
-  html += '<div class="summary-bar">' +
-    '<div class="summary-item"><div class="num">' + multiLspCount + '</div><div class="lbl">Skema di &gt;1 LSP</div></div>' +
-    '<div class="summary-item accent"><div class="num" style="font-size:16px;line-height:1.2">' + (topLsp ? esc(topLsp.nama) : '-') + '</div><div class="lbl">LSP Skema Terbanyak (' + (topLsp ? topLsp.jml_skema : 0) + ' skema)</div></div>' +
-    '<div class="summary-item"><div class="num" style="font-size:16px">' + (lastUpdated || '-') + '</div><div class="lbl">Data Terakhir Diperbarui</div></div>' +
-    '</div>';
 
   // Filter status
   html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2>' +
