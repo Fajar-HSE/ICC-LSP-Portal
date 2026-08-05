@@ -43,7 +43,7 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,.15);
 }
 .header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.header-brand { display: flex; align-items: center; gap: 12px; }
+.header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; cursor: pointer; }
 .header-brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
 .header-brand span { font-size: 13px; opacity: .85; font-weight: 500; }
 .logo-img { height: 42px; width: auto; display: block; }
@@ -53,7 +53,7 @@ body {
 .header-stats .num { font-size: 20px; font-weight: 700; }
 .header-stats .stat-aktif { color: #16a34a; }
 .header-stats .stat-habis { color: #dc2626; }
-.header-stats .lbl { opacity: .75; font-size: 11px; }
+.header-stats .lbl { color: #dbeafe; font-size: 11px; }
 .search-section {
   max-width: 1280px; margin: 0 auto; padding: 20px 32px 0;
 }
@@ -99,6 +99,12 @@ body {
 }
 .autocomplete-item .highlight { color: var(--primary); font-weight: 600; }
 .autocomplete-item .lsp-name { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.autocomplete-empty { padding: 12px 14px; font-size: 13px; color: var(--text-light); text-align: center; }
+.th-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.th-sortable:hover { background: var(--primary-light); }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-pills .lsp-pill { padding: 5px 14px; font-size: 12px; }
 .main { max-width: 1280px; margin: 0 auto; padding: 20px 32px 40px; }
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 24px; }
 .card {
@@ -197,13 +203,13 @@ tr:last-child td { border-bottom: none; }
 
 <header class="header">
   <div class="header-inner">
-    <div class="header-brand">
+    <a class="header-brand" href="#" onclick="goHome(event)" aria-label="Kembali ke beranda">
       <img src="logo_icc.png" alt="ICC Logo" class="logo-img" onerror="this.style.display='none';var b=document.createElement('span');b.className='logo-fallback';b.textContent='ICC';b.setAttribute('role','img');b.setAttribute('aria-label','ICC Logo');this.parentNode.appendChild(b);">
       <div>
         <h1>ICC LSP Portal</h1>
         <span>Lembaga Sertifikasi Profesi — BNSP</span>
       </div>
-    </div>
+    </a>
     <div class="header-stats" id="headerStats">
       <div class="stat"><div class="num" id="statLsp">-</div><div class="lbl">LSP</div></div>
       <div class="stat"><div class="num" id="statSkema">-</div><div class="lbl">Jenis Skema</div></div>
@@ -259,6 +265,12 @@ var acLspSelected = -1;
 var acSkemaSelected = -1;
 var currentView = 'home';  // 'home' | 'lsp' | 'skema'
 var currentLspId = null;
+var lspFilter = 'all';     // filter status di home: 'all' | 'aktif' | 'habis'
+var lastUpdated = '';      // tanggal update data terakhir (max last_checked)
+var unitRows = [];         // rows unit aktif utk sorting
+var unitSortKey = 'kode';  // 'kode' | 'nama'
+var unitSortDir = 1;       // 1 asc | -1 desc
+var unitLspName = '';      // nama LSP utk header tabel unit
 
 // ===== FETCH WITH PAGINATION =====
 function fetchAll(table, select, pageSize) {
@@ -292,7 +304,7 @@ function loadData() {
     '<div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>';
 
   // Fetch all 3 tables in parallel with full pagination
-  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status');
+  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
   var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
   var p3 = fetchAll('unit_kompetensi', 'count');
 
@@ -308,8 +320,21 @@ function loadData() {
 
     // Build LSP list
     lspList = lspRows.map(function(l) {
-      return { nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '' };
+      return {
+        nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
+        no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
+      };
     });
+
+    // Update timestamp terakhir (max last_checked)
+    var latest = '';
+    lspRows.forEach(function(l) {
+      if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
+    });
+    if (latest) {
+      var d = new Date(latest);
+      lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
 
     // Build LSP name map
     lspMap = {};
@@ -385,14 +410,30 @@ function highlight(text, query) {
 function renderHome() {
   currentView = 'home';
   var html = '';
+  // Insight bar (menggantikan duplikasi statistik header)
+  var multiLspCount = skemaList.filter(function(s) { return s.jml_lsp > 1; }).length;
+  var topLsp = lspList.slice().sort(function(a,b){ return b.jml_skema - a.jml_skema; })[0];
   html += '<div class="summary-bar">' +
-    '<div class="summary-item"><div class="num">' + lspList.length + '</div><div class="lbl">Total LSP</div></div>' +
-    '<div class="summary-item accent"><div class="num">' + skemaList.length + '</div><div class="lbl">Jenis Skema</div></div>' +
-    '<div class="summary-item"><div class="num">' + document.getElementById('statUnit').textContent + '</div><div class="lbl">Unit Kompetensi</div></div>' +
+    '<div class="summary-item"><div class="num">' + multiLspCount + '</div><div class="lbl">Skema di &gt;1 LSP</div></div>' +
+    '<div class="summary-item accent"><div class="num" style="font-size:16px;line-height:1.2">' + (topLsp ? esc(topLsp.nama) : '-') + '</div><div class="lbl">LSP Skema Terbanyak (' + (topLsp ? topLsp.jml_skema : 0) + ' skema)</div></div>' +
+    '<div class="summary-item"><div class="num" style="font-size:16px">' + (lastUpdated || '-') + '</div><div class="lbl">Data Terakhir Diperbarui</div></div>' +
     '</div>';
 
-  html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2></div><div class="cards-grid">';
-  var top = lspList.slice().sort(function(a,b){ return b.jml_skema - a.jml_skema; }).slice(0, 6);
+  // Filter status
+  html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2>' +
+    '<div class="filter-pills">' +
+      '<button class="lsp-pill' + (lspFilter === 'all' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'all\')"><span class="check">✓ </span>Semua</button>' +
+      '<button class="lsp-pill' + (lspFilter === 'aktif' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'aktif\')"><span class="check">✓ </span>Aktif</button>' +
+      '<button class="lsp-pill' + (lspFilter === 'habis' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'habis\')"><span class="check">✓ </span>Habis</button>' +
+    '</div></div><div class="cards-grid">';
+  var top = lspList.slice().filter(function(l) {
+    if (lspFilter === 'aktif') return l.status === 'Lisensi Aktif';
+    if (lspFilter === 'habis') return l.status === 'Masa Berlaku Habis';
+    return true;
+  }).sort(function(a,b){ return b.jml_skema - a.jml_skema; }).slice(0, 6);
+  if (top.length === 0) {
+    html += '<div class="empty-state" style="padding:30px"><p>Tidak ada LSP dengan filter ini</p></div>';
+  }
   top.forEach(function(l){
     html += '<div class="card card-lsp card-clickable" onclick="showLsp(\'' + esc(l.nama) + '\')">' +
       '<div class="title">' + esc(l.nama) + '</div>' +
@@ -427,6 +468,26 @@ function renderHome() {
   }
 }
 
+// ===== FILTER STATUS + GO HOME =====
+function filterLsp(status) {
+  lspFilter = status;
+  renderHome();
+}
+
+function goHome(e) {
+  if (e) e.preventDefault();
+  // reset kedua pencarian & autocomplete
+  if (searchLspInput) searchLspInput.value = '';
+  if (searchSkemaInput) searchSkemaInput.value = '';
+  if (clearLsp) clearLsp.classList.remove('show');
+  if (clearSkema) clearSkema.classList.remove('show');
+  if (acLsp) acLsp.classList.remove('show');
+  if (acSkema) acSkema.classList.remove('show');
+  lspFilter = 'all';
+  renderHome();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 var skemaPageSize = 24;
 var skemaCurrentPage = 1;
 
@@ -450,7 +511,7 @@ function renderSkemaPagination(page) {
   var phtml = '';
   phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
   for (var p = Math.max(1, page - 2); p <= Math.min(totalPages, page + 2); p++) {
-    phtml += '<button class="page-btn' type='button' + (p === page ? ' active' : '') + '" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
+    phtml += '<button class="page-btn' + (p === page ? ' active' : '') + '" type="button" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
   }
   phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
   document.getElementById('skemaPagination').innerHTML = phtml;
@@ -468,7 +529,11 @@ searchLspInput.addEventListener('input', function() {
   var starts = lspList.filter(function(l) { return l.nama.toLowerCase().startsWith(q); });
   var includes = lspList.filter(function(l) { return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
   var matches = starts.concat(includes).slice(0, 8);
-  if (matches.length === 0) { acLsp.classList.remove('show'); return; }
+  if (matches.length === 0) {
+    acLsp.innerHTML = '<div class="autocomplete-empty">Tidak ditemukan</div>';
+    acLsp.classList.add('show');
+    return;
+  }
   acLspSelected = -1;
   var html = '';
   matches.forEach(function(m) {
@@ -516,7 +581,11 @@ searchSkemaInput.addEventListener('input', function() {
   var starts = skemaList.filter(function(s) { return s.nama.toLowerCase().startsWith(q); });
   var includes = skemaList.filter(function(s) { return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
   var matches = starts.concat(includes).slice(0, 8);
-  if (matches.length === 0) { acSkema.classList.remove('show'); return; }
+  if (matches.length === 0) {
+    acSkema.innerHTML = '<div class="autocomplete-empty">Tidak ditemukan</div>';
+    acSkema.classList.add('show');
+    return;
+  }
   acSkemaSelected = -1;
   var html = '';
   matches.forEach(function(m) {
@@ -605,17 +674,48 @@ function showSkemaDetail(skemaName, lspIdx, btnEl) {
   fetch(url, {
     headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
   }).then(function(r) { return r.json(); }).then(function(units) {
-    var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
-      '<span class="count">' + esc(opt.lsp) + ' — ' + units.length + ' unit</span></div>';
-    html += '<div class="table-wrap"><table><thead><tr><th style="width:40px">No</th><th style="width:220px">Kode Unit</th><th>Judul Unit Kompetensi</th></tr></thead><tbody>';
-    units.forEach(function(u, idx) {
-      html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
-    });
-    html += '</tbody></table></div>';
-    document.getElementById('skemaUnitTable').innerHTML = html;
+    unitRows = units;
+    unitSortKey = 'kode';
+    unitSortDir = 1;
+    unitLspName = opt.lsp;
+    renderUnitTable();
   }).catch(function() {
     document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
   });
+}
+
+// ===== UNIT TABLE (sortable) =====
+function renderUnitTable() {
+  var rows = unitRows.slice().sort(function(a, b) {
+    var va = String(a[unitSortKey] || '').toLowerCase();
+    var vb = String(b[unitSortKey] || '').toLowerCase();
+    if (va < vb) return -unitSortDir;
+    if (va > vb) return unitSortDir;
+    return 0;
+  });
+  var arrow = function(k) { return unitSortKey === k ? (unitSortDir === 1 ? ' ▲' : ' ▼') : ''; };
+  var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
+    '<span class="count">' + esc(unitLspName) + ' — ' + unitRows.length + ' unit</span></div>';
+  html += '<div class="table-wrap"><table><thead><tr>' +
+    '<th style="width:40px">No</th>' +
+    '<th style="width:220px" class="th-sortable" onclick="sortUnits(\'kode\')" aria-label="Urutkan kode unit">Kode Unit' + arrow('kode') + '</th>' +
+    '<th class="th-sortable" onclick="sortUnits(\'nama\')" aria-label="Urutkan judul unit">Judul Unit Kompetensi' + arrow('nama') + '</th>' +
+    '</tr></thead><tbody>';
+  rows.forEach(function(u, idx) {
+    html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
+  });
+  html += '</tbody></table></div>';
+  document.getElementById('skemaUnitTable').innerHTML = html;
+}
+
+function sortUnits(key) {
+  if (unitSortKey === key) {
+    unitSortDir = -unitSortDir;
+  } else {
+    unitSortKey = key;
+    unitSortDir = 1;
+  }
+  renderUnitTable();
 }
 
 // ===== LSP PAGINATION STATE =====
@@ -648,7 +748,7 @@ function renderLspSkema(page) {
     html += '<div class="pagination">';
     html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
     for (var p = 1; p <= totalPages; p++) {
-      html += '<button class="page-btn' type='button' + (p === page ? ' active' : '') + '" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
+      html += '<button class="page-btn' + (p === page ? ' active' : '') + '" type="button" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
     }
     html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
     html += '</div>';
@@ -694,6 +794,17 @@ function showLsp(name) {
        lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626;font-size:13px;padding:6px 14px">✕ Masa Berlaku Habis</span>' : '') +
       '<span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
     '</div></div></div>';
+
+  html += '<div class="section-header"><h2>Detail Lisensi</h2></div>' +
+    '<div class="table-wrap" style="margin-bottom:20px"><table><tbody>' +
+    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">Status Lisensi</th><td>' +
+      (lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Lisensi Aktif</span>' :
+       lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Masa Berlaku Habis</span>' : esc(lsp.status || '—')) +
+    '</td></tr>' +
+    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">No SK</th><td class="kode-cell">' + esc(lsp.no_sk || '—') + '</td></tr>' +
+    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">No Lisensi</th><td class="kode-cell">' + esc(lsp.no_lisensi || '—') + '</td></tr>' +
+    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">Terakhir Diperiksa</th><td>' + esc(lsp.last_checked ? new Date(lsp.last_checked).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '—') + '</td></tr>' +
+    '</tbody></table></div>';
 
   html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lspSkemaNames.length + ' skema</span></div>';
 

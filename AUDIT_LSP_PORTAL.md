@@ -39,6 +39,20 @@
 | 9 | **CI scraper gagal di GitHub Actions**: hardcoded path Windows `C:\Users\DELL\...` di `scrape_status_bnsp.py` & `scrape_status_bnsp_playwright.py` | 🟠 High | CI / Functional | ✅ FIXED |
 | 10 | **Kredensial bocor di repo PUBLIC** (password DB di `check_status.js`, service key fallback di `update_db.py`, management key di `run_migration.py`) | 🔴 Critical | Security | ⚠️ FIXED (file) — **WAJIB rotasi** (lihat bawah) |
 
+## Perbaikan UX Batch 2 (1–7) — `index.html`
+
+Semua di-commit terpisah, tervalidasi `html-validate` (0 error) + `node --check` (JS syntax OK) + smoke test DOM stub (9/9 test).
+
+1. **Logo + judul clickable → Beranda** — `.header-brand` jadi `<a onclick="goHome(event)">`; `goHome()` reset kedua pencarian, autocomplete, filter, render ulang home + scroll ke atas. (Wayfinding)
+2. **Detail Lisensi di halaman LSP** — tabel baru: Status Lisensi, **No SK**, **No Lisensi**, **Terakhir Diperiksa** (dari kolom `no_sk`/`no_lisensi`/`last_checked`; terkonfirmasi terisi 295/295 di DB). Nilai kosong → "—".
+3. **Summary-bar → insight** — ganti 3 kartu duplikat header dengan: **Skema di >1 LSP** (jumlah skema multi-LSP), **LSP Skema Terbanyak** (nama + jumlah), **Data Terakhir Diperbarui** (max `last_checked`).
+4. **Autocomplete empty state** — ketik tanpa hasil → dropdown "Tidak ditemukan" (sebelumnya diam).
+5. **Filter status LSP di home** — pill **Semua / Aktif / Habis**; kartu "LSP dengan Skema Terbanyak" difilter sesuai status, empty-state bila kosong.
+6. **Kontras + fokus keyboard** — label header stats `opacity:.75` → warna solid `#dbeafe`; global `:focus-visible` outline oranye untuk button/link/tabindex.
+7. **Tabel unit sortable** — klik header "Kode Unit"/"Judul Unit" mengurutkan (▲/▼), toggle asc/desc, nomor urut menyesuaikan.
+
+**Bonus fix regresi:** 2 string paging dinamis (`renderSkemaPagination`, `renderLspSkema`) sebelumnya berisi `type='button'` yang memecah sintaks JS string saat dijalankan → diperbaiki ke `'" type="button" onclick=...'` (valid).
+
 ---
 
 ## Detail Perbaikan (diffs applied to `index.html`)
