@@ -6,7 +6,7 @@ import json, re, sys, time
 from urllib.request import urlopen, Request
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-OUT = "C:\\Users\\DELL\\LSP-Dashboard\\bnsp_status_all.json"
+OUT = "bnsp_status_all.json"  # relative — bekerja di Windows & Linux (CI)
 
 def fetch(url):
     req = Request(url, headers=HEADERS)
