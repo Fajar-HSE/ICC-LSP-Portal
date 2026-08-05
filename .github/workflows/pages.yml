@@ -7,7 +7,7 @@ on:
 
 concurrency:
   group: pages
-  url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+  cancel-in-progress: false
 
 jobs:
   build-deploy:
