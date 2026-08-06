@@ -353,7 +353,7 @@ tr:last-child td { border-bottom: none; }
 #landing .preview-tag small{display:block;font-weight:600;opacity:.75;margin-top:2px}
 
 /* footer */
-footer{background:var(--blue-ink);color:#cdd9e6;padding:48px 0 40px}
+footer{background:linear-gradient(135deg,#0D47A1 0%,#073e6d 100%);color:#cdd9e6;padding:48px 0 40px;border-top:4px solid #F47920;box-shadow:0 8px 28px rgba(13,71,161,.22)}
 #landing .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
 #landing .foot-brand{display:flex;align-items:center;gap:12px}
 #landing .foot-brand #landing .brand-mark{background:#fff}
@@ -391,14 +391,22 @@ footer{background:var(--blue-ink);color:#cdd9e6;padding:48px 0 40px}
   #landing .btn:hover{transform:none}
 }
 
-/* ===== BRIDGE ===== */
-
 /* ===== BRIDGE: landing → portal ===== */
 #cari{scroll-margin-top:90px}
-/* landing → portal visual bridge */
-#landing > section:last-of-type{border-bottom:1px solid #e2e8f0}
-.header{border-top:3px solid #F47920;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-/* portal header slightly elevated on scroll past landing */
+/* landing → portal visual connection:
+   footer biru navy ICC menyatu dengan portal header oranye */
+#landing > footer{
+  background:linear-gradient(135deg, #0D47A1 0%, #073e6d 100%);
+  border-top:4px solid #F47920;
+  box-shadow:0 8px 28px rgba(0,75,135,.16);
+}
+#landing > section:last-of-type{border-bottom:1px solid #e0e0e0}
+.header{
+  border-top:4px solid #F47920;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  background:#fff;
+}
+/* bridge shadow antar footer landing dan header portal saat scroll */
 @media(min-width:900px){
   .header{backdrop-filter:blur(10px)}
 }
