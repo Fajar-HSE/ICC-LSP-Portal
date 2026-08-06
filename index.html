@@ -357,11 +357,12 @@ function loadData() {
       if (m) l.jml_skema = Object.keys(m).length;
     });
 
-    // Group by name
+    // Group by name (case-insensitive key, display = kapitalisasi pertama ditemui)
     var skemaGroup = {};
     skemaRows.forEach(function(s) {
-      if (!skemaGroup[s.nama]) skemaGroup[s.nama] = { nama: s.nama, lsps: {} };
-      skemaGroup[s.nama].lsps[s.lsp_id] = {
+      var key = s.nama.toLowerCase();
+      if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
+      skemaGroup[key].lsps[s.lsp_id] = {
         id_skema: s.id_skema,
         jml_unit: s.jml_unit || 0,
         skema_id: s.id,
@@ -369,8 +370,8 @@ function loadData() {
       };
     });
 
-    skemaList = Object.keys(skemaGroup).sort().map(function(nama) {
-      var g = skemaGroup[nama];
+    skemaList = Object.keys(skemaGroup).sort().map(function(key) {
+      var g = skemaGroup[key];
       var lspArr = Object.keys(g.lsps).map(function(lid) {
         return {
           lsp: lspMap[lid] || 'Unknown',
