@@ -324,115 +324,121 @@ function fetchAll(table, select, pageSize) {
 }
 
 // ===== LOAD =====
+function buildData(lspRows, skemaRows, unitCount) {
+  // Build LSP list
+  lspList = lspRows.map(function(l) {
+    return {
+      nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
+      no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
+    };
+  });
+
+  // Timestamp terakhir (max last_checked)
+  var latest = '';
+  lspRows.forEach(function(l) {
+    if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
+  });
+  if (latest) {
+    var d = new Date(latest);
+    lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  lspMap = {};
+  lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
+
+  // All raw skema rows for per-LSP filtering + unit fetch
+  skemaAllRows = skemaRows;
+
+  // Recount jml_skema per LSP from actual skema rows (kolom DB bisa stale)
+  var lspSkemaCount = {};
+  skemaRows.forEach(function(s) {
+    var key = String(s.lsp_id);
+    if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
+    lspSkemaCount[key][s.nama] = true;
+  });
+  lspList.forEach(function(l) {
+    var m = lspSkemaCount[String(l.id)];
+    if (m) l.jml_skema = Object.keys(m).length;
+  });
+
+  // Group skema by name (case-insensitive key → no 'DATA ANALYST' / 'Data Analyst' dupes)
+  var skemaGroup = {};
+  skemaRows.forEach(function(s) {
+    var key = s.nama.toLowerCase();
+    if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
+    skemaGroup[key].lsps[s.lsp_id] = {
+      id_skema: s.id_skema,
+      jml_unit: s.jml_unit || 0,
+      skema_id: s.id,
+      lsp_id: parseInt(s.lsp_id)
+    };
+  });
+
+  skemaList = Object.keys(skemaGroup).sort().map(function(key) {
+    var g = skemaGroup[key];
+    var lspArr = Object.keys(g.lsps).map(function(lid) {
+      return {
+        lsp: lspMap[lid] || 'Unknown',
+        lsp_id: parseInt(lid),
+        id_skema: g.lsps[lid].id_skema,
+        jml_unit: g.lsps[lid].jml_unit,
+        skema_id: g.lsps[lid].skema_id
+      };
+    });
+    lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
+    return {
+      nama: g.nama,
+      jml_lsp: lspArr.length,
+      total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
+      lsps: lspArr
+    };
+  });
+
+  // Stats
+  var aktif = 0, habis = 0;
+  lspList.forEach(function(l) {
+    if (l.status === 'Lisensi Aktif') aktif++;
+    else if (l.status === 'Masa Berlaku Habis') habis++;
+  });
+  document.getElementById('statLsp').textContent = lspList.length;
+  document.getElementById('statSkema').textContent = skemaList.length;
+  var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
+  document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
+  document.getElementById('statAktif').textContent = aktif;
+  document.getElementById('statHabis').textContent = habis;
+}
+
 function loadData() {
   document.getElementById('mainContent').innerHTML =
     '<div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>';
 
-  // Fetch all 3 tables in parallel with full pagination
-  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
-  var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
-  var p3 = fetchAll('unit_kompetensi', 'count');
-
-  Promise.all([p1, p2, p3]).then(function(results) {
-    // If unit_kompetensi count query failed, try counting rows
-    var unitCount = 0;
-    if (results[2] && results[2][0] && results[2][0].count !== undefined) {
-      unitCount = parseInt(results[2][0].count, 10);
-    }
-
-    var lspRows = results[0];
-    var skemaRows = results[1];
-
-    // Build LSP list
-    lspList = lspRows.map(function(l) {
-      return {
-        nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
-        no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
-      };
-    });
-
-    // Update timestamp terakhir (max last_checked)
-    var latest = '';
-    lspRows.forEach(function(l) {
-      if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
-    });
-    if (latest) {
-      var d = new Date(latest);
-      lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-    }
-
-    // Build LSP name map
-    lspMap = {};
-    lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
-
-    // Save all raw skema rows for per-LSP filtering
-    skemaAllRows = skemaRows;
-
-    // Hitung ulang jml_skema per LSP dari data AKTUAL (tabel skema) —
-    // kolom lsp.jml_skema di DB bisa stale/basi. Fallback: tetap kolom DB bila kosong.
-    var lspSkemaCount = {};
-    skemaRows.forEach(function(s) {
-      var key = String(s.lsp_id);
-      if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
-      lspSkemaCount[key][s.nama] = true;   // unik per nama skema
-    });
-    lspList.forEach(function(l) {
-      var m = lspSkemaCount[String(l.id)];
-      if (m) l.jml_skema = Object.keys(m).length;
-    });
-
-    // Group by name (case-insensitive key, display = kapitalisasi pertama ditemui)
-    var skemaGroup = {};
-    skemaRows.forEach(function(s) {
-      var key = s.nama.toLowerCase();
-      if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
-      skemaGroup[key].lsps[s.lsp_id] = {
-        id_skema: s.id_skema,
-        jml_unit: s.jml_unit || 0,
-        skema_id: s.id,
-        lsp_id: parseInt(s.lsp_id)
-      };
-    });
-
-    skemaList = Object.keys(skemaGroup).sort().map(function(key) {
-      var g = skemaGroup[key];
-      var lspArr = Object.keys(g.lsps).map(function(lid) {
-        return {
-          lsp: lspMap[lid] || 'Unknown',
-          lsp_id: parseInt(lid),
-          id_skema: g.lsps[lid].id_skema,
-          jml_unit: g.lsps[lid].jml_unit,
-          skema_id: g.lsps[lid].skema_id
-        };
+  // 1. Coba data statis (data.json) — aman di static hosting (no CORS)
+  fetch('data.json', { cache: 'no-store' })
+    .then(function(r) {
+      if (!r.ok) throw new Error('no static data');
+      return r.json();
+    })
+    .then(function(d) {
+      buildData(d.lsp, d.skema, d.unit_total);
+      renderHome();
+    })
+    .catch(function() {
+      // 2. Fallback: fetch langsung dari Supabase (CORS-block di live browser)
+      var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
+      var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
+      var p3 = fetchAll('unit_kompetensi', 'count');
+      Promise.all([p1, p2, p3]).then(function(results) {
+        var unitCount = 0;
+        if (results[2] && results[2][0] && results[2][0].count !== undefined) {
+          unitCount = parseInt(results[2][0].count, 10);
+        }
+        buildData(results[0], results[1], unitCount);
+        renderHome();
+      }).catch(function(e) {
+        document.getElementById('mainContent').innerHTML =
+          '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
       });
-      lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
-      return {
-        nama: nama,
-        jml_lsp: lspArr.length,
-        total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
-        lsps: lspArr
-      };
     });
-
-    // Update stats
-    var aktif = 0, habis = 0;
-    lspList.forEach(function(l) {
-      if (l.status === 'Lisensi Aktif') aktif++;
-      else if (l.status === 'Masa Berlaku Habis') habis++;
-    });
-    document.getElementById('statLsp').textContent = lspList.length;
-    document.getElementById('statSkema').textContent = skemaList.length;
-    // Fallback: jumlah unit = penjumlahan jml_unit semua skema (bukan jumlah baris skema)
-    var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
-    document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
-    document.getElementById('statAktif').textContent = aktif;
-    document.getElementById('statHabis').textContent = habis;
-
-    renderHome();
-  }).catch(function(e) {
-    document.getElementById('mainContent').innerHTML =
-      '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
-  });
 }
 
 // ===== HELPERS =====

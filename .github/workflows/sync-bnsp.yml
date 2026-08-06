@@ -41,6 +41,9 @@ jobs:
           python -c "import json; d=json.load(open('skema_list.json')); print('skema total:', sum(len(v) for v in d.values()))"
           python -c "import json; d=json.load(open('skema_units.json')); print('units skema:', len(d), 'unit total:', sum(len(v) for v in d.values()))"
 
+      - name: Dump static data.json (untuk hosting static, no CORS)
+        run: python dump_static.py
+
       - name: Commit & push
         env:
           GIT_AUTHOR_NAME: github-actions
@@ -48,7 +51,7 @@ jobs:
         run: |
           git config user.name "$GIT_AUTHOR_NAME"
           git config user.email "$GIT_AUTHOR_EMAIL"
-          git add bnsp_status_all.json bnsp_status_p3.json skema_list.json skema_units.json
+          git add bnsp_status_all.json bnsp_status_p3.json skema_list.json skema_units.json data.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: BNSP weekly refresh"
             git push
