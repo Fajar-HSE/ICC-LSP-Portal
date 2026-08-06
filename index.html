@@ -273,27 +273,51 @@ var unitSortKey = 'kode';  // 'kode' | 'nama'
 var unitSortDir = 1;       // 1 asc | -1 desc
 var unitLspName = '';      // nama LSP utk header tabel unit
 
-// ===== FETCH WITH PAGINATION =====
+// ===== FETCH WITH PAGINATION (CORS-proxy fallback untuk GitHub Pages) =====
+function _buildSbUrl(table, select) {
+  return SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
+}
+function _sbHeaders(start, end) {
+  return {
+    apikey: SB_KEY,
+    Authorization: 'Bearer ' + SB_KEY,
+    Accept: 'application/json',
+    Range: start + '-' + end
+  };
+}
+// fetch JSON dari Supabase REST; jatuh ke CORS proxy bila origin diblokir
+function sbQuery(path) {
+  var url = SB_URL + '/rest/v1/' + path;
+  return fetch(url, { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' } })
+    .then(function(r) {
+      if (!r.ok && (r.status === 401 || r.status === 0)) {
+        return fetch('https://corsproxy.io/?' + encodeURIComponent(url), { headers: { 'Accept': 'application/json' } }).then(function(r2) { return r2.json(); });
+      }
+      return r.json();
+    });
+}
 function fetchAll(table, select, pageSize) {
   pageSize = pageSize || 1000;
   var results = [];
   function getPage(start) {
     var end = start + pageSize - 1;
-    var url = SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
-    return fetch(url, {
-      headers: {
-        apikey: SB_KEY,
-        Authorization: 'Bearer ' + SB_KEY,
-        Accept: 'application/json',
-        Range: start + '-' + end
+    var url = _buildSbUrl(table, select);
+    var headers = _sbHeaders(start, end);
+    return fetch(url, { headers: headers }).then(function(r) {
+      // Fallback ke CORS proxy bila origin diblokir (GitHub Pages -> Supabase CORS 401)
+      if (!r.ok && (r.status === 401 || r.status === 0)) {
+        var proxied = 'https://corsproxy.io/?' + encodeURIComponent(url);
+        return fetch(proxied, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        }).then(function(r2) { return r2.json(); });
       }
-    }).then(function(r) {
-      return r.json().then(function(data) {
-        if (!data || !data.length) return results;
-        results = results.concat(data);
-        if (data.length < pageSize) return results;
-        return getPage(start + pageSize);
-      });
+      return r.json();
+    }).then(function(data) {
+      if (!data || !data.length) return results;
+      results = results.concat(data);
+      if (data.length < pageSize) return results;
+      return getPage(start + pageSize);
     });
   }
   return getPage(0);
@@ -710,10 +734,7 @@ function showSkemaDetail(skemaName, lspIdx, btnEl) {
     '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
 
   // Fetch units for this skema
-  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc';
-  fetch(url, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r) { return r.json(); }).then(function(units) {
+  sbQuery('unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc').then(function(units) {
     unitRows = units;
     unitSortKey = 'kode';
     unitSortDir = 1;
@@ -880,10 +901,7 @@ function showLspSkemaUnits(name) {
 
   unitRows = [];
   unitLspName = currentLspName;
-  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc';
-  fetch(url, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r) { return r.json(); }).then(function(units) {
+  sbQuery('unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc').then(function(units) {
     unitRows = units;
     unitSortKey = 'kode';
     unitSortDir = 1;
