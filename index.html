@@ -197,452 +197,9 @@ tr:last-child td { border-bottom: none; }
   .search-bar { flex-direction: column; }
   .cards-grid { grid-template-columns: 1fr; }
 }
-
-/* ===== LANDING (scoped) ===== */
-
-#landing{
-  --blue:#004B87;
-  --blue-dark:#00335e;
-  --blue-ink:#083a66;
-  --blue-soft:#e8f1fb;
-  --orange:#F47920;
-  --orange-dark:#d46510;
-  --red:#E4002B;
-  --ink:#12202f;
-  --muted:#55677a;
-  --line:#e3e9f0;
-  --bg:#ffffff;
-  --bg-soft:#eef3f9;
-  --card:#ffffff;
-  --ok:#16a34a;
-  --radius:20px;
-  --shadow:0 20px 60px rgba(8,58,102,.10);
-  --shadow-sm:0 8px 30px rgba(8,58,102,.08);
-  --container:1160px;
-  --ease:cubic-bezier(.22,1,.36,1);
-}
-#landing .container{max-width:var(--container);margin:0 auto;padding:0 24px}
-#landing .accent{color:var(--blue)}
-#landing .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* skip link */
-#landing .skip-link{position:fixed;top:-48px;left:16px;z-index:200;background:var(--blue);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;transition:top .2s}
-#landing .skip-link:focus{top:14px}
-
-/* buttons */
-#landing .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  font-weight:700;border-radius:14px;padding:15px 26px;font-size:1rem;cursor:pointer;
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),border-color .25s;
-  border:2px solid transparent;white-space:nowrap;
-}
-#landing .btn:active{transform:translateY(1px) scale(.985)}
-#landing .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(0,75,135,.30)}
-#landing .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 18px 38px rgba(0,75,135,.38)}
-#landing .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue);box-shadow:var(--shadow-sm)}
-#landing .btn-outline:hover{background:var(--blue-soft);transform:translateY(-2px)}
-#landing .btn-ghost{background:var(--card);color:var(--blue);box-shadow:var(--shadow-sm);border-color:var(--line)}
-#landing .btn-ghost:hover{border-color:var(--blue);transform:translateY(-2px)}
-#landing .icon-arrow{transition:transform .25s var(--ease)}
-#landing .btn:hover #landing .icon-arrow{transform:translateX(4px)}
-
-/* nav */
-#landing .navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-#landing .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--container);margin:0 auto;padding:0 24px}
-#landing .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue);font-size:1.15rem}
-#landing .brand-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--blue),#2f74c4);display:grid;place-items:center;flex-shrink:0;box-shadow:0 6px 14px rgba(0,75,135,.32)}
-#landing .brand-mark svg{width:22px;height:22px}
-#landing .brand small{display:block;font-size:.66rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
-#landing .nav-links{display:flex;align-items:center;gap:26px}
-#landing .nav-links a{font-weight:600;color:var(--muted);font-size:.95rem;transition:color .2s}
-#landing .nav-links a:hover{color:var(--blue)}
-#landing .nav-cta{padding:11px 20px;border-radius:11px}
-
-/* hero */
-#landing .hero{position:relative;padding:56px 0 84px;overflow:hidden}
-#landing .hero-bg{position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(58% 52% at 84% 12%,rgba(0,106,196,.13),transparent 60%),
-  radial-gradient(46% 44% at 4% 92%,rgba(244,121,32,.09),transparent 62%),
-  linear-gradient(180deg,#f5f9ff 0%,#ffffff 72%)}
-#landing .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
-#landing .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue);border:1px solid #d5e6f7;font-weight:700;font-size:.82rem;padding:8px 15px;border-radius:999px;margin-bottom:22px}
-#landing .dot-live{width:8px;height:8px;border-radius:50%;background:var(--ok);position:relative}
-#landing .dot-live::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:rgba(22,163,74,.25);animation:pulse 2.4s infinite}
-@keyframes pulse{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.5);opacity:0}}
-#landing .hero h1{font-size:clamp(2.15rem,4.6vw,3.35rem);line-height:1.08;letter-spacing:-.02em;font-weight:800;color:var(--blue-ink)}
-#landing .hero h1 #landing .line{color:var(--orange)}
-#landing .hero p.lead{font-size:1.13rem;color:var(--muted);max-width:34ch;margin:22px 0 30px;line-height:1.65}
-#landing .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-
-/* stats grid */
-#landing .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:84px 0 0}
-#landing .stat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
-#landing .stat-card #landing .stat-num{font-size:2.2rem;font-weight:800;color:var(--blue);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-#landing .stat-card #landing .stat-lbl{font-size:.9rem;color:var(--muted);font-weight:600;margin-top:4px}
-#landing .stat-card.warn #landing .stat-num{color:var(--orange)}
-#landing .stat-card.warn #landing .stat-num::after{content:"";position:absolute;top:0;right:0;width:56px;height:56px;background:radial-gradient(circle at 100% 0,rgba(244,121,32,.22),transparent 70%)}
-#landing .stat-card.ok #landing .stat-num{color:var(--ok)}
-#landing .stat-card.ok #landing .stat-num::after{content:"";position:absolute;top:0;right:0;width:56px;height:56px;background:radial-gradient(circle at 100% 0,rgba(22,163,74,.20),transparent 70%)}
-#landing .stat-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
-#landing .stat-card.warn::before{background:var(--orange)}
-#landing .stat-card.ok::before{background:var(--ok)}
-
-/* features */
-#landing .section{padding:88px 0}
-#landing .section-head{max-width:640px;margin-bottom:52px}
-#landing .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
-#landing .kicker{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-#landing .kicker::before{content:"";width:22px;height:2px;background:var(--orange)}
-#landing .center #landing .kicker::after{content:"";width:22px;height:2px;background:var(--orange)}
-#landing .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:var(--blue-ink);letter-spacing:-.015em;line-height:1.15}
-#landing .section-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
-
-#landing .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-#landing .feature-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s, border-color .3s}
-#landing .feature-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(8,58,102,.13);border-color:#cfe0f2}
-#landing .feature-icon{width:52px;height:52px;border-radius:14px;background:var(--blue-soft);display:grid;place-items:center;margin-bottom:18px;color:var(--blue)}
-#landing .feature-icon svg{width:26px;height:26px}
-#landing .feature-card:nth-child(2) #landing .feature-icon{background:rgba(244,121,32,.12);color:var(--orange)}
-#landing .feature-card:nth-child(3) #landing .feature-icon{background:rgba(22,163,74,.12);color:var(--ok)}
-#landing .feature-card:nth-child(4) #landing .feature-icon{background:rgba(0,102,204,.12);color:#0066cc}
-#landing .feature-card h3{font-size:1.12rem;font-weight:800;color:var(--blue-ink);margin-bottom:8px}
-#landing .feature-card p{color:var(--muted);font-size:.95rem}
-
-/* steps */
-#landing .steps-bg{background:var(--bg-soft)}
-#landing .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
-#landing .step-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;box-shadow:var(--shadow-sm);position:relative;text-align:center}
-#landing .step-card::before{counter-increment:step;content:counter(step,decimal-leading-zero);position:absolute;top:20px;right:24px;font-size:2.4rem;font-weight:800;color:var(--blue-soft);line-height:1}
-#landing .step-icon{width:58px;height:58px;margin:0 auto 16px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;box-shadow:0 10px 22px rgba(0,75,135,.30)}
-#landing .step-icon svg{width:26px;height:26px}
-#landing .step-card h3{font-size:1.18rem;font-weight:800;color:var(--blue-ink)}
-#landing .step-card p{color:var(--muted);margin-top:8px;font-size:.95rem}
-#landing .step-arrow{display:flex;align-items:center;justify-content:center}
-#landing .step-arrow svg{width:26px;height:26px;color:var(--orange)}
-@media(min-width:900px){#landing .steps{grid-template-columns:auto 1fr auto 1fr auto 1fr;align-items:center}#landing .step-card{text-align:left}#landing .step-icon{margin:0 0 16px}}
-
-/* preview */
-#landing .preview-wrap{position:relative}
-#landing .preview-browser{border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-#landing .preview-bar{display:flex;align-items:center;gap:8px;background:#f2f5f9;padding:12px 16px;border-bottom:1px solid var(--line)}
-#landing .preview-dots{display:flex;gap:7px}
-#landing .preview-dots span{width:12px;height:12px;border-radius:50%}
-#landing .preview-dots span:nth-child(1){background:#ff5f57}
-#landing .preview-dots span:nth-child(2){background:#febc2e}
-#landing .preview-dots span:nth-child(3){background:#28c840}
-#landing .preview-url{flex:1;max-width:420px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:.75rem;color:var(--muted);padding:5px 12px;text-align:center}
-#landing .preview-body{background:var(--blue-ink);padding:26px;color:#fff}
-#landing .preview-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-#landing .preview-head #landing .pm{width:30px;height:30px;border-radius:8px;background:#fff;display:grid;place-items:center;flex-shrink:0}
-#landing .preview-head #landing .pm svg{width:17px;height:17px}
-#landing .preview-head b{font-size:.92rem}
-#landing .preview-head small{display:block;font-size:.68rem;opacity:.7;font-weight:600}
-#landing .preview-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-#landing .preview-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 12px;backdrop-filter:blur(4px)}
-#landing .preview-card #landing .pn{font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-.01em}
-#landing .preview-card #landing .pl{font-size:.66rem;opacity:.85;margin-top:3px}
-#landing .preview-card.hot #landing .pn{color:#ffb37a}
-#landing .preview-field{display:flex;gap:10px;margin-top:16px;align-items:stretch;flex-wrap:wrap}
-#landing .preview-search{flex:1;min-width:160px;background:#fff;border-radius:12px;display:flex;align-items:center;gap:9px;padding:13px 14px;color:#a9b4c0}
-#landing .preview-search svg{width:18px;height:18px;flex-shrink:0}
-#landing .preview-search span{font-size:.82rem;font-weight:600}
-#landing .preview-search.mid{flex:1.2}
-#landing .preview-btn{background:var(--orange);color:#fff;font-weight:800;border-radius:12px;padding:0 22px;display:flex;align-items:center;gap:8px;font-size:.85rem}
-#landing .preview-btn svg{width:16px;height:16px}
-#landing .preview-tag{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--blue);border:1px solid #2f74c4;border-left:4px solid var(--orange);border-radius:10px;padding:12px 14px;font-size:.82rem;font-weight:600;width:100%}
-#landing .preview-tag small{display:block;font-weight:600;opacity:.75;margin-top:2px}
-
-/* footer */
-footer{background:linear-gradient(135deg,#0D47A1 0%,#073e6d 100%);color:#cdd9e6;padding:48px 0 40px;border-top:4px solid #F47920;box-shadow:0 8px 28px rgba(13,71,161,.22)}
-#landing .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
-#landing .foot-brand{display:flex;align-items:center;gap:12px}
-#landing .foot-brand #landing .brand-mark{background:#fff}
-#landing .foot-brand b{color:#fff;font-size:1.05rem}
-#landing .foot-brand small{display:block;color:#9db4ca;font-size:.75rem;font-weight:600}
-#landing .foot-copy{color:#a9bcd0;font-size:.92rem;max-width:40ch;margin-top:18px}
-#landing .foot-nav{display:flex;gap:26px;flex-wrap:wrap}
-#landing .foot-nav a{color:#cdd9e6;font-weight:600;font-size:.95rem}
-#landing .foot-nav a:hover{color:#fff}
-#landing .foot-bottom{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;color:#8da6bc}
-
-/* reveal */
-#landing .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-#landing .reveal.in{opacity:1;transform:none}
-#landing .reveal-stagger #landing .reveal{transition-delay:calc(var(--i,0)*.09s)}
-
-@media(max-width:900px){
-  #landing .hero{padding:40px 0 56px}
-  #landing .hero-grid{grid-template-columns:1fr;gap:36px}
-  #landing .stats-grid{grid-template-columns:repeat(2,1fr);margin-top:56px}
-  #landing .features{grid-template-columns:repeat(2,1fr)}
-  #landing .preview-cards{grid-template-columns:repeat(2,1fr)}
-  #landing .nav-links{display:none}
-}
-@media(max-width:520px){
-  #landing .features{grid-template-columns:1fr}
-  #landing .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  #landing .stat-card #landing .stat-num{font-size:1.7rem}
-  #landing .hero-ctas #landing .btn{flex:1 1 100%}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  #landing .reveal{opacity:1;transform:none}
-  #landing .dot-live::after{animation:none}
-  #landing .btn:hover{transform:none}
-}
-
-/* ===== BRIDGE: landing → portal ===== */
-#cari{scroll-margin-top:90px}
-/* landing → portal visual connection:
-   footer biru navy ICC menyatu dengan portal header oranye */
-#landing > footer{
-  background:linear-gradient(135deg, #0D47A1 0%, #073e6d 100%);
-  border-top:4px solid #F47920;
-  box-shadow:0 8px 28px rgba(0,75,135,.16);
-}
-#landing > section:last-of-type{border-bottom:1px solid #e0e0e0}
-.header{
-  border-top:4px solid #F47920;
-  box-shadow:0 2px 8px rgba(0,0,0,.04);
-  background:#fff;
-}
-/* bridge shadow antar footer landing dan header portal saat scroll */
-@media(min-width:900px){
-  .header{backdrop-filter:blur(10px)}
-}
-/* live pulse next to stats */
-.live-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:11px;font-weight:600;color:#dbeafe;
-  background:rgba(255,255,255,.12);padding:4px 10px;border-radius:999px;
-  margin-left:8px;letter-spacing:.02em;
-}
-.live-badge i{
-  width:7px;height:7px;border-radius:50%;background:#22c55e;
-  box-shadow:0 0 0 0 rgba(34,197,94,.6);
-  animation:livePulse 1.6s ease-out infinite;
-  display:inline-block;
-}
-@keyframes livePulse{
-  0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}
-  70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}
-  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
-}
-/* search section elevated card feel after landing */
-.search-section{position:relative;z-index:2}
-.search-bar{
-  background:#fff;border-radius:14px;padding:18px 20px;
-  box-shadow:0 8px 28px rgba(0,75,135,.08),0 1px 3px rgba(0,0,0,.04);
-  border:1px solid #e2e8f0;
-}
-/* focus ring when scrolled via CTA */
-#cari:target .search-bar,
-.search-bar.is-focus{
-  box-shadow:0 0 0 3px rgba(244,121,32,.35),0 8px 28px rgba(0,75,135,.08);
-  border-color:#F47920;
-}
-/* footer richer */
-.footer{
-  background:#0f2740;color:#cbd5e1;padding:28px 32px;margin-top:48px;
-  font-size:13px;line-height:1.6;
-}
-.footer a{color:#93c5fd;text-decoration:none}
-.footer a:hover{text-decoration:underline}
-.footer-inner{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
-.footer-brand{font-weight:700;color:#fff}
-.footer-meta{opacity:.8}
-/* hide landing footer nav 'Masuk Portal' double feel — keep as is */
 </style>
 </head>
 <body>
-
-<div id="landing">
-<a class="skip-link" href="#cari">Lewati ke konten utama</a>
-
-<!-- NAV -->
-<header class="navbar">
-  <div class="nav-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">
-        <img src="https://training-jogja.com/wp-content/uploads/2026/08/indonesian-certification-center-removebg-preview.png" alt="Icon" width="24" height="24">
-      </span>
-      <span>ICC LSP Portal<small>Lembaga Sertifikasi Profesi - BNSP</small></span>
-    </a>
-    <nav class="nav-links" aria-label="Navigasi utama">
-      <a href="#statistik">Statistik</a>
-      <a href="#keunggulan">Keunggulan</a>
-      <a href="#cara">Cara Pakai</a>
-      <a href="#preview">Preview</a>
-      <a class="btn btn-outline nav-cta" href="#cari" target="_blank" rel="noopener">Masuk Portal</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="container hero-grid">
-    <div>
-      <span class="hero-badge"><span class="dot-live" aria-hidden="true"></span>Data resmi BNSP, live &amp; terupdate</span>
-      <h1>Temukan LSP dan Skema Sertifikasi <span class="line">Terlengkap di Indonesia</span></h1>
-      <p class="lead">Portal resmi pencarian LSP, Skema Sertifikasi, dan Unit Kompetensi.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#cari" target="_blank" rel="noopener">Cari Sekarang <span class="icon-arrow">→</span></a>
-        <a class="btn btn-ghost" href="#cari" target="_blank" rel="noopener">Masuk Portal</a>
-      </div>
-    </div>
-    <div aria-hidden="true">
-      <div class="preview-browser">
-        <div class="preview-bar">
-          <div class="preview-dots"><span></span><span></span><span></span></div>
-          
-        </div>
-        <div class="preview-body">
-          <div class="preview-head">
-            <span class="pm"><svg viewBox="0 0 24 24" fill="#004B87"><path d="M9 11l-2 5 5-2L9 11z"/><circle cx="9" cy="11" r="1.4"/><path d="M16.5 5.5l3-3 1 1-3 3zM8.5 3.5l-1 3 3-1z"/></svg></span>
-            <b>ICC LSP Portal<small>Lembaga Sertifikasi Profesi - BNSP</small></b>
-          </div>
-          <div class="preview-cards">
-            <div class="preview-card"><div class="pn">654</div><div class="pl">LSP P3</div></div>
-            <div class="preview-card"><div class="pn">6.446</div><div class="pl">Jenis Skema</div></div>
-            <div class="preview-card"><div class="pn">107.386</div><div class="pl">Unit Kompetensi</div></div>
-            <div class="preview-card hot"><div class="pn">88</div><div class="pl">Masa Berlaku Habis</div></div>
-          </div>
-          <div class="preview-field">
-            <div class="preview-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Cari LSP...</span></div>
-            <div class="preview-btn">Cari</div>
-          </div>
-          <div class="preview-tag"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffb37a" stroke-width="2.2"><path d="M4 19l1-4 9-11 5 5-11 9z"/><path d="M13 6l5 5"/></svg><span>Fasilitator Bidang Pertanian Organik<small>Tersedia di 1 LSP - total 18 unit kompetensi</small></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATISTIK -->
-<section class="section" id="statistik">
-  <div class="container">
-    <div class="stats-grid reveal-stagger">
-      <div class="stat-card" style="--i:0"><div class="stat-num">654</div><div class="stat-lbl">LSP P3</div></div>
-      <div class="stat-card" style="--i:1"><div class="stat-num">6.446</div><div class="stat-lbl">Jenis Skema</div></div>
-      <div class="stat-card" style="--i:2"><div class="stat-num">107.386</div><div class="stat-lbl">Unit Kompetensi</div></div>
-      <div class="stat-card ok" style="--i:3"><div class="stat-num">565</div><div class="stat-lbl">LSP Aktif</div></div>
-      <div class="stat-card warn" style="--i:4"><div class="stat-num">88</div><div class="stat-lbl">Masa Berlaku Habis</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- KEUNGGULAN -->
-<section class="section" id="keunggulan">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="kicker">Keunggulan</span>
-      <h2>Kenapa Menggunakan Portal Ini?</h2>
-      <p>Pencarian cepat, data resmi, selalu diperbarui, dan mencakup seluruh Indonesia.</p>
-    </div>
-    <div class="features reveal-stagger">
-      <div class="feature-card" style="--i:0">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
-        <h3>Cepat</h3><p>Hasil pencarian instan dengan saran otomatis. Temukan dalam hitungan detik.</p>
-      </div>
-      <div class="feature-card" style="--i:1">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Akurat</h3><p>Data resmi dan sesuai sumber dari BNSP. Informasi terverifikasi, bukan perkiraan.</p>
-      </div>
-      <div class="feature-card" style="--i:2">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-9-9 9 9 0 019 9z"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Terpercaya</h3><p>Pembaruan berkala menjaga data tetap segar dan dapat diandalkan kapan saja.</p>
-      </div>
-      <div class="feature-card" style="--i:3">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h12M3 18h18"/><circle cx="18" cy="12" r="2.5"/></svg></div>
-        <h3>Lengkap</h3><p>Data di seluruh Indonesia dalam satu tempat. LSP, skema, hingga unit kompetensi.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CARA -->
-<section class="section steps-bg" id="cara">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="kicker">Panduan</span>
-      <h2>Cara Menggunakan</h2>
-      <p>Tiga langkah sederhana untuk menemukan sertifikasi yang Anda butuhkan.</p>
-    </div>
-    <div class="steps reveal-stagger">
-      <div class="step-card" style="--i:0">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>Cari</h3><p>Ketik nama LSP atau skema sertifikasi pada kolom pencarian.</p>
-      </div>
-      <div class="step-arrow" style="--i:1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="step-card" style="--i:2">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
-        <h3>Pilih</h3><p>Tentukan LSP dan skema yang paling sesuai dengan kebutuhan Anda.</p>
-      </div>
-      <div class="step-arrow" style="--i:3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="step-card" style="--i:4">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 17h6M5 13l-4 4 4 4"/><path d="M11 20h11"/><path d="M14 3h10"/><path d="M17 7l-4 4 4 4"/><path d="M11 6h9M14 10h6"/></svg></div>
-        <h3>Lihat Detail</h3><p>Temukan daftar lengkap unit kompetensi beserta elemen rinci.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PREVIEW -->
-<section class="section" id="preview">
-  <div class="container preview-wrap">
-    <div class="section-head center reveal">
-      <span class="kicker">Preview</span>
-      <h2>Jelajahi Portal</h2>
-      <p>Antarmuka bersih dan mudah digunakan. Mulai membantu Anda sekarang.</p>
-    </div>
-    <div class="preview-browser reveal">
-      <div class="preview-bar">
-        <div class="preview-dots"><span></span><span></span><span></span></div>
-        
-      </div>
-      <div class="preview-body">
-        <div class="preview-field">
-          <div class="preview-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Cari LSP</span></div>
-          <div class="preview-search mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Cari Skema</span></div>
-          <div class="preview-btn">Cari<span class="icon-arrow">→</span></div>
-        </div>
-        <div class="preview-tag"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffb37a" stroke-width="2.2"><path d="M4 19l1-4 9-11 5 5-11 9z"/><path d="M13 6l5 5"/></svg><span>Teknisi Akuntansi Junior<small>Tersedia di 3 LSP - total 15 unit kompetensi</small></span></div>
-        <div class="preview-tag"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffb37a" stroke-width="2.2"><path d="M4 19l1-4 9-11 5 5-11 9z"/><path d="M13 6l5 5"/></svg><span>Operator K3 Umum<small>Tersedia di 24 LSP - total 21 unit kompetensi</small></span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px" class="reveal">
-      <a class="btn btn-primary" href="#cari" target="_blank" rel="noopener">Masuk Portal <span class="icon-arrow">→</span></a>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container foot-inner">
-    <div>
-      <div class="foot-brand">
-        <img src="https://training-jogja.com/wp-content/uploads/2026/08/indonesian-certification-center-removebg-preview.png" alt="Icon" width="24" height="24">
-        <b>ICC LSP Portal<small>Lembaga Sertifikasi Profesi - BNSP</small></b>
-      </div>
-      <p class="foot-copy">Portal resmi pencarian LSP, skema sertifikasi, dan unit kompetensi BNSP di seluruh Indonesia.</p>
-    </div>
-    <nav class="foot-nav" aria-label="Navigasi footer">
-      <a href="#statistik">Statistik</a>
-      <a href="#keunggulan">Keunggulan</a>
-      <a href="#cara">Cara Pakai</a>
-      <a href="#preview">Preview</a>
-      <a href="#cari" target="_blank" rel="noopener">Masuk Portal</a>
-    </nav>
-  </div>
-  <div class="container foot-bottom">
-    <span>© <span id="yr"></span> Indonesian Certification Center (ICC)</span>
-    <span>Data LSP BNSP</span>
-  </div>
-</footer>
-</div>
 
 <header class="header">
   <div class="header-inner">
@@ -653,7 +210,7 @@ footer{background:linear-gradient(135deg,#0D47A1 0%,#073e6d 100%);color:#cdd9e6;
         <span>Lembaga Sertifikasi Profesi — BNSP</span>
       </div>
     </a>
-    <div class="header-stats" id="headerStats"><span class="live-badge" title="Data diperbarui berkala dari BNSP"><i></i>Data Live</span>
+    <div class="header-stats" id="headerStats">
       <div class="stat"><div class="num" id="statLsp">-</div><div class="lbl">LSP</div></div>
       <div class="stat"><div class="num" id="statSkema">-</div><div class="lbl">Jenis Skema</div></div>
       <div class="stat"><div class="num" id="statUnit">-</div><div class="lbl">Unit Kompetensi</div></div>
@@ -663,7 +220,7 @@ footer{background:linear-gradient(135deg,#0D47A1 0%,#073e6d 100%);color:#cdd9e6;
   </div>
 </header>
 
-<div class="search-section" id="cari">
+<div class="search-section">
   <div class="search-bar">
     <div class="search-group">
       <label>Cari LSP</label>
@@ -691,11 +248,7 @@ footer{background:linear-gradient(135deg,#0D47A1 0%,#073e6d 100%);color:#cdd9e6;
 </main>
 
 <div class="footer">
-  <div class="footer-inner">
-    <div><div class="footer-brand">Indonesian Certification Center (ICC)</div>
-    <div class="footer-meta">Data LSP · Skema · Unit Kompetensi — sumber BNSP</div></div>
-    <div class="footer-meta"><a href="#top">Ke atas</a> · <a href="#cari">Cari sekarang</a></div>
-  </div>
+  Indonesian Certification Center (ICC) — Data LSP BNSP
 </div>
 
 <script>
@@ -720,172 +273,142 @@ var unitSortKey = 'kode';  // 'kode' | 'nama'
 var unitSortDir = 1;       // 1 asc | -1 desc
 var unitLspName = '';      // nama LSP utk header tabel unit
 
-// ===== FETCH WITH PAGINATION (CORS-proxy fallback untuk GitHub Pages) =====
-function _buildSbUrl(table, select) {
-  return SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
-}
-function _sbHeaders(start, end) {
-  return {
-    apikey: SB_KEY,
-    Authorization: 'Bearer ' + SB_KEY,
-    Accept: 'application/json',
-    Range: start + '-' + end
-  };
-}
-// fetch JSON dari Supabase REST; jatuh ke CORS proxy bila origin diblokir
-function sbQuery(path) {
-  var url = SB_URL + '/rest/v1/' + path;
-  return fetch(url, { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' } })
-    .then(function(r) {
-      if (!r.ok && (r.status === 401 || r.status === 0)) {
-        return fetch('https://corsproxy.io/?' + encodeURIComponent(url), { headers: { 'Accept': 'application/json' } }).then(function(r2) { return r2.json(); });
-      }
-      return r.json();
-    });
-}
+// ===== FETCH WITH PAGINATION =====
 function fetchAll(table, select, pageSize) {
   pageSize = pageSize || 1000;
   var results = [];
   function getPage(start) {
     var end = start + pageSize - 1;
-    var url = _buildSbUrl(table, select);
-    var headers = _sbHeaders(start, end);
-    return fetch(url, { headers: headers }).then(function(r) {
-      // Fallback ke CORS proxy bila origin diblokir (GitHub Pages -> Supabase CORS 401)
-      if (!r.ok && (r.status === 401 || r.status === 0)) {
-        var proxied = 'https://corsproxy.io/?' + encodeURIComponent(url);
-        return fetch(proxied, {
-          method: 'GET',
-          headers: { 'Accept': 'application/json' }
-        }).then(function(r2) { return r2.json(); });
+    var url = SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
+    return fetch(url, {
+      headers: {
+        apikey: SB_KEY,
+        Authorization: 'Bearer ' + SB_KEY,
+        Accept: 'application/json',
+        Range: start + '-' + end
       }
-      return r.json();
-    }).then(function(data) {
-      if (!data || !data.length) return results;
-      results = results.concat(data);
-      if (data.length < pageSize) return results;
-      return getPage(start + pageSize);
+    }).then(function(r) {
+      return r.json().then(function(data) {
+        if (!data || !data.length) return results;
+        results = results.concat(data);
+        if (data.length < pageSize) return results;
+        return getPage(start + pageSize);
+      });
     });
   }
   return getPage(0);
 }
 
 // ===== LOAD =====
-function buildData(lspRows, skemaRows, unitCount) {
-  // Build LSP list
-  lspList = lspRows.map(function(l) {
-    return {
-      nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
-      no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
-    };
-  });
-
-  // Timestamp terakhir (max last_checked)
-  var latest = '';
-  lspRows.forEach(function(l) {
-    if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
-  });
-  if (latest) {
-    var d = new Date(latest);
-    lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-  }
-
-  lspMap = {};
-  lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
-
-  // All raw skema rows for per-LSP filtering + unit fetch
-  skemaAllRows = skemaRows;
-
-  // Recount jml_skema per LSP from actual skema rows (kolom DB bisa stale)
-  var lspSkemaCount = {};
-  skemaRows.forEach(function(s) {
-    var key = String(s.lsp_id);
-    if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
-    lspSkemaCount[key][s.nama] = true;
-  });
-  lspList.forEach(function(l) {
-    var m = lspSkemaCount[String(l.id)];
-    if (m) l.jml_skema = Object.keys(m).length;
-  });
-
-  // Group skema by name (case-insensitive key → no 'DATA ANALYST' / 'Data Analyst' dupes)
-  var skemaGroup = {};
-  skemaRows.forEach(function(s) {
-    var key = s.nama.toLowerCase();
-    if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
-    skemaGroup[key].lsps[s.lsp_id] = {
-      id_skema: s.id_skema,
-      jml_unit: s.jml_unit || 0,
-      skema_id: s.id,
-      lsp_id: parseInt(s.lsp_id)
-    };
-  });
-
-  skemaList = Object.keys(skemaGroup).sort().map(function(key) {
-    var g = skemaGroup[key];
-    var lspArr = Object.keys(g.lsps).map(function(lid) {
-      return {
-        lsp: lspMap[lid] || 'Unknown',
-        lsp_id: parseInt(lid),
-        id_skema: g.lsps[lid].id_skema,
-        jml_unit: g.lsps[lid].jml_unit,
-        skema_id: g.lsps[lid].skema_id
-      };
-    });
-    lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
-    return {
-      nama: g.nama,
-      jml_lsp: lspArr.length,
-      total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
-      lsps: lspArr
-    };
-  });
-
-  // Stats
-  var aktif = 0, habis = 0;
-  lspList.forEach(function(l) {
-    if (l.status === 'Lisensi Aktif') aktif++;
-    else if (l.status === 'Masa Berlaku Habis') habis++;
-  });
-  document.getElementById('statLsp').textContent = lspList.length;
-  document.getElementById('statSkema').textContent = skemaList.length;
-  var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
-  document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
-  document.getElementById('statAktif').textContent = aktif;
-  document.getElementById('statHabis').textContent = habis;
-}
-
 function loadData() {
   document.getElementById('mainContent').innerHTML =
     '<div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>';
 
-  // 1. Coba data statis (data.json) — aman di static hosting (no CORS)
-  fetch('data.json', { cache: 'no-store' })
-    .then(function(r) {
-      if (!r.ok) throw new Error('no static data');
-      return r.json();
-    })
-    .then(function(d) {
-      buildData(d.lsp, d.skema, d.unit_total);
-      renderHome();
-    })
-    .catch(function() {
-      // 2. Fallback: fetch langsung dari Supabase (CORS-block di live browser)
-      var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
-      var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
-      var p3 = fetchAll('unit_kompetensi', 'count');
-      Promise.all([p1, p2, p3]).then(function(results) {
-        var unitCount = 0;
-        if (results[2] && results[2][0] && results[2][0].count !== undefined) {
-          unitCount = parseInt(results[2][0].count, 10);
-        }
-        buildData(results[0], results[1], unitCount);
-        renderHome();
-      }).catch(function(e) {
-        document.getElementById('mainContent').innerHTML =
-          '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
-      });
+  // Fetch all 3 tables in parallel with full pagination
+  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
+  var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
+  var p3 = fetchAll('unit_kompetensi', 'count');
+
+  Promise.all([p1, p2, p3]).then(function(results) {
+    // If unit_kompetensi count query failed, try counting rows
+    var unitCount = 0;
+    if (results[2] && results[2][0] && results[2][0].count !== undefined) {
+      unitCount = parseInt(results[2][0].count, 10);
+    }
+
+    var lspRows = results[0];
+    var skemaRows = results[1];
+
+    // Build LSP list
+    lspList = lspRows.map(function(l) {
+      return {
+        nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
+        no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
+      };
     });
+
+    // Update timestamp terakhir (max last_checked)
+    var latest = '';
+    lspRows.forEach(function(l) {
+      if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
+    });
+    if (latest) {
+      var d = new Date(latest);
+      lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
+
+    // Build LSP name map
+    lspMap = {};
+    lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
+
+    // Save all raw skema rows for per-LSP filtering
+    skemaAllRows = skemaRows;
+
+    // Hitung ulang jml_skema per LSP dari data AKTUAL (tabel skema) —
+    // kolom lsp.jml_skema di DB bisa stale/basi. Fallback: tetap kolom DB bila kosong.
+    var lspSkemaCount = {};
+    skemaRows.forEach(function(s) {
+      var key = String(s.lsp_id);
+      if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
+      lspSkemaCount[key][s.nama] = true;   // unik per nama skema
+    });
+    lspList.forEach(function(l) {
+      var m = lspSkemaCount[String(l.id)];
+      if (m) l.jml_skema = Object.keys(m).length;
+    });
+
+    // Group by name (case-insensitive key, display = kapitalisasi pertama ditemui)
+    var skemaGroup = {};
+    skemaRows.forEach(function(s) {
+      var key = s.nama.toLowerCase();
+      if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
+      skemaGroup[key].lsps[s.lsp_id] = {
+        id_skema: s.id_skema,
+        jml_unit: s.jml_unit || 0,
+        skema_id: s.id,
+        lsp_id: parseInt(s.lsp_id)
+      };
+    });
+
+    skemaList = Object.keys(skemaGroup).sort().map(function(key) {
+      var g = skemaGroup[key];
+      var lspArr = Object.keys(g.lsps).map(function(lid) {
+        return {
+          lsp: lspMap[lid] || 'Unknown',
+          lsp_id: parseInt(lid),
+          id_skema: g.lsps[lid].id_skema,
+          jml_unit: g.lsps[lid].jml_unit,
+          skema_id: g.lsps[lid].skema_id
+        };
+      });
+      lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
+      return {
+        nama: nama,
+        jml_lsp: lspArr.length,
+        total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
+        lsps: lspArr
+      };
+    });
+
+    // Update stats
+    var aktif = 0, habis = 0;
+    lspList.forEach(function(l) {
+      if (l.status === 'Lisensi Aktif') aktif++;
+      else if (l.status === 'Masa Berlaku Habis') habis++;
+    });
+    document.getElementById('statLsp').textContent = lspList.length;
+    document.getElementById('statSkema').textContent = skemaList.length;
+    // Fallback: jumlah unit = penjumlahan jml_unit semua skema (bukan jumlah baris skema)
+    var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
+    document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
+    document.getElementById('statAktif').textContent = aktif;
+    document.getElementById('statHabis').textContent = habis;
+
+    renderHome();
+  }).catch(function(e) {
+    document.getElementById('mainContent').innerHTML =
+      '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
+  });
 }
 
 // ===== HELPERS =====
@@ -1187,7 +710,10 @@ function showSkemaDetail(skemaName, lspIdx, btnEl) {
     '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
 
   // Fetch units for this skema
-  sbQuery('unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc').then(function(units) {
+  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc';
+  fetch(url, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r) { return r.json(); }).then(function(units) {
     unitRows = units;
     unitSortKey = 'kode';
     unitSortDir = 1;
@@ -1354,7 +880,10 @@ function showLspSkemaUnits(name) {
 
   unitRows = [];
   unitLspName = currentLspName;
-  sbQuery('unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc').then(function(units) {
+  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc';
+  fetch(url, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r) { return r.json(); }).then(function(units) {
     unitRows = units;
     unitSortKey = 'kode';
     unitSortDir = 1;
@@ -1375,5 +904,4 @@ document.addEventListener('click', function(e) {
 loadData();
 </script>
 </body>
-
 </html>
