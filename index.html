@@ -265,6 +265,7 @@ var acLspSelected = -1;
 var acSkemaSelected = -1;
 var currentView = 'home';  // 'home' | 'lsp' | 'skema'
 var currentLspId = null;
+var currentLspName = '';
 var lspFilter = 'all';     // filter status di home: 'all' | 'aktif' | 'habis'
 var lastUpdated = '';      // tanggal update data terakhir (max last_checked)
 var unitRows = [];         // rows unit aktif utk sorting
@@ -775,7 +776,7 @@ function renderLspSkema(page) {
         totalUnit += (skemaAllRows[j].jml_unit || 0);
       }
     }
-    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(nama) + '\')">' +
+    html += '<div class="card card-skema card-clickable" onclick="showLspSkemaUnits(\'' + esc(nama) + '\')">' +
       '<div class="title">' + esc(nama) + '</div>' +
       '<div class="badge-group"><span class="badge badge-accent">' + totalUnit + ' unit</span></div></div>';
   }
@@ -820,6 +821,7 @@ function showLsp(name) {
   lspSkemaNames = Object.keys(skemaByName).sort();
   lspCurrentPage = 1;
   currentLspId = lsp.id;
+  currentLspName = lsp.nama;
 
   var html = '<button class="back-btn" type="button" onclick="clearLsp.click()">← Kembali</button>';
 
@@ -855,6 +857,39 @@ function showLsp(name) {
   html += '<div id="lspSkemaGrid"></div>';
   document.getElementById('mainContent').innerHTML = html;
   renderLspSkema(1);
+}
+
+// ===== SHOW UNIT KOMPETENSI DARI KARTU SKEMA DI DETAIL LSP =====
+function showLspSkemaUnits(name) {
+  var skema = null;
+  for (var i = 0; i < skemaAllRows.length; i++) {
+    if (skemaAllRows[i].lsp_id === currentLspId && skemaAllRows[i].nama === name) {
+      skema = skemaAllRows[i]; break;
+    }
+  }
+  if (!skema) return;
+
+  var html = '<button class="back-btn" type="button" onclick="showLsp(\'' + esc(currentLspName) + '\')">← Kembali ke skema</button>';
+  html += '<div class="card card-skema" style="margin-bottom:20px">' +
+    '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
+    '<div class="sub" style="margin-top:4px">' + esc(currentLspName) + ' — ' + (skema.jml_unit || 0) + ' unit kompetensi</div>' +
+    '</div>';
+  html += '<div id="skemaUnitTable"><div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div></div>';
+  document.getElementById('mainContent').innerHTML = html;
+
+  unitRows = [];
+  unitLspName = currentLspName;
+  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc';
+  fetch(url, {
+    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
+  }).then(function(r) { return r.json(); }).then(function(units) {
+    unitRows = units;
+    unitSortKey = 'kode';
+    unitSortDir = 1;
+    renderUnitTable();
+  }).catch(function() {
+    document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
+  });
 }
 
 // ===== AUTO-HIDE =====
