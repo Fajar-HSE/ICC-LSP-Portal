@@ -11,8 +11,106 @@
     "jdih_id": 1986,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1986/keputusan-menteri-ketenagakerjaan-nomor-333-tahun-2020",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1986",
-    "keywords": ["instruktur","metodologi pelatihan","pelatihan kerja","standardisasi","sertifikasi","trainer","asesor","instruktur junior","instruktur senior","instruktur master","penyelenggara pelatihan","pelatih di tempat kerja"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "instruktur",
+      "metodologi pelatihan",
+      "pelatihan kerja",
+      "standardisasi",
+      "sertifikasi",
+      "trainer",
+      "asesor",
+      "instruktur junior",
+      "instruktur senior",
+      "instruktur master",
+      "penyelenggara pelatihan",
+      "pelatih di tempat kerja"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "A.01JLH00",
+      "A.02GNS01",
+      "ADM.PK01",
+      "ADM.PK02",
+      "AILCA.72109",
+      "AUD.FR02",
+      "B.05LMB04",
+      "C.100000",
+      "C.10IPK00",
+      "E.370000",
+      "E.381100",
+      "E.381200",
+      "F.71MPK00",
+      "GIM.PJ02",
+      "GIM.SG02",
+      "IAK.PM02",
+      "IAK.UM01",
+      "IMG.PC01",
+      "J.58JUR",
+      "J.63SAM00",
+      "K.641210",
+      "K.641270",
+      "K.64APU00",
+      "K.64AUD00",
+      "K.64GEB00",
+      "K.64KPT00",
+      "K.64MRP00",
+      "K.661990",
+      "K.66BPM00",
+      "K.66SPP03",
+      "KEU.GB02",
+      "KEU.MR02",
+      "KEU.WM01",
+      "KEU.WM02",
+      "KHT.AK02",
+      "KHT.BK02",
+      "KHT.IK02",
+      "KHT.IK03",
+      "KHT.LK01",
+      "KHT.LK02",
+      "KHT.LK03",
+      "KHT.PA02",
+      "KHT.PH02",
+      "KHT.PT02",
+      "KHT.RC01",
+      "KHT.RC02",
+      "KHT.RH02",
+      "KHT.RL02",
+      "KHT.WM02",
+      "KKK.HI",
+      "L.682000",
+      "M.074909",
+      "M.692000",
+      "M.702094",
+      "M.70HMS00",
+      "M.70SDM01",
+      "M.71KDT00",
+      "M.71PPC01",
+      "M.72PLT00",
+      "N.78PTI00",
+      "N.78SPS01",
+      "N.78SPS02",
+      "P.854900",
+      "P.85IPM00",
+      "P.88PKK00",
+      "PAM.MM02",
+      "PERKHAPPI.KHP",
+      "Q.86CGL01",
+      "Q.86CGL02",
+      "Q.86KSA-BNN",
+      "Q.86NUT00",
+      "Q.86RDN00",
+      "Q.86SAN00",
+      "R.90PNIL01",
+      "R.91MUS02",
+      "R.932420",
+      "T.970000",
+      "TAN.HO02",
+      "TAN.KJ02",
+      "TAN.KS02",
+      "TAN.OT01",
+      "TAN.OT02",
+      "TAN.PT02"
+    ]
   },
   {
     "id": "skkni-161-2015",
@@ -27,7 +125,8 @@
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1101/keputusan-menteri-ketenagakerjaan-nomor-161-tahun-2015",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1101",
     "keywords": [],
-    "updated_at": "2026-08-05"
+    "updated_at": "2026-08-05",
+    "unit_prefixes": []
   },
   {
     "id": "skkni-389-2019",
@@ -41,8 +140,24 @@
     "jdih_id": 1847,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1847/keputusan-menteri-ketenagakerjaan-nomor-389-tahun-2019",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1847",
-    "keywords": ["digital marketing","pemasaran digital","social media marketing","digital marketing staff","content creator","pembuatan konten"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "digital marketing",
+      "pemasaran digital",
+      "social media marketing",
+      "digital marketing staff",
+      "content creator",
+      "pembuatan konten"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "G.46RIT00",
+      "J.591200",
+      "J.63OPR00",
+      "M.702090",
+      "M.702092",
+      "M.702093",
+      "M.731000"
+    ]
   },
   {
     "id": "skkni-351-2014",
@@ -56,8 +171,31 @@
     "jdih_id": 1088,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1088/keputusan-menteri-ketenagakerjaan-nomor-351-tahun-2014",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1088",
-    "keywords": ["k3","keselamatan dan kesehatan kerja","ahli k3","petugas k3","pengawas k3","k3 umum","hse","ak3","ahli keselamatan"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "k3",
+      "keselamatan dan kesehatan kerja",
+      "ahli k3",
+      "petugas k3",
+      "pengawas k3",
+      "k3 umum",
+      "hse",
+      "ak3",
+      "ahli keselamatan"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "B.09KKK00",
+      "H.52POD00",
+      "KKK.PM01",
+      "KKK.PM02",
+      "KKK.PM03",
+      "KKK.TG02",
+      "M.70UTLK3",
+      "M.71KKK00",
+      "M.71KKK01",
+      "M.71KKK02",
+      "M.71KKK04"
+    ]
   },
   {
     "id": "skkni-38-2019",
@@ -71,8 +209,43 @@
     "jdih_id": 1812,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1812/keputusan-menteri-ketenagakerjaan-nomor-38-tahun-2019",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1812",
-    "keywords": ["pariwisata","front office","housekeeping","room attendant","fb service","waiter","bartender","barista","chef","restoran","hotel","receptionist","public area","hospitality"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "pariwisata",
+      "front office",
+      "housekeeping",
+      "room attendant",
+      "fb service",
+      "waiter",
+      "bartender",
+      "barista",
+      "chef",
+      "restoran",
+      "hotel",
+      "receptionist",
+      "public area",
+      "hospitality"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "D1.HHK",
+      "D1.HOT",
+      "D1.HRS",
+      "I.55HDR00",
+      "I.56JBA00",
+      "KTL.IO02",
+      "M.70JKP00",
+      "M.711000",
+      "M.74PDP01",
+      "PAR.HT01",
+      "PAR.HT02",
+      "PAR.HT03",
+      "PAR.JP02",
+      "PAR.UJ03",
+      "PMM.AP03",
+      "PMM.BU01",
+      "PMM.MI02",
+      "PMM.UB02"
+    ]
   },
   {
     "id": "skkni-600-2018",
@@ -86,8 +259,44 @@
     "jdih_id": 1795,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1795/keputusan-menteri-ketenagakerjaan-nomor-600-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1795",
-    "keywords": ["web developer","pemrogram","programmer","mobile programmer","database","network administrator","it","tik","teknologi informasi","junior web","back end","front end","software"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "web developer",
+      "pemrogram",
+      "programmer",
+      "mobile programmer",
+      "database",
+      "network administrator",
+      "it",
+      "tik",
+      "teknologi informasi",
+      "junior web",
+      "back end",
+      "front end",
+      "software"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "C.26EPP00",
+      "C.28LOG07",
+      "F.43RAC01",
+      "J.620060",
+      "J.620100",
+      "J.620120",
+      "J.62090",
+      "J.62AKI00",
+      "J.62SAD00",
+      "J.63TIK00",
+      "K.64PPL00",
+      "M.702000",
+      "M.74PAK01",
+      "M.75000",
+      "R.90ART00",
+      "S.96KEC00",
+      "S.96KEC01",
+      "S.96KEC02",
+      "TIK.SM02",
+      "TIK.SM03"
+    ]
   },
   {
     "id": "skkni-157-2019",
@@ -101,8 +310,115 @@
     "jdih_id": 1825,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1825/keputusan-menteri-ketenagakerjaan-nomor-157-tahun-2019",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1825",
-    "keywords": ["konstruksi","bangunan gedung","tukang","pelaksana lapangan","pengawas","konstruksi gedung","jalan","jembatan","teknik sipil","mandor"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "konstruksi",
+      "bangunan gedung",
+      "tukang",
+      "pelaksana lapangan",
+      "pengawas",
+      "konstruksi gedung",
+      "jalan",
+      "jembatan",
+      "teknik sipil",
+      "mandor"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "A.010000",
+      "A.014000",
+      "A.01UGS00",
+      "B.062020",
+      "E.382110",
+      "F. 410100",
+      "F.410100",
+      "F.410120",
+      "F.410140",
+      "F.410201",
+      "F.410202",
+      "F.41AEG00",
+      "F.41BPC00",
+      "F.41GED",
+      "F.41JGG00",
+      "F.41MDR00",
+      "F.41PKS00",
+      "F.41PLG00",
+      "F.421120",
+      "F.421140",
+      "F.422110",
+      "F.4221140",
+      "F.422120",
+      "F.422130",
+      "F.429110",
+      "F.42AMI00",
+      "F.42ATJ00",
+      "F.42ATJ01",
+      "F.42CEK00",
+      "F.42JPD00",
+      "F.42LGG00",
+      "F.42MPB00",
+      "F.42MPJ00",
+      "F.42MTJ00",
+      "F.42PJI00",
+      "F.42PLJ00",
+      "F.42PMJ00",
+      "F.42PPJ00",
+      "F.42PPT01",
+      "F.42SDA00",
+      "F.432910",
+      "F.433022",
+      "F.433032",
+      "F.433040",
+      "F.439020",
+      "F.439090",
+      "F.439092",
+      "F.43GLG00",
+      "F.43GRT09",
+      "F.43PIP00",
+      "F.43PPA00",
+      "F.43PPM00",
+      "F.43SCF00",
+      "GAR.CM01",
+      "GAR.CM02",
+      "H.49PPJ00",
+      "H.49PRK00",
+      "IMG.IN02",
+      "IMG.OP02",
+      "IMG.PA02",
+      "IMG.PE01",
+      "IMG.PE02",
+      "IMG.SV02",
+      "K.64LKM00",
+      "KON.KS17",
+      "KON.KS27",
+      "M.691001",
+      "M.70QAM00",
+      "M.7110000",
+      "M.71ABU00",
+      "M.71AKJ00",
+      "M.71AKK00",
+      "M.71ARL00",
+      "M.71BGH00",
+      "M.71FSL01",
+      "M.71INS00",
+      "M.71KFS01",
+      "M.71MKB00",
+      "M.71PUJ00",
+      "M.71TKK00",
+      "M.71TPU00",
+      "M.749090",
+      "M.74AEN00",
+      "M.74PKK00",
+      "N.79PPW00",
+      "PAR.TL02",
+      "PMB.PO02",
+      "S.941200",
+      "SPL.IG16",
+      "SPL.IG26",
+      "SPL.KS11",
+      "SPL.KS21",
+      "TTL.PA15",
+      "TTL.PA25"
+    ]
   },
   {
     "id": "skkni-312-2020",
@@ -116,8 +432,27 @@
     "jdih_id": 1950,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1950/keputusan-menteri-ketenagakerjaan-nomor-312-tahun-2020",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1950",
-    "keywords": ["data analyst","data scientist","ilmuwan data","data engineer","data management","analis data","data management staff","big data","machine learning","artificial intelligence"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "data analyst",
+      "data scientist",
+      "ilmuwan data",
+      "data engineer",
+      "data management",
+      "analis data",
+      "data management staff",
+      "big data",
+      "machine learning",
+      "artificial intelligence"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "J.62AIN00",
+      "J.62DMI00",
+      "J.62DMS00",
+      "J.62PDP00",
+      "J.631100",
+      "M.70BDA00"
+    ]
   },
   {
     "id": "skkni-238-2022",
@@ -131,8 +466,19 @@
     "jdih_id": 2671,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/2671/keputusan-menteri-nomor-238-tahun-2022",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=2671",
-    "keywords": ["bahasa jepang","japanese","front liner","bahasa korea","bahasa inggris manufaktur"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "bahasa jepang",
+      "japanese",
+      "front liner",
+      "bahasa korea",
+      "bahasa inggris manufaktur"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "ING.EN02",
+      "P.85JPN00",
+      "P.85KOR00"
+    ]
   },
   {
     "id": "skkni-130-2024",
@@ -146,8 +492,16 @@
     "jdih_id": 2875,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/2875/keputusan-menteri-ketenagakerjaan-nomor-130-tahun-2024",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=2875",
-    "keywords": ["semikonduktor","elektronik","industri komputer","industri pengolahan"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "semikonduktor",
+      "elektronik",
+      "industri komputer",
+      "industri pengolahan"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "IJE.UM01"
+    ]
   },
   {
     "id": "skkni-082-2018",
@@ -161,8 +515,24 @@
     "jdih_id": 1760,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1760/keputusan-menteri-ketenagakerjaan-nomor-82-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1760",
-    "keywords": ["logistik","warehouse","freight forwarding","supply chain","gudang","pengurusan logistik","kurir","delivery","pengiriman barang"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "logistik",
+      "warehouse",
+      "freight forwarding",
+      "supply chain",
+      "gudang",
+      "pengurusan logistik",
+      "kurir",
+      "delivery",
+      "pengiriman barang"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "H.522900",
+      "H.52LOG00",
+      "N.82MIC00",
+      "PBD.AP01"
+    ]
   },
   {
     "id": "skkni-123-2018",
@@ -176,8 +546,25 @@
     "jdih_id": 1775,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1775/keputusan-menteri-ketenagakerjaan-nomor-123-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1775",
-    "keywords": ["telekomunikasi","network administrator","rf engineer","vsat","fiber optik","jointer","drive test","telekomunikasi digital","network technician"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "telekomunikasi",
+      "network administrator",
+      "rf engineer",
+      "vsat",
+      "fiber optik",
+      "jointer",
+      "drive test",
+      "telekomunikasi digital",
+      "network technician"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "J.612000",
+      "J.612001",
+      "J.61SAT00",
+      "J.620900",
+      "M.701001"
+    ]
   },
   {
     "id": "skkni-402-2013",
@@ -191,8 +578,23 @@
     "jdih_id": 1055,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1055/keputusan-menteri-ketenagakerjaan-nomor-402-tahun-2013",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1055",
-    "keywords": ["umkm","kewirausahaan","wirausaha","konsultan umkm","pendamping umkm","inkubator bisnis","startup","koperasi"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "umkm",
+      "kewirausahaan",
+      "wirausaha",
+      "konsultan umkm",
+      "pendamping umkm",
+      "inkubator bisnis",
+      "startup",
+      "koperasi"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "M.702091",
+      "M.70IBT00",
+      "M.70PEN00",
+      "M.741000"
+    ]
   },
   {
     "id": "skkni-149-2020",
@@ -206,8 +608,22 @@
     "jdih_id": 1940,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1940/keputusan-menteri-ketenagakerjaan-nomor-149-tahun-2020",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1940",
-    "keywords": ["administrasi perkantoran","sekretaris","secretary","administrative assistant","office manager","front office","personal assistant","administrasi"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "administrasi perkantoran",
+      "sekretaris",
+      "secretary",
+      "administrative assistant",
+      "office manager",
+      "front office",
+      "personal assistant",
+      "administrasi"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "N.821100",
+      "N.82ADM00",
+      "R.93DWS00"
+    ]
   },
   {
     "id": "skkni-299-2020",
@@ -221,8 +637,29 @@
     "jdih_id": 1965,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1965/keputusan-menteri-ketenagakerjaan-nomor-299-tahun-2020",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1965",
-    "keywords": ["animator","desainer grafis","graphic designer","motion graphic","3d animator","multimedia","desain grafis","ilustrasi"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "animator",
+      "desainer grafis",
+      "graphic designer",
+      "motion graphic",
+      "3d animator",
+      "multimedia",
+      "desain grafis",
+      "ilustrasi"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "J.591120",
+      "J.59ANM00",
+      "J.59ANM01",
+      "J.59ANM02",
+      "J.59ANM03",
+      "J.59MTM00",
+      "M.74100",
+      "M.74DKV13",
+      "TIK.MM01",
+      "TIK.MM02"
+    ]
   },
   {
     "id": "skkni-091-2018",
@@ -236,8 +673,26 @@
     "jdih_id": 1745,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1745/keputusan-menteri-ketenagakerjaan-nomor-91-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1745",
-    "keywords": ["keperawatan","farmasi","caregiver","lansia","fisioterapi","kesehatan","spa bayi","spa kehamilan"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "keperawatan",
+      "farmasi",
+      "caregiver",
+      "lansia",
+      "fisioterapi",
+      "kesehatan",
+      "spa bayi",
+      "spa kehamilan"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "KES.PG01",
+      "KES.PG02",
+      "KES.VK01",
+      "KES.VK02",
+      "M.075000",
+      "Q.869020",
+      "Q.86FIS90"
+    ]
   },
   {
     "id": "skkni-122-2020",
@@ -251,8 +706,29 @@
     "jdih_id": 1935,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1935/keputusan-menteri-ketenagakerjaan-nomor-122-tahun-2020",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1935",
-    "keywords": ["spa","terapis spa","supervisor spa","wellness","aromaterapi","meditasi wellness","therapeutic massage","beauty spa"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "spa",
+      "terapis spa",
+      "supervisor spa",
+      "wellness",
+      "aromaterapi",
+      "meditasi wellness",
+      "therapeutic massage",
+      "beauty spa"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "F.42SAL02",
+      "M.712020",
+      "PAM.CP02",
+      "PAR.SP",
+      "S.961220",
+      "S.96SPA01",
+      "S.96SPA02",
+      "S.96WEL01",
+      "S.96WEL02",
+      "T.97PDO00"
+    ]
   },
   {
     "id": "skkni-205-2014",
@@ -266,8 +742,44 @@
     "jdih_id": 1065,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1065/keputusan-menteri-ketenagakerjaan-nomor-205-tahun-2014",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1065",
-    "keywords": ["welding","welder","las","plate welder","pipe welder","smaw","gmaw","fcaw"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "welding",
+      "welder",
+      "las",
+      "plate welder",
+      "pipe welder",
+      "smaw",
+      "gmaw",
+      "fcaw"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "APPI.OPS",
+      "B.05TMB03",
+      "B.05TMB04",
+      "C.20FER01",
+      "C.20FER02",
+      "C.20FER04",
+      "C.20FER06",
+      "C.20FER12",
+      "C.20FER14",
+      "C.20FER16",
+      "C.24LAS01",
+      "C.259200",
+      "C.25LAS01",
+      "C.301110",
+      "E.36PAM11",
+      "IAB.MKO2",
+      "JIP.GT02",
+      "JIP.SM01",
+      "JIP.SM02",
+      "JIP.SM03",
+      "JIP.WI02",
+      "JIP.WS02",
+      "M70.UTLK3",
+      "MEK.PW12",
+      "MEK.PW22"
+    ]
   },
   {
     "id": "skkni-619-2018",
@@ -281,8 +793,25 @@
     "jdih_id": 1800,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1800/keputusan-menteri-ketenagakerjaan-nomor-619-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1800",
-    "keywords": ["tekstil","garmen","operator jahit","cutting","finishing","quality control","sewing","bundling","jahit"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "tekstil",
+      "garmen",
+      "operator jahit",
+      "cutting",
+      "finishing",
+      "quality control",
+      "sewing",
+      "bundling",
+      "jahit"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "C.14FAS00",
+      "LMTGN2",
+      "LMTGN2001B",
+      "MSAENV272B",
+      "MSS402040A"
+    ]
   },
   {
     "id": "skkni-053-2018",
@@ -296,8 +825,25 @@
     "jdih_id": 1730,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1730/keputusan-menteri-ketenagakerjaan-nomor-53-tahun-2018",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1730",
-    "keywords": ["otomotif","sepeda motor","servis motor","body repair","tune up","kendaraan ringan","transmisi otomatis","ac mobil"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "otomotif",
+      "sepeda motor",
+      "servis motor",
+      "body repair",
+      "tune up",
+      "kendaraan ringan",
+      "transmisi otomatis",
+      "ac mobil"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "G.45OTO01",
+      "G.45OTO02",
+      "G.45TSM01",
+      "OTO.KR10",
+      "OTO.SM01",
+      "OTO.SM02"
+    ]
   },
   {
     "id": "skkni-422-2014",
@@ -311,8 +857,23 @@
     "jdih_id": 1070,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/1070/keputusan-menteri-ketenagakerjaan-nomor-422-tahun-2014",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=1070",
-    "keywords": ["koperasi","akuntansi koperasi","ksp","dana koperasi","customer service koperasi"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "koperasi",
+      "akuntansi koperasi",
+      "ksp",
+      "dana koperasi",
+      "customer service koperasi"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "B.05EMB02",
+      "B.05EMB03",
+      "G.46PEI00",
+      "KJK.SP02",
+      "KOP.EK02",
+      "PDB.EI",
+      "PDB.EK"
+    ]
   },
   {
     "id": "skkni-koperasi-2022",
@@ -326,7 +887,16 @@
     "jdih_id": 2650,
     "url_detail": "https://jdih.kemnaker.go.id/peraturan/detail/2650/keputusan-menteri-ketenagakerjaan-nomor-88-tahun-2022",
     "url_download": "https://jdih.kemnaker.go.id/download.php?id=2650",
-    "keywords": ["koperasi merah putih","pengurus koperasi","pengawas koperasi","manajer koperasi","koperasi simpan pinjam"],
-    "updated_at": "2026-08-05"
+    "keywords": [
+      "koperasi merah putih",
+      "pengurus koperasi",
+      "pengawas koperasi",
+      "manajer koperasi",
+      "koperasi simpan pinjam"
+    ],
+    "updated_at": "2026-08-05",
+    "unit_prefixes": [
+      "G.46RKU00"
+    ]
   }
 ]
