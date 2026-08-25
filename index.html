@@ -3,252 +3,331 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSP &amp; Skema Directory — ICC</title>
+<title>ICC LSP Portal — Direktori LSP & Skema BNSP | SKKNI Terkurasi</title>
+<meta name="description" content="Direktori 295+ LSP P3 & 1000+ Skema Sertifikasi BNSP. Dilengkapi info SKKNI acuan, status Berlaku/Dicabut, dan download PDF langsung dari JDIH Kemnaker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="all">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --primary: #004B87;
-  --primary-light: #0066b3;
-  --primary-dark: #003366;
-  --accent: #F47920;
-  --accent-light: #ff9633;
-  --red: #E4002B;
-  --bg: #f0f4f8;
-  --card: #ffffff;
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-  --border: #e2e8f0;
-  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.04);
-  --radius: 10px;
-  --radius-sm: 6px;
+:root{
+  --navy:#0B1E33;
+  --navy-2:#0F2A44;
+  --navy-3:#14355E;
+  --navy-soft:#EAF0F8;
+  --orange:#FF6B2B;
+  --orange-2:#FF8533;
+  --orange-soft:#FFF1E8;
+  --green:#0F9D6A;
+  --green-soft:#E6F7EE;
+  --red:#E11D48;
+  --red-soft:#FFF0F3;
+  --yellow:#B45309;
+  --yellow-soft:#FFFBEB;
+  --bg:#F6F7F9;
+  --card:#FFFFFF;
+  --line:#E6E9EF;
+  --line-2:#EDF0F4;
+  --text:#0F172A;
+  --muted:#64748B;
+  --muted-2:#94A3B8;
+  --shadow:0 1px 2px rgba(15,30,51,.06),0 8px 24px rgba(15,30,51,.06);
+  --shadow-lg:0 12px 40px rgba(15,30,51,.10),0 4px 12px rgba(15,30,51,.06);
+  --r-lg:18px;
+  --r-md:14px;
+  --r-sm:10px;
+  --r-pill:999px;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-.header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-  padding: 24px 32px;
-  position: sticky; top: 0; z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,.15);
-}
-.header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; cursor: pointer; }
-.header-brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
-.header-brand span { font-size: 13px; opacity: .85; font-weight: 500; }
-.logo-img { height: 42px; width: auto; display: block; }
-.logo-fallback { font-size: 20px; font-weight: 700; color: #fff; }
-.header-stats { display: flex; align-items: center; gap: 20px; font-size: 13px; flex-wrap: wrap; }
-.header-stats .stat { text-align: center; }
-.header-stats .num { font-size: 20px; font-weight: 700; }
-.header-stats .stat-aktif { color: #16a34a; }
-.header-stats .stat-habis { color: #dc2626; }
-.header-stats .lbl { color: #dbeafe; font-size: 11px; }
-.search-section {
-  max-width: 1280px; margin: 0 auto; padding: 20px 32px 0;
-}
-.search-bar {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  background: var(--card); border-radius: var(--radius);
-  padding: 16px 20px; box-shadow: var(--shadow);
-}
-.search-group { flex: 1; min-width: 200px; position: relative; }
-.search-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
-.search-input-wrap { position: relative; }
-.search-group input {
-  width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: var(--radius-sm);
-  font-family: inherit; font-size: 14px; transition: all .2s; background: var(--bg);
-  padding-right: 36px;
-}
-.search-group input:focus { outline: none; border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px rgba(0,75,135,.1); }
-.search-group .clear-btn {
-  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-  background: none; border: none; font-size: 16px; cursor: pointer;
-  color: var(--text-light); display: none; padding: 4px 6px; border-radius: 4px;
-  line-height: 1;
-}
-.search-group .clear-btn:hover { color: var(--text); background: var(--border); }
-.search-group .clear-btn.show { display: block; }
-.search-hint { font-size: 12px; color: var(--text-light); margin-top: 6px; }
-.autocomplete {
-  position: absolute; top: 100%; left: 0; right: 0; z-index: 50;
-  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-lg); max-height: 320px; overflow-y: auto; display: none;
-  margin-top: 2px;
-}
-.autocomplete.show { display: block; }
-.autocomplete-item {
-  padding: 10px 14px; cursor: pointer; font-size: 13px; border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center; transition: background .1s;
-}
-.autocomplete-item:last-child { border-bottom: none; }
-.autocomplete-item:hover, .autocomplete-item.selected { background: #f0f7ff; }
-.autocomplete-item .tag {
-  font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px;
-  background: var(--bg); color: var(--text-muted); white-space: nowrap;
-}
-.autocomplete-item .highlight { color: var(--primary); font-weight: 600; }
-.autocomplete-item .lsp-name { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-.autocomplete-empty { padding: 12px 14px; font-size: 13px; color: var(--text-light); text-align: center; }
-.th-sortable { cursor: pointer; user-select: none; white-space: nowrap; }
-.th-sortable:hover { background: var(--primary-light); }
-button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-.filter-pills .lsp-pill { padding: 5px 14px; font-size: 12px; }
-.main { max-width: 1280px; margin: 0 auto; padding: 20px 32px 40px; }
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 24px; }
-.card {
-  background: var(--card); border-radius: var(--radius); border: 1px solid var(--border);
-  padding: 20px; box-shadow: var(--shadow); transition: all .2s;
-  display: flex; flex-direction: column; height: 100%;
-}
-.card:hover { box-shadow: var(--shadow-lg); }
-.card-clickable { cursor: pointer; }
-.card-clickable:hover { transform: translateY(-2px); }
-.card-lsp { border-left: 4px solid var(--primary); }
-.card-skema { border-left: 4px solid var(--accent); }
-.card .title { font-size: 15px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
-.card .sub { font-size: 12px; color: var(--text-muted); }
-.card .badge-group { display: flex; gap: 8px; margin-top: auto; flex-wrap: wrap; }
-.badge {
-  display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 12px;
-  font-size: 11px; font-weight: 600;
-}
-.badge-primary { background: #e8f0fe; color: var(--primary); }
-.badge-accent { background: #fef3e8; color: var(--accent); }
-.badge-red { background: #fde8eb; color: var(--red); }
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
-.section-header h2 { font-size: 18px; font-weight: 700; }
-.section-header .count { font-size: 13px; color: var(--text-muted); }
-.table-wrap { overflow-x: auto; background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th {
-  background: var(--primary); color: #fff; font-weight: 600; padding: 10px 16px;
-  text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .5px;
-  position: sticky; top: 0;
-}
-td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
-tr:hover td { background: #f8fafc; }
-tr:last-child td { border-bottom: none; }
-.kode-cell { font-family: 'Courier New', monospace; font-size: 13px; color: var(--primary); font-weight: 500; white-space: nowrap; }
-.empty-state { text-align: center; padding: 60px 20px; color: var(--text-light); }
-.empty-state .icon { font-size: 48px; margin-bottom: 12px; opacity: .5; }
-.empty-state p { font-size: 15px; }
-.empty-state .sub { font-size: 13px; margin-top: 4px; }
-.summary-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-.summary-item {
-  background: var(--card); padding: 14px 20px; border-radius: var(--radius-sm);
-  border: 1px solid var(--border); flex: 1; min-width: 140px;
-}
-.summary-item .num { font-size: 24px; font-weight: 800; color: var(--primary); }
-.summary-item .lbl { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-.summary-item.accent .num { color: var(--accent); }
-.loading { text-align: center; padding: 60px; color: var(--text-light); }
-.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 12px; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.back-btn {
-  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
-  border: 1px solid var(--border); border-radius: var(--radius-sm);
-  background: var(--card); cursor: pointer; font-family: inherit;
-  font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 16px;
-  transition: all .15s;
-}
-.back-btn:hover { background: var(--bg); border-color: var(--primary); color: var(--primary); }
-.footer { text-align: center; padding: 24px; color: var(--text-light); font-size: 12px; border-top: 1px solid var(--border); margin-top: 40px; }
-.lsp-options { margin-bottom: 20px; }
-.lsp-options .hint { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-.lsp-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-.lsp-pill {
-  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
-  border-radius: 20px; border: 2px solid var(--border); background: var(--card);
-  cursor: pointer; font-size: 13px; font-weight: 500; transition: all .15s;
-  font-family: inherit;
-}
-.lsp-pill:hover { border-color: var(--primary); color: var(--primary); }
-.lsp-pill .count { font-size: 11px; color: var(--text-muted); }
-.lsp-pill .check { display: none; }
-.lsp-pill.selected { border-color: var(--primary); background: #e8f0fe; color: var(--primary); }
-.lsp-pill.selected .check { display: inline; }
-.pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
-.page-btn {
-  padding: 6px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
-  background: var(--card); cursor: pointer; font-size: 13px; font-family: inherit;
-  transition: all .15s; display: inline-flex; align-items: center; justify-content: center; min-width: 36px;
-}
-.page-btn:hover { border-color: var(--primary); color: var(--primary); }
-.page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-.page-btn:disabled { opacity: .4; cursor: default; }
-@media (max-width: 768px) {
-  .header { padding: 16px; }
-  .header-inner { flex-direction: column; align-items: flex-start; }
-  .header-stats { width: 100%; justify-content: space-between; }
-  .search-section { padding: 12px 16px 0; }
-  .main { padding: 12px 16px 24px; }
-  .search-bar { flex-direction: column; }
-  .cards-grid { grid-template-columns: 1fr; }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+button{font-family:inherit}
+
+/* Header */
+.header{position:sticky;top:0;z-index:80;background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.header-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;overflow:hidden;flex:0 0 44px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.brand-mark img{width:100%;height:100%;object-fit:contain;padding:4px}
+.brand-text h1{font-family:'Fraunces',serif;font-size:19px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.brand-text h1 i{font-style:normal;color:var(--orange)}
+.brand-text p{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin-top:2px;font-weight:600}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.pill{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:#fff;padding:8px 14px;border-radius:var(--r-pill);font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(6px);transition:.15s}
+.pill:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22)}
+.pill--accent{background:var(--orange);border-color:var(--orange);color:#fff}
+.pill--accent:hover{background:var(--orange-2)}
+.pill--ghost{background:#fff;color:var(--navy);border-color:var(--line)}
+.header-stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat-mini{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:12px;min-width:92px}
+.stat-mini b{font-size:18px;font-weight:800;display:block;line-height:1}
+.stat-mini span{font-size:11px;color:#CBD5E1;letter-spacing:.04em}
+.stat-mini--green b{color:#86EFAC}
+.stat-mini--red b{color:#FECDD3}
+
+/* Hero */
+.hero{max-width:1280px;margin:0 auto;padding:28px 24px 0}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:18px}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 26px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-card::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;background:radial-gradient(closest-side, rgba(255,107,43,.14), transparent 70%);pointer-events:none}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px var(--green-soft);display:inline-block}
+.hero h2{font-family:'Fraunces',serif;font-size:38px;line-height:.95;letter-spacing:-.03em;margin-top:10px;font-weight:900}
+.hero h2 em{font-style:normal;color:var(--orange)}
+.hero p{color:var(--muted);font-size:14px;line-height:1.6;margin-top:10px;max-width:56ch}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.meta-chip{display:inline-flex;align-items:center;gap:8px;background:var(--navy-soft);border:1px solid #DCE6F5;color:var(--navy);padding:7px 12px;border-radius:var(--r-pill);font-size:12px;font-weight:700}
+.meta-chip--orange{background:var(--orange-soft);border-color:#FFDCC6;color:#9A3412}
+.search-wrap{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:18px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.search-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,107,43,.18), transparent 55%);pointer-events:none}
+.search-wrap h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FFDCC6;font-weight:800;position:relative}
+.search-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;position:relative}
+@media(max-width:640px){.search-grid{grid-template-columns:1fr}}
+.field{position:relative}
+.field label{display:block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#CBD5E1;margin-bottom:6px}
+.input{width:100%;background:#fff;color:var(--text);border:1px solid transparent;border-radius:12px;padding:12px 40px 12px 14px;font-size:14px;font-weight:500;outline:none;transition:.15s}
+.input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,107,43,.15)}
+.input::placeholder{color:#94A3B8}
+.clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:none;background:#F1F5F9;color:#64748B;cursor:pointer;display:none;place-items:center;font-size:13px}
+.clear.show{display:grid}
+.clear:hover{background:var(--line)}
+.hint{font-size:11px;color:#94A3B8;margin-top:6px}
+.ac{position:absolute;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;display:none;z-index:30;max-height:360px;overflow-y:auto}
+.ac.show{display:block}
+.ac-item{padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line-2);transition:.08s}
+.ac-item:last-child{border:none}
+.ac-item:hover,.ac-item.selected{background:#F8FAFF}
+.ac-item b{font-size:13px;font-weight:700;color:var(--text)}
+.ac-item b em{font-style:normal;color:var(--orange);background:var(--orange-soft);padding:0 3px;border-radius:4px}
+.ac-item small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.tag{font-size:10px;font-weight:800;letter-spacing:.04em;padding:4px 8px;border-radius:var(--r-pill);background:var(--navy-soft);color:var(--navy);white-space:nowrap;align-self:center}
+.ac-empty{padding:16px;text-align:center;color:var(--muted);font-size:13px}
+
+/* Stats bento */
+.stats{max-width:1280px;margin:14px auto 0;padding:0 24px;display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr .8fr;gap:12px}
+@media(max-width:1100px){.stats{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
+.stat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.stat-card--hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);color:#fff;border-color:transparent}
+.stat-card--hero::after{content:'';position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;background:radial-gradient(closest-side, rgba(255,107,43,.22), transparent 68%);pointer-events:none}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat-card--hero .eyebrow{color:#CBD5E1}
+.stat-card b{font-family:'Fraunces',serif;font-size:34px;line-height:1;letter-spacing:-.03em;font-weight:900}
+.stat-card small{color:var(--muted);font-size:12px;line-height:1.4}
+.stat-card--hero small{color:#CBD5E1}
+.stat-row{display:flex;align-items:center;gap:8px;margin-top:auto}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot--green{background:var(--green)}
+.dot--red{background:var(--red)}
+.inline-badge{font-size:11px;font-weight:800;padding:5px 10px;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff}
+.inline-badge--green{background:var(--green-soft);border-color:#B7F0D1;color:#065F46}
+.inline-badge--red{background:var(--red-soft);border-color:#FFD1DC;color:#9F1239}
+
+/* Main */
+.main{max-width:1280px;margin:14px auto;padding:0 24px 32px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:22px 0 14px}
+.section-head h2{font-family:'Fraunces',serif;font-size:22px;line-height:1;letter-spacing:-.02em;font-weight:900}
+.section-head p{color:var(--muted);font-size:12px;margin-top:6px}
+.section-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter{display:inline-flex;gap:6px;background:#fff;border:1px solid var(--line);padding:4px;border-radius:var(--r-pill);box-shadow:var(--shadow)}
+.filter button{border:none;background:transparent;padding:7px 12px;border-radius:var(--r-pill);font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);transition:.12s}
+.filter button.active{background:var(--navy);color:#fff}
+.filter button:hover{color:var(--text)}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:1024px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.card-grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:.16s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:#D8DEEA}
+.card::before{content:'';position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--orange));opacity:0}
+.card:hover::before{opacity:1}
+.card--lsp::before{background:linear-gradient(90deg,var(--navy),#3B82F6)}
+.card--skema::before{background:linear-gradient(90deg,var(--orange),#F59E0B)}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.card h3{font-size:14px;font-weight:800;line-height:1.35;letter-spacing:-.01em}
+.card h3 a{color:inherit;text-decoration:none}
+.card h3 a:hover{color:var(--navy)}
+.sub{font-size:12px;color:var(--muted);line-height:1.4}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.badge{font-size:11px;font-weight:800;padding:5px 10px;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;display:inline-flex;align-items:center;gap:6px}
+.badge--navy{background:var(--navy-soft);border-color:#DCE6F5;color:var(--navy)}
+.badge--orange{background:var(--orange-soft);border-color:#FFDCC6;color:#9A3412}
+.badge--green{background:var(--green-soft);border-color:#B7F0D1;color:#065F46}
+.badge--red{background:var(--red-soft);border-color:#FFD1DC;color:#9F1239}
+.badge--yellow{background:var(--yellow-soft);border-color:#FDE6A8;color:#92400E}
+.badge--mono{font-family:'JetBrains Mono',monospace;font-weight:600;letter-spacing:-.01em}
+.skkni-line{margin-top:8px;padding:10px 12px;border-radius:12px;background:#F8FAFF;border:1px solid #E0E8FF;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.skkni-line b{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}
+.skkni-line span{font-size:11px;color:var(--muted)}
+.skkni-actions{display:flex;gap:6px}
+.btn{border:1px solid var(--line);background:#fff;color:var(--text);padding:8px 12px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.12s;white-space:nowrap;text-decoration:none}
+.btn:hover{border-color:var(--navy);color:var(--navy)}
+.btn--primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn--primary:hover{background:var(--navy-3);border-color:var(--navy-3);color:#fff}
+.btn--accent{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn--accent:hover{background:var(--orange-2);border-color:var(--orange-2)}
+.btn--sm{padding:6px 10px;font-size:11px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.back{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer}
+.back:hover{border-color:var(--navy);color:var(--navy)}
+.table-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.table-wrap th{background:var(--navy);color:#fff;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:12px 14px;text-align:left;white-space:nowrap;position:sticky;top:0}
+.table-wrap td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top}
+.table-wrap tr:hover td{background:#F8FAFF}
+.mono{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--navy);font-weight:600}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:16px}
+.empty b{display:block;color:var(--text);font-size:14px;margin-bottom:4px}
+.pager{display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap}
+.pager button{min-width:36px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.pager button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pager button:disabled{opacity:.45;cursor:not-allowed}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pills button{padding:8px 12px;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.pills button.active{background:var(--navy-soft);border-color:var(--navy);color:var(--navy)}
+.skkni-hero{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+@media(max-width:760px){.skkni-hero{grid-template-columns:1fr}}
+.skkni-hero h3{font-size:16px;font-weight:900;letter-spacing:-.01em}
+.skkni-hero p{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+@media(max-width:640px){.kv{grid-template-columns:1fr}}
+.kv div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kv label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block}
+.kv b{font-size:13px;font-weight:800;display:block;margin-top:2px}
+.drawer{position:fixed;inset:0;z-index:90;display:none}
+.drawer.open{display:block}
+.drawer-bg{position:absolute;inset:0;background:rgba(11,30,51,.48);backdrop-filter:blur(6px)}
+.drawer-panel{position:absolute;right:0;top:0;bottom:0;width:min(560px,92vw);background:#fff;border-left:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:auto}
+.drawer-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:16px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.drawer-body{padding:16px}
+.skkni-list{display:grid;gap:10px}
+.skkni-item{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;display:grid;gap:8px}
+.skkni-item h4{font-size:13px;font-weight:800;line-height:1.35}
+.skkni-item p{font-size:11px;color:var(--muted);line-height:1.5}
+.footer{text-align:center;padding:22px;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.loading{display:grid;place-items:center;padding:48px 16px;color:var(--muted)}
+.spinner{width:36px;height:36px;border:3px solid var(--line);border-top-color:var(--navy);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
-
 <header class="header">
   <div class="header-inner">
-    <a class="header-brand" href="#" onclick="goHome(event)" aria-label="Kembali ke beranda">
-      <img src="logo_icc.png" alt="ICC Logo" class="logo-img" onerror="this.style.display='none';var b=document.createElement('span');b.className='logo-fallback';b.textContent='ICC';b.setAttribute('role','img');b.setAttribute('aria-label','ICC Logo');this.parentNode.appendChild(b);">
-      <div>
-        <h1>ICC LSP Portal</h1>
-        <span>Lembaga Sertifikasi Profesi — BNSP</span>
-      </div>
+    <a class="brand" href="#" onclick="goHome(event)" aria-label="Kembali ke beranda">
+      <span class="brand-mark"><img src="logo_icc.png" alt="ICC" onerror="this.style.display='none';this.parentElement.textContent='ICC';this.parentElement.style.fontWeight='900'"></span>
+      <span class="brand-text">
+        <h1>ICC <i>LSP</i> Portal</h1>
+        <p>Direktori BNSP — Terkurasi & SKKNI Ready</p>
+      </span>
     </a>
-    <div class="header-stats" id="headerStats">
-      <div class="stat"><div class="num" id="statLsp">-</div><div class="lbl">LSP</div></div>
-      <div class="stat"><div class="num" id="statSkema">-</div><div class="lbl">Jenis Skema</div></div>
-      <div class="stat"><div class="num" id="statUnit">-</div><div class="lbl">Unit Kompetensi</div></div>
-      <div class="stat"><div class="num stat-aktif" id="statAktif">-</div><div class="lbl">Aktif</div></div>
-      <div class="stat"><div class="num stat-habis" id="statHabis">-</div><div class="lbl">Masa Berlaku Habis</div></div>
+    <div class="nav-actions">
+      <button class="pill" type="button" onclick="openSkkniDrawer()">SKKNI & Regulasi <span id="skkniCount" class="inline-badge" style="background:var(--orange);color:#fff;border-color:transparent">—</span></button>
+      <button class="pill pill--ghost" type="button" onclick="document.getElementById('searchSkema').focus()">Cari Skema</button>
     </div>
   </div>
 </header>
 
-<div class="search-section">
-  <div class="search-bar">
-    <div class="search-group">
-      <label>Cari LSP</label>
-      <div class="search-input-wrap">
-        <input type="text" id="searchLsp" placeholder="Ketik nama LSP..." autocomplete="off">
-        <button class="clear-btn" id="clearLsp" type="button" aria-label="Hapus pencarian LSP">✕</button>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-card">
+      <div class="kicker"><i></i> Live dari Supabase • Update BNSP</div>
+      <h2>Semua <em>LSP P3</em> & <em>Skema</em> — satu tempat, rapi, siap asesmen.</h2>
+      <p>Jelajahi 295+ LSP dan ribuan skema sertifikasi BNSP. Kini dengan <b>SKKNI acuan</b>, status <b>Berlaku / Dicabut / Diganti</b>, dan tombol <b>Download PDF langsung dari JDIH Kemnaker</b> — tanpa scraping, link resmi.</p>
+      <div class="hero-meta">
+        <span class="meta-chip">✓ 100% link JDIH resmi</span>
+        <span class="meta-chip meta-chip--orange">✓ Tanpa scraping — kurasi manual terverifikasi</span>
+        <span class="meta-chip">Last update: <b id="lastUpdatedLabel">—</b></span>
       </div>
-      <div class="autocomplete" id="acLsp"></div>
-      <div class="search-hint">Misal: Administrator, Digital, K3, Migas</div>
     </div>
-    <div class="search-group">
-      <label>Cari Skema</label>
-      <div class="search-input-wrap">
-        <input type="text" id="searchSkema" placeholder="Ketik nama skema..." autocomplete="off">
-        <button class="clear-btn" id="clearSkema" type="button" aria-label="Hapus pencarian Skema">✕</button>
+    <div class="search-wrap">
+      <h3>Pencarian</h3>
+      <div class="search-grid">
+        <div class="field">
+          <label for="searchLsp">Cari LSP</label>
+          <input id="searchLsp" class="input" placeholder="Misal: Digital, K3, Migas..." autocomplete="off">
+          <button id="clearLsp" class="clear" type="button" aria-label="Hapus">✕</button>
+          <div id="acLsp" class="ac"></div>
+          <div class="hint">Ketik 1 huruf untuk autocomplete</div>
+        </div>
+        <div class="field">
+          <label for="searchSkema">Cari Skema</label>
+          <input id="searchSkema" class="input" placeholder="Misal: Digital Marketing, K3 Umum..." autocomplete="off">
+          <button id="clearSkema" class="clear" type="button" aria-label="Hapus">✕</button>
+          <div id="acSkema" class="ac"></div>
+          <div class="hint">Coba: “Data Analyst” → lihat SKKNI</div>
+        </div>
       </div>
-      <div class="autocomplete" id="acSkema"></div>
-      <div class="search-hint">Misal: Digital Marketing, K3 Umum, Sekretaris</div>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;position:relative">
+        <button class="pill" type="button" onclick="goHome(event)">Reset</button>
+        <button class="pill pill--accent" type="button" onclick="openSkkniDrawer()">Lihat katalog SKKNI</button>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="stats" id="statsBar">
+  <div class="stat-card stat-card--hero">
+    <div class="eyebrow">Total LSP</div>
+    <b id="statLsp">—</b>
+    <small>Terdaftar BNSP • sinkron Supabase</small>
+    <div class="stat-row"><span class="inline-badge" id="statLspDetail">—</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="eyebrow">Jenis Skema</div>
+    <b id="statSkema">—</b>
+    <small>Skema unik (case-insensitive)</small>
+    <div class="stat-row"><span class="dot dot--green"></span><span id="statSkemaSub" style="font-size:12px;color:var(--muted)">—</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="eyebrow">Unit Kompetensi</div>
+    <b id="statUnit">—</b>
+    <small>Total unit di semua skema</small>
+    <div class="stat-row"><span class="inline-badge" id="statUnitSub">—</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="eyebrow">Lisensi Aktif</div>
+    <b id="statAktif" style="color:var(--green)">—</b>
+    <small>LSP dengan status Aktif</small>
+    <div class="stat-row"><span class="inline-badge--green inline-badge">✓ Aktif</span></div>
+  </div>
+  <div class="stat-card">
+    <div class="eyebrow">Masa Berlaku Habis</div>
+    <b id="statHabis" style="color:var(--red)">—</b>
+    <small>Perlu perpanjangan</small>
+    <div class="stat-row"><span class="inline-badge--red inline-badge">✕ Habis</span></div>
+  </div>
+</section>
 
 <main class="main" id="mainContent">
-  <div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>
+  <div class="loading"><div class="spinner"></div><p style="margin-top:10px">Memuat data...</p></div>
 </main>
 
-<div class="footer">
-  Indonesian Certification Center (ICC) — Data LSP BNSP
+<div class="footer">Indonesian Certification Center (ICC) — Data LSP BNSP • SKKNI registry kurasi manual • Link download langsung ke JDIH Kemnaker (download.php)</div>
+
+<!-- SKKNI Drawer -->
+<div id="skkniDrawer" class="drawer" aria-hidden="true">
+  <div class="drawer-bg" onclick="closeSkkniDrawer()"></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Katalog SKKNI">
+    <div class="drawer-head">
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Katalog</div>
+        <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:900">SKKNI Terkurasi</div>
+        <div style="font-size:11px;color:var(--muted)">Direct link ke JDIH • Status Berlaku/Dicabut/Diganti</div>
+      </div>
+      <button class="btn" type="button" onclick="closeSkkniDrawer()">✕ Tutup</button>
+    </div>
+    <div class="drawer-body">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+        <input id="skkniSearch" class="input" style="border:1px solid var(--line);flex:1;min-width:180px" placeholder="Cari SKKNI: digital marketing, k3, pariwisata...">
+        <select id="skkniFilter" class="input" style="border:1px solid var(--line);width:160px"><option value="all">Semua status</option><option value="berlaku">Berlaku</option><option value="dicabut">Dicabut</option><option value="diganti">Diganti</option></select>
+      </div>
+      <div id="skkniList" class="skkni-list"></div>
+      <div style="margin-top:14px;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;font-size:12px;color:var(--muted);line-height:1.6">
+        <b style="color:var(--text)">Catatan kurasi:</b> Link download menggunakan <span class="mono">download.php?id=…</span> resmi JDIH (langsung stream PDF, bukan homepage). Tanpa scraping. Update manual 1×/bulan. Jika JDIH berganti ID, fallback otomatis ke halaman katalog.
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -256,22 +335,99 @@ tr:last-child td { border-bottom: none; }
 var SB_URL = 'https://ziybqtcdphuzhfoahopr.supabase.co';
 var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
 
+// ===== SKKNI REGISTRY =====
+var skkniRegistry = [];
+var skkniMapById = {};
+function loadSkkni(){
+  return fetch('skkni_registry.json').then(r=>r.json()).then(data=>{
+    skkniRegistry=data;
+    skkniRegistry.forEach(function(x){skkniMapById[x.id]=x;});
+    document.getElementById('skkniCount').textContent = skkniRegistry.length + ' SKKNI';
+    renderSkkniList();
+  }).catch(function(e){
+    document.getElementById('skkniCount').textContent = '0 SKKNI';
+  });
+}
+function findSkkniForSkema(name){
+  if(!name || !skkniRegistry.length) return null;
+  var q = String(name).toLowerCase();
+  var best=null, bestScore=-1;
+  for(var i=0;i<skkniRegistry.length;i++){
+    var s=skkniRegistry[i];
+    if(!s.keywords || !s.keywords.length) continue;
+    var score=0;
+    for(var k=0;k<s.keywords.length;k++){
+      var kw=s.keywords[k].toLowerCase();
+      if(q.indexOf(kw)!==-1) score+=kw.length*3;
+      else if(kw.indexOf(q)!==-1) score+=q.length;
+      // token partial
+      else {
+        var tokens=kw.split(/[\s\-\/]+/);
+        for(var t=0;t<tokens.length;t++) if(q.indexOf(tokens[t])!==-1) score+=2;
+      }
+    }
+    if(score>bestScore && score>4){best=s;bestScore=score;}
+  }
+  return best;
+}
+function badgeForStatus(st){
+  if(st==='berlaku') return '<span class="badge badge--green">● Berlaku</span>';
+  if(st==='dicabut') return '<span class="badge badge--red">✕ Dicabut</span>';
+  if(st==='diganti') return '<span class="badge badge--yellow">↻ Diganti</span>';
+  return '<span class="badge">'+esc(st)+'</span>';
+}
+function skkniCardHtml(s){
+  var statusBadge=badgeForStatus(s.status);
+  var dl = s.url_download ? '<a class="btn btn--accent btn--sm" href="'+esc(s.url_download)+'" target="_blank" rel="noopener" onclick="trackDl(\''+esc(s.id)+'\')">⬇ Download PDF</a>' : '<span class="btn btn--sm" style="opacity:.6;pointer-events:none">Link belum tersedia</span>';
+  var detail = s.url_detail ? '<a class="btn btn--sm" href="'+esc(s.url_detail)+'" target="_blank" rel="noopener">Lihat di JDIH</a>' : '';
+  var replaced = s.digantikan_oleh && skkniMapById[s.digantikan_oleh] ? '<div style="font-size:11px;color:var(--muted)">Diganti oleh: <b>'+esc(skkniMapById[s.digantikan_oleh].nomor)+'</b></div>' : '';
+  return '<div class="skkni-item">'+
+    '<div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><div><div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">'+esc(s.sektor)+' • '+s.tahun+'</div><h4>'+esc(s.nomor)+'</h4><p>'+esc(s.judul)+'</p></div>'+statusBadge+'</div>'+
+    '<div style="font-size:11px;color:var(--muted);line-height:1.5">'+esc(s.keterangan)+'</div>'+replaced+
+    '<div style="display:flex;gap:6px;flex-wrap:wrap">'+dl+detail+'<span class="badge badge--mono" style="font-size:10px">'+esc(s.id)+'</span></div>'+
+    '</div>';
+}
+function renderSkkniList(){
+  var q=(document.getElementById('skkniSearch').value||'').toLowerCase();
+  var f=document.getElementById('skkniFilter').value;
+  var list=document.getElementById('skkniList');
+  var items=skkniRegistry.filter(function(s){
+    if(f!=='all' && s.status!==f) return false;
+    if(!q) return true;
+    var hay=(s.nomor+' '+s.judul+' '+s.sektor+' '+(s.keywords||[]).join(' ')).toLowerCase();
+    return hay.indexOf(q)!==-1;
+  });
+  if(items.length===0){list.innerHTML='<div class="empty"><b>Tidak ada SKKNI</b><div>Coba kata kunci lain.</div></div>';return;}
+  var html=''; for(var i=0;i<Math.min(items.length,80);i++) html+=skkniCardHtml(items[i]);
+  list.innerHTML=html;
+}
+function openSkkniDrawer(){document.getElementById('skkniDrawer').classList.add('open');document.getElementById('skkniDrawer').setAttribute('aria-hidden','false');}
+function closeSkkniDrawer(){document.getElementById('skkniDrawer').classList.remove('open');document.getElementById('skkniDrawer').setAttribute('aria-hidden','true');}
+function trackDl(id){ try{ fetch('https://httpbin.org/post',{method:'POST',body:JSON.stringify({event:'skkni_download',id:id})}); }catch(e){} }
+document.getElementById('skkniSearch').addEventListener('input', renderSkkniList);
+document.getElementById('skkniFilter').addEventListener('change', renderSkkniList);
+
 // ===== STATE =====
 var lspList = [];
-var skemaList = [];        // grouped by name (unique)
-var skemaAllRows = [];     // raw rows for per-LSP filtering
-var lspMap = {};           // id -> name
+var skemaList = [];
+var skemaAllRows = [];
+var lspMap = {};
 var acLspSelected = -1;
 var acSkemaSelected = -1;
-var currentView = 'home';  // 'home' | 'lsp' | 'skema'
+var currentView = 'home';
 var currentLspId = null;
 var currentLspName = '';
-var lspFilter = 'all';     // filter status di home: 'all' | 'aktif' | 'habis'
-var lastUpdated = '';      // tanggal update data terakhir (max last_checked)
-var unitRows = [];         // rows unit aktif utk sorting
-var unitSortKey = 'kode';  // 'kode' | 'nama'
-var unitSortDir = 1;       // 1 asc | -1 desc
-var unitLspName = '';      // nama LSP utk header tabel unit
+var lspFilter = 'all';
+var lastUpdated = '';
+var unitRows = [];
+var unitSortKey = 'kode';
+var unitSortDir = 1;
+var unitLspName = '';
+var skemaPageSize = 24;
+var skemaCurrentPage = 1;
+var lspSkemaNames = [];
+var lspCurrentPage = 1;
+var lspPageSize = 24;
 
 // ===== FETCH WITH PAGINATION =====
 function fetchAll(table, select, pageSize) {
@@ -281,624 +437,294 @@ function fetchAll(table, select, pageSize) {
     var end = start + pageSize - 1;
     var url = SB_URL + '/rest/v1/' + table + '?select=' + encodeURIComponent(select);
     return fetch(url, {
-      headers: {
-        apikey: SB_KEY,
-        Authorization: 'Bearer ' + SB_KEY,
-        Accept: 'application/json',
-        Range: start + '-' + end
-      }
-    }).then(function(r) {
-      return r.json().then(function(data) {
-        if (!data || !data.length) return results;
-        results = results.concat(data);
-        if (data.length < pageSize) return results;
-        return getPage(start + pageSize);
-      });
-    });
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json', Range: start + '-' + end }
+    }).then(function(r){ return r.json().then(function(data){
+      if (!data || !data.length) return results;
+      results = results.concat(data);
+      if (data.length < pageSize) return results;
+      return getPage(start + pageSize);
+    });});
   }
   return getPage(0);
 }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function highlight(text, query){
+  if(!query) return esc(text);
+  var q=query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  var re=new RegExp('('+q+')','gi');
+  return esc(text).replace(re,'<em>$1</em>');
+}
 
-// ===== LOAD =====
-// ===== BUILD DATA (extracted from Promise.all callback) =====
-function buildData(lspRows, skemaRows, unitCount) {
-  // Build LSP list
-  lspList = lspRows.map(function(l) {
-    return {
-      nama: l.nama, jml_skema: l.jml_skema || 0, id: l.id, status: l.status || '',
-      no_sk: l.no_sk || '', no_lisensi: l.no_lisensi || '', last_checked: l.last_checked || ''
-    };
+// ===== BUILD DATA =====
+function buildData(lspRows, skemaRows, unitCount){
+  lspList = lspRows.map(function(l){
+    return { nama:l.nama, jml_skema:l.jml_skema||0, id:l.id, status:l.status||'', no_sk:l.no_sk||'', no_lisensi:l.no_lisensi||'', last_checked:l.last_checked||'' };
   });
-
-  // Timestamp terakhir (max last_checked)
-  var latest = '';
-  lspRows.forEach(function(l) {
-    if (l.last_checked && l.last_checked > latest) latest = l.last_checked;
-  });
-  if (latest) {
-    var d = new Date(latest);
-    lastUpdated = d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+  var latest='';
+  lspRows.forEach(function(l){ if(l.last_checked && l.last_checked>latest) latest=l.last_checked; });
+  if(latest){
+    var d=new Date(latest);
+    lastUpdated=d.toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'});
+    document.getElementById('lastUpdatedLabel').textContent=lastUpdated;
   }
-
-  lspMap = {};
-  lspList.forEach(function(l) { lspMap[l.id] = l.nama; });
-
-  // All raw skema rows for per-LSP filtering + unit fetch
-  skemaAllRows = skemaRows;
-
-  // Recount jml_skema per LSP from actual skema rows (kolom DB bisa stale)
-  var lspSkemaCount = {};
-  skemaRows.forEach(function(s) {
-    var key = String(s.lsp_id);
-    if (!lspSkemaCount[key]) lspSkemaCount[key] = {};
-    lspSkemaCount[key][s.nama] = true;
+  lspMap={}; lspList.forEach(function(l){ lspMap[l.id]=l.nama; });
+  skemaAllRows=skemaRows;
+  var lspSkemaCount={};
+  skemaRows.forEach(function(s){ var key=String(s.lsp_id); if(!lspSkemaCount[key]) lspSkemaCount[key]={}; lspSkemaCount[key][s.nama]=true; });
+  lspList.forEach(function(l){ var m=lspSkemaCount[String(l.id)]; if(m) l.jml_skema=Object.keys(m).length; });
+  var skemaGroup={};
+  skemaRows.forEach(function(s){
+    var key=s.nama.toLowerCase();
+    if(!skemaGroup[key]) skemaGroup[key]={nama:s.nama, lsps:{}};
+    skemaGroup[key].lsps[s.lsp_id]={id_skema:s.id_skema, jml_unit:s.jml_unit||0, skema_id:s.id, lsp_id:parseInt(s.lsp_id)};
   });
-  lspList.forEach(function(l) {
-    var m = lspSkemaCount[String(l.id)];
-    if (m) l.jml_skema = Object.keys(m).length;
-  });
-
-  // Group skema by name (case-insensitive key → no 'DATA ANALYST' / 'Data Analyst' dupes)
-  var skemaGroup = {};
-  skemaRows.forEach(function(s) {
-    var key = s.nama.toLowerCase();
-    if (!skemaGroup[key]) skemaGroup[key] = { nama: s.nama, lsps: {} };
-    skemaGroup[key].lsps[s.lsp_id] = {
-      id_skema: s.id_skema,
-      jml_unit: s.jml_unit || 0,
-      skema_id: s.id,
-      lsp_id: parseInt(s.lsp_id)
-    };
-  });
-
-  skemaList = Object.keys(skemaGroup).sort().map(function(key) {
-    var g = skemaGroup[key];
-    var lspArr = Object.keys(g.lsps).map(function(lid) {
-      return {
-        lsp: lspMap[lid] || 'Unknown',
-        lsp_id: parseInt(lid),
-        id_skema: g.lsps[lid].id_skema,
-        jml_unit: g.lsps[lid].jml_unit,
-        skema_id: g.lsps[lid].skema_id
-      };
+  skemaList=Object.keys(skemaGroup).sort().map(function(key){
+    var g=skemaGroup[key];
+    var lspArr=Object.keys(g.lsps).map(function(lid){
+      return { lsp:lspMap[lid]||'Unknown', lsp_id:parseInt(lid), id_skema:g.lsps[lid].id_skema, jml_unit:g.lsps[lid].jml_unit, skema_id:g.lsps[lid].skema_id };
     });
-    lspArr.sort(function(a, b) { return a.lsp.localeCompare(b.lsp); });
-    return {
-      nama: g.nama,
-      jml_lsp: lspArr.length,
-      total_unit: lspArr.reduce(function(s, o) { return s + o.jml_unit; }, 0),
-      lsps: lspArr
-    };
+    lspArr.sort(function(a,b){ return a.lsp.localeCompare(b.lsp); });
+    return { nama:g.nama, jml_lsp:lspArr.length, total_unit:lspArr.reduce(function(s,o){return s+o.jml_unit;},0), lsps:lspArr };
   });
-
-  // Stats
-  var aktif = 0, habis = 0;
-  lspList.forEach(function(l) {
-    if (l.status === 'Lisensi Aktif') aktif++;
-    else if (l.status === 'Masa Berlaku Habis') habis++;
-  });
-  document.getElementById('statLsp').textContent = lspList.length;
-  document.getElementById('statSkema').textContent = skemaList.length;
-  var unitTotal = skemaList.reduce(function(s, o) { return s + o.total_unit; }, 0);
-  document.getElementById('statUnit').textContent = unitCount ? unitCount.toLocaleString() : unitTotal.toLocaleString();
-  document.getElementById('statAktif').textContent = aktif;
-  document.getElementById('statHabis').textContent = habis;
-
+  var aktif=0,habis=0; lspList.forEach(function(l){ if(l.status==='Lisensi Aktif') aktif++; else if(l.status==='Masa Berlaku Habis') habis++; });
+  document.getElementById('statLsp').textContent=lspList.length;
+  document.getElementById('statSkema').textContent=skemaList.length;
+  var unitTotal=skemaList.reduce(function(s,o){return s+o.total_unit;},0);
+  document.getElementById('statUnit').textContent= unitCount ? unitCount.toLocaleString('id-ID') : unitTotal.toLocaleString('id-ID');
+  document.getElementById('statAktif').textContent=aktif;
+  document.getElementById('statHabis').textContent=habis;
+  document.getElementById('statLspDetail').textContent=aktif+' Aktif • '+habis+' Habis';
+  document.getElementById('statUnitSub').textContent=unitTotal.toLocaleString('id-ID')+' unit (sum skema)';
+  document.getElementById('statSkemaSub').textContent=skemaList.filter(s=>s.jml_lsp>1).length+' skema di >1 LSP';
   renderHome();
 }
-
-// ===== LOAD =====
-function loadData() {
-  document.getElementById('mainContent').innerHTML =
-    '<div class="loading"><div class="spinner"></div><p>Memuat data...</p></div>';
-
-  // Fetch all 3 tables in parallel with full pagination
-  var p1 = fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
-  var p2 = fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit');
-  var p3 = fetchAll('unit_kompetensi', 'count');
-
-  Promise.all([p1, p2, p3]).then(function(results) {
-    var unitCount = 0;
-    if (results[2] && results[2][0] && results[2][0].count !== undefined) {
-      unitCount = parseInt(results[2][0].count, 10);
-    }
-    buildData(results[0], results[1], unitCount);
-  }).catch(function(e) {
-    document.getElementById('mainContent').innerHTML =
-      '<div class="empty-state"><div class="icon">⚠️</div><p>Gagal memuat data</p><div class="sub">' + esc(e.message) + '</div></div>';
+function loadData(){
+  document.getElementById('mainContent').innerHTML='<div class="loading"><div class="spinner"></div><p style="margin-top:10px">Memuat data...</p></div>';
+  var p1=fetchAll('lsp','id,nama,jml_skema,status,no_sk,no_lisensi,last_checked');
+  var p2=fetchAll('skema','id,nama,id_skema,lsp_id,jml_unit');
+  var p3=fetchAll('unit_kompetensi','count');
+  Promise.all([p1,p2,p3]).then(function(results){
+    var unitCount=0;
+    if(results[2] && results[2][0] && results[2][0].count!==undefined) unitCount=parseInt(results[2][0].count,10);
+    buildData(results[0],results[1],unitCount);
+  }).catch(function(e){
+    document.getElementById('mainContent').innerHTML='<div class="empty"><b>Gagal memuat data</b><div>'+esc(e.message)+'</div></div>';
   });
 }
-
-// ===== HELPERS =====
-function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-function highlight(text, query) {
-  if (!query) return esc(text);
-  var q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  var re = new RegExp('(' + q + ')', 'gi');
-  return esc(text).replace(re, '<span class="highlight">$1</span>');
-}
+loadSkkni();
 
 // ===== HOME =====
-function renderHome() {
-  currentView = 'home';
-  var html = '';
-
-  // Filter status
-  var cntAktif = 0, cntHabis = 0;
-  lspList.forEach(function(l) {
-    if (l.status === 'Lisensi Aktif') cntAktif++;
-    else if (l.status === 'Masa Berlaku Habis') cntHabis++;
-  });
-  html += '<div class="section-header"><h2>LSP dengan Skema Terbanyak</h2>' +
-    '<div class="filter-pills">' +
-      '<button class="lsp-pill' + (lspFilter === 'all' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'all\')"><span class="check">✓ </span>Semua (' + lspList.length + ')</button>' +
-      '<button class="lsp-pill' + (lspFilter === 'aktif' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'aktif\')"><span class="check">✓ </span>Aktif (' + cntAktif + ')</button>' +
-      '<button class="lsp-pill' + (lspFilter === 'habis' ? ' selected' : '') + '" type="button" onclick="filterLsp(\'habis\')"><span class="check">✓ </span>Habis (' + cntHabis + ')</button>' +
-    '</div></div>' +
-    '<div class="section-sub" style="margin:-12px 0 16px;font-size:12px;color:var(--text-muted)">Top 6 LSP — diurutkan berdasarkan jumlah skema aktual</div>' +
-    '<div class="cards-grid">';
-  var top = lspList.slice().filter(function(l) {
-    if (lspFilter === 'aktif') return l.status === 'Lisensi Aktif';
-    if (lspFilter === 'habis') return l.status === 'Masa Berlaku Habis';
-    return true;
-  }).sort(function(a,b){ return b.jml_skema - a.jml_skema; }).slice(0, 6);
-  if (top.length === 0) {
-    html += '<div class="empty-state" style="padding:30px"><p>Tidak ada LSP dengan filter ini</p></div>';
-  }
+function renderHome(){
+  currentView='home';
+  var html='';
+  var cntAktif=0,cntHabis=0;
+  lspList.forEach(function(l){ if(l.status==='Lisensi Aktif') cntAktif++; else if(l.status==='Masa Berlaku Habis') cntHabis++; });
+  html+='<div class="section-head"><div><h2>LSP dengan Skema Terbanyak</h2><p>Top 6 • klik kartu untuk lihat skema & SKKNI acuan</p></div><div class="filter"><button class="'+(lspFilter==='all'?'active':'')+'" type="button" onclick="filterLsp(\'all\')">Semua ('+lspList.length+')</button><button class="'+(lspFilter==='aktif'?'active':'')+'" type="button" onclick="filterLsp(\'aktif\')">Aktif ('+cntAktif+')</button><button class="'+(lspFilter==='habis'?'active':'')+'" type="button" onclick="filterLsp(\'habis\')">Habis ('+cntHabis+')</button></div></div>';
+  html+='<div class="card-grid">';
+  var top=lspList.slice().filter(function(l){ if(lspFilter==='aktif') return l.status==='Lisensi Aktif'; if(lspFilter==='habis') return l.status==='Masa Berlaku Habis'; return true; }).sort(function(a,b){return b.jml_skema-a.jml_skema;}).slice(0,6);
+  if(top.length===0) html+='<div class="empty" style="grid-column:1/-1"><b>Tidak ada LSP</b><div>Filter tidak cocok.</div></div>';
   top.forEach(function(l){
-    html += '<div class="card card-lsp card-clickable" onclick="showLsp(\'' + esc(l.nama) + '\')">' +
-      '<div class="title">' + esc(l.nama) + '</div>' +
-      '<div class="sub">' + l.jml_skema + ' skema sertifikasi</div>' +
-      '<div class="badge-group">' +
-        '<span class="badge badge-primary">' + l.jml_skema + ' skema</span>' +
-        (l.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Aktif</span>' :
-         l.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Habis</span>' : '') +
-      '</div></div>';
+    var statusBadge = l.status==='Lisensi Aktif' ? '<span class="badge badge--green">✓ Aktif</span>' : l.status==='Masa Berlaku Habis' ? '<span class="badge badge--red">✕ Habis</span>' : '';
+    html+='<div class="card card--lsp" style="cursor:pointer" onclick="showLsp(\''+esc(l.nama).replace(/'/g,'&#39;')+'\')"><div class="card-top"><h3>'+esc(l.nama)+'</h3><span class="badge badge--navy">'+l.jml_skema+' skema</span></div><div class="sub">Lembaga Sertifikasi Profesi • '+esc(l.no_lisensi||'No lisensi —')+'</div><div class="badges">'+statusBadge+'<span class="badge">'+esc(l.no_sk||'No SK —')+'</span></div></div>';
   });
-  html += '</div>';
-
-  html += '<div class="section-header"><h2>Skema Tersedia</h2><span class="count">' + skemaList.length + ' jenis skema</span></div><div class="cards-grid" id="skemaGrid">';
-  // Show first 24
-  for (var i = 0; i < Math.min(24, skemaList.length); i++) {
-    var s = skemaList[i];
-    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
-      '<div class="title">' + esc(s.nama) + '</div>' +
-      '<div class="sub">' + s.jml_lsp + ' LSP • ' + s.total_unit + ' unit</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">' + s.total_unit + ' unit</span></div></div>';
-  }
-  html += '</div>';
-
-  if (skemaList.length > 24) {
-    html += '<div class="pagination" id="skemaPagination"></div>';
-  }
-
-  document.getElementById('mainContent').innerHTML = html;
-
-  if (skemaList.length > 24) {
-    renderSkemaPagination(1);
-  }
+  html+='</div>';
+  html+='<div class="section-head"><div><h2>Skema Tersedia</h2><p>'+skemaList.length+' jenis skema • badge SKKNI menunjukkan acuan regulasi & status</p></div><div class="section-actions"><span class="badge">SKKNI: <b style="color:var(--green)">● Berlaku</b> <b style="color:var(--red)">✕ Dicabut</b> <b style="color:var(--yellow)">↻ Diganti</b></span></div></div><div class="card-grid" id="skemaGrid"></div><div class="pager" id="skemaPagination"></div>';
+  document.getElementById('mainContent').innerHTML=html;
+  renderSkemaPagination(1);
 }
-
-// ===== FILTER STATUS + GO HOME =====
-function filterLsp(status) {
-  lspFilter = status;
-  renderHome();
+function filterLsp(status){ lspFilter=status; renderHome(); }
+function goHome(e){ if(e) e.preventDefault(); var a=document.getElementById('searchLsp'); var b=document.getElementById('searchSkema'); if(a) a.value=''; if(b) b.value=''; var cl=document.getElementById('clearLsp'); var cs=document.getElementById('clearSkema'); if(cl) cl.classList.remove('show'); if(cs) cs.classList.remove('show'); var al=document.getElementById('acLsp'); var as=document.getElementById('acSkema'); if(al) al.classList.remove('show'); if(as) as.classList.remove('show'); lspFilter='all'; renderHome(); window.scrollTo({top:0,behavior:'smooth'}); }
+function skkniBadgeForCard(skemaName){
+  var s=findSkkniForSkema(skemaName);
+  if(!s) return '<span class="badge" style="opacity:.6">SKKNI belum dipetakan</span>';
+  var dot = s.status==='berlaku' ? '<span class="badge badge--green">● Berlaku</span>' : s.status==='dicabut' ? '<span class="badge badge--red">✕ Dicabut</span>' : '<span class="badge badge--yellow">↻ Diganti</span>';
+  return '<span class="badge badge--mono" title="'+esc(s.judul)+'">'+esc(s.nomor)+'</span>'+dot;
 }
-
-function goHome(e) {
-  if (e) e.preventDefault();
-  // reset kedua pencarian & autocomplete
-  if (searchLspInput) searchLspInput.value = '';
-  if (searchSkemaInput) searchSkemaInput.value = '';
-  if (clearLsp) clearLsp.classList.remove('show');
-  if (clearSkema) clearSkema.classList.remove('show');
-  if (acLsp) acLsp.classList.remove('show');
-  if (acSkema) acSkema.classList.remove('show');
-  lspFilter = 'all';
-  renderHome();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-var skemaPageSize = 24;
-var skemaCurrentPage = 1;
-
-function renderSkemaPagination(page) {
-  skemaCurrentPage = page;
-  var grid = document.getElementById('skemaGrid');
-  if (!grid) return;
-  var start = (page - 1) * skemaPageSize;
-  var end = Math.min(start + skemaPageSize, skemaList.length);
-  var html = '';
-  for (var i = start; i < end; i++) {
-    var s = skemaList[i];
-    html += '<div class="card card-skema card-clickable" onclick="searchSkemaAndPickLsp(\'' + esc(s.nama) + '\')">' +
-      '<div class="title">' + esc(s.nama) + '</div>' +
-      '<div class="sub">' + s.jml_lsp + ' LSP • ' + s.total_unit + ' unit</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">' + s.total_unit + ' unit</span></div></div>';
+function renderSkemaPagination(page){
+  skemaCurrentPage=page;
+  var grid=document.getElementById('skemaGrid'); if(!grid) return;
+  var start=(page-1)*skemaPageSize, end=Math.min(start+skemaPageSize, skemaList.length);
+  var html='';
+  for(var i=start;i<end;i++){
+    var s=skemaList[i];
+    var skkni=findSkkniForSkema(s.nama);
+    var skkniLine = skkni ? '<div class="skkni-line"><div><b>'+esc(skkni.nomor)+'</b><span> • '+esc(skkni.sektor)+'</span></div>'+badgeForStatus(skkni.status)+'</div>' : '<div class="skkni-line" style="opacity:.7"><div><b>SKKNI belum dipetakan</b><span> • usulkan via katalog SKKNI</span></div><span class="badge">—</span></div>';
+    html+='<div class="card card--skema" style="cursor:pointer" onclick="searchSkemaAndPickLsp(\''+esc(s.nama).replace(/'/g,'&#39;')+'\')"><div class="card-top"><h3>'+esc(s.nama)+'</h3><span class="badge badge--orange">'+s.total_unit+' unit</span></div><div class="sub">'+s.jml_lsp+' LSP penyelenggara</div>'+skkniLine+'<div class="badges">'+skkniBadgeForCard(s.nama)+'<span class="badge">'+s.jml_lsp+' LSP</span></div></div>';
   }
-  grid.innerHTML = html;
-
-  var totalPages = Math.ceil(skemaList.length / skemaPageSize);
-  var phtml = '';
-  phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
-  for (var p = Math.max(1, page - 2); p <= Math.min(totalPages, page + 2); p++) {
-    phtml += '<button class="page-btn' + (p === page ? ' active' : '') + '" type="button" onclick="renderSkemaPagination(' + p + ')">' + p + '</button>';
-  }
-  phtml += '<button class="page-btn" type="button" onclick="renderSkemaPagination(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
-  document.getElementById('skemaPagination').innerHTML = phtml;
+  grid.innerHTML=html;
+  var totalPages=Math.ceil(skemaList.length/skemaPageSize), phtml='';
+  phtml+='<button type="button" onclick="renderSkemaPagination('+(page-1)+')"' + (page<=1?' disabled':'') + '>← Prev</button>';
+  for(var p=Math.max(1,page-2);p<=Math.min(totalPages,page+2);p++) phtml+='<button type="button" class="'+(p===page?'active':'')+'" onclick="renderSkemaPagination('+p+')">'+p+'</button>';
+  phtml+='<button type="button" onclick="renderSkemaPagination('+(page+1)+')"' + (page>=totalPages?' disabled':'') + '>Next →</button>';
+  document.getElementById('skemaPagination').innerHTML=phtml;
 }
 
 // ===== SEARCH LSP =====
-var searchLspInput = document.getElementById('searchLsp');
-var acLsp = document.getElementById('acLsp');
-var clearLsp = document.getElementById('clearLsp');
-
-searchLspInput.addEventListener('input', function() {
-  var q = this.value.trim().toLowerCase();
-  clearLsp.classList.toggle('show', q.length > 0);
-  if (q.length < 1) { acLsp.classList.remove('show'); if (currentView === 'home') return; renderHome(); return; }
-  var starts = lspList.filter(function(l) { return l.nama.toLowerCase().startsWith(q); });
-  var includes = lspList.filter(function(l) { return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
-  var matches = starts.concat(includes).slice(0, 8);
-  if (matches.length === 0) {
-    acLsp.innerHTML = '<div class="autocomplete-empty">Tidak ditemukan</div>';
-    acLsp.classList.add('show');
-    return;
-  }
-  acLspSelected = -1;
-  var html = '';
-  matches.forEach(function(m) {
-    html += '<div class="autocomplete-item" onclick="selectLsp(\'' + esc(m.nama) + '\')">' +
-      '<span>' + highlight(m.nama, searchLspInput.value) + '</span></div>';
+var searchLspInput=document.getElementById('searchLsp'), acLsp=document.getElementById('acLsp'), clearLsp=document.getElementById('clearLsp');
+searchLspInput.addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase();
+  clearLsp.classList.toggle('show', q.length>0);
+  if(q.length<1){ acLsp.classList.remove('show'); if(currentView==='home') return; renderHome(); return; }
+  var starts=lspList.filter(function(l){ return l.nama.toLowerCase().startsWith(q); });
+  var includes=lspList.filter(function(l){ return l.nama.toLowerCase().includes(q) && !l.nama.toLowerCase().startsWith(q); });
+  var matches=starts.concat(includes).slice(0,8);
+  if(matches.length===0){ acLsp.innerHTML='<div class="ac-empty">Tidak ditemukan</div>'; acLsp.classList.add('show'); return; }
+  acLspSelected=-1;
+  var html=''; matches.forEach(function(m){
+    html+='<div class="ac-item" onclick="selectLsp(\''+esc(m.nama).replace(/'/g,'&#39;')+'\')"><span><b>'+highlight(m.nama, searchLspInput.value)+'</b><small>'+esc(m.status||'')+' • '+m.jml_skema+' skema</small></span></div>';
   });
-  acLsp.innerHTML = html;
-  acLsp.classList.add('show');
+  acLsp.innerHTML=html; acLsp.classList.add('show');
 });
-
-searchLspInput.addEventListener('keydown', function(e) {
-  var items = acLsp.querySelectorAll('.autocomplete-item');
-  if (e.key === 'ArrowDown') { e.preventDefault(); acLspSelected = Math.min(acLspSelected + 1, items.length - 1); highlightAc(items); }
-  if (e.key === 'ArrowUp') { e.preventDefault(); acLspSelected = Math.max(acLspSelected - 1, -1); highlightAc(items); }
-  if (e.key === 'Enter' && acLspSelected >= 0 && items[acLspSelected]) { items[acLspSelected].click(); }
-  if (e.key === 'Escape') { acLsp.classList.remove('show'); }
+searchLspInput.addEventListener('keydown',function(e){
+  var items=acLsp.querySelectorAll('.ac-item');
+  if(e.key==='ArrowDown'){ e.preventDefault(); acLspSelected=Math.min(acLspSelected+1, items.length-1); highlightAc(items); }
+  if(e.key==='ArrowUp'){ e.preventDefault(); acLspSelected=Math.max(acLspSelected-1,-1); highlightAc(items); }
+  if(e.key==='Enter' && acLspSelected>=0 && items[acLspSelected]) items[acLspSelected].click();
+  if(e.key==='Escape') acLsp.classList.remove('show');
 });
-
-function highlightAc(items) {
-  items.forEach(function(el, i) { el.classList.toggle('selected', i === acLspSelected); });
-}
-
-function selectLsp(name) {
-  searchLspInput.value = name;
-  acLsp.classList.remove('show');
-  showLsp(name);
-}
-
-clearLsp.addEventListener('click', function() {
-  searchLspInput.value = '';
-  clearLsp.classList.remove('show');
-  acLsp.classList.remove('show');
-  renderHome();
-});
+function highlightAc(items){ items.forEach(function(el,i){ el.classList.toggle('selected', i===acLspSelected); }); }
+function selectLsp(name){ searchLspInput.value=name; acLsp.classList.remove('show'); showLsp(name); }
+clearLsp.addEventListener('click',function(){ searchLspInput.value=''; clearLsp.classList.remove('show'); acLsp.classList.remove('show'); renderHome(); });
 
 // ===== SEARCH SKEMA =====
-var searchSkemaInput = document.getElementById('searchSkema');
-var acSkema = document.getElementById('acSkema');
-var clearSkema = document.getElementById('clearSkema');
-
-searchSkemaInput.addEventListener('input', function() {
-  var q = this.value.trim().toLowerCase();
-  clearSkema.classList.toggle('show', q.length > 0);
-  if (q.length < 1) { acSkema.classList.remove('show'); return; }
-  var starts = skemaList.filter(function(s) { return s.nama.toLowerCase().startsWith(q); });
-  var includes = skemaList.filter(function(s) { return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
-  var matches = starts.concat(includes).slice(0, 8);
-  if (matches.length === 0) {
-    acSkema.innerHTML = '<div class="autocomplete-empty">Tidak ditemukan</div>';
-    acSkema.classList.add('show');
-    return;
-  }
-  acSkemaSelected = -1;
-  var html = '';
-  matches.forEach(function(m) {
-    html += '<div class="autocomplete-item" onclick="searchSkemaAndPickLsp(\'' + esc(m.nama) + '\')">' +
-      '<span>' + highlight(m.nama, searchSkemaInput.value) + '</span>' +
-      ' <span class="tag">' + m.jml_lsp + ' LSP</span></div>';
+var searchSkemaInput=document.getElementById('searchSkema'), acSkema=document.getElementById('acSkema'), clearSkema=document.getElementById('clearSkema');
+searchSkemaInput.addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase();
+  clearSkema.classList.toggle('show', q.length>0);
+  if(q.length<1){ acSkema.classList.remove('show'); return; }
+  var starts=skemaList.filter(function(s){ return s.nama.toLowerCase().startsWith(q); });
+  var includes=skemaList.filter(function(s){ return s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q); });
+  var matches=starts.concat(includes).slice(0,8);
+  if(matches.length===0){ acSkema.innerHTML='<div class="ac-empty">Tidak ditemukan</div>'; acSkema.classList.add('show'); return; }
+  acSkemaSelected=-1;
+  var html=''; matches.forEach(function(m){
+    var sk=findSkkniForSkema(m.nama);
+    html+='<div class="ac-item" onclick="searchSkemaAndPickLsp(\''+esc(m.nama).replace(/'/g,'&#39;')+'\')"><span><b>'+highlight(m.nama, searchSkemaInput.value)+'</b><small>'+m.jml_lsp+' LSP • '+(sk?esc(sk.nomor)+' • '+badgeForStatus(sk.status).replace(/<[^>]+>/g,''):'SKKNI belum dipetakan')+'</small></span><span class="tag">'+m.jml_lsp+' LSP</span></div>';
   });
-  acSkema.innerHTML = html;
-  acSkema.classList.add('show');
+  acSkema.innerHTML=html; acSkema.classList.add('show');
 });
-
-searchSkemaInput.addEventListener('keydown', function(e) {
-  var items = acSkema.querySelectorAll('.autocomplete-item');
-  if (e.key === 'ArrowDown') { e.preventDefault(); acSkemaSelected = Math.min(acSkemaSelected + 1, items.length - 1); highlightAc(items); }
-  if (e.key === 'ArrowUp') { e.preventDefault(); acSkemaSelected = Math.max(acSkemaSelected - 1, -1); highlightAc(items); }
-  if (e.key === 'Enter' && acSkemaSelected >= 0 && items[acSkemaSelected]) { items[acSkemaSelected].click(); }
-  if (e.key === 'Escape') { acSkema.classList.remove('show'); }
+searchSkemaInput.addEventListener('keydown',function(e){
+  var items=acSkema.querySelectorAll('.ac-item');
+  if(e.key==='ArrowDown'){ e.preventDefault(); acSkemaSelected=Math.min(acSkemaSelected+1, items.length-1); highlightAc(items); }
+  if(e.key==='ArrowUp'){ e.preventDefault(); acSkemaSelected=Math.max(acSkemaSelected-1,-1); highlightAc(items); }
+  if(e.key==='Enter' && acSkemaSelected>=0 && items[acSkemaSelected]) items[acSkemaSelected].click();
+  if(e.key==='Escape') acSkema.classList.remove('show');
 });
+clearSkema.addEventListener('click',function(){ searchSkemaInput.value=''; clearSkema.classList.remove('show'); acSkema.classList.remove('show'); renderHome(); });
 
-clearSkema.addEventListener('click', function() {
-  searchSkemaInput.value = '';
-  clearSkema.classList.remove('show');
-  acSkema.classList.remove('show');
-  renderHome();
-});
-
-// ===== SKEMA DETAIL (pick LSP → show units) =====
-function searchSkemaAndPickLsp(name) {
-  currentView = 'skema';
-  searchSkemaInput.value = name;
-  acSkema.classList.remove('show');
-  clearSkema.classList.add('show');
-
-  var skema = null;
-  for (var i = 0; i < skemaList.length; i++) {
-    if (skemaList[i].nama === name) { skema = skemaList[i]; break; }
+function skkniPanelHtml(skkni){
+  if(!skkni) return '<div class="skkni-hero"><div><h3>SKKNI acuan belum dipetakan</h3><p>Skema ini belum memiliki pemetaan SKKNI di registry kurasi. Buka katalog SKKNI untuk mencari regulasi yang relevan, atau hubungi admin untuk pemetaan manual.</p><div style="margin-top:10px;display:flex;gap:8px"><button class="btn btn--primary" type="button" onclick="openSkkniDrawer()">Buka katalog SKKNI</button><a class="btn" href="https://jdih.kemnaker.go.id/peraturan?keywords=SKKNI" target="_blank" rel="noopener">Cari di JDIH</a></div></div><div><span class="badge">Perlu kurasi</span></div></div>';
+  var dl = skkni.url_download ? '<a class="btn btn--accent" href="'+esc(skkni.url_download)+'" target="_blank" rel="noopener" onclick="trackDl(\''+esc(skkni.id)+'\')">⬇ Download PDF (JDIH)</a>' : '';
+  var detail = skkni.url_detail ? '<a class="btn" href="'+esc(skkni.url_detail)+'" target="_blank" rel="noopener">Lihat detail JDIH</a>' : '';
+  var st=badgeForStatus(skkni.status);
+  var replaced='';
+  if(skkni.digantikan_oleh && skkniMapById[skkni.digantikan_oleh]){
+    var rep=skkniMapById[skkni.digantikan_oleh];
+    replaced='<div style="margin-top:8px;padding:8px 10px;background:var(--yellow-soft);border:1px solid #FDE6A8;border-radius:10px;font-size:12px">↻ Diganti oleh <b>'+esc(rep.nomor)+'</b> — <a href="'+esc(rep.url_download)+'" target="_blank">Download pengganti</a></div>';
   }
-  if (!skema || skema.lsps.length === 0) {
-    document.getElementById('mainContent').innerHTML =
-      '<button class="back-btn" type="button" onclick="clearSkema.click()">← Kembali</button>' +
-      '<div class="empty-state"><div class="icon">🔍</div><p>Skema tidak ditemukan</p></div>';
-    return;
+  if(skkni.status==='dicabut' && skkni.digantikan_oleh && skkniMapById[skkni.digantikan_oleh]){
+    var r2=skkniMapById[skkni.digantikan_oleh];
+    replaced='<div style="margin-top:8px;padding:8px 10px;background:var(--red-soft);border:1px solid #FFD1DC;border-radius:10px;font-size:12px">✕ Dicabut — diganti <b>'+esc(r2.nomor)+'</b> • <a href="'+esc(r2.url_download)+'" target="_blank">Download versi berlaku</a></div>';
   }
-
-  var html = '<button class="back-btn" type="button" onclick="clearSkema.click()">← Kembali</button>';
-  html += '<div class="card card-skema" style="margin-bottom:20px">' +
-    '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
-    '<div class="sub" style="margin-top:4px">Tersedia di ' + skema.jml_lsp + ' LSP — total ' + skema.total_unit + ' unit kompetensi</div>' +
-    '</div>';
-  html += '<div class="lsp-options">' +
-    '<div class="hint">Pilih LSP untuk melihat daftar unit kompetensi:</div>' +
-    '<div class="lsp-pills">';
-  skema.lsps.forEach(function(o, idx) {
-    html += '<button class="lsp-pill" type="button" onclick="showSkemaDetail(\'' + esc(name) + '\', ' + idx + ', this)">' +
-      '<span class="check">✓ </span>' + esc(o.lsp) + ' <span class="count">(' + o.jml_unit + ' unit)</span></button>';
-  });
-  html += '</div></div>';
-  html += '<div id="skemaLspInfo"></div>';
-  html += '<div id="skemaUnitTable"></div>';
-  document.getElementById('mainContent').innerHTML = html;
-
-  // Auto-load if only 1 LSP
-  if (skema.lsps.length === 1) {
-    var firstPill = document.querySelector('.lsp-pill');
-    if (firstPill) firstPill.click();
-  }
+  return '<div class="skkni-hero"><div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="badge badge--mono">'+esc(skkni.nomor)+'</span>'+st+'<span class="badge">'+esc(skkni.sektor)+' • '+skkni.tahun+'</span></div><h3 style="margin-top:8px">'+esc(skkni.judul)+'</h3><p>'+esc(skkni.keterangan)+'</p><div class="kv"><div><label>Status</label><b>'+esc(skkni.status)+'</b></div><div><label>Sumber</label><b>JDIH Kemnaker</b></div><div><label>File</label><b>PDF resmi</b></div></div>'+replaced+'</div><div style="display:grid;gap:8px;min-width:180px">'+dl+detail+'<button class="btn" type="button" onclick="openSkkniDrawer()">Lihat semua SKKNI</button><div style="font-size:11px;color:var(--muted);line-height:1.5">Link langsung ke <span class="mono">download.php?id='+skkni.jdih_id+'</span> — langsung preview/download PDF, bukan homepage.</div></div></div>';
 }
 
-function showSkemaDetail(skemaName, lspIdx, btnEl) {
-  var skema = null;
-  for (var i = 0; i < skemaList.length; i++) {
-    if (skemaList[i].nama === skemaName) { skema = skemaList[i]; break; }
+// ===== SKEMA DETAIL =====
+function searchSkemaAndPickLsp(name){
+  currentView='skema';
+  searchSkemaInput.value=name; acSkema.classList.remove('show'); clearSkema.classList.add('show');
+  var skema=null; for(var i=0;i<skemaList.length;i++) if(skemaList[i].nama===name){skema=skemaList[i];break;}
+  if(!skema || skema.lsps.length===0){
+    document.getElementById('mainContent').innerHTML='<button class="back" type="button" onclick="clearSkema.click()">← Kembali</button><div class="empty"><b>Skema tidak ditemukan</b></div>'; return;
   }
-  if (!skema) return;
-  var opt = skema.lsps[lspIdx];
-  if (!opt) return;
-
-  var allPills = document.querySelectorAll('.lsp-pill');
-  allPills.forEach(function(p) { p.classList.remove('selected'); });
-  if (btnEl) btnEl.classList.add('selected');
-
-  // Info LSP pemilik skema ini (lookup dari lspList via lsp_id)
-  var infoEl = document.getElementById('skemaLspInfo');
-  if (infoEl) {
-    var lsp = null;
-    for (var i = 0; i < lspList.length; i++) {
-      if (lspList[i].id === opt.lsp_id) { lsp = lspList[i]; break; }
-    }
-    infoEl.innerHTML =
-      '<div class="card card-lsp" style="margin-bottom:20px">' +
-        '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:start">' +
-          '<div><div style="font-size:18px;font-weight:700">' + esc(lsp ? lsp.nama : opt.lsp) + '</div>' +
-          '<div style="font-size:13px;color:var(--text-muted);margin-top:2px">Lembaga Sertifikasi Profesi</div></div>' +
-          (lsp && lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Lisensi Aktif</span>' :
-           lsp && lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Masa Berlaku Habis</span>' : '') +
-        '</div>' +
-        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px">' +
-          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">No SK</div>' +
-            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.no_sk) || '—') + '</div></div>' +
-          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">No Lisensi</div>' +
-            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.no_lisensi) || '—') + '</div></div>' +
-          '<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)">Terakhir Diperiksa</div>' +
-            '<div style="font-size:14px;font-weight:600;margin-top:2px">' + esc((lsp && lsp.last_checked) ? new Date(lsp.last_checked).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '—') + '</div></div>' +
-        '</div></div>';
-  }
-
-  document.getElementById('skemaUnitTable').innerHTML =
-    '<div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div>';
-
-  // Fetch units for this skema
-  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + opt.skema_id + '&order=kode.asc';
-  fetch(url, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r) { return r.json(); }).then(function(units) {
-    unitRows = units;
-    unitSortKey = 'kode';
-    unitSortDir = 1;
-    unitLspName = opt.lsp;
-    renderUnitTable();
-  }).catch(function() {
-    document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
-  });
+  var skkni=findSkkniForSkema(skema.nama);
+  var html='<button class="back" type="button" onclick="clearSkema.click()">← Kembali</button>';
+  html+='<div class="card card--skema" style="margin-top:12px"><div class="card-top"><div><div style="font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Skema Sertifikasi</div><div style="font-family:Fraunces,serif;font-size:22px;font-weight:900;letter-spacing:-.02em;margin-top:4px">'+esc(skema.nama)+'</div><div class="sub" style="margin-top:6px">Tersedia di '+skema.jml_lsp+' LSP • total '+skema.total_unit+' unit kompetensi</div></div><span class="badge badge--orange" style="align-self:start">'+skema.total_unit+' unit</span></div></div>';
+  html+=skkniPanelHtml(skkni);
+  html+='<div style="margin-top:14px" class="pills">'+skema.lsps.map(function(o,idx){return '<button type="button" onclick="showSkemaDetail(\''+esc(name).replace(/'/g,'&#39;')+'\','+idx+',this)">'+esc(o.lsp)+' <span style="color:var(--muted)">('+o.jml_unit+' unit)</span></button>';}).join('')+'</div>';
+  html+='<div id="skemaLspInfo" style="margin-top:12px"></div><div id="skemaUnitTable" style="margin-top:12px"></div>';
+  document.getElementById('mainContent').innerHTML=html;
+  if(skema.lsps.length===1){ var first=document.querySelector('.pills button'); if(first) first.click(); }
 }
-
-// ===== UNIT TABLE (sortable) =====
-function renderUnitTable() {
-  var rows = unitRows.slice().sort(function(a, b) {
-    var va = String(a[unitSortKey] || '').toLowerCase();
-    var vb = String(b[unitSortKey] || '').toLowerCase();
-    if (va < vb) return -unitSortDir;
-    if (va > vb) return unitSortDir;
-    return 0;
-  });
-  var arrow = function(k) { return unitSortKey === k ? (unitSortDir === 1 ? ' ▲' : ' ▼') : ''; };
-  var html = '<div class="section-header"><h2>Unit Kompetensi</h2>' +
-    '<span class="count">' + esc(unitLspName) + ' — ' + unitRows.length + ' unit</span></div>';
-  html += '<div class="table-wrap"><table><thead><tr>' +
-    '<th style="width:40px">No</th>' +
-    '<th style="width:220px" class="th-sortable" onclick="sortUnits(\'kode\')" aria-label="Urutkan kode unit">Kode Unit' + arrow('kode') + '</th>' +
-    '<th class="th-sortable" onclick="sortUnits(\'nama\')" aria-label="Urutkan judul unit">Judul Unit Kompetensi' + arrow('nama') + '</th>' +
-    '</tr></thead><tbody>';
-  rows.forEach(function(u, idx) {
-    html += '<tr><td>' + (idx + 1) + '</td><td class="kode-cell">' + esc(u.kode) + '</td><td>' + esc(u.nama) + '</td></tr>';
-  });
-  html += '</tbody></table></div>';
-  document.getElementById('skemaUnitTable').innerHTML = html;
+function showSkemaDetail(skemaName,lspIdx,btnEl){
+  var skema=null; for(var i=0;i<skemaList.length;i++) if(skemaList[i].nama===skemaName){skema=skemaList[i];break;} if(!skema) return;
+  var opt=skema.lsps[lspIdx]; if(!opt) return;
+  document.querySelectorAll('.pills button').forEach(function(p){p.classList.remove('active')}); if(btnEl) btnEl.classList.add('active');
+  var infoEl=document.getElementById('skemaLspInfo');
+  if(infoEl){
+    var lsp=null; for(var i=0;i<lspList.length;i++) if(lspList[i].id===opt.lsp_id){lsp=lspList[i];break;}
+    infoEl.innerHTML='<div class="card card--lsp"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><div style="font-size:16px;font-weight:900">'+esc(lsp?lsp.nama:opt.lsp)+'</div><div class="sub">Lembaga Sertifikasi Profesi</div></div>'+(lsp && lsp.status==='Lisensi Aktif'?'<span class="badge badge--green">✓ Lisensi Aktif</span>':lsp && lsp.status==='Masa Berlaku Habis'?'<span class="badge badge--red">✕ Masa Berlaku Habis</span>':'')+'</div><div class="kv" style="margin-bottom:0"><div><label>No SK</label><b class="mono">'+esc((lsp&&lsp.no_sk)||'—')+'</b></div><div><label>No Lisensi</label><b class="mono">'+esc((lsp&&lsp.no_lisensi)||'—')+'</b></div><div><label>Terakhir diperiksa</label><b>'+esc((lsp&&lsp.last_checked)?new Date(lsp.last_checked).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}):'—')+'</b></div></div></div>';
+  }
+  document.getElementById('skemaUnitTable').innerHTML='<div class="loading"><div class="spinner"></div><p style="margin-top:10px">Memuat unit...</p></div>';
+  var url=SB_URL+'/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.'+opt.skema_id+'&order=kode.asc';
+  fetch(url,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,Accept:'application/json'}}).then(function(r){return r.json();}).then(function(units){ unitRows=units; unitSortKey='kode'; unitSortDir=1; unitLspName=opt.lsp; renderUnitTable(); }).catch(function(){ document.getElementById('skemaUnitTable').innerHTML='<div class="empty"><b>Gagal memuat unit</b></div>'; });
 }
-
-function sortUnits(key) {
-  if (unitSortKey === key) {
-    unitSortDir = -unitSortDir;
-  } else {
-    unitSortKey = key;
-    unitSortDir = 1;
-  }
-  renderUnitTable();
-}
-
-// ===== LSP PAGINATION STATE =====
-var lspSkemaNames = [];      // sorted skema names for current LSP
-var lspCurrentPage = 1;
-var lspPageSize = 24;
-
-function renderLspSkema(page) {
-  lspCurrentPage = page;
-  var start = (page - 1) * lspPageSize;
-  var end = Math.min(start + lspPageSize, lspSkemaNames.length);
-  var html = '<div class="cards-grid">';
-  for (var i = start; i < end; i++) {
-    var nama = lspSkemaNames[i];
-    // Find total units for this skema name across this LSP
-    var totalUnit = 0;
-    for (var j = 0; j < skemaAllRows.length; j++) {
-      if (skemaAllRows[j].nama === nama && skemaAllRows[j].lsp_id === currentLspId) {
-        totalUnit += (skemaAllRows[j].jml_unit || 0);
-      }
-    }
-    html += '<div class="card card-skema card-clickable" onclick="showLspSkemaUnits(\'' + esc(nama) + '\')">' +
-      '<div class="title">' + esc(nama) + '</div>' +
-      '<div class="badge-group"><span class="badge badge-accent">' + totalUnit + ' unit</span></div></div>';
-  }
-  html += '</div>';
-
-  var totalPages = Math.ceil(lspSkemaNames.length / lspPageSize);
-  if (totalPages > 1) {
-    html += '<div class="pagination">';
-    html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page - 1) + ')"' + (page <= 1 ? ' disabled' : '') + '>← Prev</button>';
-    for (var p = 1; p <= totalPages; p++) {
-      html += '<button class="page-btn' + (p === page ? ' active' : '') + '" type="button" onclick="renderLspSkema(' + p + ')">' + p + '</button>';
-    }
-    html += '<button class="page-btn" type="button" onclick="renderLspSkema(' + (page + 1) + ')"' + (page >= totalPages ? ' disabled' : '') + '>Next →</button>';
-    html += '</div>';
-  }
-
-  document.getElementById('lspSkemaGrid').innerHTML = html;
-}
-
-// ===== SHOW LSP DETAIL =====
-function showLsp(name) {
-  currentView = 'lsp';
-  searchLspInput.value = name;
-  clearLsp.classList.add('show');
-
-  var lsp = null;
-  for (var i = 0; i < lspList.length; i++) {
-    if (lspList[i].nama === name) { lsp = lspList[i]; break; }
-  }
-  if (!lsp) return;
-
-  // Get all skema belonging to this LSP from skemaAllRows
-  var lspSkemaRows = skemaAllRows.filter(function(s) {
-    return s.lsp_id === lsp.id;
+function renderUnitTable(){
+  var rows=unitRows.slice().sort(function(a,b){
+    var va=String(a[unitSortKey]||'').toLowerCase(), vb=String(b[unitSortKey]||'').toLowerCase();
+    if(va<vb) return -unitSortDir; if(va>vb) return unitSortDir; return 0;
   });
+  var arrow=function(k){ return unitSortKey===k ? (unitSortDir===1?' ▲':' ▼') : ''; };
+  var html='<div class="section-head" style="margin-bottom:10px"><h2 style="font-size:18px">Unit Kompetensi</h2><span class="badge">'+esc(unitLspName)+' • '+unitRows.length+' unit</span></div>';
+  html+='<div class="table-wrap"><table><thead><tr><th style="width:48px">No</th><th style="width:180px;cursor:pointer" onclick="sortUnits(\'kode\')">Kode Unit'+arrow('kode')+'</th><th style="cursor:pointer" onclick="sortUnits(\'nama\')">Judul Unit'+arrow('nama')+'</th></tr></thead><tbody>';
+  rows.forEach(function(u,idx){ html+='<tr><td>'+(idx+1)+'</td><td class="mono">'+esc(u.kode)+'</td><td>'+esc(u.nama)+'</td></tr>'; });
+  html+='</tbody></table></div>';
+  document.getElementById('skemaUnitTable').innerHTML=html;
+}
+function sortUnits(key){ if(unitSortKey===key) unitSortDir=-unitSortDir; else{ unitSortKey=key; unitSortDir=1;} renderUnitTable(); }
 
-  // Group by name, sort
-  var skemaByName = {};
-  lspSkemaRows.forEach(function(s) {
-    if (!skemaByName[s.nama]) skemaByName[s.nama] = true;
-  });
-  lspSkemaNames = Object.keys(skemaByName).sort();
-  lspCurrentPage = 1;
-  currentLspId = lsp.id;
-  currentLspName = lsp.nama;
-
-  var html = '<button class="back-btn" type="button" onclick="clearLsp.click()">← Kembali</button>';
-
-  html += '<div class="card card-lsp" style="margin-bottom:20px">' +
-    '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">' +
-    '  <div><div style="font-size:20px;font-weight:700">' + esc(lsp.nama) + '</div>' +
-    '  <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Lembaga Sertifikasi Profesi</div></div>' +
-    '  <div style="display:flex;gap:8px;align-items:start">' +
-      (lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a;font-size:13px;padding:6px 14px">✓ Lisensi Aktif</span>' :
-       lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626;font-size:13px;padding:6px 14px">✕ Masa Berlaku Habis</span>' : '') +
-      '<span class="badge badge-primary" style="font-size:13px;padding:6px 14px;align-self:start">' + lsp.jml_skema + ' Skema</span>' +
-    '</div></div></div>';
-
-  html += '<div class="section-header"><h2>Detail Lisensi</h2></div>' +
-    '<div class="table-wrap" style="margin-bottom:20px"><table><tbody>' +
-    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">Status Lisensi</th><td>' +
-      (lsp.status === 'Lisensi Aktif' ? '<span class="badge" style="background:#dcfce7;color:#16a34a">✓ Lisensi Aktif</span>' :
-       lsp.status === 'Masa Berlaku Habis' ? '<span class="badge" style="background:#fef2f2;color:#dc2626">✕ Masa Berlaku Habis</span>' : esc(lsp.status || '—')) +
-    '</td></tr>' +
-    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">No SK</th><td class="kode-cell">' + esc(lsp.no_sk || '—') + '</td></tr>' +
-    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">No Lisensi</th><td class="kode-cell">' + esc(lsp.no_lisensi || '—') + '</td></tr>' +
-    '<tr><th style="width:180px;background:var(--bg);color:var(--text-muted)">Terakhir Diperiksa</th><td>' + esc(lsp.last_checked ? new Date(lsp.last_checked).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '—') + '</td></tr>' +
-    '</tbody></table></div>';
-
-  html += '<div class="section-header"><h2>Skema Sertifikasi</h2><span class="count">' + lspSkemaNames.length + ' skema</span></div>';
-
-  if (lspSkemaNames.length === 0) {
-    html += '<div class="empty-state"><p>Tidak ada skema ditemukan untuk LSP ini</p></div>';
-    document.getElementById('mainContent').innerHTML = html;
-    return;
+// ===== LSP PAGINATION =====
+function renderLspSkema(page){
+  lspCurrentPage=page;
+  var start=(page-1)*lspPageSize, end=Math.min(start+lspPageSize,lspSkemaNames.length);
+  var html='<div class="card-grid">';
+  for(var i=start;i<end;i++){
+    var nama=lspSkemaNames[i];
+    var totalUnit=0; for(var j=0;j<skemaAllRows.length;j++) if(skemaAllRows[j].nama===nama && skemaAllRows[j].lsp_id===currentLspId) totalUnit+=(skemaAllRows[j].jml_unit||0);
+    var sk=findSkkniForSkema(nama);
+    html+='<div class="card card--skema" style="cursor:pointer" onclick="showLspSkemaUnits(\''+esc(nama).replace(/'/g,'&#39;')+'\')"><div class="card-top"><h3>'+esc(nama)+'</h3><span class="badge badge--orange">'+totalUnit+' unit</span></div>'+ (sk?'<div class="skkni-line" style="margin-top:8px"><b>'+esc(sk.nomor)+'</b>'+badgeForStatus(sk.status)+'</div>':'<div class="skkni-line" style="opacity:.6"><b>SKKNI belum dipetakan</b></div>') +'</div>';
   }
-
-  html += '<div id="lspSkemaGrid"></div>';
-  document.getElementById('mainContent').innerHTML = html;
+  html+='</div>';
+  var totalPages=Math.ceil(lspSkemaNames.length/lspPageSize);
+  if(totalPages>1){
+    html+='<div class="pager" style="margin-top:14px">';
+    html+='<button type="button" onclick="renderLspSkema('+(page-1)+')"' + (page<=1?' disabled':'') + '>← Prev</button>';
+    for(var p=1;p<=totalPages;p++) html+='<button type="button" class="'+(p===page?'active':'')+'" onclick="renderLspSkema('+p+')">'+p+'</button>';
+    html+='<button type="button" onclick="renderLspSkema('+(page+1)+')"' + (page>=totalPages?' disabled':'') + '>Next →</button></div>';
+  }
+  document.getElementById('lspSkemaGrid').innerHTML=html;
+}
+function showLsp(name){
+  currentView='lsp'; searchLspInput.value=name; clearLsp.classList.add('show');
+  var lsp=null; for(var i=0;i<lspList.length;i++) if(lspList[i].nama===name){lsp=lspList[i];break;} if(!lsp) return;
+  var lspSkemaRows=skemaAllRows.filter(function(s){return s.lsp_id===lsp.id;});
+  var skemaByName={}; lspSkemaRows.forEach(function(s){ if(!skemaByName[s.nama]) skemaByName[s.nama]=true; });
+  lspSkemaNames=Object.keys(skemaByName).sort(); lspCurrentPage=1; currentLspId=lsp.id; currentLspName=lsp.nama;
+  var html='<button class="back" type="button" onclick="clearLsp.click()">← Kembali</button>';
+  html+='<div class="card card--lsp" style="margin-top:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><div style="font-family:Fraunces,serif;font-size:22px;font-weight:900">'+esc(lsp.nama)+'</div><div class="sub">Lembaga Sertifikasi Profesi — Detail lisensi & daftar skema</div></div><div style="display:flex;gap:8px;align-items:start;flex-wrap:wrap">'+(lsp.status==='Lisensi Aktif'?'<span class="badge badge--green" style="padding:7px 12px">✓ Lisensi Aktif</span>':lsp.status==='Masa Berlaku Habis'?'<span class="badge badge--red" style="padding:7px 12px">✕ Masa Berlaku Habis</span>':'')+'<span class="badge badge--navy" style="padding:7px 12px">'+lsp.jml_skema+' Skema</span></div></div></div>';
+  html+='<div class="section-head"><h2>Detail Lisensi</h2></div><div class="table-wrap" style="margin-bottom:12px"><table><tbody><tr><th style="width:180px;background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">Status Lisensi</th><td>'+(lsp.status==='Lisensi Aktif'?'<span class="badge badge--green">✓ Lisensi Aktif</span>':lsp.status==='Masa Berlaku Habis'?'<span class="badge badge--red">✕ Masa Berlaku Habis</span>':esc(lsp.status||'—'))+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">No SK</th><td class="mono">'+esc(lsp.no_sk||'—')+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">No Lisensi</th><td class="mono">'+esc(lsp.no_lisensi||'—')+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">Terakhir diperiksa</th><td>'+esc(lsp.last_checked?new Date(lsp.last_checked).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}):'—')+'</td></tr></tbody></table></div>';
+  html+='<div class="section-head"><h2>Skema Sertifikasi</h2><span class="badge">'+lspSkemaNames.length+' skema • klik untuk unit & SKKNI</span></div>';
+  if(lspSkemaNames.length===0){ html+='<div class="empty"><b>Tidak ada skema</b></div>'; document.getElementById('mainContent').innerHTML=html; return; }
+  html+='<div id="lspSkemaGrid"></div>';
+  document.getElementById('mainContent').innerHTML=html;
   renderLspSkema(1);
 }
-
-// ===== SHOW UNIT KOMPETENSI DARI KARTU SKEMA DI DETAIL LSP =====
-function showLspSkemaUnits(name) {
-  var skema = null;
-  for (var i = 0; i < skemaAllRows.length; i++) {
-    if (skemaAllRows[i].lsp_id === currentLspId && skemaAllRows[i].nama === name) {
-      skema = skemaAllRows[i]; break;
-    }
-  }
-  if (!skema) return;
-
-  var html = '<button class="back-btn" type="button" onclick="showLsp(\'' + esc(currentLspName) + '\')">← Kembali ke skema</button>';
-  html += '<div class="card card-skema" style="margin-bottom:20px">' +
-    '<div class="title" style="font-size:20px">' + esc(skema.nama) + '</div>' +
-    '<div class="sub" style="margin-top:4px">' + esc(currentLspName) + ' — ' + (skema.jml_unit || 0) + ' unit kompetensi</div>' +
-    '</div>';
-  html += '<div id="skemaUnitTable"><div class="loading" style="padding:30px"><div class="spinner"></div><p>Memuat unit...</p></div></div>';
-  document.getElementById('mainContent').innerHTML = html;
-
-  unitRows = [];
-  unitLspName = currentLspName;
-  var url = SB_URL + '/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.' + skema.id + '&order=kode.asc';
-  fetch(url, {
-    headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, Accept: 'application/json' }
-  }).then(function(r) { return r.json(); }).then(function(units) {
-    unitRows = units;
-    unitSortKey = 'kode';
-    unitSortDir = 1;
-    renderUnitTable();
-  }).catch(function() {
-    document.getElementById('skemaUnitTable').innerHTML = '<div class="empty-state"><p>Gagal memuat unit</p></div>';
-  });
+function showLspSkemaUnits(name){
+  var skema=null; for(var i=0;i<skemaAllRows.length;i++) if(skemaAllRows[i].lsp_id===currentLspId && skemaAllRows[i].nama===name){skema=skemaAllRows[i];break;} if(!skema) return;
+  var skkni=findSkkniForSkema(name);
+  var html='<button class="back" type="button" onclick="showLsp(\''+esc(currentLspName).replace(/'/g,'&#39;')+'\')">← Kembali ke skema</button>';
+  html+='<div class="card card--skema" style="margin-top:12px"><div class="card-top"><div><div style="font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Unit Kompetensi</div><div style="font-family:Fraunces,serif;font-size:20px;font-weight:900;margin-top:4px">'+esc(skema.nama)+'</div><div class="sub" style="margin-top:4px">'+esc(currentLspName)+' • '+(skema.jml_unit||0)+' unit</div></div><span class="badge badge--orange">'+(skema.jml_unit||0)+' unit</span></div></div>';
+  html+=skkniPanelHtml(skkni);
+  html+='<div id="skemaUnitTable" style="margin-top:12px"><div class="loading"><div class="spinner"></div><p style="margin-top:10px">Memuat unit...</p></div></div>';
+  document.getElementById('mainContent').innerHTML=html;
+  unitRows=[]; unitLspName=currentLspName;
+  var url=SB_URL+'/rest/v1/unit_kompetensi?select=kode,nama&skema_id=eq.'+skema.id+'&order=kode.asc';
+  fetch(url,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,Accept:'application/json'}}).then(function(r){return r.json();}).then(function(units){ unitRows=units; unitSortKey='kode'; unitSortDir=1; renderUnitTable(); }).catch(function(){ document.getElementById('skemaUnitTable').innerHTML='<div class="empty"><b>Gagal memuat unit</b></div>'; });
 }
-
-// ===== AUTO-HIDE =====
-document.addEventListener('click', function(e) {
-  var t = e.target;
-  if (!t.closest('#searchLsp') && !t.closest('#acLsp')) acLsp.classList.remove('show');
-  if (!t.closest('#searchSkema') && !t.closest('#acSkema')) acSkema.classList.remove('show');
+document.addEventListener('click',function(e){
+  if(!e.target.closest('#searchLsp') && !e.target.closest('#acLsp')) acLsp.classList.remove('show');
+  if(!e.target.closest('#searchSkema') && !e.target.closest('#acSkema')) acSkema.classList.remove('show');
 });
-
-// ===== INIT =====
 loadData();
 </script>
 </body>
