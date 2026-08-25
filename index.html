@@ -423,6 +423,8 @@ var unitRows = [];
 var unitSortKey = 'kode';
 var unitSortDir = 1;
 var unitLspName = '';
+var currentSkkni = null;
+var currentSkemaName = '';
 var skemaPageSize = 24;
 var skemaCurrentPage = 1;
 var lspSkemaNames = [];
@@ -632,12 +634,14 @@ function skkniPanelHtml(skkni){
 // ===== SKEMA DETAIL =====
 function searchSkemaAndPickLsp(name){
   currentView='skema';
+  currentSkemaName=name;
+  currentSkkni=findSkkniForSkema(name);
   searchSkemaInput.value=name; acSkema.classList.remove('show'); clearSkema.classList.add('show');
   var skema=null; for(var i=0;i<skemaList.length;i++) if(skemaList[i].nama===name){skema=skemaList[i];break;}
   if(!skema || skema.lsps.length===0){
     document.getElementById('mainContent').innerHTML='<button class="back" type="button" onclick="clearSkema.click()">← Kembali</button><div class="empty"><b>Skema tidak ditemukan</b></div>'; return;
   }
-  var skkni=findSkkniForSkema(skema.nama);
+  var skkni=currentSkkni;
   var html='<button class="back" type="button" onclick="clearSkema.click()">← Kembali</button>';
   html+='<div class="card card--skema" style="margin-top:12px"><div class="card-top"><div><div style="font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Skema Sertifikasi</div><div style="font-family:Fraunces,serif;font-size:22px;font-weight:900;letter-spacing:-.02em;margin-top:4px">'+esc(skema.nama)+'</div><div class="sub" style="margin-top:6px">Tersedia di '+skema.jml_lsp+' LSP • total '+skema.total_unit+' unit kompetensi</div></div><span class="badge badge--orange" style="align-self:start">'+skema.total_unit+' unit</span></div></div>';
   html+=skkniPanelHtml(skkni);
@@ -647,6 +651,8 @@ function searchSkemaAndPickLsp(name){
   if(skema.lsps.length===1){ var first=document.querySelector('.pills button'); if(first) first.click(); }
 }
 function showSkemaDetail(skemaName,lspIdx,btnEl){
+  currentSkemaName=skemaName;
+  currentSkkni=findSkkniForSkema(skemaName);
   var skema=null; for(var i=0;i<skemaList.length;i++) if(skemaList[i].nama===skemaName){skema=skemaList[i];break;} if(!skema) return;
   var opt=skema.lsps[lspIdx]; if(!opt) return;
   document.querySelectorAll('.pills button').forEach(function(p){p.classList.remove('active')}); if(btnEl) btnEl.classList.add('active');
@@ -665,10 +671,34 @@ function renderUnitTable(){
     if(va<vb) return -unitSortDir; if(va>vb) return unitSortDir; return 0;
   });
   var arrow=function(k){ return unitSortKey===k ? (unitSortDir===1?' ▲':' ▼') : ''; };
+  // SKKNI header above unit table
+  var skkniBar='';
+  if(currentSkkni){
+    var dlBtn=currentSkkni.url_download ? '<a class="btn btn--accent btn--sm" href="'+esc(currentSkkni.url_download)+'" target="_blank" rel="noopener" onclick="trackDl(\''+esc(currentSkkni.id)+'\')">⬇ Download SKKNI</a>' : '';
+    var detailBtn=currentSkkni.url_detail ? '<a class="btn btn--sm" href="'+esc(currentSkkni.url_detail)+'" target="_blank" rel="noopener">Lihat JDIH</a>' : '';
+    skkniBar='<div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px;box-shadow:var(--shadow)">'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">'+
+        '<span class="badge badge--mono" style="font-size:11px">'+esc(currentSkkni.nomor)+' • '+currentSkkni.tahun+'</span>'+
+        badgeForStatus(currentSkkni.status)+
+        '<span style="font-size:12px;color:var(--muted)">Unit Kompetensi menggunakan <b style="color:var(--text)">'+esc(currentSkkni.nomor)+' Tahun '+currentSkkni.tahun+'</b> • '+esc(currentSkkni.sektor)+'</span>'+
+      '</div>'+
+      '<div style="display:flex;gap:6px;flex-wrap:wrap">'+dlBtn+detailBtn+'</div>'+
+    '</div>';
+  } else {
+    skkniBar='<div style="background:var(--yellow-soft);border:1px solid #FDE6A8;border-radius:12px;padding:10px 14px;display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px"><span style="font-size:12px;color:#92400E">Unit Kompetensi — SKKNI acuan belum dipetakan untuk <b>'+esc(currentSkemaName||'')+'</b></span><button class="btn btn--sm" type="button" onclick="openSkkniDrawer()">Cari SKKNI</button></div>';
+  }
   var html='<div class="section-head" style="margin-bottom:10px"><h2 style="font-size:18px">Unit Kompetensi</h2><span class="badge">'+esc(unitLspName)+' • '+unitRows.length+' unit</span></div>';
-  html+='<div class="table-wrap"><table><thead><tr><th style="width:48px">No</th><th style="width:180px;cursor:pointer" onclick="sortUnits(\'kode\')">Kode Unit'+arrow('kode')+'</th><th style="cursor:pointer" onclick="sortUnits(\'nama\')">Judul Unit'+arrow('nama')+'</th></tr></thead><tbody>';
-  rows.forEach(function(u,idx){ html+='<tr><td>'+(idx+1)+'</td><td class="mono">'+esc(u.kode)+'</td><td>'+esc(u.nama)+'</td></tr>'; });
+  html+=skkniBar;
+  html+='<div class="table-wrap"><table><thead><tr><th style="width:48px">No</th><th style="width:190px;cursor:pointer" onclick="sortUnits(\'kode\')">Kode Unit'+arrow('kode')+'</th><th style="cursor:pointer" onclick="sortUnits(\'nama\')">Judul Unit Kompetensi'+arrow('nama')+'</th><th style="width:160px">SKKNI Acuan</th></tr></thead><tbody>';
+  rows.forEach(function(u,idx){
+    var skkniCell=currentSkkni ? '<span class="badge badge--mono" style="font-size:10px">'+esc(currentSkkni.nomor)+'</span> '+badgeForStatus(currentSkkni.status) : '<span class="badge" style="opacity:.5">—</span>';
+    html+='<tr><td>'+(idx+1)+'</td><td class="mono">'+esc(u.kode)+'</td><td>'+esc(u.nama)+'</td><td>'+skkniCell+'</td></tr>';
+  });
   html+='</tbody></table></div>';
+  // footer SKKNI download for this unit table
+  if(currentSkkni && currentSkkni.url_download){
+    html+='<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px"><span style="font-size:12px;color:var(--muted)">Sumber resmi: <b>JDIH Kemnaker</b> • Link langsung <span class="mono">download.php?id='+currentSkkni.jdih_id+'</span> (bukan homepage)</span><a class="btn btn--accent btn--sm" href="'+esc(currentSkkni.url_download)+'" target="_blank" rel="noopener" onclick="trackDl(\''+esc(currentSkkni.id)+'\')">⬇ Download SKKNI PDF</a></div>';
+  }
   document.getElementById('skemaUnitTable').innerHTML=html;
 }
 function sortUnits(key){ if(unitSortKey===key) unitSortDir=-unitSortDir; else{ unitSortKey=key; unitSortDir=1;} renderUnitTable(); }
@@ -710,8 +740,10 @@ function showLsp(name){
   renderLspSkema(1);
 }
 function showLspSkemaUnits(name){
+  currentSkemaName=name;
+  currentSkkni=findSkkniForSkema(name);
   var skema=null; for(var i=0;i<skemaAllRows.length;i++) if(skemaAllRows[i].lsp_id===currentLspId && skemaAllRows[i].nama===name){skema=skemaAllRows[i];break;} if(!skema) return;
-  var skkni=findSkkniForSkema(name);
+  var skkni=currentSkkni;
   var html='<button class="back" type="button" onclick="showLsp(\''+esc(currentLspName).replace(/'/g,'&#39;')+'\')">← Kembali ke skema</button>';
   html+='<div class="card card--skema" style="margin-top:12px"><div class="card-top"><div><div style="font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Unit Kompetensi</div><div style="font-family:Fraunces,serif;font-size:20px;font-weight:900;margin-top:4px">'+esc(skema.nama)+'</div><div class="sub" style="margin-top:4px">'+esc(currentLspName)+' • '+(skema.jml_unit||0)+' unit</div></div><span class="badge badge--orange">'+(skema.jml_unit||0)+' unit</span></div></div>';
   html+=skkniPanelHtml(skkni);
