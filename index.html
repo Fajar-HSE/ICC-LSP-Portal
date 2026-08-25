@@ -397,23 +397,33 @@ function findSkkniForUnit(kode){
 }
 function findSkkniForSkema(name){
   if(!name || !skkniRegistry.length) return null;
-  var q = String(name).toLowerCase();
+  var q = String(name).toLowerCase().trim();
+  if(q.length<2) return null;
   var best=null, bestScore=-1;
+  var bestBerlaku=null, bestBerlakuScore=-1;
   for(var i=0;i<skkniRegistry.length;i++){
     var s=skkniRegistry[i];
     if(!s.keywords || !s.keywords.length) continue;
-    var score=0;
+    var rawScore=0;
     for(var k=0;k<s.keywords.length;k++){
       var kw=s.keywords[k].toLowerCase();
-      if(q.indexOf(kw)!==-1) score+=kw.length*3;
-      else if(kw.indexOf(q)!==-1) score+=q.length;
+      if(!kw) continue;
+      if(q.indexOf(kw)!==-1) rawScore+=kw.length*3;
+      else if(kw.indexOf(q)!==-1) rawScore+=q.length;
       else {
         var tokens=kw.split(/[\s\-\/]+/);
-        for(var t=0;t<tokens.length;t++) if(t && t.length>=3 && q.indexOf(tokens[t])!==-1) score+=2;
+        for(var t=0;t<tokens.length;t++) if(t && t.length>=3 && q.indexOf(tokens[t])!==-1) rawScore+=2;
       }
     }
+    if(rawScore===0) continue; // no keyword match at all -> skip, don't boost
+    var score=rawScore;
+    if(s.status==='berlaku') score+=10;
+    else if(s.status==='dicabut') score-=20;
+    else if(s.status==='diganti') score-=5;
     if(score>bestScore && score>6){best=s;bestScore=score;}
+    if(s.status==='berlaku' && score>bestBerlakuScore && score>6){bestBerlaku=s;bestBerlakuScore=score;}
   }
+  if(bestBerlaku) return bestBerlaku;
   return best;
 }
 function findSkkniForSkemaByUnits(units){
