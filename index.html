@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICC LSP Portal — Direktori LSP & Skema BNSP | SKKNI Terkurasi</title>
-<meta name="description" content="Direktori 295+ LSP P3 & 1000+ Skema Sertifikasi BNSP. Dilengkapi info SKKNI acuan, status Berlaku/Dicabut, dan download PDF langsung dari JDIH Kemnaker.">
+<title>ICC LSP Portal — Search Engine Sertifikasi Kompetensi Indonesia | LSP, Skema & SKKNI</title>
+<meta name="description" content="Portal Data LSP, Skema Sertifikasi & SKKNI Indonesia — Search engine khusus sertifikasi. 295+ LSP BNSP, ribuan skema, 810 SKKNI terkurasi Berlaku, link resmi JDIH Kemnaker.">
+<link rel="canonical" href="https://fajar-hse.github.io/ICC-LSP-Portal/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -104,7 +105,53 @@ button{font-family:inherit}
 .tag{font-size:10px;font-weight:800;letter-spacing:.04em;padding:4px 8px;border-radius:var(--r-pill);background:var(--navy-soft);color:var(--navy);white-space:nowrap;align-self:center}
 .ac-empty{padding:16px;text-align:center;color:var(--muted);font-size:13px}
 
-/* Stats bento */
+/* NEW: Search-engine Hero (cognitive load reduction) */
+.hero--engine{max-width:880px;margin:0 auto;padding:36px 24px 18px;text-align:center}
+.hero--engine .kicker{justify-content:center;margin-bottom:10px}
+.hero--engine h2{font-size:42px;line-height:.95;max-width:760px;margin:0 auto}
+@media(max-width:640px){.hero--engine h2{font-size:32px}}
+.hero--engine .subhero{color:var(--muted);font-size:14px;margin-top:12px;line-height:1.6;max-width:640px;margin-left:auto;margin-right:auto}
+.hero--engine .subhero b{color:var(--text)}
+.primary-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.primary-actions button{padding:12px 18px;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-size:13px;font-weight:800;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+.primary-actions button.active{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:var(--shadow-lg)}
+.primary-actions button:hover{border-color:var(--navy);transform:translateY(-1px)}
+.search-single{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:var(--shadow-lg);display:flex;gap:8px;align-items:center;max-width:720px;margin-left:auto;margin-right:auto;position:relative}
+.search-single input{flex:1;border:none;outline:none;font-size:15px;padding:12px 14px;background:transparent;font-weight:500}
+.search-single input::placeholder{color:var(--muted-2)}
+.search-single .btn-search{background:var(--orange);color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.search-single .btn-search:hover{background:var(--orange-2)}
+.trust{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.trust span{font-size:11px;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);padding:6px 10px;border-radius:var(--r-pill)}
+.trust span i{color:var(--green)}
+.hero--engine + .stats{margin-top:18px}
+/* Thin social proof bar */
+.stats--proof{max-width:1280px;margin:14px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:800px){.stats--proof{grid-template-columns:repeat(2,1fr)}}
+.stats--proof .stat-mini-proof{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.stats--proof .stat-mini-proof b{font-family:'Fraunces',serif;font-size:20px;font-weight:900;display:block}
+.stats--proof .stat-mini-proof span{font-size:11px;color:var(--muted);letter-spacing:.04em}
+/* Search results focus */
+.results-layout{display:grid;grid-template-columns:260px 1fr;gap:16px;margin-top:16px}
+@media(max-width:900px){.results-layout{grid-template-columns:1fr}}
+.filter-sidebar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);height:fit-content;position:sticky;top:80px}
+.filter-sidebar h4{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.filter-group{margin-bottom:14px}
+.filter-group label{font-size:12px;font-weight:700;display:block;margin-bottom:6px}
+.filter-group select, .filter-group input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:10px;font-size:13px;background:#fff}
+.result-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:grid;gap:8px;transition:.12s}
+.result-card:hover{border-color:#D8DEEA;box-shadow:var(--shadow-lg)}
+.result-card .result-head{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.result-card h3{font-size:15px;font-weight:800;line-height:1.35}
+.result-meta{font-size:12px;color:var(--muted)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+@media(max-width:600px){.result-grid{grid-template-columns:1fr}}
+.profile-header{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:grid;gap:12px}
+.profile-header .profile-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.profile-table{width:100%;border-collapse:collapse;font-size:13px}
+.profile-table th{width:160px;background:var(--bg);color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px;text-align:left;border:1px solid var(--line)}
+.profile-table td{padding:10px 12px;border:1px solid var(--line)}
+/* Stats bento (legacy, keep for fallback) */
 .stats{max-width:1280px;margin:14px auto 0;padding:0 24px;display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr .8fr;gap:12px}
 @media(max-width:1100px){.stats{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
@@ -218,7 +265,7 @@ button{font-family:inherit}
       <span class="brand-mark"><img src="logo_icc.png" alt="ICC" onerror="this.style.display='none';this.parentElement.textContent='ICC';this.parentElement.style.fontWeight='900'"></span>
       <span class="brand-text">
         <h1>ICC <i>LSP</i> Portal</h1>
-        <p>Direktori BNSP — Terkurasi & SKKNI Ready</p>
+        <p>Portal Data LSP, Skema & SKKNI Indonesia</p>
       </span>
     </a>
     <div class="nav-actions">
@@ -228,85 +275,48 @@ button{font-family:inherit}
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-card">
-      <div class="kicker"><i></i> Live dari Supabase • Update BNSP</div>
-      <h2>Semua <em>LSP P3</em> & <em>Skema</em> — satu tempat, rapi, siap asesmen.</h2>
-      <p>Jelajahi 295+ LSP dan ribuan skema sertifikasi BNSP. Kini dengan <b>SKKNI acuan</b>, status <b>Berlaku / Dicabut / Diganti</b>, dan tombol <b>Download PDF langsung dari JDIH Kemnaker</b> — tanpa scraping, link resmi.</p>
-      <div class="hero-meta">
-        <span class="meta-chip">✓ 100% link JDIH resmi</span>
-        <span class="meta-chip meta-chip--orange">✓ Tanpa scraping — kurasi manual terverifikasi</span>
-        <span class="meta-chip">Last update: <b id="lastUpdatedLabel">—</b></span>
-      </div>
-    </div>
-    <div class="search-wrap">
-      <h3>Pencarian</h3>
-      <div class="search-grid">
-        <div class="field">
-          <label for="searchLsp">Cari LSP</label>
-          <input id="searchLsp" class="input" placeholder="Misal: Digital, K3, Migas..." autocomplete="off">
-          <button id="clearLsp" class="clear" type="button" aria-label="Hapus">✕</button>
-          <div id="acLsp" class="ac"></div>
-          <div class="hint">Ketik 1 huruf untuk autocomplete</div>
-        </div>
-        <div class="field">
-          <label for="searchSkema">Cari Skema</label>
-          <input id="searchSkema" class="input" placeholder="Misal: Digital Marketing, K3 Umum..." autocomplete="off">
-          <button id="clearSkema" class="clear" type="button" aria-label="Hapus">✕</button>
-          <div id="acSkema" class="ac"></div>
-          <div class="hint">Coba: “Data Analyst” → lihat SKKNI</div>
-        </div>
-      </div>
-      <div style="margin-top:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;position:relative">
-        <label for="searchUnitKode" style="display:block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#FFDCC6;margin-bottom:6px">Cek SKKNI per Kode Unit <span style="text-transform:none;letter-spacing:0;font-weight:600;color:#CBD5E1">— tempel kode unit untuk tahu SKKNI-nya</span></label>
-        <div style="display:flex;gap:8px">
-          <input id="searchUnitKode" class="input" placeholder="Misal: N.78SPS02.028.2, M.702093.001.01, J.620100.004.01 ..." autocomplete="off" style="flex:1">
-          <button id="btnCekKode" class="pill pill--accent" type="button" style="white-space:nowrap">Cek SKKNI →</button>
-        </div>
-        <div id="unitKodeResult" style="margin-top:10px;display:none"></div>
-        <div class="hint" style="color:#CBD5E1">Langsung mapping kode → SKKNI (prefix map 330 entri) + link cek di JDIH jika belum dipetakan.</div>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;position:relative">
-        <button class="pill" type="button" onclick="goHome(event)">Reset</button>
-        <button class="pill pill--accent" type="button" onclick="openSkkniDrawer()">Lihat katalog SKKNI</button>
-      </div>
-    </div>
+<section class="hero hero--engine" id="heroEngine">
+  <div class="kicker"><i></i> Search Engine Sertifikasi Kompetensi Indonesia • Live BNSP</div>
+  <h2>Temukan <em>LSP</em>, Skema Sertifikasi & <em>SKKNI</em> BNSP</h2>
+  <p class="subhero"><b>295+ LSP</b> · <b>Ribuan Skema</b> · <b>810 SKKNI Terkurasi Berlaku</b> — Portal data LSP, Skema & SKKNI Indonesia. Data BNSP live, link resmi JDIH Kemnaker.</p>
+  <div class="primary-actions" id="primaryActions" role="tablist" aria-label="Apa yang ingin Anda cari?">
+    <button type="button" class="active" data-mode="lsp" role="tab" aria-selected="true" onclick="setPrimaryMode('lsp')">🏢 Cari LSP <span style="font-weight:600;opacity:.7">— bidang/skema</span></button>
+    <button type="button" data-mode="skema" role="tab" aria-selected="false" onclick="setPrimaryMode('skema')">📜 Cari Skema Sertifikasi</button>
+    <button type="button" data-mode="unit" role="tab" aria-selected="false" onclick="setPrimaryMode('unit')">🔎 Cek SKKNI <span style="font-weight:600;opacity:.7">— kode unit</span></button>
+  </div>
+  <div class="search-single" id="searchSingle">
+    <span style="font-size:16px;opacity:.6;margin-left:6px">🔎</span>
+    <input id="primarySearch" type="text" placeholder="Cari LSP — misal: K3, Digital, Pariwisata, Migas..." autocomplete="off" aria-label="Pencarian utama">
+    <button class="btn-search" type="button" onclick="doPrimarySearch()">Cari</button>
+    <div id="acPrimary" class="ac" style="top:calc(100% + 8px);left:8px;right:8px"></div>
+  </div>
+  <div id="unitKodeResult" style="margin-top:12px;display:none;max-width:720px;margin-left:auto;margin-right:auto;text-align:left"></div>
+  <div class="trust">
+    <span><i>✓</i> Data LSP BNSP</span>
+    <span><i>✓</i> 810 SKKNI terkurasi Berlaku</span>
+    <span><i>✓</i> Link resmi JDIH Kemnaker</span>
+    <span>Last update: <b id="lastUpdatedLabel">—</b></span>
+  </div>
+  <!-- Hidden legacy inputs for compatibility (kept off-screen) -->
+  <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+    <input id="searchLsp" autocomplete="off"><div id="acLsp"></div><button id="clearLsp" type="button"></button>
+    <input id="searchSkema" autocomplete="off"><div id="acSkema"></div><button id="clearSkema" type="button"></button>
+    <input id="searchUnitKode" autocomplete="off"><button id="btnCekKode" type="button"></button>
   </div>
 </section>
 
-<section class="stats" id="statsBar">
-  <div class="stat-card stat-card--hero">
-    <div class="eyebrow">Total LSP</div>
-    <b id="statLsp">—</b>
-    <small>Terdaftar BNSP • sinkron Supabase</small>
-    <div class="stat-row"><span class="inline-badge" id="statLspDetail">—</span></div>
-  </div>
-  <div class="stat-card">
-    <div class="eyebrow">Jenis Skema</div>
-    <b id="statSkema">—</b>
-    <small>Skema unik (case-insensitive)</small>
-    <div class="stat-row"><span class="dot dot--green"></span><span id="statSkemaSub" style="font-size:12px;color:var(--muted)">—</span></div>
-  </div>
-  <div class="stat-card">
-    <div class="eyebrow">Unit Kompetensi</div>
-    <b id="statUnit">—</b>
-    <small>Total unit di semua skema</small>
-    <div class="stat-row"><span class="inline-badge" id="statUnitSub">—</span></div>
-  </div>
-  <div class="stat-card">
-    <div class="eyebrow">Lisensi Aktif</div>
-    <b id="statAktif" style="color:var(--green)">—</b>
-    <small>LSP dengan status Aktif</small>
-    <div class="stat-row"><span class="inline-badge--green inline-badge">✓ Aktif</span></div>
-  </div>
-  <div class="stat-card">
-    <div class="eyebrow">Masa Berlaku Habis</div>
-    <b id="statHabis" style="color:var(--red)">—</b>
-    <small>Perlu perpanjangan</small>
-    <div class="stat-row"><span class="inline-badge--red inline-badge">✕ Habis</span></div>
-  </div>
+<section class="stats--proof" id="statsBar" aria-label="Statistik kredibilitas">
+  <div class="stat-mini-proof"><b id="statLsp">—</b><span>Total LSP</span></div>
+  <div class="stat-mini-proof"><b id="statSkema">—</b><span>Jenis Skema</span></div>
+  <div class="stat-mini-proof"><b id="statUnit">—</b><span>Unit Kompetensi</span></div>
+  <div class="stat-mini-proof"><b id="statSkemaSub" style="font-size:13px">—</b><span>Skema di >1 LSP</span></div>
 </section>
+<div style="max-width:880px;margin:8px auto 0;padding:0 24px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:11px;color:var(--muted)">
+  <span class="inline-badge" id="statLspDetail">—</span>
+  <span class="inline-badge" id="statUnitSub">—</span>
+  <span class="badge" style="background:var(--green-soft);border-color:#B7F0D1;color:#065F46">✓ <span id="statAktif">—</span> Aktif</span>
+  <span class="badge" style="background:var(--red-soft);border-color:#FFD1DC;color:#9F1239">✕ <span id="statHabis">—</span> Habis</span>
+</div>
 
 <main class="main" id="mainContent">
   <div class="loading"><div class="spinner"></div><p style="margin-top:10px">Memuat data...</p></div>
@@ -458,6 +468,160 @@ function trackDl(id){ try{ fetch('https://httpbin.org/post',{method:'POST',body:
 document.getElementById('skkniSearch').addEventListener('input', renderSkkniList);
 document.getElementById('skkniFilter').addEventListener('change', renderSkkniList);
 
+// ===== PRIMARY SEARCH ENGINE (3 actions) =====
+var primaryMode='lsp';
+var primaryAcSelected=-1;
+function setPrimaryMode(mode){
+  primaryMode=mode;
+  document.querySelectorAll('#primaryActions button').forEach(function(b){
+    var active=b.getAttribute('data-mode')===mode;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active?'true':'false');
+  });
+  var input=document.getElementById('primarySearch');
+  var ac=document.getElementById('acPrimary');
+  if(ac) ac.classList.remove('show');
+  if(mode==='lsp') input.placeholder='Cari LSP — misal: K3, Digital, Pariwisata, Migas...';
+  if(mode==='skema') input.placeholder='Cari Skema Sertifikasi — misal: Digital Marketing, K3 Umum, Barista...';
+  if(mode==='unit') input.placeholder='Cek Kode Unit — misal: N.78SPS02.028.2, M.702093.001.01...';
+  input.focus();
+  // Update URL hash for SEO
+  try{ history.replaceState(null,'', '#/'+mode); }catch(e){}
+}
+function doPrimarySearch(){
+  var q=document.getElementById('primarySearch').value.trim();
+  if(!q) return;
+  if(primaryMode==='lsp'){
+    // try exact match or first autocomplete
+    var m=lspList.find(function(l){ return l.nama.toLowerCase()===q.toLowerCase(); });
+    if(m) selectLsp(m.nama); else {
+      // fallback: filter and show results page
+      showSearchResults('lsp', q);
+    }
+  } else if(primaryMode==='skema'){
+    var s=skemaList.find(function(x){ return x.nama.toLowerCase()===q.toLowerCase(); });
+    if(s) searchSkemaAndPickLsp(s.nama); else showSearchResults('skema', q);
+  } else if(primaryMode==='unit'){
+    renderUnitKodeResult(q);
+  }
+}
+function showSearchResults(type, query){
+  // Unified results focus view with filter sidebar
+  currentView='search';
+  var q=query.toLowerCase();
+  var html='<button class="back" type="button" onclick="goHome(event)">← Kembali</button>';
+  html+='<div class="section-head"><div><h2>Hasil pencarian</h2><p>'+esc(query)+' — '+type+'</p></div><div class="filter"><button class="'+(primaryMode==='lsp'?'active':'')+'" onclick="setPrimaryMode(\'lsp\');showSearchResults(\'lsp\',\''+esc(query).replace(/'/g,'&#39;')+'\')">LSP</button><button class="'+(primaryMode==='skema'?'active':'')+'" onclick="setPrimaryMode(\'skema\');showSearchResults(\'skema\',\''+esc(query).replace(/'/g,'&#39;')+'\')">Skema</button><button class="'+(primaryMode==='unit'?'active':'')+'" onclick="setPrimaryMode(\'unit\');renderUnitKodeResult(\''+esc(query).replace(/'/g,'&#39;')+'\')">Kode Unit</button></div></div>';
+  if(type==='lsp'){
+    var matches=lspList.filter(function(l){ return l.nama.toLowerCase().indexOf(q)!==-1; }).slice(0,24);
+    html+='<div class="results-layout"><div class="filter-sidebar"><h4>Filter</h4><div class="filter-group"><label>Status Lisensi</label><select id="fStatus" onchange="filterLspResults()"><option value="all">Semua</option><option value="aktif">Aktif</option><option value="habis">Habis</option></select></div><div class="filter-group"><label>Urutkan</label><select id="fSort" onchange="filterLspResults()"><option value="skema_desc">Skema terbanyak</option><option value="nama_asc">Nama A-Z</option></select></div><div style="font-size:11px;color:var(--muted)">'+matches.length+' LSP ditemukan</div></div><div id="resultsMain">';
+    if(matches.length===0) html+='<div class="empty"><b>Tidak ada LSP</b><div>Coba kata kunci lain</div></div>';
+    else {
+      html+='<div class="card-grid" id="resultsGrid">';
+      matches.forEach(function(l){
+        var badge=l.status==='Lisensi Aktif'?'<span class="badge badge--green">✓ Aktif</span>':'<span class="badge badge--red">✕ Habis</span>';
+        html+='<div class="result-card" onclick="selectLsp(\''+esc(l.nama).replace(/'/g,'&#39;')+'\')" style="cursor:pointer"><div class="result-head"><h3>'+esc(l.nama)+'</h3>'+badge+'</div><div class="result-meta">'+l.jml_skema+' skema • '+esc(l.no_lisensi||'No lisensi —')+'</div><div class="badges"><span class="badge">'+esc(l.no_sk||'No SK —')+'</span></div></div>';
+      });
+      html+='</div>';
+    }
+    html+='</div></div>';
+  } else if(type==='skema'){
+    var matches=skemaList.filter(function(s){ return s.nama.toLowerCase().indexOf(q)!==-1; }).slice(0,30);
+    html+='<div class="results-layout"><div class="filter-sidebar"><h4>Filter</h4><div class="filter-group"><label>SKKNI</label><select id="fSkkni" onchange="filterSkemaResults(\''+esc(query).replace(/'/g,'&#39;')+'\')"><option value="all">Semua</option><option value="berlaku">Berlaku</option><option value="dicabut">Dicabut</option></select></div><div class="filter-group"><label>Urutkan</label><select id="fSortSkema" onchange="filterSkemaResults(\''+esc(query).replace(/'/g,'&#39;')+'\')"><option value="relevansi">Relevansi</option><option value="unit_desc">Unit terbanyak</option><option value="lsp_desc">LSP terbanyak</option></select></div><div style="font-size:11px;color:var(--muted)">'+matches.length+' skema ditemukan</div></div><div id="resultsMain">';
+    if(matches.length===0) html+='<div class="empty"><b>Tidak ada Skema</b><div>Coba kata kunci lain</div></div>';
+    else {
+      html+='<div id="resultsGrid">';
+      matches.forEach(function(s){
+        var sk=findSkkniForSkema(s.nama);
+        var line=sk?'<div class="skkni-line"><div><b>'+esc(sk.nomor)+'</b> • '+esc(sk.sektor)+'</div>'+badgeForStatus(sk.status)+'</div>':'<div class="skkni-line" style="opacity:.6"><b>SKKNI belum dipetakan</b></div>';
+        html+='<div class="result-card" onclick="searchSkemaAndPickLsp(\''+esc(s.nama).replace(/'/g,'&#39;')+'\')" style="cursor:pointer"><div class="result-head"><h3>'+esc(s.nama)+'</h3><span class="badge badge--orange">'+s.total_unit+' unit</span></div><div class="result-meta">'+s.jml_lsp+' LSP penyelenggara</div>'+line+'<div class="badges"><span class="badge">'+s.jml_lsp+' LSP</span></div></div>';
+      });
+      html+='</div>';
+    }
+    html+='</div></div>';
+  }
+  document.getElementById('mainContent').innerHTML=html;
+  try{ history.pushState(null,'', '#/search/'+type+'/'+encodeURIComponent(query)); }catch(e){}
+}
+function filterLspResults(){
+  var st=document.getElementById('fStatus').value;
+  var sort=document.getElementById('fSort').value;
+  var q=document.getElementById('primarySearch').value.trim().toLowerCase();
+  var list=lspList.filter(function(l){ return l.nama.toLowerCase().indexOf(q)!==-1; });
+  if(st==='aktif') list=list.filter(function(l){return l.status==='Lisensi Aktif'});
+  if(st==='habis') list=list.filter(function(l){return l.status==='Masa Berlaku Habis'});
+  if(sort==='skema_desc') list.sort(function(a,b){return b.jml_skema-a.jml_skema});
+  if(sort==='nama_asc') list.sort(function(a,b){return a.nama.localeCompare(b.nama)});
+  var grid=document.getElementById('resultsGrid');
+  if(!grid) return;
+  var html='';
+  list.slice(0,24).forEach(function(l){
+    var badge=l.status==='Lisensi Aktif'?'<span class="badge badge--green">✓ Aktif</span>':'<span class="badge badge--red">✕ Habis</span>';
+    html+='<div class="result-card" onclick="selectLsp(\''+esc(l.nama).replace(/'/g,'&#39;')+'\')" style="cursor:pointer"><div class="result-head"><h3>'+esc(l.nama)+'</h3>'+badge+'</div><div class="result-meta">'+l.jml_skema+' skema • '+esc(l.no_lisensi||'—')+'</div></div>';
+  });
+  grid.innerHTML=html || '<div class="empty"><b>Tidak ada hasil filter</b></div>';
+}
+function filterSkemaResults(query){
+  var f=document.getElementById('fSkkni').value;
+  var sort=document.getElementById('fSortSkema').value;
+  var q=query.toLowerCase();
+  var list=skemaList.filter(function(s){ return s.nama.toLowerCase().indexOf(q)!==-1; });
+  if(f!=='all') list=list.filter(function(s){ var sk=findSkkniForSkema(s.nama); return sk && sk.status===f; });
+  if(sort==='unit_desc') list.sort(function(a,b){return b.total_unit-a.total_unit});
+  if(sort==='lsp_desc') list.sort(function(a,b){return b.jml_lsp-a.jml_lsp});
+  var grid=document.getElementById('resultsGrid');
+  var html='';
+  list.slice(0,30).forEach(function(s){
+    var sk=findSkkniForSkema(s.nama);
+    var line=sk?'<div class="skkni-line"><div><b>'+esc(sk.nomor)+'</b> • '+esc(sk.sektor)+'</div>'+badgeForStatus(sk.status)+'</div>':'<div class="skkni-line" style="opacity:.6"><b>SKKNI belum dipetakan</b></div>';
+    html+='<div class="result-card" onclick="searchSkemaAndPickLsp(\''+esc(s.nama).replace(/'/g,'&#39;')+'\')" style="cursor:pointer"><div class="result-head"><h3>'+esc(s.nama)+'</h3><span class="badge badge--orange">'+s.total_unit+' unit</span></div><div class="result-meta">'+s.jml_lsp+' LSP</div>'+line+'</div>';
+  });
+  grid.innerHTML=html || '<div class="empty"><b>Tidak ada hasil filter</b></div>';
+}
+
+// ===== PRIMARY SEARCH AUTOCOMPLETE =====
+var primarySearchInput=document.getElementById('primarySearch');
+var acPrimary=document.getElementById('acPrimary');
+if(primarySearchInput){
+  primarySearchInput.addEventListener('input', function(){
+    var q=this.value.trim().toLowerCase();
+    if(!q){ acPrimary.classList.remove('show'); document.getElementById('unitKodeResult').style.display='none'; return; }
+    if(primaryMode==='lsp'){
+      var starts=lspList.filter(function(l){return l.nama.toLowerCase().startsWith(q)}).slice(0,6);
+      var inc=lspList.filter(function(l){return l.nama.toLowerCase().indexOf(q)!==-1 && !starts.includes(l)}).slice(0,4);
+      var matches=starts.concat(inc).slice(0,8);
+      if(matches.length===0){ acPrimary.innerHTML='<div class="ac-empty">Tidak ada LSP — coba kata lain</div>'; acPrimary.classList.add('show'); return; }
+      var html=''; matches.forEach(function(m){ html+='<div class="ac-item" onclick="selectLsp(\''+esc(m.nama).replace(/'/g,'&#39;')+'\')"><span><b>'+highlight(m.nama, primarySearchInput.value)+'</b><small>'+esc(m.status||'')+' • '+m.jml_skema+' skema</small></span></div>'; });
+      acPrimary.innerHTML=html; acPrimary.classList.add('show');
+    } else if(primaryMode==='skema'){
+      var starts=skemaList.filter(function(s){return s.nama.toLowerCase().startsWith(q)}).slice(0,6);
+      var inc=skemaList.filter(function(s){return s.nama.toLowerCase().indexOf(q)!==-1 && !starts.includes(s)}).slice(0,4);
+      var matches=starts.concat(inc).slice(0,8);
+      if(matches.length===0){ acPrimary.innerHTML='<div class="ac-empty">Tidak ada Skema — coba kata lain</div>'; acPrimary.classList.add('show'); return; }
+      var html=''; matches.forEach(function(m){ var sk=findSkkniForSkema(m.nama); html+='<div class="ac-item" onclick="searchSkemaAndPickLsp(\''+esc(m.nama).replace(/'/g,'&#39;')+'\')"><span><b>'+highlight(m.nama, primarySearchInput.value)+'</b><small>'+m.jml_lsp+' LSP • '+(sk?esc(sk.nomor):'SKKNI belum dipetakan')+'</small></span><span class="tag">'+m.jml_lsp+' LSP</span></div>'; });
+      acPrimary.innerHTML=html; acPrimary.classList.add('show');
+    } else if(primaryMode==='unit'){
+      var sk=findSkkniForUnit(q);
+      if(sk){
+        acPrimary.innerHTML='<div class="ac-item" onclick="renderUnitKodeResult(\''+esc(q).replace(/'/g,'&#39;')+'\');acPrimary.classList.remove(\'show\')"><span><b>'+esc(q.toUpperCase())+' → '+esc(sk.nomor)+'</b><small>'+esc(sk.judul).substring(0,60)+' • '+sk.tahun+' • '+sk.status+'</small></span><span class="tag" style="background:var(--green-soft);color:#065F46">● Berlaku</span></div>';
+      } else {
+        acPrimary.innerHTML='<div class="ac-item" onclick="renderUnitKodeResult(\''+esc(q).replace(/'/g,'&#39;')+'\');acPrimary.classList.remove(\'show\')"><span><b>Cek '+esc(q)+' di JDIH</b><small>Kode belum dipetakan — akan cari di JDIH (SKKNI 810)</small></span></div>';
+      }
+      acPrimary.classList.add('show');
+    }
+  });
+  primarySearchInput.addEventListener('keydown', function(e){
+    var items=acPrimary.querySelectorAll('.ac-item');
+    if(e.key==='ArrowDown'){ e.preventDefault(); primaryAcSelected=Math.min(primaryAcSelected+1, items.length-1); items.forEach(function(el,i){el.classList.toggle('selected', i===primaryAcSelected)}); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); primaryAcSelected=Math.max(primaryAcSelected-1,-1); items.forEach(function(el,i){el.classList.toggle('selected', i===primaryAcSelected)}); }
+    if(e.key==='Enter'){ e.preventDefault(); if(primaryAcSelected>=0 && items[primaryAcSelected]) items[primaryAcSelected].click(); else doPrimarySearch(); }
+    if(e.key==='Escape') acPrimary.classList.remove('show');
+  });
+  primarySearchInput.addEventListener('focus', function(){ if(this.value.trim()) this.dispatchEvent(new Event('input')); });
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('#searchSingle') && !e.target.closest('#acPrimary')){ var ac=document.getElementById('acPrimary'); if(ac) ac.classList.remove('show'); }
+});
+
 // ===== STATE =====
 var lspList = [];
 var skemaList = [];
@@ -586,7 +750,17 @@ function renderHome(){
   renderSkemaPagination(1);
 }
 function filterLsp(status){ lspFilter=status; renderHome(); }
-function goHome(e){ if(e) e.preventDefault(); var a=document.getElementById('searchLsp'); var b=document.getElementById('searchSkema'); if(a) a.value=''; if(b) b.value=''; var cl=document.getElementById('clearLsp'); var cs=document.getElementById('clearSkema'); if(cl) cl.classList.remove('show'); if(cs) cs.classList.remove('show'); var al=document.getElementById('acLsp'); var as=document.getElementById('acSkema'); if(al) al.classList.remove('show'); if(as) as.classList.remove('show'); lspFilter='all'; renderHome(); window.scrollTo({top:0,behavior:'smooth'}); }
+function goHome(e){
+  if(e) e.preventDefault();
+  var a=document.getElementById('searchLsp'); var b=document.getElementById('searchSkema'); if(a) a.value=''; if(b) b.value='';
+  var ps=document.getElementById('primarySearch'); if(ps) ps.value='';
+  var acP=document.getElementById('acPrimary'); if(acP) acP.classList.remove('show');
+  var ur=document.getElementById('unitKodeResult'); if(ur) ur.style.display='none';
+  var cl=document.getElementById('clearLsp'); var cs=document.getElementById('clearSkema'); if(cl) cl.classList.remove('show'); if(cs) cs.classList.remove('show');
+  var al=document.getElementById('acLsp'); var as=document.getElementById('acSkema'); if(al) al.classList.remove('show'); if(as) as.classList.remove('show');
+  lspFilter='all'; setPrimaryMode('lsp'); renderHome(); window.scrollTo({top:0,behavior:'smooth'});
+  try{ history.pushState(null,'', window.location.pathname); }catch(e){}
+}
 function skkniBadgeForCard(skemaName){
   var s=findSkkniForSkema(skemaName);
   if(!s) return '<span class="badge" style="opacity:.6">SKKNI belum dipetakan</span>';
@@ -792,19 +966,43 @@ function renderLspSkema(page){
   document.getElementById('lspSkemaGrid').innerHTML=html;
 }
 function showLsp(name){
-  currentView='lsp'; searchLspInput.value=name; clearLsp.classList.add('show');
+  currentView='lsp';
+  // Update hash for SEO
+  try{ history.pushState(null,'', '#/lsp/'+encodeURIComponent(name.toLowerCase().replace(/\s+/g,'-'))); document.title = esc(name)+' — LSP BNSP | ICC Portal'; }catch(e){}
   var lsp=null; for(var i=0;i<lspList.length;i++) if(lspList[i].nama===name){lsp=lspList[i];break;} if(!lsp) return;
+  // Keep legacy inputs in sync for compatibility
+  try{ searchLspInput.value=name; clearLsp.classList.add('show'); }catch(e){}
   var lspSkemaRows=skemaAllRows.filter(function(s){return s.lsp_id===lsp.id;});
   var skemaByName={}; lspSkemaRows.forEach(function(s){ if(!skemaByName[s.nama]) skemaByName[s.nama]=true; });
   lspSkemaNames=Object.keys(skemaByName).sort(); lspCurrentPage=1; currentLspId=lsp.id; currentLspName=lsp.nama;
-  var html='<button class="back" type="button" onclick="clearLsp.click()">← Kembali</button>';
-  html+='<div class="card card--lsp" style="margin-top:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><div style="font-family:Fraunces,serif;font-size:22px;font-weight:900">'+esc(lsp.nama)+'</div><div class="sub">Lembaga Sertifikasi Profesi — Detail lisensi & daftar skema</div></div><div style="display:flex;gap:8px;align-items:start;flex-wrap:wrap">'+(lsp.status==='Lisensi Aktif'?'<span class="badge badge--green" style="padding:7px 12px">✓ Lisensi Aktif</span>':lsp.status==='Masa Berlaku Habis'?'<span class="badge badge--red" style="padding:7px 12px">✕ Masa Berlaku Habis</span>':'')+'<span class="badge badge--navy" style="padding:7px 12px">'+lsp.jml_skema+' Skema</span></div></div></div>';
-  html+='<div class="section-head"><h2>Detail Lisensi</h2></div><div class="table-wrap" style="margin-bottom:12px"><table><tbody><tr><th style="width:180px;background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">Status Lisensi</th><td>'+(lsp.status==='Lisensi Aktif'?'<span class="badge badge--green">✓ Lisensi Aktif</span>':lsp.status==='Masa Berlaku Habis'?'<span class="badge badge--red">✕ Masa Berlaku Habis</span>':esc(lsp.status||'—'))+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">No SK</th><td class="mono">'+esc(lsp.no_sk||'—')+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">No Lisensi</th><td class="mono">'+esc(lsp.no_lisensi||'—')+'</td></tr><tr><th style="background:#F8FAFF;color:var(--muted);border-right:1px solid var(--line)">Terakhir diperiksa</th><td>'+esc(lsp.last_checked?new Date(lsp.last_checked).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}):'—')+'</td></tr></tbody></table></div>';
-  html+='<div class="section-head"><h2>Skema Sertifikasi</h2><span class="badge">'+lspSkemaNames.length+' skema • klik untuk unit & SKKNI</span></div>';
+  var isActive=lsp.status==='Lisensi Aktif';
+  var html='<button class="back" type="button" onclick="goHome(event)">← Kembali ke pencarian</button>';
+  // Profile header — point 7
+  html+='<div class="profile-header" style="margin-top:12px"><div class="profile-top"><div><div style="font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Lembaga Sertifikasi Profesi</div><div style="font-family:Fraunces,serif;font-size:24px;font-weight:900;letter-spacing:-.02em;margin-top:4px">'+esc(lsp.nama)+'</div><div class="sub" style="margin-top:4px">'+lsp.jml_skema+' skema sertifikasi • Terakhir diperiksa '+esc(lsp.last_checked?new Date(lsp.last_checked).toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}):'—')+'</div></div><div style="text-align:right;display:grid;gap:8px;justify-items:end"><div>'+(isActive?'<span class="badge badge--green" style="padding:8px 14px;font-size:12px">🟢 Aktif</span>':'<span class="badge badge--red" style="padding:8px 14px;font-size:12px">🔴 Masa Berlaku Habis</span>')+'</div><div style="font-size:11px;color:var(--muted)">No. Lisensi<br><b class="mono" style="color:var(--text)">'+esc(lsp.no_lisensi||'—')+'</b></div></div></div>';
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px"><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">Status Lisensi</div><div style="margin-top:6px">'+(isActive?'<span class="badge badge--green">✓ Lisensi Aktif</span>':'<span class="badge badge--red">✕ Masa Berlaku Habis</span>')+'</div></div><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">No. SK</div><div class="mono" style="margin-top:6px;font-size:13px">'+esc(lsp.no_sk||'—')+'</div></div><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">Masa Berlaku</div><div style="margin-top:6px;font-size:13px;font-weight:700">'+(isActive?'Aktif':'Perlu perpanjangan')+'</div></div></div></div>';
+  // Skema table — professional data platform
+  html+='<div class="section-head" style="margin-top:18px"><div><h2>Skema Sertifikasi</h2><p>'+lspSkemaNames.length+' skema • klik baris untuk lihat unit & SKKNI acuan</p></div><span class="badge">'+lsp.jml_skema+' skema</span></div>';
   if(lspSkemaNames.length===0){ html+='<div class="empty"><b>Tidak ada skema</b></div>'; document.getElementById('mainContent').innerHTML=html; return; }
-  html+='<div id="lspSkemaGrid"></div>';
+  // Render as table for profile feel (desktop) + cards for mobile via CSS
+  html+='<div class="table-wrap" style="margin-bottom:12px"><table><thead><tr><th>Skema</th><th style="width:90px;text-align:center">Unit</th><th style="width:220px">SKKNI Acuan</th><th style="width:120px;text-align:center">Aksi</th></tr></thead><tbody id="lspSkemaTableBody"></tbody></table></div>';
+  html+='<div id="lspSkemaGrid" style="display:none"></div>';
+  html+='<div style="margin-top:12px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;align-items:center"><span style="font-size:12px;color:var(--muted)">Butuh SKKNI untuk skema ini? <b style="color:var(--text)">810 SKKNI Berlaku</b> terkurasi</span><button class="btn btn--accent btn--sm" type="button" onclick="openSkkniDrawer()">Lihat Katalog SKKNI</button></div>';
   document.getElementById('mainContent').innerHTML=html;
-  renderLspSkema(1);
+  renderLspProfileTable();
+}
+function renderLspProfileTable(){
+  var tbody=document.getElementById('lspSkemaTableBody');
+  if(!tbody) return;
+  var html='';
+  lspSkemaNames.forEach(function(nama){
+    var totalUnit=0; var skemaId=null;
+    for(var j=0;j<skemaAllRows.length;j++) if(skemaAllRows[j].nama===nama && skemaAllRows[j].lsp_id===currentLspId){ totalUnit+=(skemaAllRows[j].jml_unit||0); skemaId=skemaAllRows[j].id; }
+    var sk=findSkkniForSkema(nama);
+    var skkniCell=sk?'<span class="badge badge--mono" style="font-size:10px">'+esc(sk.nomor)+'</span> '+badgeForStatus(sk.status)+'<div style="font-size:11px;color:var(--muted);margin-top:4px">'+esc(sk.sektor)+' • '+sk.tahun+'</div>':'<span class="badge" style="opacity:.5">Belum dipetakan</span>';
+    var dlBtn=sk && sk.url_download ? '<a class="btn btn--sm" href="'+esc(sk.url_download)+'" target="_blank" rel="noopener" onclick="event.stopPropagation();trackDl(\''+esc(sk.id)+'\')">⬇ PDF</a>' : '';
+    html+='<tr style="cursor:pointer" onclick="showLspSkemaUnits(\''+esc(nama).replace(/'/g,'&#39;')+'\')"><td><b style="font-size:13px">'+esc(nama)+'</b><div style="font-size:11px;color:var(--muted)">Lihat unit →</div></td><td style="text-align:center"><span class="badge badge--orange">'+totalUnit+'</span></td><td>'+skkniCell+'</td><td style="text-align:center"><button class="btn btn--primary btn--sm" type="button" onclick="event.stopPropagation();showLspSkemaUnits(\''+esc(nama).replace(/'/g,'&#39;')+'\')">Lihat Detail →</button> '+dlBtn+'</td></tr>';
+  });
+  tbody.innerHTML=html;
 }
 function showLspSkemaUnits(name){
   currentSkemaName=name;
@@ -851,7 +1049,44 @@ if(unitKodeInput){
 if(btnCekKode){
   btnCekKode.addEventListener('click',function(){ var v=unitKodeInput.value.trim(); if(!v) { unitKodeInput.focus(); return; } renderUnitKodeResult(v); });
 }
+// ===== SEO HASH ROUTING (programmatic SEO) =====
+function updateSEO(title, desc, path){
+  document.title = title;
+  var md=document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute('content', desc);
+  try{ history.replaceState(null,'', path); }catch(e){}
+}
+function handleHash(){
+  var hash=location.hash || '';
+  if(hash.indexOf('#/lsp/')===0){
+    var slug=decodeURIComponent(hash.replace('#/lsp/','')).replace(/-/g,' ');
+    // Find LSP by slug
+    var found=lspList.find(function(l){ return l.nama.toLowerCase()===slug.toLowerCase() || l.nama.toLowerCase().replace(/\s+/g,'-')===slug.toLowerCase(); });
+    if(found) showLsp(found.nama);
+  } else if(hash.indexOf('#/skema/')===0){
+    var slug=decodeURIComponent(hash.replace('#/skema/','')).replace(/-/g,' ');
+    var found=skemaList.find(function(s){ return s.nama.toLowerCase()===slug.toLowerCase(); });
+    if(found) searchSkemaAndPickLsp(found.nama);
+  } else if(hash.indexOf('#/skkni/')===0){
+    openSkkniDrawer();
+  } else if(hash.indexOf('#/search/')===0){
+    var parts=hash.replace('#/search/','').split('/');
+    var type=parts[0], q=decodeURIComponent(parts[1]||'');
+    if(type && q){ setPrimaryMode(type==='lsp'?'lsp':type==='skema'?'skema':'unit'); document.getElementById('primarySearch').value=q; showSearchResults(type,q); }
+  }
+}
+window.addEventListener('hashchange', handleHash);
+// Patch existing navigation to push hash
+var _origShowLsp=showLsp;
+var _origSearchSkema=searchSkemaAndPickLsp;
+searchSkemaAndPickLsp=function(name){
+  try{ history.pushState(null,'', '#/skema/'+encodeURIComponent(name.toLowerCase().replace(/\s+/g,'-'))); updateSEO(name+' — Skema Sertifikasi | ICC Portal', 'Skema '+name+' — '+skemaList.find(function(s){return s.nama===name})?.jml_lsp+' LSP • SKKNI acuan dan unit kompetensi', location.hash); }catch(e){}
+  return _origSearchSkema(name);
+};
+// Wrap selectLsp already pushes via showLsp
 loadData();
+setTimeout(handleHash, 800);
+document.addEventListener('DOMContentLoaded', function(){ setPrimaryMode('lsp'); });
 </script>
 </body>
 </html>
