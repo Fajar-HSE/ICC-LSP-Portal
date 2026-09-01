@@ -1,3 +1,6 @@
+// This script checks Supabase DB status and requires environment variables
+// SUPABASE_DB_PASSWORD must be set as environment variable, not hardcoded
+
 if (!process.env.SUPABASE_DB_PASSWORD) { console.error('ERROR: set SUPABASE_DB_PASSWORD env var'); process.exit(1); }
 const { Client } = require('pg');
 const client = new Client({
@@ -5,7 +8,7 @@ const client = new Client({
   port: 6543,
   database: 'postgres',
   user: 'postgres.ziybqtcdphuzhfoahopr',
-  password: process.env.SUPABASE_DB_PASSWORD || '',
+  password: process.env.SUPABASE_DB_PASSWORD,
   ssl: { rejectUnauthorized: false }
 });
 client.connect().then(() => {

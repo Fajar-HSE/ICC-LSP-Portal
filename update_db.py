@@ -30,26 +30,39 @@ ANON_KEY = load_anon_key()
 
 def get_key():
     """Pilih key: env secret (jika valid) > anon key. Auto-test keduanya."""
-    candidates = []
     env_key = os.environ.get("SUPABASE_SERVICE_KEY", "").strip()
     if env_key and len(env_key) > 100:
-        candidates.append(("env", env_key))
-    if len(ANON_KEY) > 100:
-        candidates.append(("anon", ANON_KEY))
-
-    for name, key in candidates:
+        # Test env key first
         try:
             resp = req.get(
                 f"{SUPABASE_URL}/rest/v1/lsp?select=id&limit=1",
-                headers={"apikey": key, "Authorization": f"Bearer {key}"},
+                headers={"apikey": env_key, "Authorization": f"Bearer {env_key}"},
                 timeout=10,
             )
             if resp.status_code == 200:
-                print(f"Using key: {name}", file=sys.stderr)
-                return key
-            print(f"Key {name} rejected (HTTP {resp.status_code}), trying next...", file=sys.stderr)
+                print(f"Using key: env", file=sys.stderr)
+                return env_key
+            else:
+                print(f"Key env rejected (HTTP {resp.status_code}), trying anon key...", file=sys.stderr)
         except Exception as e:
-            print(f"Key {name} error: {e}", file=sys.stderr)
+            print(f"Key env error: {e}, trying anon key...", file=sys.stderr)
+    
+    # Fallback to anon key
+    if len(ANON_KEY) > 100:
+        try:
+            resp = req.get(
+                f"{SUPABASE_URL}/rest/v1/lsp?select=id&limit=1",
+                headers={"apikey": ANON_KEY, "Authorization": f"Bearer {ANON_KEY}"},
+                timeout=10,
+            )
+            if resp.status_code == 200:
+                print(f"Using key: anon", file=sys.stderr)
+                return ANON_KEY
+            else:
+                print(f"Key anon rejected (HTTP {resp.status_code})", file=sys.stderr)
+        except Exception as e:
+            print(f"Key anon error: {e}", file=sys.stderr)
+    
     print("FATAL: no valid key", file=sys.stderr)
     sys.exit(1)
 
