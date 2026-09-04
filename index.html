@@ -448,8 +448,6 @@ var currentSkemaName = '';
 var skemaPageSize = 24;
 var skemaCurrentPage = 1;
 var lspSkemaNames = [];
-var lspCurrentPage = 1;
-var lspPageSize = 24;
 
 // ===== FETCH WITH PAGINATION =====
 function fetchAll(table, select, pageSize) {
@@ -689,26 +687,6 @@ function renderUnitTable(){
 }
 function sortUnits(key){ if(unitSortKey===key) unitSortDir=-unitSortDir; else{ unitSortKey=key; unitSortDir=1;} renderUnitTable(); }
 
-// ===== LSP PAGINATION =====
-function renderLspSkema(page){
-  lspCurrentPage=page;
-  var start=(page-1)*lspPageSize, end=Math.min(start+lspPageSize,lspSkemaNames.length);
-  var html='<div class="card-grid">';
-  for(var i=start;i<end;i++){
-    var nama=lspSkemaNames[i];
-    var totalUnit=0; for(var j=0;j<skemaAllRows.length;j++) if(skemaAllRows[j].nama===nama && skemaAllRows[j].lsp_id===currentLspId) totalUnit+=(skemaAllRows[j].jml_unit||0);
-    html+='<div class="card card--skema" style="cursor:pointer" onclick="showLspSkemaUnits(\''+esc(nama).replace(/'/g,'&#39;')+'\')"><div class="card-top"><h3>'+esc(nama)+'</h3><span class="badge badge--orange">'+totalUnit+' unit</span></div></div>';
-  }
-  html+='</div>';
-  var totalPages=Math.ceil(lspSkemaNames.length/lspPageSize);
-  if(totalPages>1){
-    html+='<div class="pager" style="margin-top:14px">';
-    html+='<button type="button" onclick="renderLspSkema('+(page-1)+')"' + (page<=1?' disabled':'') + '>← Prev</button>';
-    for(var p=1;p<=totalPages;p++) html+='<button type="button" class="'+(p===page?'active':'')+'" onclick="renderLspSkema('+p+')">'+p+'</button>';
-    html+='<button type="button" onclick="renderLspSkema('+(page+1)+')"' + (page>=totalPages?' disabled':'') + '>Next →</button></div>';
-  }
-  document.getElementById('lspSkemaGrid').innerHTML=html;
-}
 function showLsp(name){
   currentView='lsp';
   // Update hash for SEO
@@ -718,7 +696,7 @@ function showLsp(name){
   try{ searchLspInput.value=name; clearLsp.classList.add('show'); }catch(e){}
   var lspSkemaRows=skemaAllRows.filter(function(s){return s.lsp_id===lsp.id;});
   var skemaByName={}; lspSkemaRows.forEach(function(s){ if(!skemaByName[s.nama]) skemaByName[s.nama]=true; });
-  lspSkemaNames=Object.keys(skemaByName).sort(); lspCurrentPage=1; currentLspId=lsp.id; currentLspName=lsp.nama;
+  lspSkemaNames=Object.keys(skemaByName).sort(); currentLspId=lsp.id; currentLspName=lsp.nama;
   var isActive=lsp.status==='Lisensi Aktif';
   var html='<button class="back" type="button" onclick="goHome(event)">← Kembali ke pencarian</button>';
   // Profile header — point 7
@@ -726,8 +704,7 @@ function showLsp(name){
   html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px"><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">Status Lisensi</div><div style="margin-top:6px">'+(isActive?'<span class="badge badge--green">✓ Lisensi Aktif</span>':'<span class="badge badge--red">✕ Masa Berlaku Habis</span>')+'</div></div><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">No. SK</div><div class="mono" style="margin-top:6px;font-size:13px">'+esc(lsp.no_sk||'—')+'</div></div><div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px"><div style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:800">Masa Berlaku</div><div style="margin-top:6px;font-size:13px;font-weight:700">'+(isActive?'Aktif':'Perlu perpanjangan')+'</div></div></div></div>';
   // Skema table — professional data platform
   if(lspSkemaNames.length===0){ html+='<div class="empty"><b>Tidak ada skema</b></div>'; document.getElementById('mainContent').innerHTML=html; return; }
-  // Render as table for profile feel (desktop) + cards for mobile via CSS
-  html+='<div id="lspSkemaGrid" style="display:none"></div>';
+  html+='<div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Skema</th><th style="width:110px;text-align:center">Unit</th><th style="width:140px;text-align:center">Aksi</th></tr></thead><tbody id="lspSkemaTableBody"></tbody></table></div>';
   document.getElementById('mainContent').innerHTML=html;
   renderLspProfileTable();
 }
@@ -736,9 +713,9 @@ function renderLspProfileTable(){
   if(!tbody) return;
   var html='';
   lspSkemaNames.forEach(function(nama){
-    var totalUnit=0; var skemaId=null;
-    for(var j=0;j<skemaAllRows.length;j++) if(skemaAllRows[j].nama===nama && skemaAllRows[j].lsp_id===currentLspId){ totalUnit+=(skemaAllRows[j].jml_unit||0); skemaId=skemaAllRows[j].id; }
-    var dlBtn=sk && sk.url_download ? '<a class="btn btn--sm" href="'+esc(sk.url_download)+'" target="_blank" rel="noopener" onclick="event.stopPropagation();trackDl(\''+esc(sk.id)+'\')">⬇ PDF</a>' : '';
+    var totalUnit=0; for(var j=0;j<skemaAllRows.length;j++) if(skemaAllRows[j].nama===nama && skemaAllRows[j].lsp_id===currentLspId) totalUnit+=(skemaAllRows[j].jml_unit||0);
+    var safeName=esc(nama).replace(/'/g,'&#39;');
+    html+='<tr style="cursor:pointer" onclick="showLspSkemaUnits(\''+safeName+'\')"><td>'+esc(nama)+'</td><td style="text-align:center"><span class="badge badge--orange">'+totalUnit+' unit</span></td><td style="text-align:center"><button class="btn btn--sm" type="button" onclick="event.stopPropagation();showLspSkemaUnits(\''+safeName+'\')">Lihat Unit →</button></td></tr>';
   });
   tbody.innerHTML=html;
 }

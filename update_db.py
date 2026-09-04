@@ -1,10 +1,11 @@
 """
 Update Supabase LSP — match scraped BNSP data to DB records.
 
-Robust version:
-- Menggunakan anon key (publik, ada di repo) sebagai key utama — TIDAK butuh secret.
-- Jika env SUPABASE_SERVICE_KEY diset, dipakai dulu (prioritas), tapi anon key jadi fallback.
-- Auto-detect key valid: kalau request pertama 401, coba key lain.
+- Butuh SUPABASE_SERVICE_KEY (env/GitHub secret) untuk INSERT/UPDATE/DELETE —
+  sejak RLS diaktifkan (lihat supabase/migrations/20260904000000_enable_rls_readonly.sql),
+  anon key hanya berhak SELECT dan akan ditolak (401/403) untuk operasi tulis.
+- Anon key (publik, diambil runtime dari index.html) tetap dicoba sebagai fallback
+  agar error-nya jelas kalau SUPABASE_SERVICE_KEY belum diset, bukan diam-diam gagal.
 """
 import json, os, sys
 import requests as req
@@ -13,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 SUPABASE_URL = "https://ziybqtcdphuzhfoahopr.supabase.co"
 
 # Anon key publik — diambil runtime dari index.html (single source of truth,
-# jadi tidak ada duplikasi key di repo). Sudah cukup untuk SELECT + PATCH (RLS terbuka).
+# jadi tidak ada duplikasi key di repo). Hanya untuk SELECT (RLS read-only).
 def load_anon_key():
     import re
     try:
@@ -193,9 +194,23 @@ def main():
 
     # PRUNE: hapus LSP non-P3 dari DB (portal hanya menampilkan LSP Pihak Ketiga)
     # Skema semua milik LSP P3 (diverifikasi: 0 skema non-P3), jadi aman dihapus.
+    #
+    # SAFETY GUARD: hapus LSP di sini cascade menghapus skema + unit_kompetensi
+    # miliknya (FK ON DELETE CASCADE). Kalau hasil scrape jauh lebih kecil dari
+    # DB saat ini (mis. BNSP down / berubah struktur / scraper berhenti dini),
+    # jangan prune sama sekali — lebih aman data DB "ketinggalan" seminggu
+    # daripada kehilangan data secara massal & tidak bisa dipulihkan.
+    MIN_SCRAPE_RATIO = 0.9
     scraped_names = set(s['nama'].lower().strip() for s in scraped)
     orphans = [l for l in db_lsp if l['nama'].lower().strip() not in scraped_names]
-    if orphans:
+    if db_lsp and len(scraped) < len(db_lsp) * MIN_SCRAPE_RATIO:
+        print(
+            f"\nSKIP PRUNE: hasil scrape hanya {len(scraped)} LSP vs {len(db_lsp)} di DB "
+            f"(< {int(MIN_SCRAPE_RATIO*100)}%) — kemungkinan scrape gagal/parsial. "
+            f"Prune dibatalkan demi keamanan data.",
+            file=sys.stderr,
+        )
+    elif orphans:
         print(f"\nPruning {len(orphans)} LSP non-P3 dari DB...")
         pruned = 0
         for i in range(0, len(orphans), 100):
