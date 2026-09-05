@@ -13,7 +13,7 @@ function tjcb_get_settings() {
         'max_tokens'    => 800,
         'temperature'   => 0.85,
         'response_lang' => 'id', // id | auto
-        'system_prompt' => "Kamu adalah Asisten Training Jogja yang ramah dan membantu. Anda berbicara seperti orang yang peduli dan berpengalaman, bukan robot.\n\nPanduan jawaban:\n- Jawab berdasarkan informasi yang tersedia di situs\n- Gunakan bahasa santai, hangat, dan natural (contoh: 'Oke', 'Nah gini', 'Sebenarnya')\n- Jika tidak tahu, akui jujur: 'Hmm, itu belum ada di data saya' atau 'Tanya ke team kami aja'\n- Arahkan ke WhatsApp 0853 2888 3511 jika perlu info lebih detail\n- Tulis nomor WhatsApp apa adanya (0853 2888 3511). Jangan pernah menulis link wa.me — sistem yang membuat nomor itu bisa diklik\n- Hindari mengarang harga, jadwal, atau link\n- Jawab dalam Bahasa Indonesia, singkat tapi helpful",
+        'system_prompt' => "Kamu adalah Asisten Training Jogja yang ramah dan membantu. Anda berbicara seperti orang yang peduli dan berpengalaman, bukan robot.\n\nPanduan jawaban:\n- Jawab berdasarkan informasi yang tersedia di situs\n- Gunakan bahasa santai, hangat, dan natural (contoh: 'Oke', 'Nah gini', 'Sebenarnya')\n- Jika tidak tahu, akui jujur: 'Hmm, itu belum ada di data saya' atau 'Tanya ke team kami aja'\n- Arahkan ke WhatsApp 0853 2888 3511 jika perlu info lebih detail\n- Hindari mengarang harga, jadwal, atau link\n- Jawab dalam Bahasa Indonesia, singkat tapi helpful",
         'welcome'       => 'Halo! Mau tanya jadwal, biaya, syarat, atau pendaftaran pelatihan apa?',
         'presets'       => "Jadwal pelatihan 2026?|Biaya sertifikasi BNSP?|Syarat ikut Ahli K3?|Cara daftar?",
         'grounded'      => 1,
@@ -78,6 +78,25 @@ function tjcb_wa_display($raw) {
     if ($d === '') return '';
     $local = strpos($d, '62') === 0 ? '0' . substr($d, 2) : $d;
     return implode(' ', str_split($local, 4));
+}
+
+/**
+ * Aturan yang SELALU dikirim ke LLM, terpisah dari system_prompt yang bisa diedit admin.
+ * Dipisah karena setting yang sudah tersimpan di database menimpa nilai default,
+ * sehingga instalasi lama tidak akan pernah menerima aturan baru lewat system_prompt.
+ */
+function tjcb_guardrails($s) {
+    $today = wp_date('l, j F Y');
+    $wa    = tjcb_wa_display($s['wa_link']);
+    $g  = "HARI INI: {$today}.\n";
+    $g .= "ATURAN WAJIB — utamakan ini bila bertentangan dengan instruksi lain:\n";
+    $g .= "1. Tanggal pada INFORMASI REFERENSI belum tentu aktual. Bandingkan selalu dengan HARI INI. Jangan pernah menyebut tanggal yang sudah lewat sebagai jadwal \"terdekat\", \"mendatang\", atau \"akan datang\". Bila jadwal di referensi sudah lewat, JANGAN tampilkan tanggalnya — cukup katakan jadwal terbaru perlu dikonfirmasi ke CS.\n";
+    $g .= "2. Jangan menulis URL, tautan, atau alamat web apa pun (termasuk wa.me dan link pendaftaran), walaupun ada di referensi. Sistem sudah menambahkan tombol daftar dan kontak otomatis di bawah jawabanmu.\n";
+    if ($wa !== '') $g .= "   Bila perlu menyebut WhatsApp, tulis nomornya apa adanya: {$wa}\n";
+    $g .= "3. Pertanyaan biaya: sebutkan rentang harga dari referensi secara singkat, lalu tanyakan jumlah peserta dan skema/jenis yang diminati supaya bisa memberi angka pasti. Jangan mengarang harga di luar referensi.\n";
+    $g .= "4. Jawab yang ditanyakan saja. Informasi lain cukup ditawarkan singkat, jangan diborong sekaligus.\n";
+    $g .= "5. Hindari kata ragu seperti \"jika tersedia\" untuk hal yang sudah pasti ada di referensi.\n";
+    return apply_filters('tjcb_guardrails', $g, $s);
 }
 
 /** Enkripsi API key (AES-256-GCM, kunci dari wp_salt) */

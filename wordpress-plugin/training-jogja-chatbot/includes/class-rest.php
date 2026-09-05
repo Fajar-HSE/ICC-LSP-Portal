@@ -96,7 +96,9 @@ class TJCB_REST {
             ? 'Balas dalam bahasa yang dipakai user.'
             : 'Selalu jawab SELURUHNYA dalam Bahasa Indonesia.';
         $messages = [
-            ['role' => 'system', 'content' => $s['system_prompt'] . "\n" . $lang_rule . "\n\nINFORMASI REFERENSI (sumber utama, jangan tambah fakta di luar ini):\n" . mb_substr($ref, 0, 6000)],
+            ['role' => 'system', 'content' => $s['system_prompt'] . "\n" . $lang_rule
+                . "\n\nINFORMASI REFERENSI (sumber utama, jangan tambah fakta di luar ini):\n" . mb_substr($ref, 0, 6000)
+                . "\n\n" . tjcb_guardrails($s)],
         ];
         foreach (self::history($sid, 6) as $h) $messages[] = $h;
         $messages[] = ['role' => 'user', 'content' => $msg];
