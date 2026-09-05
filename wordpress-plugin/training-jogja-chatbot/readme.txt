@@ -4,7 +4,7 @@ Tags: ai chatbot, chatbot, openrouter, rag, knowledge base
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 
 Chatbot AI Bahasa Indonesia — menjawab dari konten situs + Knowledge Base, tidak mengarang jawaban.
@@ -24,6 +24,9 @@ Fitur: widget floating kanan bawah + shortcode [tj_chatbot], Bahasa Indonesia de
 5. Knowledge → tambah Q&A. Aktifkan Tampilkan sitewide.
 
 == Changelog ==
+
+= 1.3.2 =
+UI/UX improvement: tombol floating chat diperbesar (avatar 26px → 32px, text 14px → 15px, tinggi 52px → 64px) untuk visibility & prominence lebih baik di desktop websites.
 
 = 1.3.1 =
 Perbaikan hasil audit: model AI otomatis dinormalkan sesuai provider (dulu bisa gagal total kalau pindah ke OpenAI langsung), pencarian keyword & knowledge pindah ke BOOLEAN MODE + fallback LIKE per token (dulu kata pendek Bahasa Indonesia sering tak ketemu di NATURAL LANGUAGE MODE), vector search dibatasi & disaring lewat keyword dulu untuk index besar (dulu selalu scan sampai 2000 baris per chat), embedding pertanyaan di-cache 12 jam, batas harian kini berbasis cookie perangkat + jaringan sekaligus (dulu gampang reset cuma ganti IP/User-Agent) plus tambahan batas harian sitewide, proteksi origin REST diperketat (dulu request tanpa header Origin/Referer selalu lolos), pembuatan sesi dibatasi per jam, field Max tokens/Temperature/Rate limit/Batas sitewide kini muncul di Pengaturan, validasi upload Knowledge diperkuat, serta pemuatan textdomain untuk terjemahan.
