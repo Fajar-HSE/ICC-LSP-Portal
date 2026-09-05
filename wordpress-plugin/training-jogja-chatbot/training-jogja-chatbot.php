@@ -3,7 +3,7 @@
  * Plugin Name:       TJ AI Chatbot
  * Plugin URI:        https://training-jogja.com/
  * Description:       Chatbot AI untuk WordPress — menjawab dari konten situs + Knowledge Base sendiri, tidak mengarang jawaban. Provider: OpenAI / OpenRouter / OpenAI-compatible. Bahasa Indonesia default.
- * Version:           1.3.2
+ * Version:           1.3.3
  * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Training Jogja
@@ -14,7 +14,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('TJCB_VERSION', '1.3.2');
+define('TJCB_VERSION', '1.3.3');
 define('TJCB_DIR', plugin_dir_path(__FILE__));
 define('TJCB_URL', plugin_dir_url(__FILE__));
 define('TJCB_OPT', 'tjcb_settings');
