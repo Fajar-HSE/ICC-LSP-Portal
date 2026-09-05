@@ -54,9 +54,9 @@ class TJCB_Activator {
             $now = current_time('mysql');
             $seed = [
                 ['Bagaimana cara mendaftar pelatihan?', "Isi formulir di https://amcicccrm.my.id/registrasi, lalu CS verifikasi via WA. Lengkapi KTP, ijazah, CV, dan pas foto, lakukan pembayaran, terima undangan kelas.", 1],
-                ['Berapa kontak Training Jogja?', "Alamat Jl. Patangpuluhan No.26A Wirobrajan, Yogyakarta. WA 0853 2888 3511 (https://wa.me/6285328883511), email info@hseskillup.com, jam Senin–Jumat 08.00–17.00.", 1],
+                ['Berapa kontak Training Jogja?', "Alamat: Jl. Patangpuluhan No.26A Wirobrajan, Yogyakarta. WA: 0853 2888 3511, Email: info@hseskillup.com, Jam Kerja: Senin–Jumat 08.00–17.00.", 1],
                 ['Apa saja layanan Training Jogja?', "Sertifikasi BNSP, Sertifikasi Kemnaker/K3, Sertifikasi ISO (9001, 14001, 45001), In House Training, K3 & HSE, dan Management & Leadership.", 0],
-                ['Apakah tersedia In House Training?', "Ya. Kurikulum custom sesuai kebutuhan perusahaan, instruktur onsite, diskon grup. Konsultasi via WhatsApp https://wa.me/6285328883511.", 0],
+                ['Apakah tersedia In House Training?', "Ya. Kurikulum custom sesuai kebutuhan perusahaan, instruktur onsite, diskon grup. Konsultasi: WA 0853 2888 3511.", 0],
             ];
             foreach ($seed as $s) {
                 $wpdb->insert("{$t}tjcb_knowledge", [
