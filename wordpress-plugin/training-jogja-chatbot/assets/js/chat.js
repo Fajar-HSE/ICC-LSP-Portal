@@ -50,13 +50,23 @@
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
   function fmt(s) {
     s = esc(s);
+    var held = [];
+    function hold(url, text) {
+      held.push('<a href="' + url + '" target="_blank" rel="noopener">' + text + '</a>');
+      return '<' + (held.length - 1) + '>';
+    }
+    s = s.replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)<>"']+)\)/g, function (m, text, url) { return hold(url, text); });
+    s = s.replace(/https?:\/\/[^\s<>"']+/g, function (url) { return hold(url, url); });
+    s = s.replace(/(?:\+62|62|0)8[1-9][0-9]{1,2}[\s-]?[0-9]{3,4}[\s-]?[0-9]{3,5}/g, function (num) {
+      var d = num.replace(/\D+/g, '');
+      return hold('https://wa.me/' + (d.charAt(0) === '0' ? '62' + d.slice(1) : d), num);
+    });
     s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/__(.+?)__/g, '<strong>$1</strong>');
     s = s.replace(/\*(.+?)\*/g, '<em>$1</em>');
     s = s.replace(/_(.+?)_/g, '<em>$1</em>');
-    s = s.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     s = s.replace(/\n/g, '<br>');
-    return s;
+    return s.replace(/<(\d+)>/g, function (m, i) { return held[i]; });
   }
   root.querySelector('#tj-fab').onclick = function () {
     panel.hidden = !panel.hidden;

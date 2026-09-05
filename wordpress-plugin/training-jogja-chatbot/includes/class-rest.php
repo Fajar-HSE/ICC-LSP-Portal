@@ -108,7 +108,9 @@ class TJCB_REST {
         }
         self::save_turn($sid, $msg, $res['text'], $res['in'], $res['out'], tjcb_chat_model($s));
         TJCB_Usage::hit();
-        $reply = $res['text'] . "\n\n👉 " . __('Daftar: ', 'tj-chatbot') . $s['daftar_link'] . ' | ' . __('Konsultasi: ', 'tj-chatbot') . $s['wa_link'];
+        $reply = $res['text'] . "\n\n👉 " . __('Daftar: ', 'tj-chatbot') . $s['daftar_link'];
+        $wa_url = tjcb_wa_url($s['wa_link']);
+        if ($wa_url !== '') $reply .= ' | ' . __('Konsultasi: ', 'tj-chatbot') . '[' . tjcb_wa_display($s['wa_link']) . '](' . $wa_url . ')';
         return ['reply' => $reply, 'tools' => ['retrieval', 'llm'], 'sources' => array_values(array_unique($sources))];
     }
 

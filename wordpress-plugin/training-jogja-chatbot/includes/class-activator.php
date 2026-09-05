@@ -69,6 +69,7 @@ class TJCB_Activator {
     }
     /** Migrasi DB untuk install lama (v1.0.x → tambah tabel vektor). Dijalankan tiap admin_init. */
     public static function migrate() {
+        self::migrate_wa_link();
         if ((int) get_option('tjcb_dbv', 1) >= 2) return;
         global $wpdb;
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -81,6 +82,19 @@ class TJCB_Activator {
             PRIMARY KEY (post_id, chunk_no)
         ) $c;");
         update_option('tjcb_dbv', 2);
+    }
+    /** Setting wa_link lama bisa ter-mangle esc_url_raw jadi "http://0853%202888%203511". Pulihkan sekali. */
+    private static function migrate_wa_link() {
+        if (get_option('tjcb_wa_fixed')) return;
+        update_option('tjcb_wa_fixed', 1);
+        $opt = get_option(TJCB_OPT, []);
+        if (!is_array($opt) || !isset($opt['wa_link'])) return;
+        $host = (string) parse_url($opt['wa_link'], PHP_URL_HOST);
+        if ($host !== '' && strpos($host, '.') !== false) return; // sudah URL wajar
+        $url = tjcb_wa_url($opt['wa_link']);
+        if ($url === '') return;
+        $opt['wa_link'] = $url;
+        update_option(TJCB_OPT, $opt);
     }
     public static function cleanup() {
         global $wpdb;

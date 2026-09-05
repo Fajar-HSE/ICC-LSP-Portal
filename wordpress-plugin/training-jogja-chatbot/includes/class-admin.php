@@ -239,7 +239,7 @@ class TJCB_Admin {
             <br><small>Atau pasang shortcode <code>[tj_chatbot]</code> di Elementor (Shortcode/HTML widget).</small></td></tr>
             <tr><th>Sapaan</th><td><input name="' . TJCB_OPT . '[welcome]" value="' . esc_attr($s['welcome']) . '" style="width:100%"></td></tr>
             <tr><th>Preset (pisah |)</th><td><input name="' . TJCB_OPT . '[presets]" value="' . esc_attr($s['presets']) . '" style="width:100%"></td></tr>
-            <tr><th>Link WA / Daftar</th><td><input name="' . TJCB_OPT . '[wa_link]" value="' . esc_attr($s['wa_link']) . '" style="width:49%"> <input name="' . TJCB_OPT . '[daftar_link]" value="' . esc_attr($s['daftar_link']) . '" style="width:49%"></td></tr>
+            <tr><th>Nomor WA / Link Daftar</th><td><input name="' . TJCB_OPT . '[wa_link]" value="' . esc_attr($s['wa_link']) . '" style="width:49%" placeholder="0853 2888 3511"> <input name="' . TJCB_OPT . '[daftar_link]" value="' . esc_attr($s['daftar_link']) . '" style="width:49%"><p class="description">Isi nomor WA biasa (mis. 0853 2888 3511) atau URL wa.me — otomatis dinormalkan. Di chat yang tampil hanya nomornya, klik langsung ke WhatsApp.</p></td></tr>
             </table>';
         submit_button();
         echo '</form><script>document.getElementById("tjcb-test").onclick=function(){var m=document.getElementById("tjcb-testmsg");m.textContent="Menghubungi...";var fd="action=tjcb_test&_ajax_nonce=' . wp_create_nonce('tjcb_test') . '&provider="+encodeURIComponent(document.getElementById("tjcb-provider").value)+"&api_key="+encodeURIComponent(document.getElementById("tjcb-apikey").value)+"&custom_base="+encodeURIComponent(document.getElementById("tjcb-base").value)+"&model="+encodeURIComponent(document.getElementById("tjcb-model").value);fetch(ajaxurl,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:fd}).then(function(r){return r.json();}).then(function(j){m.textContent=j.success?j.data:"Gagal: "+j.data;});};</script>';
@@ -282,7 +282,8 @@ class TJCB_Admin {
         $o['save_history'] = !empty($in['save_history']) ? 1 : 0;
         $o['retention'] = max(7, absint($in['retention'] ?? 90));
         $o['sitewide'] = !empty($in['sitewide']) ? 1 : 0;
-        $o['wa_link'] = esc_url_raw($in['wa_link'] ?? $old['wa_link']);
+        $wa = trim((string) ($in['wa_link'] ?? $old['wa_link']));
+        $o['wa_link'] = preg_match('~^https?://~i', $wa) ? esc_url_raw($wa) : tjcb_wa_url($wa);
         $o['daftar_link'] = esc_url_raw($in['daftar_link'] ?? $old['daftar_link']);
         $o['bot_name'] = sanitize_text_field($in['bot_name'] ?? $old['bot_name']);
         $o['bot_avatar'] = mb_substr(sanitize_text_field($in['bot_avatar'] ?? $old['bot_avatar']), 0, 8);

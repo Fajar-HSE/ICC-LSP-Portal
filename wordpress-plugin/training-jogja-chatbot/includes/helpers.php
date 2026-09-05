@@ -13,7 +13,7 @@ function tjcb_get_settings() {
         'max_tokens'    => 800,
         'temperature'   => 0.85,
         'response_lang' => 'id', // id | auto
-        'system_prompt' => "Kamu adalah Asisten Training Jogja yang ramah dan membantu. Anda berbicara seperti orang yang peduli dan berpengalaman, bukan robot.\n\nPanduan jawaban:\n- Jawab berdasarkan informasi yang tersedia di situs\n- Gunakan bahasa santai, hangat, dan natural (contoh: 'Oke', 'Nah gini', 'Sebenarnya')\n- Jika tidak tahu, akui jujur: 'Hmm, itu belum ada di data saya' atau 'Tanya ke team kami aja'\n- Arahkan ke WhatsApp 0853 2888 3511 jika perlu info lebih detail\n- Hindari mengarang harga, jadwal, atau link\n- Jawab dalam Bahasa Indonesia, singkat tapi helpful",
+        'system_prompt' => "Kamu adalah Asisten Training Jogja yang ramah dan membantu. Anda berbicara seperti orang yang peduli dan berpengalaman, bukan robot.\n\nPanduan jawaban:\n- Jawab berdasarkan informasi yang tersedia di situs\n- Gunakan bahasa santai, hangat, dan natural (contoh: 'Oke', 'Nah gini', 'Sebenarnya')\n- Jika tidak tahu, akui jujur: 'Hmm, itu belum ada di data saya' atau 'Tanya ke team kami aja'\n- Arahkan ke WhatsApp 0853 2888 3511 jika perlu info lebih detail\n- Tulis nomor WhatsApp apa adanya (0853 2888 3511). Jangan pernah menulis link wa.me — sistem yang membuat nomor itu bisa diklik\n- Hindari mengarang harga, jadwal, atau link\n- Jawab dalam Bahasa Indonesia, singkat tapi helpful",
         'welcome'       => 'Halo! Mau tanya jadwal, biaya, syarat, atau pendaftaran pelatihan apa?',
         'presets'       => "Jadwal pelatihan 2026?|Biaya sertifikasi BNSP?|Syarat ikut Ahli K3?|Cara daftar?",
         'grounded'      => 1,
@@ -57,6 +57,28 @@ function tjcb_normalize_model($model, $provider) {
 }
 function tjcb_chat_model($s) { return tjcb_normalize_model($s['model'], $s['provider']); }
 function tjcb_embed_model($s) { return tjcb_normalize_model($s['embed_model'], $s['provider']); }
+
+/** Nomor WhatsApp: terima "0853 2888 3511", "62853...", atau URL wa.me — hasilkan digit format internasional. */
+function tjcb_wa_digits($raw) {
+    // rawurldecode dulu: setting lama bisa tersimpan ter-encode ("0853%202888%203511"),
+    // dan "%20" akan ikut terbaca sebagai angka 20 kalau tidak didekode.
+    $d = preg_replace('/\D+/', '', rawurldecode((string) $raw));
+    if ($d === '') return '';
+    if (strpos($d, '62') === 0) return $d;
+    if ($d[0] === '0') return '62' . substr($d, 1);
+    return $d;
+}
+function tjcb_wa_url($raw) {
+    $d = tjcb_wa_digits($raw);
+    return $d === '' ? '' : 'https://wa.me/' . $d;
+}
+/** Tampilan lokal berspasi: 0853 2888 3511 */
+function tjcb_wa_display($raw) {
+    $d = tjcb_wa_digits($raw);
+    if ($d === '') return '';
+    $local = strpos($d, '62') === 0 ? '0' . substr($d, 2) : $d;
+    return implode(' ', str_split($local, 4));
+}
 
 /** Enkripsi API key (AES-256-GCM, kunci dari wp_salt) */
 function tjcb_encrypt($plain) {

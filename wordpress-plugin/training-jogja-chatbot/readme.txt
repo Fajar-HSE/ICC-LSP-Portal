@@ -4,7 +4,7 @@ Tags: ai chatbot, chatbot, openrouter, rag, knowledge base
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 License: GPLv2 or later
 
 Chatbot AI Bahasa Indonesia — menjawab dari konten situs + Knowledge Base, tidak mengarang jawaban.
@@ -24,6 +24,9 @@ Fitur: widget floating kanan bawah + shortcode [tj_chatbot], Bahasa Indonesia de
 5. Knowledge → tambah Q&A. Aktifkan Tampilkan sitewide.
 
 == Changelog ==
+
+= 1.3.5 =
+Nomor WhatsApp kini tampil sebagai nomor saja (0853 2888 3511) dan bisa diklik langsung ke WhatsApp — link wa.me tidak lagi ditampilkan mentah. Field Nomor WA di Pengaturan menerima nomor biasa maupun URL wa.me (dulu nomor berspasi rusak jadi "http://0853%202888%203511"); setting lama yang terlanjur rusak diperbaiki otomatis saat update. Chat juga mendukung tautan format [teks](url) dan menomorkan nomor telepon Indonesia secara otomatis.
 
 = 1.3.4 =
 Peningkatan tone & style: Temperature 0.2 → 0.85 (jawaban lebih variatif & natural), system prompt lebih santai & emotional, knowledge base hanya tampilkan nomor WA tanpa link.
