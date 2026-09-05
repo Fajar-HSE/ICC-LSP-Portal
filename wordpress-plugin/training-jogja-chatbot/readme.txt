@@ -4,7 +4,7 @@ Tags: ai chatbot, chatbot, openrouter, rag, knowledge base
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 
 Chatbot AI Bahasa Indonesia — menjawab dari konten situs + Knowledge Base, tidak mengarang jawaban.
@@ -24,6 +24,9 @@ Fitur: widget floating kanan bawah + shortcode [tj_chatbot], Bahasa Indonesia de
 5. Knowledge → tambah Q&A. Aktifkan Tampilkan sitewide.
 
 == Changelog ==
+
+= 1.3.4 =
+Peningkatan tone & style: Temperature 0.2 → 0.85 (jawaban lebih variatif & natural), system prompt lebih santai & emotional, knowledge base hanya tampilkan nomor WA tanpa link.
 
 = 1.3.3 =
 Perbaikan rendering teks: support Markdown formatting (**bold**, *italic*, __bold__, _italic_) di pesan chatbot. Sebelumnya hanya menampilkan asterisk literal.
