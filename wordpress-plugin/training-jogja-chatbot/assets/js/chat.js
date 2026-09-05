@@ -48,7 +48,16 @@
       form = root.querySelector('#tj-form'), inp = root.querySelector('#tj-in');
   function bub(html, cls) { var d = document.createElement('div'); d.className = cls; d.innerHTML = html; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-  function fmt(s) { return esc(s).replace(/\n/g, '<br>').replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>'); }
+  function fmt(s) {
+    s = esc(s);
+    s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    s = s.replace(/\*(.+?)\*/g, '<em>$1</em>');
+    s = s.replace(/_(.+?)_/g, '<em>$1</em>');
+    s = s.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    s = s.replace(/\n/g, '<br>');
+    return s;
+  }
   root.querySelector('#tj-fab').onclick = function () {
     panel.hidden = !panel.hidden;
     if (!panel.hidden && !msgs.children.length) bub(fmt(C.welcome), 'bot');
