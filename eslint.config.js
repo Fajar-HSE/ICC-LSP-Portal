@@ -28,6 +28,7 @@ export default tseslint.config(
             'vitest.config.ts',
             'playwright.config.ts',
             'e2e/*.ts',
+            'scripts/*.mjs',
           ],
         },
         tsconfigRootDir: import.meta.dirname,
@@ -60,6 +61,18 @@ export default tseslint.config(
     files: ['e2e/**/*.ts'],
     rules: {
       '@typescript-eslint/prefer-regexp-exec': 'off',
+    },
+  },
+  {
+    // Build script JS polos tanpa type — aturan type-aware tidak berlaku.
+    files: ['scripts/**/*.mjs'],
+    rules: {
+      'no-undef': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
     },
   },
 );

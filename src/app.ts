@@ -8,9 +8,11 @@ import { lspProfileHTML } from './components/LspProfile.js';
 import { skemaDetailHTML, skemaLspInfoHTML } from './components/SkemaDetail.js';
 import { unitErrorHTML, unitLoadingHTML, unitTableHTML } from './components/UnitTable.js';
 import { statsHTML } from './components/StatsBar.js';
+import { footerHTML } from './components/Footer.js';
 import { toast } from './components/Toast.js';
-import { buildData } from './services/skema.js';
-import { filterLsp, searchLsp, topLsp } from './services/lsp.js';
+import { buildData, groupSkemaRows } from './services/skema.js';
+import { searchPage } from './services/search.js';
+import { searchLsp, topLsp } from './services/lsp.js';
 import { fetchAll } from './services/supabase.js';
 import { fetchUnitsBySkema, sortUnits } from './services/unit.js';
 import { paginate } from './services/pagination.js';
@@ -18,7 +20,7 @@ import type { LspItem, LspRow, SkemaItem, SkemaRow, UnitRow } from './types/data
 import type { LspFilter, PrimaryMode, UnitSortKey } from './types/ui.js';
 import { debounce, esc } from './utils/dom.js';
 import { formatCount, formatDateID, slugify } from './utils/format.js';
-import { announce } from './utils/a11y.js';
+import { announce, focusMain } from './utils/a11y.js';
 
 interface AppState {
   lspList: LspItem[];
@@ -63,7 +65,7 @@ const state: AppState = {
 let virtualRendered = 48;
 
 export function renderApp(root: HTMLElement): void {
-  root.innerHTML = `${headerHTML()}<div id="heroSlot"></div><div id="statsSlot"></div><main class="main" id="mainContent" tabindex="-1"><div class="loading" role="status"><div class="spinner"></div><p>Memuat data...</p></div></main><div class="footer">Indonesian Certification Center (ICC) — Data LSP BNSP • Portal Skema &amp; Unit Kompetensi</div>`;
+  root.innerHTML = `${headerHTML()}<div id="heroSlot"></div><div id="statsSlot"></div><main class="main" id="mainContent" tabindex="-1"><div class="loading" role="status"><div class="spinner"></div><p>Memuat data...</p></div></main><div id="footerSlot">${footerHTML('—')}</div>`;
 
   bindHeader(
     () => goHome(),
@@ -197,7 +199,7 @@ async function loadData(): Promise<void> {
   } catch (e) {
     const main = document.getElementById('mainContent');
     if (main) {
-      main.innerHTML = `<div class="empty" role="alert"><b>Gagal memuat data</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div style="margin-top:12px"><button class="btn btn--primary" type="button" id="btnRetryLoad">Coba lagi</button></div></div>`;
+      main.innerHTML = `<div class="empty" role="alert"><b>Gagal memuat data</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetryLoad">Coba lagi</button></div></div>`;
       document.getElementById('btnRetryLoad')?.addEventListener('click', () => void loadData());
     }
     toast('Gagal memuat data. Periksa koneksi lalu coba lagi.', 'error');
@@ -220,6 +222,8 @@ function renderStats(): void {
     aktif: String(aktif),
     habis: String(habis),
   });
+  const footer = document.getElementById('footerSlot');
+  if (footer) footer.innerHTML = footerHTML(formatDateID(state.latestChecked));
 }
 
 function renderHome(): void {
@@ -302,20 +306,86 @@ function renderSkemaWindowed(): void {
   }
 }
 
+interface SearchView {
+  type: 'lsp' | 'skema';
+  q: string;
+  page: number;
+}
+
+let searchView: SearchView | null = null;
+const SEARCH_PAGE_SIZE = 12;
+
+// Hasil pencarian diambil dari server (ilike + paginasi), bukan filter
+// seluruh dataset di memori — jumlah total akurat via count=exact.
 function showSearchResults(type: 'lsp' | 'skema', q: string): void {
+  searchView = { type, q, page: 1 };
+  void renderSearchView();
+}
+
+async function renderSearchView(): Promise<void> {
   const main = document.getElementById('mainContent');
-  if (!main) return;
-  const query = q.toLowerCase();
-  if (type === 'lsp') {
-    const matches = state.lspList.filter((l) => l.nama.toLowerCase().includes(query)).slice(0, 24);
-    main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>Hasil pencarian LSP</h2><p>${matches.length} hasil untuk “${esc(q)}”</p></div></div><div class="card-grid">${matches.map((l) => lspCardHTML(l)).join('') || '<div class="empty">Tidak ditemukan</div>'}</div>`;
-  } else {
-    const matches = state.skemaList.filter((s) => s.nama.toLowerCase().includes(query)).slice(0, 24);
-    main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>Hasil pencarian Skema</h2><p>${matches.length} hasil untuk “${esc(q)}”</p></div></div><div class="card-grid">${matches.map((s) => skemaCardHTML(s)).join('') || '<div class="empty">Tidak ditemukan</div>'}</div>`;
-  }
+  if (!main || !searchView) return;
+  const { type, q, page } = searchView;
+  const title = type === 'lsp' ? 'Hasil pencarian LSP' : 'Hasil pencarian Skema';
+  main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>${title}</h2><p>Mencari “${esc(q)}”…</p></div></div><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div></div>`;
   document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
-  bindCards(main);
-  announce(`Hasil pencarian: ${q}`);
+  try {
+    if (type === 'lsp') {
+      const { rows, total } = await searchPage(
+        'lsp',
+        'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked',
+        'nama',
+        q,
+        page,
+        SEARCH_PAGE_SIZE,
+      );
+      const items = rows as unknown as LspItem[];
+      const totalPages = Math.max(1, Math.ceil(total / SEARCH_PAGE_SIZE));
+      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>${title}</h2><p>${total} hasil untuk “${esc(q)}” • halaman ${page}/${totalPages}</p></div></div><div class="card-grid">${items.map((l) => lspCardHTML(l)).join('') || '<div class="empty" style="grid-column:1/-1"><b>Tidak ditemukan</b><div>Coba kata kunci lain.</div></div>'}</div><div id="searchPager"></div>`;
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      bindCards(main);
+      const pager = document.getElementById('searchPager');
+      if (pager && totalPages > 1) {
+        pager.innerHTML = pagerHTML(page, totalPages, 'hasil pencarian');
+        bindPager(pager, (p) => {
+          if (searchView) {
+            searchView.page = p;
+            void renderSearchView();
+          }
+        });
+      }
+    } else {
+      const { rows, total } = await searchPage(
+        'skema',
+        'id,nama,id_skema,lsp_id,jml_unit',
+        'nama',
+        q,
+        1,
+        200,
+      );
+      const grouped = groupSkemaRows(rows as unknown as SkemaRow[], state.lspMap);
+      const { pageItems, totalPages } = paginate(grouped, page, SEARCH_PAGE_SIZE);
+      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>${title}</h2><p>${grouped.length} jenis skema (dari ${total} baris cocok) untuk “${esc(q)}”</p></div></div><div class="card-grid">${pageItems.map((s) => skemaCardHTML(s)).join('') || '<div class="empty" style="grid-column:1/-1"><b>Tidak ditemukan</b><div>Coba kata kunci lain.</div></div>'}</div><div id="searchPager"></div>`;
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      bindCards(main);
+      const pager = document.getElementById('searchPager');
+      if (pager && totalPages > 1) {
+        pager.innerHTML = pagerHTML(page, totalPages, 'hasil pencarian');
+        bindPager(pager, (p) => {
+          if (searchView) {
+            searchView.page = p;
+            void renderSearchView();
+          }
+        });
+      }
+    }
+    focusMain();
+    announce(`${title}: ${q}`);
+  } catch (e) {
+    main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="empty" role="alert"><b>Pencarian gagal</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetrySearch">Coba lagi</button></div></div>`;
+    document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+    document.getElementById('btnRetrySearch')?.addEventListener('click', () => void renderSearchView());
+  }
 }
 
 function showLsp(name: string): void {
@@ -339,6 +409,8 @@ function showLsp(name: string): void {
   main.innerHTML = lspProfileHTML(lsp);
   document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
   renderLspSkemaTable();
+  focusMain();
+  announce(`Profil ${lsp.nama}, ${names.length} skema`);
 }
 
 function renderLspSkemaTable(): void {
@@ -378,8 +450,8 @@ function showLspSkemaUnits(name: string): void {
   const main = document.getElementById('mainContent');
   if (!main) return;
   main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button>
-  <div class="card card--skema" style="margin-top:12px"><div class="card-top"><div><div style="font-size:11px;font-weight:800;color:var(--muted)">UNIT KOMPETENSI</div><div style="font-family:Fraunces,serif;font-size:20px;font-weight:900;margin-top:4px">${esc(skema.nama)}</div><div class="sub" style="margin-top:4px">${esc(state.currentLspName)} • ${skema.jml_unit ?? 0} unit</div></div><span class="badge badge--orange">${skema.jml_unit ?? 0} unit</span></div></div>
-  <div id="skemaUnitTable" style="margin-top:12px">${unitLoadingHTML()}</div>`;
+  <div class="card card--skema mt-12"><div class="card-top"><div><div class="lbl">UNIT KOMPETENSI</div><div class="h-unit">${esc(skema.nama)}</div><div class="sub mt-4">${esc(state.currentLspName)} • ${skema.jml_unit ?? 0} unit</div></div><span class="badge badge--orange">${skema.jml_unit ?? 0} unit</span></div></div>
+  <div id="skemaUnitTable" class="mt-12">${unitLoadingHTML()}</div>`;
   document.getElementById('btnBackLsp')?.addEventListener('click', () => showLsp(state.currentLspName));
   void loadUnits(skema.id);
 }
@@ -442,6 +514,8 @@ function searchSkemaAndPickLsp(name: string): void {
     });
   });
   if (buttons.length === 1 && buttons[0]) buttons[0].click();
+  focusMain();
+  announce(`Skema ${name}, tersedia di ${skema.jml_lsp} LSP`);
 }
 
 function showSkemaDetail(skemaName: string, lspIdx: number, btnEl: HTMLButtonElement | null): void {
@@ -488,7 +562,9 @@ function goHome(): void {
   }
   renderHero();
   renderHome();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  focusMain();
 }
 
 function handleHash(): void {
@@ -506,6 +582,3 @@ function handleHash(): void {
     if (found) searchSkemaAndPickLsp(found.nama);
   }
 }
-
-// Expose untuk filterLsp lama bila ada sisa onclick inline (tidak dipakai di template baru)
-void filterLsp;

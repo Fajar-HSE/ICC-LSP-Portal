@@ -14,6 +14,13 @@ export function announce(msg: string): void {
   });
 }
 
+export function focusMain(): void {
+  const main = document.getElementById('mainContent');
+  if (!main) return;
+  if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+  main.focus({ preventScroll: true });
+}
+
 export function trapFocus(container: HTMLElement): () => void {
   const selector =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';

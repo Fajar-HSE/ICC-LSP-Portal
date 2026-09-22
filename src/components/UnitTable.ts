@@ -18,9 +18,9 @@ export function unitTableHTML(rows: UnitRow[], sortKey: UnitSortKey, dir: 1 | -1
 }
 
 export function unitLoadingHTML(): string {
-  return '<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p style="margin-top:10px">Memuat unit...</p></div>';
+  return '<div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p class="mt-10">Memuat unit...</p></div>';
 }
 
 export function unitErrorHTML(message: string): string {
-  return `<div class="empty" role="alert"><b>Gagal memuat unit</b><div>${esc(message)}</div><div style="margin-top:12px"><button class="btn btn--primary" type="button" id="btnRetryUnits">Coba lagi</button></div></div>`;
+  return `<div class="empty" role="alert"><b>Gagal memuat unit</b><div>${esc(message)}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetryUnits">Coba lagi</button></div></div>`;
 }

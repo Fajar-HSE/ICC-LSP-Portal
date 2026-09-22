@@ -6,16 +6,16 @@ export function lspProfileHTML(lsp: LspItem): string {
   const isActive = lsp.status === 'Lisensi Aktif';
   return `
   <button class="back" type="button" id="btnBackHome">← Kembali ke pencarian</button>
-  <div class="profile-header" style="margin-top:12px">
+  <div class="profile-header mt-12">
     <div class="profile-top">
       <div>
-        <div style="font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Lembaga Sertifikasi Profesi</div>
-        <div style="font-family:Fraunces,serif;font-size:24px;font-weight:900;margin-top:4px">${esc(lsp.nama)}</div>
-        <div class="sub" style="margin-top:4px">${lsp.jml_skema} skema sertifikasi • Terakhir diperiksa ${esc(formatDateID(lsp.last_checked))}</div>
+        <div class="lbl">Lembaga Sertifikasi Profesi</div>
+        <div class="h-profile">${esc(lsp.nama)}</div>
+        <div class="sub mt-4">${lsp.jml_skema} skema sertifikasi • Terakhir diperiksa ${esc(formatDateID(lsp.last_checked))}</div>
       </div>
-      <div style="text-align:right;display:grid;gap:8px;justify-items:end">
-        <div>${isActive ? '<span class="badge badge--green" style="padding:8px 14px;font-size:12px">🟢 Aktif</span>' : '<span class="badge badge--red" style="padding:8px 14px;font-size:12px">🔴 Masa Berlaku Habis</span>'}</div>
-        <div style="font-size:11px;color:var(--muted)">No. Lisensi<br /><b class="mono" style="color:var(--text)">${esc(lsp.no_lisensi || '—')}</b></div>
+      <div class="profile-side">
+        <div>${isActive ? '<span class="badge badge--green badge--lg">🟢 Aktif</span>' : '<span class="badge badge--red badge--lg">🔴 Masa Berlaku Habis</span>'}</div>
+        <div><span class="lbl">No. Lisensi</span><br /><b class="mono txt">${esc(lsp.no_lisensi || '—')}</b></div>
       </div>
     </div>
     <div class="kv">

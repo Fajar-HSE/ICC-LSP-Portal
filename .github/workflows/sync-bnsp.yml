@@ -27,13 +27,20 @@ jobs:
           python scrape_status_bnsp.py
 
       - name: Sync skema + units to DB (resume-friendly)
+        # WAJIB: set repo secret SUPABASE_SERVICE_KEY (service_role).
+        # Tanpa ini script jatuh ke anon key yang (setelah RLS) read-only
+        # sehingga sync gagal dengan jelas, bukan diam-diam.
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           set -e
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then echo "ERROR: SUPABASE_SERVICE_KEY belum diset — stop agar tidak sync setengah jalan"; exit 1; fi
           pip install --quiet requests 2>/dev/null || true
           # fase 1: update/purge LSP di DB (bnsp_status_p3.json -> Supabase)
           python update_db.py
           # fase 2+3: scrape unit + sync skema ke DB (resume checkpoint)
-          timeout 1200 python sync_units.py || true
+          # Sengaja tanpa `|| true`: kegagalan harus merah agar terlihat.
+          timeout 1200 python sync_units.py
 
       - name: Validate JSON
         run: |

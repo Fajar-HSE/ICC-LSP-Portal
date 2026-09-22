@@ -45,9 +45,18 @@ export function buildData(lspRows: LspRow[], skemaRows: SkemaRow[]): BuiltData {
     if (set) l.jml_skema = set.size;
   }
 
-  // Group skema per nama (case-insensitive) lintas LSP
+  const skemaList = groupSkemaRows(skemaRows, lspMap);
+
+  return { lspList, skemaList, lspMap, latestChecked };
+}
+
+/** Kelompokkan baris skema per nama (case-insensitive) lintas LSP. */
+export function groupSkemaRows(
+  rows: SkemaRow[],
+  lspMap: Record<number, string>,
+): SkemaItem[] {
   const group = new Map<string, { nama: string; lsps: SkemaItem['lsps'] }>();
-  for (const s of skemaRows) {
+  for (const s of rows) {
     const key = s.nama.toLowerCase();
     let g = group.get(key);
     if (!g) {
@@ -63,15 +72,11 @@ export function buildData(lspRows: LspRow[], skemaRows: SkemaRow[]): BuiltData {
     });
   }
 
-  const skemaList: SkemaItem[] = [...group.keys()]
-    .sort()
-    .map((key) => {
-      const g = group.get(key);
-      if (!g) throw new Error('unreachable');
-      g.lsps.sort((a, b) => a.lsp.localeCompare(b.lsp));
-      const total_unit = g.lsps.reduce((sum, o) => sum + o.jml_unit, 0);
-      return { nama: g.nama, jml_lsp: g.lsps.length, total_unit, lsps: g.lsps };
-    });
-
-  return { lspList, skemaList, lspMap, latestChecked };
+  return [...group.keys()].sort().map((key) => {
+    const g = group.get(key);
+    if (!g) throw new Error('unreachable');
+    g.lsps.sort((a, b) => a.lsp.localeCompare(b.lsp));
+    const total_unit = g.lsps.reduce((sum, o) => sum + o.jml_unit, 0);
+    return { nama: g.nama, jml_lsp: g.lsps.length, total_unit, lsps: g.lsps };
+  });
 }
