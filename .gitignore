@@ -1,4 +1,8 @@
 node_modules/
+dist/
+test-results/
+playwright-report/
+playwright/.cache/
 seed_full.sql
 seed_supabase.py
 data.json
@@ -9,6 +13,7 @@ supabase/.temp/
 # environment / credentials
 *.env
 .env*
+!.env.example
 
 __pycache__/
 *.pyc

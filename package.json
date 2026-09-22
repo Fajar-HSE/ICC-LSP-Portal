@@ -1,5 +1,32 @@
 {
-  "dependencies": {
-    "pg": "^8.22.0"
+  "name": "icc-lsp-portal",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Portal Data LSP & Skema Sertifikasi Indonesia — search engine BNSP",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.7.4",
+    "eslint": "^9.12.0",
+    "jsdom": "^25.0.1",
+    "pg": "^8.22.0",
+    "prettier": "^3.3.3",
+    "typescript": "~5.6.3",
+    "typescript-eslint": "^8.8.0",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.3"
   }
 }

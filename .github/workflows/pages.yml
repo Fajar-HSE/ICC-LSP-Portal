@@ -25,13 +25,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install deps (pg only, for completeness)
-        run: if [ -f package-lock.json ]; then npm ci --omit=dev || true; fi
+      - name: Install deps
+        run: npm ci
 
-      - name: Upload artifact (artifact only; index.html is static)
+      - name: Build (Vite → dist/)
+        run: npm run build
+        env:
+          VITE_SB_URL: ${{ secrets.VITE_SB_URL }}
+          VITE_SB_KEY: ${{ secrets.VITE_SB_KEY }}
+
+      - name: Upload artifact (Vite build output)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./dist
 
       - name: Deploy to Pages
         id: deployment
