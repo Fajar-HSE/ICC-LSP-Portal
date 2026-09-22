@@ -1,8 +1,16 @@
 const FALLBACK_URL = 'https://ziybqtcdphuzhfoahopr.supabase.co';
 
+// Anon key publik (public by design untuk client-side, RLS read-only).
+// Env VITE_SB_KEY menimpa bila diset; fallback ini menjaga deploy statis
+// tetap jalan tanpa secrets — perilaku sama seperti index.html lama.
+const FALLBACK_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
+
 export function getSupabaseConfig(): { url: string; key: string } {
-  const url = (import.meta.env['VITE_SB_URL'] as string | undefined) ?? FALLBACK_URL;
-  const key = (import.meta.env['VITE_SB_KEY'] as string | undefined) ?? '';
+  const envUrl = import.meta.env['VITE_SB_URL'] as string | undefined;
+  const envKey = import.meta.env['VITE_SB_KEY'] as string | undefined;
+  const url = envUrl && envUrl.length > 0 ? envUrl : FALLBACK_URL;
+  const key = envKey && envKey.length > 0 ? envKey : FALLBACK_KEY;
   return { url, key };
 }
 
