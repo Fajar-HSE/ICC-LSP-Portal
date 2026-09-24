@@ -10,29 +10,37 @@ export interface SearchResult {
   total: number;
 }
 
-/** Bersihkan wildcard ilike agar query user tidak jadi pola berbahaya. */
+/**
+ * Bersihkan karakter berbahaya untuk pola ilike / sintaks or=(...):
+ * `*` (wildcard), `( )` (grouping), `"` (quoting), `,` (pemisah), `:` (operator).
+ */
 export function escapeIlike(q: string): string {
-  return q.replace(/\*/g, '').trim();
+  return q.replace(/[*()",:]/g, '').trim();
 }
 
 export function buildSearchRequest(
   table: string,
   select: string,
-  column: string,
+  column: string | string[],
   query: string,
   page: number,
   pageSize: number,
 ): SearchRequest | null {
   const q = escapeIlike(query);
   if (!q) return null;
+  const cols = Array.isArray(column) ? column : [column];
+  if (cols.length === 0) return null;
   const safePage = Math.max(1, Math.floor(page));
   const start = (safePage - 1) * pageSize;
   const end = start + pageSize - 1;
-  const params = new URLSearchParams({
-    select,
-    [column]: `ilike.*${q}*`,
-    order: `${column}.asc`,
-  });
+  const params = new URLSearchParams({ select });
+  const first = cols[0] as string;
+  if (cols.length === 1) {
+    params.set(first, `ilike.*${q}*`);
+  } else {
+    params.set('or', `(${cols.map((c) => `${c}.ilike.*${q}*`).join(',')})`);
+  }
+  params.set('order', `${first}.asc`);
   return { path: `${table}?${params.toString()}`, range: `${start}-${end}` };
 }
 
@@ -45,7 +53,7 @@ export function parseContentRange(header: string | null): number | null {
 export async function searchPage(
   table: string,
   select: string,
-  column: string,
+  column: string | string[],
   query: string,
   page: number,
   pageSize: number,

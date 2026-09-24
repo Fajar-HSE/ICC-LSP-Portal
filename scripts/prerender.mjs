@@ -1,7 +1,7 @@
 // Prerender halaman statis per LSP & skema untuk SEO (crawler tidak mengeksekusi
 // hash routing SPA). Dijalankan setelah `vite build`: menulis dist/lsp/*,
 // dist/skema/*, dist/sitemap.xml, dist/robots.txt.
-// Sumber key: duplikat dari src/services/supabase.ts (anon key publik).
+// Sumber key: duplikat dari src/services/supabase.ts (publishable key publik).
 // Fail-soft: bila fetch gagal, tulis robots + sitemap home-only agar build
 // tidak pernah merah karena tahap SEO.
 
@@ -10,9 +10,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SB_URL = process.env.VITE_SB_URL || 'https://ziybqtcdphuzhfoahopr.supabase.co';
-const SB_KEY =
-  process.env.VITE_SB_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
+const SB_KEY = process.env.VITE_SB_KEY || 'sb_publishable_0yUKTSy_QGWYgJrggRC5TA_M71e5fA_';
 const SITE = (process.env.SITE_BASE || 'https://fajar-hse.github.io/ICC-LSP-Portal').replace(/\/$/, '');
 const DIST = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 

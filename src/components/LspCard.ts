@@ -12,6 +12,6 @@ export function lspCardHTML(l: LspItem): string {
   <article class="card card--lsp" data-lsp="${esc(l.nama)}" tabindex="0" role="button" aria-label="Lihat skema ${esc(l.nama)}">
     <div class="card-top"><h3>${esc(l.nama)}</h3><span class="badge badge--navy">${l.jml_skema} skema</span></div>
     <div class="sub">Lembaga Sertifikasi Profesi • ${esc(l.no_lisensi || 'No lisensi —')}</div>
-    <div class="badges">${badge}<span class="badge">${esc(l.no_sk || 'No SK —')}</span></div>
+    <div class="badges">${badge}<span class="badge">${esc(l.no_sk || 'No SK —')}</span><span class="card-cta" aria-hidden="true">Lihat skema →</span></div>
   </article>`;
 }

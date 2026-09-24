@@ -24,6 +24,11 @@ export function deslugify(slug: string): string {
   return slug.replace(/-/g, ' ');
 }
 
+/** Rapikan nama: pangkas spasi tepi + jadikan spasi ganda satu spasi. */
+export function normalizeName(s: string): string {
+  return s.trim().replace(/\s+/g, ' ');
+}
+
 export function chunk<T>(arr: T[], size: number): T[][] {
   if (size <= 0) return [arr.slice()];
   const out: T[][] = [];

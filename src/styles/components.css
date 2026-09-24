@@ -56,6 +56,23 @@
   box-shadow: var(--shadow-lg);
   border-color: #d8deea;
 }
+.card[data-lsp],
+.card[data-skema] {
+  cursor: pointer;
+}
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--orange);
+  margin-left: auto;
+  align-self: center;
+}
+.card:hover .card-cta,
+.card:focus-visible .card-cta {
+  text-decoration: underline;
+}
 .card::before {
   content: '';
   position: absolute;

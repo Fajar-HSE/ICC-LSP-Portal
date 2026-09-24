@@ -1,5 +1,5 @@
 import { bindHeader, headerHTML } from './components/Header.js';
-import { heroHTML } from './components/HeroSearch.js';
+import { bindPrimaryTabs, heroHTML } from './components/HeroSearch.js';
 import { hideAc, renderAcLsp, renderAcSkema } from './components/Autocomplete.js';
 import { lspCardHTML } from './components/LspCard.js';
 import { skemaCardHTML } from './components/SkemaCard.js';
@@ -10,28 +10,43 @@ import { unitErrorHTML, unitLoadingHTML, unitTableHTML } from './components/Unit
 import { statsHTML } from './components/StatsBar.js';
 import { footerHTML } from './components/Footer.js';
 import { toast } from './components/Toast.js';
-import { buildData, groupSkemaRows } from './services/skema.js';
+import { groupSkemaRows } from './services/skema.js';
 import { searchPage } from './services/search.js';
-import { searchLsp, topLsp } from './services/lsp.js';
-import { fetchAll } from './services/supabase.js';
 import { fetchUnitsBySkema, sortUnits } from './services/unit.js';
 import { paginate } from './services/pagination.js';
-import type { LspItem, LspRow, SkemaItem, SkemaRow, UnitRow } from './types/database.js';
-import type { LspFilter, PrimaryMode, UnitSortKey } from './types/ui.js';
+import {
+  fetchLspByName,
+  fetchLspMap,
+  fetchLspSkemaNames,
+  fetchSkemaGroup,
+  fetchSkemaId,
+  getSkemaPage,
+  getStats,
+  getTopLsp,
+  suggestLsp,
+  suggestSkema,
+  type PortalStats,
+  type SkemaSummary,
+} from './services/portal.js';
+import type { LspItem, SkemaItem, SkemaRow, UnitRow } from './types/database.js';
+import type { LspFilter, PrimaryMode, SkemaSort, UnitSortKey } from './types/ui.js';
 import { debounce, esc } from './utils/dom.js';
-import { formatCount, formatDateID, slugify } from './utils/format.js';
+import { deslugify, formatCount, formatDateID, slugify } from './utils/format.js';
 import { announce, focusMain } from './utils/a11y.js';
 
+interface LspSkemaEntry {
+  nama: string;
+  units: number;
+}
+
 interface AppState {
-  lspList: LspItem[];
-  skemaList: SkemaItem[];
-  skemaAllRows: SkemaRow[];
-  lspMap: Record<number, string>;
+  stats: PortalStats | null;
   latestChecked: string;
   mode: PrimaryMode;
   lspFilter: LspFilter;
   skemaPage: number;
-  lspSkemaNames: string[];
+  homeSkemaTotal: number;
+  lspSkemaEntries: LspSkemaEntry[];
   lspSkemaPage: number;
   currentLspId: number | null;
   currentLspName: string;
@@ -40,18 +55,17 @@ interface AppState {
   unitSortDir: 1 | -1;
   skemaPageSize: number;
   lspPageSize: number;
+  skemaSort: SkemaSort;
 }
 
 const state: AppState = {
-  lspList: [],
-  skemaList: [],
-  skemaAllRows: [],
-  lspMap: {},
+  stats: null,
   latestChecked: '',
   mode: 'lsp',
   lspFilter: 'all',
   skemaPage: 1,
-  lspSkemaNames: [],
+  homeSkemaTotal: 0,
+  lspSkemaEntries: [],
   lspSkemaPage: 1,
   currentLspId: null,
   currentLspName: '',
@@ -60,20 +74,20 @@ const state: AppState = {
   unitSortDir: 1,
   skemaPageSize: 24,
   lspPageSize: 24,
+  skemaSort: 'nama-asc',
 };
 
-let virtualRendered = 48;
+interface SkemaCtx {
+  group: SkemaItem;
+  info: Map<number, LspItem>;
+}
+
+let skemaCtx: SkemaCtx | null = null;
 
 export function renderApp(root: HTMLElement): void {
   root.innerHTML = `${headerHTML()}<div id="heroSlot"></div><div id="statsSlot"></div><main class="main" id="mainContent" tabindex="-1"><div class="loading" role="status"><div class="spinner"></div><p>Memuat data...</p></div></main><div id="footerSlot">${footerHTML('—')}</div>`;
 
-  bindHeader(
-    () => goHome(),
-    () => {
-      setMode('skema');
-      document.getElementById('primarySearch')?.focus();
-    },
-  );
+  bindHeader(() => goHome());
   renderHero();
   void loadData();
   window.addEventListener('hashchange', handleHash);
@@ -83,38 +97,47 @@ export function renderApp(root: HTMLElement): void {
 function renderHero(): void {
   const slot = document.getElementById('heroSlot');
   if (!slot) return;
-  slot.innerHTML = heroHTML(state.mode, formatDateID(state.latestChecked));
-  slot.querySelectorAll<HTMLButtonElement>('.primary-actions button').forEach((b) => {
-    b.addEventListener('click', () => setMode(b.getAttribute('data-mode') === 'skema' ? 'skema' : 'lsp'));
-  });
+  slot.innerHTML = heroHTML(state.mode);
+  bindPrimaryTabs(slot, (m, source) => setMode(m, source === 'click'));
   const input = document.getElementById('primarySearch') as HTMLInputElement | null;
   const ac = document.getElementById('acPrimary');
   const btn = document.getElementById('btnPrimarySearch');
   if (!input || !ac) return;
 
+  // Autocomplete selalu dari server: tanpa unduhan dataset penuh.
   const onInput = debounce(() => {
-    const q = input.value.trim().toLowerCase();
-    if (!q) {
+    const raw = input.value.trim();
+    if (!raw) {
       hideAc(ac, input);
       return;
     }
     if (state.mode === 'lsp') {
-      renderAcLsp(ac, input, searchLsp(state.lspList, q, 8), (nama) => {
-        hideAc(ac, input);
-        input.value = nama;
-        showLsp(nama);
-      });
+      void suggestLsp(raw, 8)
+        .then((matches) => {
+          if (input.value.trim() !== raw) return;
+          renderAcLsp(ac, input, matches, (nama) => {
+            hideAc(ac, input);
+            input.value = nama;
+            showLsp(nama);
+          });
+        })
+        .catch(() => hideAc(ac, input));
     } else {
-      const starts = state.skemaList.filter((s) => s.nama.toLowerCase().startsWith(q)).slice(0, 6);
-      const inc = state.skemaList
-        .filter((s) => s.nama.toLowerCase().includes(q) && !s.nama.toLowerCase().startsWith(q))
-        .slice(0, 4);
-      const matches = starts.concat(inc).slice(0, 8);
-      renderAcSkema(ac, input, matches, (nama) => {
-        hideAc(ac, input);
-        input.value = nama;
-        searchSkemaAndPickLsp(nama);
-      });
+      void suggestSkema(raw, 8)
+        .then((names) => {
+          if (input.value.trim() !== raw) return;
+          renderAcSkema(
+            ac,
+            input,
+            names.map((nama) => ({ nama, jml_lsp: 0, total_unit: 0 })),
+            (nama) => {
+              hideAc(ac, input);
+              input.value = nama;
+              searchSkemaAndPickLsp(nama);
+            },
+          );
+        })
+        .catch(() => hideAc(ac, input));
     }
   }, 150);
 
@@ -153,7 +176,7 @@ function renderHero(): void {
   btn?.addEventListener('click', doPrimarySearch);
 }
 
-function setMode(mode: PrimaryMode): void {
+function setMode(mode: PrimaryMode, focusSearch = true): void {
   state.mode = mode;
   try {
     history.replaceState(null, '', `#/${mode}`);
@@ -161,41 +184,34 @@ function setMode(mode: PrimaryMode): void {
     /* abaikan */
   }
   renderHero();
-  document.getElementById('primarySearch')?.focus();
+  if (focusSearch) {
+    document.getElementById('primarySearch')?.focus();
+  } else {
+    document
+      .querySelector<HTMLButtonElement>(`.primary-actions button[data-mode="${mode}"]`)
+      ?.focus();
+  }
 }
 
 function doPrimarySearch(): void {
   const input = document.getElementById('primarySearch') as HTMLInputElement | null;
   const q = input?.value.trim() ?? '';
   if (!q) return;
-  if (state.mode === 'lsp') {
-    const m = state.lspList.find((l) => l.nama.toLowerCase() === q.toLowerCase());
-    if (m) showLsp(m.nama);
-    else showSearchResults('lsp', q);
-  } else {
-    const s = state.skemaList.find((x) => x.nama.toLowerCase() === q.toLowerCase());
-    if (s) searchSkemaAndPickLsp(s.nama);
-    else showSearchResults('skema', q);
-  }
+  // Selalu lewat hasil pencarian server (data tidak lagi di memori).
+  // Navigasi langsung tetap tersedia via pilihan autocomplete.
+  showSearchResults(state.mode, q);
 }
 
 async function loadData(): Promise<void> {
   try {
-    const [lspRows, skemaRows] = await Promise.all([
-      fetchAll('lsp', 'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked'),
-      fetchAll('skema', 'id,nama,id_skema,lsp_id,jml_unit'),
-    ]);
-    const built = buildData(lspRows as unknown as LspRow[], skemaRows as unknown as SkemaRow[]);
-    state.lspList = built.lspList;
-    state.skemaList = built.skemaList;
-    state.lspMap = built.lspMap;
-    state.latestChecked = built.latestChecked;
-    state.skemaAllRows = skemaRows as unknown as SkemaRow[];
+    // Agregat dari server (RPC): tanpa unduhan seluruh tabel.
+    // Bila RPC belum di-deploy, getStats jatuh ke jalur warisan otomatis.
+    const stats = await getStats();
+    state.stats = stats;
+    state.latestChecked = stats.latest_checked ?? '';
     renderStats();
-    const heroDate = document.getElementById('lastUpdatedLabel');
-    if (heroDate) heroDate.textContent = formatDateID(state.latestChecked);
-    renderHome();
-    announce(`Data dimuat: ${state.lspList.length} LSP, ${state.skemaList.length} skema`);
+    await renderHome();
+    announce(`Data dimuat: ${stats.total_lsp} LSP, ${stats.skema_jenis} skema`);
   } catch (e) {
     const main = document.getElementById('mainContent');
     if (main) {
@@ -208,50 +224,69 @@ async function loadData(): Promise<void> {
 
 function renderStats(): void {
   const slot = document.getElementById('statsSlot');
-  if (!slot) return;
-  const aktif = state.lspList.filter((l) => l.status === 'Lisensi Aktif').length;
-  const habis = state.lspList.filter((l) => l.status === 'Masa Berlaku Habis').length;
-  const unitTotal = state.skemaList.reduce((s, o) => s + o.total_unit, 0);
+  if (!slot || !state.stats) return;
+  const s = state.stats;
   slot.innerHTML = statsHTML({
-    totalLsp: String(state.lspList.length),
-    totalSkema: String(state.skemaList.length),
-    totalUnit: formatCount(unitTotal),
-    multiLsp: String(state.skemaList.filter((s) => s.jml_lsp > 1).length),
-    detail: `${aktif} Aktif • ${habis} Habis`,
-    unitSub: `${formatCount(unitTotal)} unit`,
-    aktif: String(aktif),
-    habis: String(habis),
+    totalLsp: String(s.total_lsp),
+    totalSkema: String(s.skema_jenis),
+    totalUnit: formatCount(s.total_unit),
+    multiLsp: String(s.multi_lsp),
+    detail: `${s.aktif} Aktif • ${s.habis} Habis`,
+    unitSub: `${formatCount(s.total_unit)} unit`,
+    dataPer: formatDateID(state.latestChecked),
   });
+  const setHeroCount = (id: string, value: string): void => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+  setHeroCount('heroLspCount', `${formatCount(s.total_lsp)}+`);
+  setHeroCount('heroSkemaCount', `${formatCount(s.skema_jenis)}+`);
+  setHeroCount('heroUnitCount', `${formatCount(s.total_unit)}+`);
   const footer = document.getElementById('footerSlot');
   if (footer) footer.innerHTML = footerHTML(formatDateID(state.latestChecked));
 }
 
-function renderHome(): void {
+async function renderHome(): Promise<void> {
   const main = document.getElementById('mainContent');
-  if (!main) return;
-  const cntAktif = state.lspList.filter((l) => l.status === 'Lisensi Aktif').length;
-  const cntHabis = state.lspList.filter((l) => l.status === 'Masa Berlaku Habis').length;
-  const top = topLsp(state.lspList, state.lspFilter, 6);
+  if (!main || !state.stats) return;
+  const s = state.stats;
 
   let html = `<div class="section-head"><div><h2>LSP dengan Skema Terbanyak</h2><p>Top 6 • klik kartu untuk lihat skema</p></div>`;
-  html += `<div class="filter" role="group" aria-label="Filter status LSP"><button type="button" class="${state.lspFilter === 'all' ? 'active' : ''}" data-filter="all" ${state.lspFilter === 'all' ? 'aria-pressed="true"' : ''}>Semua (${state.lspList.length})</button><button type="button" class="${state.lspFilter === 'aktif' ? 'active' : ''}" data-filter="aktif">Aktif (${cntAktif})</button><button type="button" class="${state.lspFilter === 'habis' ? 'active' : ''}" data-filter="habis">Habis (${cntHabis})</button></div></div>`;
-  html += '<div class="card-grid" id="topLspGrid">';
-  if (top.length === 0) html += '<div class="empty" style="grid-column:1/-1"><b>Tidak ada LSP</b><div>Filter tidak cocok.</div></div>';
-  html += top.map((l) => lspCardHTML(l)).join('');
-  html += '</div>';
-  html += `<div class="section-head"><div><h2>Skema Tersedia</h2><p>${state.skemaList.length} jenis skema • tersedia di LSP terverifikasi</p></div></div><div class="card-grid" id="skemaGrid"></div><div id="skemaSentinel" aria-hidden="true"></div><div id="skemaPager"></div>`;
+  const pressed = (f: LspFilter): string => (state.lspFilter === f ? 'true' : 'false');
+  html += `<div class="filter" role="group" aria-label="Filter status LSP"><button type="button" class="${state.lspFilter === 'all' ? 'active' : ''}" data-filter="all" aria-pressed="${pressed('all')}">Semua (${s.total_lsp})</button><button type="button" class="${state.lspFilter === 'aktif' ? 'active' : ''}" data-filter="aktif" aria-pressed="${pressed('aktif')}">Aktif (${s.aktif})</button><button type="button" class="${state.lspFilter === 'habis' ? 'active' : ''}" data-filter="habis" aria-pressed="${pressed('habis')}">Habis (${s.habis})</button></div></div>`;
+  html += '<div class="card-grid" id="topLspGrid"><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div></div></div>';
+  const sel = (v: SkemaSort): string => (state.skemaSort === v ? ' selected' : '');
+  html += `<div class="section-head"><div><h2>Skema Tersedia</h2><p>${s.skema_jenis} jenis skema • tersedia di LSP terverifikasi</p></div><div class="section-actions"><label class="sr-only" for="skemaSort">Urutkan skema</label><select id="skemaSort" class="btn" aria-label="Urutkan skema"><option value="nama-asc"${sel('nama-asc')}>Nama A–Z</option><option value="nama-desc"${sel('nama-desc')}>Nama Z–A</option><option value="unit-desc"${sel('unit-desc')}>Unit terbanyak</option></select></div></div><div class="card-grid" id="skemaGrid"><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div></div></div><div id="skemaPager"></div>`;
   main.innerHTML = html;
+  document.getElementById('skemaSort')?.addEventListener('change', (e) => {
+    state.skemaSort = (e.target as HTMLSelectElement).value as SkemaSort;
+    state.skemaPage = 1;
+    void renderSkemaPage();
+  });
 
   main.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) => {
     b.addEventListener('click', () => {
       state.lspFilter = (b.getAttribute('data-filter') ?? 'all') as LspFilter;
-      renderHome();
+      void renderHome();
     });
   });
-  bindCards(main);
   state.skemaPage = 1;
-  virtualRendered = 48;
-  renderSkemaWindowed();
+  await Promise.all([refreshHomeTop(), renderSkemaPage()]);
+}
+
+async function refreshHomeTop(): Promise<void> {
+  const grid = document.getElementById('topLspGrid');
+  if (!grid) return;
+  try {
+    const top = await getTopLsp(state.lspFilter, 6);
+    grid.innerHTML =
+      top.map((l) => lspCardHTML(l)).join('') ||
+      '<div class="empty" style="grid-column:1/-1"><b>Tidak ada LSP</b><div>Filter tidak cocok.</div></div>';
+    bindCards(grid);
+  } catch {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1" role="alert"><b>Gagal memuat LSP</b><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetryTop">Coba lagi</button></div></div>`;
+    document.getElementById('btnRetryTop')?.addEventListener('click', () => void refreshHomeTop());
+  }
 }
 
 function bindCards(scope: HTMLElement): void {
@@ -277,32 +312,30 @@ function bindCards(scope: HTMLElement): void {
   });
 }
 
-// Performance: virtual window + sentinel (progressive render), fallback pager tetap ada.
-function renderSkemaWindowed(): void {
+function toSkemaCard(s: SkemaSummary): string {
+  return skemaCardHTML({ nama: s.nama, jml_lsp: s.jml_lsp, total_unit: s.total_unit, lsps: [] });
+}
+
+async function renderSkemaPage(): Promise<void> {
   const grid = document.getElementById('skemaGrid');
   const pager = document.getElementById('skemaPager');
-  const sentinel = document.getElementById('skemaSentinel');
   if (!grid || !pager) return;
-  const { pageItems, totalPages } = paginate(state.skemaList, state.skemaPage, state.skemaPageSize);
-  const windowed = pageItems.slice(0, virtualRendered);
-  grid.innerHTML = windowed.map((s) => skemaCardHTML(s)).join('');
-  bindCards(grid);
-  pager.innerHTML = pagerHTML(state.skemaPage, totalPages, 'skema');
-  bindPager(pager, (p) => {
-    state.skemaPage = Math.min(Math.max(1, p), totalPages);
-    virtualRendered = 48;
-    renderSkemaWindowed();
-    document.getElementById('skemaGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-
-  if (sentinel && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      if (entries[0]?.isIntersecting && virtualRendered < pageItems.length) {
-        virtualRendered += 24;
-        renderSkemaWindowed();
-      }
+  try {
+    const { total, items } = await getSkemaPage(state.skemaSort, state.skemaPage, state.skemaPageSize);
+    state.homeSkemaTotal = total;
+    const totalPages = Math.max(1, Math.ceil(total / state.skemaPageSize));
+    grid.innerHTML = items.map(toSkemaCard).join('');
+    bindCards(grid);
+    pager.innerHTML = pagerHTML(state.skemaPage, totalPages, 'skema');
+    bindPager(pager, (p) => {
+      state.skemaPage = Math.min(Math.max(1, p), totalPages);
+      void renderSkemaPage();
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('skemaGrid')?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
     });
-    io.observe(sentinel);
+  } catch {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1" role="alert"><b>Gagal memuat skema</b><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetrySkema">Coba lagi</button></div></div>`;
+    document.getElementById('btnRetrySkema')?.addEventListener('click', () => void renderSkemaPage());
   }
 }
 
@@ -314,6 +347,9 @@ interface SearchView {
 
 let searchView: SearchView | null = null;
 const SEARCH_PAGE_SIZE = 12;
+// Batas baris skema yang ditarik per pencarian agar payload tetap ringan.
+// Bila total melebihi ini, tampilkan peringatan eksplisit (anti truncasi senyap).
+const SEARCH_SKEMA_ROW_CAP = 200;
 
 // Hasil pencarian diambil dari server (ilike + paginasi), bukan filter
 // seluruh dataset di memori — jumlah total akurat via count=exact.
@@ -331,10 +367,11 @@ async function renderSearchView(): Promise<void> {
   document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
   try {
     if (type === 'lsp') {
+      // Cari di nama, nomor lisensi, dan nomor SK sekaligus.
       const { rows, total } = await searchPage(
         'lsp',
         'id,nama,jml_skema,status,no_sk,no_lisensi,last_checked',
-        'nama',
+        ['nama', 'no_lisensi', 'no_sk'],
         q,
         page,
         SEARCH_PAGE_SIZE,
@@ -361,11 +398,17 @@ async function renderSearchView(): Promise<void> {
         'nama',
         q,
         1,
-        200,
+        SEARCH_SKEMA_ROW_CAP,
       );
-      const grouped = groupSkemaRows(rows as unknown as SkemaRow[], state.lspMap);
+      const truncated = total > rows.length;
+      const skemaRows = rows as unknown as SkemaRow[];
+      const lspIds = [...new Set(skemaRows.map((r) => r.lsp_id))];
+      const grouped = groupSkemaRows(skemaRows, await fetchLspMap(lspIds));
       const { pageItems, totalPages } = paginate(grouped, page, SEARCH_PAGE_SIZE);
-      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>${title}</h2><p>${grouped.length} jenis skema (dari ${total} baris cocok) untuk “${esc(q)}”</p></div></div><div class="card-grid">${pageItems.map((s) => skemaCardHTML(s)).join('') || '<div class="empty" style="grid-column:1/-1"><b>Tidak ditemukan</b><div>Coba kata kunci lain.</div></div>'}</div><div id="searchPager"></div>`;
+      const warn = truncated
+        ? `<div class="empty" role="note"><b>Hasil dibatasi ${rows.length} dari ${total} baris cocok</b><div>Persempit kata kunci untuk hasil yang lengkap.</div></div>`
+        : '';
+      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="section-head"><div><h2>${title}</h2><p>${grouped.length} jenis skema (dari ${total} baris cocok) untuk “${esc(q)}”</p></div></div>${warn}<div class="card-grid">${pageItems.map((s) => skemaCardHTML(s)).join('') || '<div class="empty" style="grid-column:1/-1"><b>Tidak ditemukan</b><div>Coba kata kunci lain.</div></div>'}</div><div id="searchPager"></div>`;
       document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
       bindCards(main);
       const pager = document.getElementById('searchPager');
@@ -389,28 +432,39 @@ async function renderSearchView(): Promise<void> {
 }
 
 function showLsp(name: string): void {
-  const lsp = state.lspList.find((l) => l.nama === name);
-  if (!lsp) return;
   try {
     history.pushState(null, '', `#/lsp/${encodeURIComponent(slugify(name))}`);
     document.title = `${name} — LSP BNSP | ICC Portal`;
   } catch {
     /* abaikan */
   }
-  const rows = state.skemaAllRows.filter((s) => s.lsp_id === lsp.id);
-  const names = [...new Set(rows.map((s) => s.nama))].sort();
-  state.lspSkemaNames = names;
-  state.lspSkemaPage = 1;
-  state.currentLspId = lsp.id;
-  state.currentLspName = lsp.nama;
-
   const main = document.getElementById('mainContent');
   if (!main) return;
-  main.innerHTML = lspProfileHTML(lsp);
+  main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali ke pencarian</button><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p class="mt-10">Memuat profil LSP…</p></div>`;
   document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
-  renderLspSkemaTable();
-  focusMain();
-  announce(`Profil ${lsp.nama}, ${names.length} skema`);
+  void (async () => {
+    try {
+      const lsp = await fetchLspByName(name);
+      if (!lsp) {
+        main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali ke pencarian</button><div class="empty"><b>LSP tidak ditemukan</b><div>“${esc(name)}” tidak ada di data.</div></div>`;
+        document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+        return;
+      }
+      state.lspSkemaEntries = await fetchLspSkemaNames(lsp.id);
+      state.lspSkemaPage = 1;
+      state.currentLspId = lsp.id;
+      state.currentLspName = lsp.nama;
+      main.innerHTML = lspProfileHTML(lsp);
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      renderLspSkemaTable();
+      focusMain();
+      announce(`Profil ${lsp.nama}, ${state.lspSkemaEntries.length} skema`);
+    } catch (e) {
+      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali ke pencarian</button><div class="empty" role="alert"><b>Gagal memuat profil</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetryProfile">Coba lagi</button></div></div>`;
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      document.getElementById('btnRetryProfile')?.addEventListener('click', () => showLsp(name));
+    }
+  })();
 }
 
 function renderLspSkemaTable(): void {
@@ -418,20 +472,17 @@ function renderLspSkemaTable(): void {
   const pager = document.getElementById('lspSkemaPager');
   const count = document.getElementById('lspSkemaCount');
   if (!tbody || !pager || state.currentLspId === null) return;
-  const { pageItems, totalPages } = paginate(state.lspSkemaNames, state.lspSkemaPage, state.lspPageSize);
-  if (count) count.textContent = `${state.lspSkemaNames.length} skema • halaman ${state.lspSkemaPage}/${totalPages}`;
+  const { pageItems, totalPages } = paginate(
+    state.lspSkemaEntries,
+    state.lspSkemaPage,
+    state.lspPageSize,
+  );
+  if (count)
+    count.textContent = `${state.lspSkemaEntries.length} skema • halaman ${state.lspSkemaPage}/${totalPages}`;
   tbody.innerHTML = pageItems
-    .map((nama, i) => {
-      let totalUnit = 0;
-      let skemaId: number | null = null;
-      for (const r of state.skemaAllRows) {
-        if (r.nama === nama && r.lsp_id === state.currentLspId) {
-          totalUnit += r.jml_unit ?? 0;
-          skemaId = r.id;
-        }
-      }
+    .map((entry, i) => {
       const no = (state.lspSkemaPage - 1) * state.lspPageSize + i + 1;
-      return `<tr><td>${no}</td><td>${esc(nama)}</td><td class="mono">${totalUnit}</td><td><button class="btn btn--sm" type="button" data-skema="${esc(nama)}" data-id="${skemaId ?? ''}">Lihat unit</button></td></tr>`;
+      return `<tr><td>${no}</td><td>${esc(entry.nama)}</td><td class="mono">${entry.units}</td><td><button class="btn btn--sm" type="button" data-skema="${esc(entry.nama)}">Lihat unit</button></td></tr>`;
     })
     .join('');
   tbody.querySelectorAll<HTMLButtonElement>('[data-skema]').forEach((b) => {
@@ -445,34 +496,36 @@ function renderLspSkemaTable(): void {
 }
 
 function showLspSkemaUnits(name: string): void {
-  const skema = state.skemaAllRows.find((s) => s.lsp_id === state.currentLspId && s.nama === name);
-  if (!skema) return;
+  if (state.currentLspId === null) return;
+  const lspId = state.currentLspId;
   const main = document.getElementById('mainContent');
   if (!main) return;
-  main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button>
-  <div class="card card--skema mt-12"><div class="card-top"><div><div class="lbl">UNIT KOMPETENSI</div><div class="h-unit">${esc(skema.nama)}</div><div class="sub mt-4">${esc(state.currentLspName)} • ${skema.jml_unit ?? 0} unit</div></div><span class="badge badge--orange">${skema.jml_unit ?? 0} unit</span></div></div>
-  <div id="skemaUnitTable" class="mt-12">${unitLoadingHTML()}</div>`;
+  main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div></div>`;
   document.getElementById('btnBackLsp')?.addEventListener('click', () => showLsp(state.currentLspName));
-  void loadUnits(skema.id);
-}
-
-async function loadUnits(skemaId: number): Promise<void> {
-  const box = document.getElementById('skemaUnitTable');
-  if (!box) return;
-  try {
-    const units = await fetchUnitsBySkema(skemaId);
-    state.unitRows = units;
-    state.unitSortKey = 'kode';
-    state.unitSortDir = 1;
-    renderUnitTable();
-    announce(`${units.length} unit kompetensi dimuat`);
-  } catch (e) {
-    box.innerHTML = unitErrorHTML(e instanceof Error ? e.message : String(e));
-    document.getElementById('btnRetryUnits')?.addEventListener('click', () => {
-      box.innerHTML = unitLoadingHTML();
-      void loadUnits(skemaId);
-    });
-  }
+  void (async () => {
+    try {
+      const skemaId = await fetchSkemaId(lspId, name);
+      if (skemaId === null) {
+        main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button><div class="empty"><b>Skema tidak ditemukan</b></div>`;
+        document.getElementById('btnBackLsp')?.addEventListener('click', () => showLsp(state.currentLspName));
+        return;
+      }
+      const units = await fetchUnitsBySkema(skemaId);
+      main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button>
+  <div class="card card--skema mt-12"><div class="card-top"><div><div class="lbl">UNIT KOMPETENSI</div><div class="h-unit">${esc(name)}</div><div class="sub mt-4">${esc(state.currentLspName)} • ${units.length} unit</div></div><span class="badge badge--orange">${units.length} unit</span></div></div>
+  <div id="skemaUnitTable" class="mt-12"></div>`;
+      document.getElementById('btnBackLsp')?.addEventListener('click', () => showLsp(state.currentLspName));
+      state.unitRows = units;
+      state.unitSortKey = 'kode';
+      state.unitSortDir = 1;
+      renderUnitTable();
+      announce(`${units.length} unit kompetensi dimuat`);
+    } catch (e) {
+      main.innerHTML = `<button class="back" type="button" id="btnBackLsp">← Kembali ke skema</button><div class="empty" role="alert"><b>Gagal memuat unit</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetryUnits2">Coba lagi</button></div></div>`;
+      document.getElementById('btnBackLsp')?.addEventListener('click', () => showLsp(state.currentLspName));
+      document.getElementById('btnRetryUnits2')?.addEventListener('click', () => showLspSkemaUnits(name));
+    }
+  })();
 }
 
 function renderUnitTable(): void {
@@ -494,8 +547,6 @@ function renderUnitTable(): void {
 }
 
 function searchSkemaAndPickLsp(name: string): void {
-  const skema = state.skemaList.find((s) => s.nama === name);
-  if (!skema) return;
   try {
     history.pushState(null, '', `#/skema/${encodeURIComponent(slugify(name))}`);
     document.title = `${name} — Skema | ICC Portal`;
@@ -504,24 +555,42 @@ function searchSkemaAndPickLsp(name: string): void {
   }
   const main = document.getElementById('mainContent');
   if (!main) return;
-  main.innerHTML = skemaDetailHTML(skema);
+  main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="loading" role="status"><div class="spinner" aria-hidden="true"></div><p class="mt-10">Memuat skema…</p></div>`;
   document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
-  const buttons = [...main.querySelectorAll<HTMLButtonElement>('.pills button')];
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const idx = Number(btn.getAttribute('data-idx'));
-      showSkemaDetail(name, idx, btn);
-    });
-  });
-  if (buttons.length === 1 && buttons[0]) buttons[0].click();
-  focusMain();
-  announce(`Skema ${name}, tersedia di ${skema.jml_lsp} LSP`);
+  void (async () => {
+    try {
+      const { group, info } = await fetchSkemaGroup(name);
+      if (!group) {
+        main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="empty"><b>Skema tidak ditemukan</b><div>“${esc(name)}” tidak ada di data.</div></div>`;
+        document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+        return;
+      }
+      skemaCtx = { group, info };
+      main.innerHTML = skemaDetailHTML(group);
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      const buttons = [...main.querySelectorAll<HTMLButtonElement>('.pills button')];
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.getAttribute('data-idx'));
+          showSkemaDetail(group.nama, idx, btn);
+        });
+      });
+      if (buttons.length === 1 && buttons[0]) buttons[0].click();
+      focusMain();
+      announce(`Skema ${group.nama}, tersedia di ${group.jml_lsp} LSP`);
+    } catch (e) {
+      main.innerHTML = `<button class="back" type="button" id="btnBackHome">← Kembali</button><div class="empty" role="alert"><b>Gagal memuat skema</b><div>${esc(e instanceof Error ? e.message : String(e))}</div><div class="mt-12"><button class="btn btn--primary" type="button" id="btnRetrySkemaDetail">Coba lagi</button></div></div>`;
+      document.getElementById('btnBackHome')?.addEventListener('click', () => goHome());
+      document.getElementById('btnRetrySkemaDetail')?.addEventListener('click', () => searchSkemaAndPickLsp(name));
+    }
+  })();
 }
 
 function showSkemaDetail(skemaName: string, lspIdx: number, btnEl: HTMLButtonElement | null): void {
-  const skema = state.skemaList.find((s) => s.nama === skemaName);
-  const opt = skema?.lsps[lspIdx];
-  if (!skema || !opt) return;
+  if (skemaCtx?.group.nama !== skemaName) return;
+  const skema = skemaCtx.group;
+  const opt = skema.lsps[lspIdx];
+  if (!opt) return;
   document.querySelectorAll('.pills button').forEach((p) => {
     p.classList.remove('active');
     p.setAttribute('aria-selected', 'false');
@@ -530,7 +599,7 @@ function showSkemaDetail(skemaName: string, lspIdx: number, btnEl: HTMLButtonEle
   btnEl?.setAttribute('aria-selected', 'true');
   const infoEl = document.getElementById('skemaLspInfo');
   if (infoEl) {
-    const lsp = state.lspList.find((l) => l.id === opt.lsp_id);
+    const lsp = skemaCtx.info.get(opt.lsp_id);
     infoEl.innerHTML = skemaLspInfoHTML(lsp?.nama ?? opt.lsp, lsp);
   }
   const box = document.getElementById('skemaUnitTable');
@@ -561,24 +630,49 @@ function goHome(): void {
     /* abaikan */
   }
   renderHero();
-  renderHome();
+  void renderHome();
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   focusMain();
 }
 
 function handleHash(): void {
-  if (state.lspList.length === 0) return;
+  if (!state.stats) return;
   const hash = window.location.hash || '';
   if (hash.startsWith('#/lsp/')) {
-    const slug = decodeURIComponent(hash.replace('#/lsp/', '')).replace(/-/g, ' ');
-    const found = state.lspList.find(
-      (l) => l.nama.toLowerCase() === slug.toLowerCase() || slugify(l.nama) === slugify(slug),
-    );
-    if (found) showLsp(found.nama);
+    void resolveLspSlug(decodeURIComponent(hash.replace('#/lsp/', '')));
   } else if (hash.startsWith('#/skema/')) {
-    const slug = decodeURIComponent(hash.replace('#/skema/', '')).replace(/-/g, ' ');
-    const found = state.skemaList.find((s) => s.nama.toLowerCase() === slug.toLowerCase());
-    if (found) searchSkemaAndPickLsp(found.nama);
+    void resolveSkemaSlug(decodeURIComponent(hash.replace('#/skema/', '')));
+  }
+}
+
+/** Deep-link slug → nama eksak bila cocok, saran teratas bila tidak. */
+async function resolveLspSlug(slug: string): Promise<void> {
+  const deslug = deslugify(slug);
+  try {
+    const exact = await fetchLspByName(deslug);
+    if (exact) {
+      showLsp(exact.nama);
+      return;
+    }
+    const sug = await suggestLsp(deslug, 1);
+    if (sug[0]) showLsp(sug[0].nama);
+  } catch {
+    /* abaikan: tetap di home */
+  }
+}
+
+async function resolveSkemaSlug(slug: string): Promise<void> {
+  const deslug = deslugify(slug);
+  try {
+    const { group } = await fetchSkemaGroup(deslug);
+    if (group) {
+      searchSkemaAndPickLsp(group.nama);
+      return;
+    }
+    const sug = await suggestSkema(deslug, 1);
+    if (sug[0]) searchSkemaAndPickLsp(sug[0]);
+  } catch {
+    /* abaikan: tetap di home */
   }
 }

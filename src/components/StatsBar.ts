@@ -5,8 +5,7 @@ export interface StatsData {
   multiLsp: string;
   detail: string;
   unitSub: string;
-  aktif: string;
-  habis: string;
+  dataPer: string;
 }
 
 export function statsHTML(s: StatsData): string {
@@ -18,9 +17,8 @@ export function statsHTML(s: StatsData): string {
     <div class="stat-mini-proof"><b class="fs-13">${s.multiLsp}</b><span>Skema di &gt;1 LSP</span></div>
   </section>
   <div class="proof-meta">
+    <span class="inline-badge">📅 Data per <b>${s.dataPer}</b></span>
     <span class="inline-badge">${s.detail}</span>
     <span class="inline-badge">${s.unitSub}</span>
-    <span class="badge badge--green">✓ ${s.aktif} Aktif</span>
-    <span class="badge badge--red">✕ ${s.habis} Habis</span>
   </div>`;
 }

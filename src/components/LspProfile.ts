@@ -24,6 +24,7 @@ export function lspProfileHTML(lsp: LspItem): string {
       <div><label>Masa Berlaku</label><b>${isActive ? 'Aktif' : 'Perlu perpanjangan'}</b></div>
     </div>
   </div>
+  <div class="card card--lsp mt-12"><div class="sub"><b>Butuh kontak LSP ini?</b> Data kontak tidak tersedia di data terbuka BNSP. Hubungi Call Center BNSP <b class="mono">0812 8888 7014</b> / <a href="mailto:admin@bnsp.go.id">admin@bnsp.go.id</a> atau kunjungi <a href="https://bnsp.go.id/" target="_blank" rel="noopener">bnsp.go.id</a>.</div></div>
   <div class="section-head"><div><h2>Skema Sertifikasi</h2><p id="lspSkemaCount"></p></div></div>
   <div class="table-wrap"><table aria-label="Daftar skema ${esc(lsp.nama)}">
     <thead><tr><th scope="col">No</th><th scope="col">Nama Skema</th><th scope="col">Unit</th><th scope="col">Aksi</th></tr></thead>

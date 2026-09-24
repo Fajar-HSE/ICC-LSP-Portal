@@ -17,6 +17,31 @@ const UNITS: Record<string, { kode: string; nama: string }[]> = {
 };
 
 test.beforeEach(async ({ page }) => {
+  await page.route('**/rest/v1/rpc/portal_stats*', (route) =>
+    route.fulfill({
+      json: {
+        total_lsp: 1,
+        aktif: 1,
+        habis: 0,
+        total_unit: 3,
+        skema_jenis: 2,
+        multi_lsp: 0,
+        latest_checked: '2026-08-05T00:00:00.000Z',
+      },
+    }),
+  );
+  await page.route('**/rest/v1/rpc/top_lsp*', (route) => route.fulfill({ json: LSP_ROWS }));
+  await page.route('**/rest/v1/rpc/skema_page*', (route) =>
+    route.fulfill({
+      json: {
+        total: 2,
+        items: [
+          { nama: 'K3 Umum', jml_lsp: 1, total_unit: 2 },
+          { nama: 'Barista', jml_lsp: 1, total_unit: 1 },
+        ],
+      },
+    }),
+  );
   await page.route('**/rest/v1/lsp*', (route) => route.fulfill({ json: LSP_ROWS }));
   await page.route('**/rest/v1/skema*', (route) => route.fulfill({ json: SKEMA_ROWS }));
   await page.route('**/rest/v1/unit_kompetensi*', (route) => {
@@ -45,7 +70,7 @@ test('search LSP autocomplete and open profile', async ({ page }) => {
 
 test('open skema and sort units', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: /Lihat penyelenggara skema K3 Umum|K3 Umum/ }).first().click();
+  await page.locator('#skemaGrid').getByRole('button', { name: /K3 Umum/ }).click();
   await expect(page.getByText('Tersedia di 1 LSP').first()).toBeVisible();
   await page.getByRole('tab').first().click();
   await expect(page.getByText('Menerapkan K3')).toBeVisible();

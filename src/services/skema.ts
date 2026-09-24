@@ -4,6 +4,8 @@ import type {
   SkemaItem,
   SkemaRow,
 } from '../types/database.js';
+import type { SkemaSort } from '../types/ui.js';
+import { normalizeName } from '../utils/format.js';
 
 export interface BuiltData {
   lspList: LspItem[];
@@ -13,7 +15,9 @@ export interface BuiltData {
 }
 
 export function buildData(lspRows: LspRow[], skemaRows: SkemaRow[]): BuiltData {
-  const lspList: LspItem[] = lspRows.map((l) => ({
+  const cleanLsp = lspRows.map((l) => ({ ...l, nama: normalizeName(l.nama) }));
+  const cleanSkema = skemaRows.map((s) => ({ ...s, nama: normalizeName(s.nama) }));
+  const lspList: LspItem[] = cleanLsp.map((l) => ({
     id: l.id,
     nama: l.nama,
     jml_skema: l.jml_skema ?? 0,
@@ -33,34 +37,39 @@ export function buildData(lspRows: LspRow[], skemaRows: SkemaRow[]): BuiltData {
   const lspMap: Record<number, string> = {};
   for (const l of lspList) lspMap[l.id] = l.nama;
 
-  // Hitung skema unik per LSP (nama unik, bukan row count)
+  // Hitung skema unik per LSP (nama unik ternormalisasi, bukan row count)
   const lspSkemaSet: Record<string, Set<string>> = {};
-  for (const s of skemaRows) {
+  for (const s of cleanSkema) {
     const key = String(s.lsp_id);
     if (!lspSkemaSet[key]) lspSkemaSet[key] = new Set();
-    lspSkemaSet[key].add(s.nama);
+    lspSkemaSet[key].add(s.nama.toLowerCase());
   }
   for (const l of lspList) {
     const set = lspSkemaSet[String(l.id)];
     if (set) l.jml_skema = set.size;
   }
 
-  const skemaList = groupSkemaRows(skemaRows, lspMap);
+  const skemaList = groupSkemaRows(cleanSkema, lspMap);
 
   return { lspList, skemaList, lspMap, latestChecked };
 }
 
-/** Kelompokkan baris skema per nama (case-insensitive) lintas LSP. */
+/**
+ * Kelompokkan baris skema per nama (case-insensitive + spasi ternormalisasi)
+ * lintas LSP. Normalisasi di sini juga agar hasil pencarian server
+ * (yang tidak lewat buildData) tampil rapi.
+ */
 export function groupSkemaRows(
   rows: SkemaRow[],
   lspMap: Record<number, string>,
 ): SkemaItem[] {
   const group = new Map<string, { nama: string; lsps: SkemaItem['lsps'] }>();
   for (const s of rows) {
-    const key = s.nama.toLowerCase();
+    const nama = normalizeName(s.nama);
+    const key = nama.toLowerCase();
     let g = group.get(key);
     if (!g) {
-      g = { nama: s.nama, lsps: [] };
+      g = { nama, lsps: [] };
       group.set(key, g);
     }
     g.lsps.push({
@@ -79,4 +88,17 @@ export function groupSkemaRows(
     const total_unit = g.lsps.reduce((sum, o) => sum + o.jml_unit, 0);
     return { nama: g.nama, jml_lsp: g.lsps.length, total_unit, lsps: g.lsps };
   });
+}
+
+/** Urutkan daftar skema untuk browsing; tidak mengubah array asli. */
+export function sortSkemaItems(list: SkemaItem[], sort: SkemaSort): SkemaItem[] {
+  const out = list.slice();
+  if (sort === 'nama-desc') {
+    out.sort((a, b) => b.nama.localeCompare(a.nama));
+  } else if (sort === 'unit-desc') {
+    out.sort((a, b) => b.total_unit - a.total_unit);
+  } else {
+    out.sort((a, b) => a.nama.localeCompare(b.nama));
+  }
+  return out;
 }

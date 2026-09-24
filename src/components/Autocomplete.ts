@@ -42,10 +42,12 @@ export function renderAcSkema(container: HTMLElement, input: HTMLInputElement, m
     return;
   }
   container.innerHTML = matches
-    .map(
-      (m) =>
-        `<div class="ac-item" role="option" tabindex="-1" data-nama="${esc(m.nama)}"><span><b>${highlight(m.nama, input.value)}</b><small>${m.jml_lsp} LSP • ${m.total_unit} unit</small></span><span class="tag">${m.jml_lsp} LSP</span></div>`,
-    )
+    .map((m) => {
+      const meta =
+        m.jml_lsp > 0 ? `<small>${m.jml_lsp} LSP • ${m.total_unit} unit</small>` : '<small>Lihat penyelenggara →</small>';
+      const tag = m.jml_lsp > 0 ? `<span class="tag">${m.jml_lsp} LSP</span>` : '';
+      return `<div class="ac-item" role="option" tabindex="-1" data-nama="${esc(m.nama)}"><span><b>${highlight(m.nama, input.value)}</b>${meta}</span>${tag}</div>`;
+    })
     .join('');
   container.classList.add('show');
   input.setAttribute('aria-expanded', 'true');

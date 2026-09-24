@@ -1,10 +1,10 @@
 const FALLBACK_URL = 'https://ziybqtcdphuzhfoahopr.supabase.co';
 
-// Anon key publik (public by design untuk client-side, RLS read-only).
+// Publishable key (sb_publishable_...): dirancang publik untuk client-side,
+// setara anon key, tunduk pada RLS read-only.
 // Env VITE_SB_KEY menimpa bila diset; fallback ini menjaga deploy statis
-// tetap jalan tanpa secrets — perilaku sama seperti index.html lama.
-const FALLBACK_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppeWJxdGNkcGh1emhmb2Fob3ByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3ODQ0NTUsImV4cCI6MjEwMDM2MDQ1NX0.pksC4kqaO3YIjqc2RQEEJnDiYYwu-HoT9vVoFRRi64I';
+// dan dev lokal tetap jalan tanpa secrets.
+const FALLBACK_KEY = 'sb_publishable_0yUKTSy_QGWYgJrggRC5TA_M71e5fA_';
 
 export function getSupabaseConfig(): { url: string; key: string } {
   const envUrl = import.meta.env['VITE_SB_URL'] as string | undefined;
@@ -19,23 +19,35 @@ export async function fetchAll(
   select: string,
   pageSize = 1000,
 ): Promise<Record<string, unknown>[]> {
+  return fetchWhere(table, select, '', pageSize);
+}
+
+/**
+ * fetchAll + filter PostgREST mentah (mis. `lsp_id=eq.1`).
+ * Dipakai untuk query tercakup (satu LSP, satu nama) agar tidak
+ * mengunduh seluruh tabel.
+ */
+export async function fetchWhere(
+  table: string,
+  select: string,
+  filter: string,
+  pageSize = 1000,
+): Promise<Record<string, unknown>[]> {
   const { url, key } = getSupabaseConfig();
   const results: Record<string, unknown>[] = [];
   let start = 0;
+  const base = `${url}/rest/v1/${table}?select=${encodeURIComponent(select)}${filter ? `&${filter}` : ''}`;
 
   for (;;) {
     const end = start + pageSize - 1;
-    const res = await fetch(
-      `${url}/rest/v1/${table}?select=${encodeURIComponent(select)}`,
-      {
-        headers: {
-          apikey: key,
-          Authorization: `Bearer ${key}`,
-          Accept: 'application/json',
-          Range: `${start}-${end}`,
-        },
+    const res = await fetch(base, {
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        Accept: 'application/json',
+        Range: `${start}-${end}`,
       },
-    );
+    });
     if (!res.ok) {
       throw new Error(`Supabase ${table} gagal: ${res.status}`);
     }
